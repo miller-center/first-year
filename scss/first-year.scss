@@ -41,3 +41,45 @@
 //   "foundation/components/type",
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
+
+$navigation-container-height: 4rem !default;
+$navigation-container-bg-color: #84a0b5;
+$navigation-container-z-index: 1000;
+
+@media #{$small-up} {
+
+}
+
+@media #{$medium-up} {
+  
+}
+
+@media #{$large-up} {
+  #navigation-container {
+    background-color: $navigation-container-bg-color;
+    height: $navigation-container-height;
+    z-index: $navigation-container-z-index;
+  }
+
+  #hero-container {
+    height: 500px;
+    background-color: #666;
+  }
+
+}
+
+@media #{$small-only} {
+  
+}
+
+@media #{$medium-only} {
+  
+}
+
+@media #{$large-only} {
+  
+}
+
+@media #{$xlarge-only} {
+  
+}
