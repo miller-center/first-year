@@ -10,6 +10,15 @@ You'll need to have the following items installed before continuing.
   * [Grunt](http://gruntjs.com/): Run `[sudo] npm install -g grunt-cli`
   * [Bower](http://bower.io): Run `[sudo] npm install -g bower`
 
+## Components
+
+This project uses the following open-source libraries and frameworks:
+
+  * Foundation 5
+  * JQuery 2
+  * [Precision Icons](http://tomswebspace.com/round-social-media-icons)
+  * Slick Carousel
+
 ## Quickstart
 
 ```bash
