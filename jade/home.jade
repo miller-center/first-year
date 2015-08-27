@@ -2,6 +2,7 @@ doctype html
 - var title = "The First Year Project"
 - var issue = "The Crucible Year"
 - var essay = "What Time Is It?"
+- var project_home = "/usr/local/projects/first-year"
 html(lang="en")
   head
     meta(charset="utf-8")
@@ -9,9 +10,9 @@ html(lang="en")
     meta(name="description", content="")
     meta(name="author", content="")
     meta(name="viewport", content="width=device-width, initial-scale=1")
-    link(rel="stylesheet", href="css/first-year.css")
-    link(rel="stylesheet", href="css/home.css")
-    link(rel="icon", type="image/png", href="images/favicon.ico")
+    link(rel="stylesheet", href="#{project_home}/css/first-year.css")
+    link(rel="stylesheet", href="#{project_home}/css/home.css")
+    link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
     //- adding Slick Carousel
     //- link(rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick.css")
     //- link(rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick-theme.css")
@@ -38,7 +39,8 @@ html(lang="en")
           ul
             li About
             li Contact
-            li Blah
+            li Home&nbsp;
+              i.fi-home
         .small-6.large-4.columns
           ul
             li More
@@ -50,14 +52,14 @@ html(lang="en")
             li Stuff
             li Here
 
-    script(src="bower_components/foundation/js/vendor/jquery.js")
+    script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
     //- remove http protocol from production version
     script(src="http://code.jquery.com/jquery-migrate-1.2.1.min.js")
-    script(src="bower_components/foundation/js/foundation/foundation.js")
-    script(src="bower_components/foundation/js/foundation/foundation.topbar.js")
-    script(src="bower_components/foundation/js/foundation/foundation.interchange.js")
-    script(src="bower_components/slick-carousel/slick/slick.min.js")
+    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.js")
+    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.topbar.js")
+    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.interchange.js")
+    script(src="#{project_home}/bower_components/slick-carousel/slick/slick.min.js")
     //- script(src="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")
-    script(src="js/first-year.js")
+    script(src="#{project_home}/js/first-year.js")
     //- first-year.js initializes Foundation
-    script(src="js/home.js")
+    script(src="#{project_home}/js/home.js")
