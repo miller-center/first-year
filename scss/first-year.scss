@@ -153,3 +153,41 @@ $fy-blue-1: #84a0b5;
 @media #{$xlarge-only} {
   
 }
+
+
+//
+// MAIN CONTAINER
+//
+
+@media #{$small-up} {
+  #featured-container {
+    background: grey;
+  }
+  #blog-container {
+    background: blue;
+  }
+}
+
+@media #{$medium-up} {
+  
+}
+
+@media #{$large-up} {
+
+}
+
+@media #{$small-only} {
+  
+}
+
+@media #{$medium-only} {
+  
+}
+
+@media #{$large-only} {
+  
+}
+
+@media #{$xlarge-only} {
+  
+}

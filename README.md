@@ -32,7 +32,13 @@ While you're working on your project, run:
 
 And you're set!
 
+Leave a Terminal window open with Grunt running on it.  It will watch your directory and compile .jade and .scss files into .html and .css
+
 ## Directory Structure
 
   * `scss/_settings.scss`: Foundation configuration settings go in here
-  * `scss/app.scss`: Application styles go here
+  * `scss/first-year.scss`: Project-wide styles go here
+  * `scss/home.scss`: Landing page styles go here
+  * `scss/issue.scss`: 'Bucket' Page styles go here
+  * `scss/essay.scss`: Essay styles go here
+  * Other subcomponents can get their own pages, e.g `_header.scss` and are included in major pages.
