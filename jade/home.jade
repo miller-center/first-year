@@ -9,7 +9,7 @@ html(lang="en")
     title #{title}
     meta(name="description", content="")
     meta(name="author", content="")
-    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
     link(rel="stylesheet", href="#{project_home}/css/first-year.css")
     link(rel="stylesheet", href="#{project_home}/css/home.css")
     link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
@@ -20,27 +20,59 @@ html(lang="en")
   
   body
 
+    
     //- topbar nav
-    .sticky.contain-to-grid
+    .sticky.contain-to-grid#navigation-container
       nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: large")
-        ul.title-area
-          li.name
-            h1
-              a(href="#") Sticky Top Bar
-          li.toggle-topbar.menu-icon
-            a(href="#")
-              span Menu
-        section.top-bar-section
+        section.logo-section
+          a(href="#") 
+            h1 <b>First Year</b> 2017
+            h4 Where successful administrations begin
+        section.social-section 
+          //  Right Nav Section 
           ul.right
-            li.divider.hide-for-small
-            li
-              a(href="#") Main Item 1
+            li#sh-fb-icon.menu-option: a(href="#")
+              | &nbsp;
+              //- img(src="images/icons/lg/facebook-wht.png")
+            li#sh-tw-icon.menu-option: a(href="#") 
+              | &nbsp;
+            li#menu-icon
+              Menu
 
  
 
-    .row#hero-container-row
-      .small-12.columns#hero-container
-        p here is a hero
+    section.hero
+      .row.hero-title
+        .small-centered.medium-uncentered.small-12.columns#hero-title
+          h2 Issue 1
+          span.stars &#x2605; &#x2605; &#x2605;
+          h1.main-title The Next President's #[br ] Crucible Year
+          p  Six essays about the promises and pitfalls of the first 365 days in office.
+        //- .small-centered.medium-uncentered.medium-6.large-5.columns
+        //-   .tech-img
+
+      .intro-nav
+        .small-6.small-centered.columns
+          span Explore the essays
+          span Learn about First Year 2017
+
+      ul.header-subnav#nav-tabs
+        li.tab
+          .tab-entry.is-active
+            a(href="") Issue 1
+            p The Next President's Crucible Year
+        li.tab
+          .tab-entry
+            a(href="") Issue 2
+            p Coming in December: National Security
+        li.tab
+          .tab-entry
+            a(href="") Issue 3
+            p Coming January 2016
+        li.tab
+          .tab-entry
+            a(href="") More →
+            p &nbsp;
 
 
     .row

@@ -1,3 +1,4 @@
+$fy-blue-1: #84a0b5;
 @import "settings";
 @import "foundation";
 @import "foundation-icons.css";
@@ -42,9 +43,12 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
-$navigation-container-height: 4rem !default;
+$navigation-container-height: $topbar-height;
 $navigation-container-bg-color: #84a0b5;
 $navigation-container-z-index: 1000;
+
+$mc-semi-transparent-whitesmoke: rgba(245,245,245,0.2);
+$navigation-transition-time: 500ms;
 
 @media #{$small-up} {
 
@@ -56,14 +60,36 @@ $navigation-container-z-index: 1000;
 
 @media #{$large-up} {
   #navigation-container {
+    @include single-transition(padding, $navigation-transition-time, ease-out);
+    @include single-transition(background-color, 200ms, ease-out);
     background-color: $navigation-container-bg-color;
     height: $navigation-container-height;
     z-index: $navigation-container-z-index;
+    nav {
+      @include single-transition(padding, $navigation-transition-time, ease-out);
+      a {
+        padding-top:0.6em;
+      }
+    }
   }
 
   #hero-container {
     height: 500px;
     background-color: #666;
+  }
+
+  // nav bar shrink/expand classes
+  #navigation-container.shrinkMenu {
+    background-color: $mc-semi-transparent-whitesmoke !important;
+    nav {
+      padding: 0 3em 0;
+    }
+  }
+  #navigation-container.expandMenu {
+    background-color: $navigation-container-bg-color;
+    nav {
+      padding: 0;
+    }    
   }
 
 }

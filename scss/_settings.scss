@@ -430,7 +430,7 @@ $include-html-global-classes: $include-html-classes;
 
 // We use these to control the slash between breadcrumbs
 // $crumb-slash-color: $base;
-// $crumb-slash: "/";
+$crumb-slash: "→";
 
 // 05. Buttons
 // - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -1400,8 +1400,8 @@ $include-html-global-classes: $include-html-classes;
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: $oil;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg-color: transparentize(#F5F5F5, 0.2);
+$topbar-bg: $topbar-bg-color;
 
 // Height and margin
 // $topbar-height: rem-calc(45);
