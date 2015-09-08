@@ -17,7 +17,8 @@ module.exports = function(grunt) {
           'css/first-year.css': 'scss/first-year.scss',
           'css/home.css': 'scss/home.scss',
           'css/issue.css': 'scss/issue.scss',
-          'css/essay.css': 'scss/essay.scss'
+          'css/essay.css': 'scss/essay.scss',
+          'css/teaser.css': 'scss/teaser.scss'
         }
       }
     },
