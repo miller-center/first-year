@@ -36,8 +36,19 @@ html(lang="en")
               //- img(src="images/icons/lg/facebook-wht.png")
             li.menu-option#header-tw-icon: a(href="#") 
               | &nbsp;
-            li#menu-icon
-              Menu
+            li.menu-option.has-dropdown#header-menu-icon
+              a(href="#")
+                span.label Menu
+                  span
+              ul.dropdown
+                li
+                  a(href="#") First link in dropdown
+                li.featured
+                  a(href="#") Featured link in dropdown
+                li
+                  a(href="#") Third link in dropdown
+                li
+                  a(href="#") Fourth link in dropdown
 
  
 
