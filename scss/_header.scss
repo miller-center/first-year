@@ -1,0 +1,393 @@
+ 
+@import "settings";
+@import "foundation";
+@import "foundation-icons.css";
+
+// project-wide styling here
+
+// Or selectively include components
+// @import
+//   "foundation/components/accordion",
+//   "foundation/components/alert-boxes",
+//   "foundation/components/block-grid",
+//   "foundation/components/breadcrumbs",
+//   "foundation/components/button-groups",
+//   "foundation/components/buttons",
+//   "foundation/components/clearing",
+//   "foundation/components/dropdown",
+//   "foundation/components/dropdown-buttons",
+//   "foundation/components/flex-video",
+//   "foundation/components/forms",
+//   "foundation/components/grid",
+//   "foundation/components/inline-lists",
+//   "foundation/components/joyride",
+//   "foundation/components/keystrokes",
+//   "foundation/components/labels",
+//   "foundation/components/magellan",
+//   "foundation/components/orbit",
+//   "foundation/components/pagination",
+//   "foundation/components/panels",
+//   "foundation/components/pricing-tables",
+//   "foundation/components/progress-bars",
+//   "foundation/components/reveal",
+//   "foundation/components/side-nav",
+//   "foundation/components/split-buttons",
+//   "foundation/components/sub-nav",
+//   "foundation/components/switches",
+//   "foundation/components/tables",
+//   "foundation/components/tabs",
+//   "foundation/components/thumbs",
+//   "foundation/components/tooltips",
+//   "foundation/components/top-bar",
+//   "foundation/components/type",
+//   "foundation/components/offcanvas",
+//   "foundation/components/visibility";
+
+
+$navigation-container-height: $topbar-height;
+$navigation-container-bg-color: transparentize(#F5F5F5,0.8);
+$navigation-container-z-index: 1000;
+
+$navigation-transition-time: 500ms;
+
+// hero
+.row.intro {
+  padding-top: 0 !important;
+}
+.intro-nav {
+  color: #eee;
+  background-color: none;
+  div {
+    display: flex;    
+  }
+  span {
+    text-align: center;
+    padding: 0.3em 1em;
+    display: inline-block;
+    flex: 1;
+    margin: 0 0.5em;
+    min-width: 45%;
+    max-width: 47%;
+    width: 50%;
+    text-transform: uppercase;
+    font-size: 90%;
+    $gradient-opacity: 0.7;
+    $hover-opacity: 0.5;
+    border: 1px solid rgba(#eee, 0.3);
+    border-radius: 1px;
+    background: -webkit-radial-gradient(transparentize(#000, $gradient-opacity) 5%, transparentize(#333, $gradient-opacity) 25%, transparentize(#888, $gradient-opacity) 95%);
+    &:hover, &:active {
+      background: -webkit-radial-gradient(transparentize(#000, $hover-opacity) 5%, transparentize(#333, $hover-opacity) 25%, transparentize(#888, $hover-opacity) 95%);
+    }
+    @include single-transition(background, 500ms, ease-in-out);
+
+  }
+}
+.hero-title {
+  text-align: center;
+  top:0;
+  #hero-title {
+    margin-top: 4%;
+  }
+  h2 {
+    color: #ccc;
+    font-size: 1.3rem;
+    letter-spacing: 0.15em;
+    font-weight: 100;
+    font-family: "Verdana";
+    text-transform: uppercase;
+  }
+  p {
+    text-shadow: 1px 1px #000000;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
+  }
+  .stars {
+    color: orange;
+    display: inline-block;
+    letter-spacing: 0.5em;
+    padding-bottom: 0.25em;
+  }
+  h1.main-title {
+    font-family: "Droid Serif";
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 1em;
+    letter-spacing: 0.025em;
+    font-weight: 300;
+    text-align: center;
+    padding-top: 0em;
+  }
+  p {
+    color: #fff;
+    line-height: 1.75em;
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+}
+.hero {
+  // background: url('http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg') no-repeat center center;
+  background: url('../images/heros/white-house.jpg') no-repeat center center;
+  background-size: cover;
+  height: 75vh;
+  top: -($topbar-height);
+  position: relative;
+  &:before {
+    content: '';
+    height: 75vh;
+    position: absolute;
+    top: 0; // watch out for topbar
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+    background-image: linear-gradient(to bottom right,#222222,#111111);
+    opacity: .8; // was .8 
+  }
+  .intro {
+    padding: 3rem;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border:thin solid yellow;
+  }
+  .intro-nav {
+    // border: thin solid red;
+    .columns {
+      // border: thin solid pink;
+    }
+  }
+  h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    line-height: 1.5em;
+    letter-spacing: -0.025em;
+    font-weight: 300;
+    text-align: center;
+  }
+  p {
+    color: #fff;
+    line-height: 1.75em;
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  @media only screen and (min-width: 40.063em) {
+    .tech-img {
+      height: 18rem;
+      width: 18rem;
+    }
+    h1 {
+      padding-top: 4.5rem;
+      text-align: right;
+      font-size: 2.5rem;
+    }
+    p {
+      text-align: right;
+    }
+  }
+  .subnav {
+    $window-tint: 0.3;
+    float: none;
+    position: absolute;
+    // top: 4rem;
+    bottom: 0;
+    // text-align: center;
+    margin-bottom: 0;
+    left: 10%;
+    width: 75%;
+    // border: thin solid yellow;
+    min-height: 8rem;
+    li.tab {
+      float: none;
+      display: inline-block;
+      width: 24%;
+      .tab-entry {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 24%;
+        padding-right: 1em;
+        @include single-transition(background-color, 500ms, ease-in-out);
+        &:hover {
+          background: rgba(250,250,250,$window-tint);
+        }
+        &.is-active {
+          border-top: 5px solid orange;
+        }
+      }
+      p {
+        text-align: center;
+        padding: 0 1em;
+        margin-top: 0.5em;
+        padding-left: 0em;
+      }
+      a {
+        padding: 0.9rem 1rem 0.75rem;
+        font-size: 0.875rem;
+        color: #fff;
+        text-transform: uppercase;
+        display: block;
+        // font-weight: bold;
+        letter-spacing: 1px;
+        top: 0;
+        position: relative;
+        &.is-active {
+          // background: rgba(250,250,250,$window-tint);
+          color: orange;
+          top: -5px;
+        }
+
+        &:hover {
+          // background: rgba(250,250,250,$window-tint);
+          color: orange;
+          transition: all .25s ease-in-out;
+        }
+      }
+    }
+  }
+}
+
+
+@media #{$small-up} {
+
+}
+
+@media #{$medium-up} {
+  
+}
+
+@media #{$large-up} {
+  #navigation-container {
+    @include single-transition(padding, $navigation-transition-time, ease-out);
+    @include single-transition(margin, $navigation-transition-time, ease-out);
+    @include single-transition(background-color, 750ms, ease-out);
+    background-color: $navigation-container-bg-color !important;
+    height: $navigation-container-height;
+    z-index: $navigation-container-z-index;
+    nav {
+      @include single-transition(padding, $navigation-transition-time, ease-out);
+      z-index: $navigation-container-z-index + 1;
+      background-color: rgba(245,245,245,0.0); // transparent; parent has correct style
+       border:none;
+      a {
+        padding-top:0.6em;
+      }
+    }
+  }
+
+
+  #navigation-container {
+    section.logo-section {
+      margin-left: 0.5em;
+      h1, h4 {
+        color: #eee !important;
+        font-weight: 100;
+        line-height: 0.8em;
+        font-size: large;
+        @include single-transition(font-size, $navigation-transition-time, ease-out);
+      }
+      h1 {
+        font-family: "Lato", sans-serif;
+        text-transform: uppercase;
+        font-size: 200%;
+        b {
+          font-weight: 300;
+        }
+      }
+      h4 {
+        letter-spacing: 0.08em;
+      }
+      &::before {
+        content: '';
+        display: block;
+        background-repeat: no-repeat;
+        position:absolute;
+        left:-($topbar-height);
+        top:0;
+        background-size: $topbar-height $topbar-height;
+        background-image: url('../images/logos/mc-white.png') !important;
+        min-height: $topbar-height !important;
+        min-width: $topbar-height !important;
+      }
+    }
+    // select size for social icons here
+    $social-icon-size: 50px;
+    .social-section {
+      ul.right {
+        list-style-type: none;
+        position:relative;
+        display: inline;
+        li.menu-option {
+          position: absolute;
+          height: $social-icon-size;
+          width: $social-icon-size;
+          top: -$topbar-height;
+          float:right;
+        }
+        li#header-fb-icon {
+          background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
+        }
+        li#header-tw-icon {
+          background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center;
+        }
+      }
+
+    }
+  }
+
+
+
+  #hero-container {
+    height: 500px;
+  }
+
+  // nav bar shrink/expand classes
+  #navigation-container.shrinkMenu {
+    nav {
+      padding: 0 0 0;
+      margin-left: 5%;
+    }
+  }
+  #navigation-container.expandMenu {
+    nav {
+      padding: 0;
+      margin-left: 5%;
+    }    
+  }
+  #navigation-container.belowHero {
+    background-color: $oil !important;
+    height: rem-calc(45);
+    h1 {
+      font-size: 1rem !important;
+    }
+    h4 {
+      font-size: 0.9rem !important;
+    }
+    section.logo-section {
+      margin-left: -0.5em;      
+      &:before {
+        background-size: ($topbar-height * 0.75) ($topbar-height * 0.75);
+      }
+    }
+  }
+
+}
+
+@media #{$small-only} {
+  
+}
+
+@media #{$medium-only} {
+  
+}
+
+@media #{$large-only} {
+  
+}
+
+@media #{$xlarge-only} {
+  
+}
