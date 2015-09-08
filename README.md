@@ -22,7 +22,7 @@ This project uses the following open-source libraries and frameworks:
 ## Quickstart
 
 ```bash
-git clone git@github.com:zurb/foundation-libsass-template.git
+git clone git@github.com:miller-center/first-year.git
 npm install && bower install
 ```
 
