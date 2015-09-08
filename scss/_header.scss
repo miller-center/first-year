@@ -174,16 +174,6 @@ $navigation-transition-time: 500ms;
     text-align: center;
     margin-bottom: 2rem;
   }
-  .tech-img {
-    // background: url('http://static.pexels.com/wp-content/uploads/2015/02/apple-hand-iphone-6-4322-525x350.jpg') no-repeat center center;
-    background: url('../images/divs/signing_bill.jpg') no-repeat center center;
-    background-size: cover;
-    height: 9rem;
-    width: 9rem;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto;
-  }
   @media only screen and (min-width: 40.063em) {
     .tech-img {
       height: 18rem;
@@ -323,7 +313,31 @@ $navigation-transition-time: 500ms;
         min-width: $topbar-height !important;
       }
     }
+    // select size for social icons here
+    $social-icon-size: 50px;
+    .social-section {
+      ul.right {
+        list-style-type: none;
+        position:relative;
+        display: inline;
+        li.menu-option {
+          position: absolute;
+          height: $social-icon-size;
+          width: $social-icon-size;
+          top: -$topbar-height;
+          float:right;
+        }
+        li#header-fb-icon {
+          background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
+        }
+        li#header-tw-icon {
+          background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center;
+        }
+      }
+
+    }
   }
+
 
 
   #hero-container {
