@@ -1,4 +1,4 @@
- 
+
 @import "settings";
 @import "foundation";
 @import "foundation-icons.css";
@@ -49,6 +49,8 @@ $navigation-container-bg-color: transparentize(#F5F5F5,0.8);
 $navigation-container-z-index: 1000;
 
 $navigation-transition-time: 500ms;
+
+$header-title-fonts: "Lato", sans-serif;
 
 // hero
 .row.intro {
@@ -110,7 +112,7 @@ $navigation-transition-time: 500ms;
     padding-bottom: 0.25em;
   }
   h1.main-title {
-    font-family: "Droid Serif";
+    font-family: $header-title-fonts;
     color: #fff;
     font-size: 2.5rem;
     line-height: 1em;
@@ -290,7 +292,7 @@ $navigation-transition-time: 500ms;
         @include single-transition(font-size, $navigation-transition-time, ease-out);
       }
       h1 {
-        font-family: "Lato", sans-serif;
+        font-family: $header-title-fonts;
         text-transform: uppercase;
         font-size: 200%;
         b {
@@ -315,23 +317,70 @@ $navigation-transition-time: 500ms;
     }
     // select size for social icons here
     $social-icon-size: 50px;
+    $social-icon-pad: 10px;
     .social-section {
       ul.right {
         list-style-type: none;
+        margin-right: 5em; // align section here
         position:relative;
-        display: inline;
         li.menu-option {
           position: absolute;
           height: $social-icon-size;
           width: $social-icon-size;
-          top: -$topbar-height;
+          top: -($topbar-height) + rem-calc(5px);
           float:right;
+          a {
+            background-color: rgba(255,255,255,0.0);
+            &:active, &:hover, &.is-active {
+              background-color: $navigation-container-bg-color;
+            }
+          }
+
         }
         li#header-fb-icon {
           background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
         }
         li#header-tw-icon {
-          background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center;
+          background: url('../images/icons/#{$social-icon-size}/twitter-dk.png') no-repeat center center;
+          left: $social-icon-size + $social-icon-pad;
+        }
+        li#header-menu-icon {
+          left: (($social-icon-size) * 2) + $social-icon-pad; 
+          color: #eee;
+          // padding-top: $social-icon-size * 0.2;
+          background-color: rgba(255,255,255,0.0); 
+          a {
+            // border:thin solid yellow;
+            min-width: 150px;
+            max-height: $topbar-height;
+            min-height: $topbar-height;
+            position: relative;
+            top: -($topbar-height * 0.05);
+          }
+          span.label {
+            min-width: 8rem;
+            text-align: left;
+            line-height: ($topbar-height * .5);
+            padding-bottom: 0.4em;
+            @include hamburger(16px, false, 0, 1px, 6px, $topbar-menu-icon-color, "", false);
+            font-size: 200%;
+            font-family: $header-title-fonts;
+            font-weight: 300;
+            background-color: rgba(255,255,255,0.0);
+          }
+          a + ul.dropdown {
+            width: 200px;
+            left: -6em;
+            li a {
+              min-width: 100% !important;
+              // background-color: transparentize(#ddd, 0.9);
+              width: ($social-icon-size + $social-icon-pad) * 2 !important;
+            }
+            li.featured a {
+              color: $secondary-color;
+            }
+          }
+      
         }
       }
 
@@ -370,6 +419,23 @@ $navigation-transition-time: 500ms;
       margin-left: -0.5em;      
       &:before {
         background-size: ($topbar-height * 0.75) ($topbar-height * 0.75);
+      }
+    }
+    // resize icons
+    $social-icon-size: 40px;
+    $social-icon-pad: 8px;
+
+    section.social-section {
+      li.menu-option {
+        position: absolute;
+        top: -($topbar-height) + rem-calc(15px);
+      }
+      li#header-fb-icon {
+        background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
+      }
+      li#header-tw-icon {
+        background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center;
+        left: $social-icon-size + $social-icon-pad;
       }
     }
   }
