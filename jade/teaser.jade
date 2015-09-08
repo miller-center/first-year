@@ -29,16 +29,27 @@ html(lang="en")
           a(href="#") 
             h1 <b>First Year</b> 2017
             h4 Where successful administrations begin
-        section.social-section 
+        section.top-bar-section.social-section 
           //  Right Nav Section 
           ul.right
-            li#sh-fb-icon.menu-option: a(href="#")
+            li.menu-option#header-fb-icon: a(href="#")
               | &nbsp;
               //- img(src="images/icons/lg/facebook-wht.png")
-            li#sh-tw-icon.menu-option: a(href="#") 
+            li.menu-option#header-tw-icon: a(href="#") 
               | &nbsp;
-            li#menu-icon
-              Menu
+            li.menu-option.has-dropdown#header-menu-icon
+              a(href="#")
+                span.label Menu
+                  span
+              ul.dropdown
+                li
+                  a(href="#") First link in dropdown
+                li.featured
+                  a(href="#") Featured link in dropdown
+                li
+                  a(href="#") Third link in dropdown
+                li
+                  a(href="#") Fourth link in dropdown
 
  
 
@@ -92,64 +103,44 @@ html(lang="en")
 
     p [First Year Logo]
       p
-          em
-            &ldquo;You&rsquo;ve got to give it all you can that first year.  Doesn&rsquo;t matter what kind of majority you come in with.  You&rsquo;ve got just one year when they treat you right, and before they start worrying about themselves. &mldr;So, you&rsquo;ve got one year.&rdquo;
-            - Lyndon B. Johnson, January 1965
+        em &ldquo;You&rsquo;ve got to give it all you can that first year.  Doesn&rsquo;t matter what kind of majority you come in with.  You&rsquo;ve got just one year when they treat you right, and before they start worrying about themselves. &mldr;So, you&rsquo;ve got one year.&rdquo;
+          span - Lyndon B. Johnson, January 1965
         p [Video]
-        p
-          [Interested in contributing to the First Year Project? Click to contact .... trout. ]
-        p
-           On October 15, the Miller Center will launch The First Year: POTUS 2017, a new, multi-year initiative that will generate leading-edge scholarship and non-partisan policy recommendations to guide the next administration during its critical first year.  Click here to read more about the First Year project. (link to text below)
+        p [Interested in contributing to the First Year Project? Click to contact .... trout. ]
+        p On October 15, the Miller Center will launch The First Year: POTUS 2017, a new, multi-year initiative that will generate leading-edge scholarship and non-partisan policy recommendations to guide the next administration during its critical first year.  Click here to read more about the First Year project. (link to text below)
         hr
-        p
-           In October 2015, the Miller Center will launch a multi-year, non-partisan effort to:
+        p In October 2015, the Miller Center will launch a multi-year, non-partisan effort to:
         ul
-          li
-             Examine the 
-            strong history
-              and structure of presidential First Years;
-           &#x9;&#x9;
-          li
-             Assess the 
-            strong policy
-              opportunities and threats for our next President; and
-           &#x9;&#x9;
-          li
-            strong Impact
-              the national debate by addressing candidates, opinion leaders, and the public.
-        p
-          strong Why the First Year?
-        p
-           Political polarization has made it harder and harder for Washington to work effectively.  A new President&rsquo;s First Year in particular is high pressure, heated, and intense.  It is a trial and a test&mdash;quite literally, a crucible for a new administration.  And beyond our shores, the world takes measure of our new leaders, targeting our vulnerability as we transition.
-        p
-           Yet, First Years also offer opportunities.  Presidents can set priorities and enact great achievements&mdash;whether renewing America&rsquo;s promise at home or making historic breakthroughs on the world stage.  All newly elected Presidents rightly claim some electoral mandate, which they will use to confirm a cabinet and advance a legislative agenda.  Congress&mdash;at least at first&mdash;cannot appear to obstruct the newly elected leader.
-        p
-           Still, even when controlled by the new President&rsquo;s party, Congress works on its own timetable not just on legislation, but also when it comes to vetting and confirming senior officials.  And after the President&rsquo;s first year, Congressional attention turns to mid-term elections that November.  Presidents thus have a short-term window of opportunity.
-        p
-           How the next President and Congress use their First Year will test our political system.
+          li Examine the <strong> history</strong> and structure of presidential First Years; &#x9;&#x9;
+          li Assess the <strong> policy</strong> opportunities and threats for our next President; and &#x9;&#x9;
+          li <strong> Impact</strong> the national debate by addressing candidates, opinion leaders, and the public.
+        p <strong> Why the First Year?</strong>
+        p Political polarization has made it harder and harder for Washington to work effectively.  A new President&rsquo;s First Year in particular is high pressure, heated, and intense.  It is a trial and a test&mdash;quite literally, a crucible for a new administration.  And beyond our shores, the world takes measure of our new leaders, targeting our vulnerability as we transition.
+        p Yet, First Years also offer opportunities.  Presidents can set priorities and enact great achievements&mdash;whether renewing America&rsquo;s promise at home or making historic breakthroughs on the world stage.  All newly elected Presidents rightly claim some electoral mandate, which they will use to confirm a cabinet and advance a legislative agenda.  Congress&mdash;at least at first&mdash;cannot appear to obstruct the newly elected leader.
+        p Still, even when controlled by the new President&rsquo;s party, Congress works on its own timetable not just on legislation, but also when it comes to vetting and confirming senior officials.  And after the President&rsquo;s first year, Congressional attention turns to mid-term elections that November.  Presidents thus have a short-term window of opportunity.
+        p How the next President and Congress use their First Year will test our political system.
         p
           strong Achieving Impact: Issues, Outreach and Action
-        p
-           Starting in October 2015, every two months the Miller Center will release a set of short memos, on a wide range of policy and institutional topics:
+        p Starting in October 2015, every two months the Miller Center will release a set of short memos, on a wide range of policy and institutional topics:
         ul
           li First Year: The Next President&rsquo;s Crucible Year
-           &#x9;&#x9;
+            | &#x9;&#x9;
           li National Security: American Power and World Order
-           &#x9;&#x9;
+            | &#x9;&#x9;
           li Fiscal Policy: The Critical First Budget
-           &#x9;&#x9;
+            | &#x9;&#x9;
           li Mobility: Securing the Runaway American Dream
-           &#x9;&#x9;
+            | &#x9;&#x9;
           li Social Policy: The Rights and Obligations of Citizenship
-           &#x9;&#x9;
+            | &#x9;&#x9;
           li Science and Values: The Illimitable Freedom of the Human Mind
-           &#x9;&#x9;
+            | &#x9;&#x9;
           li Broken Government: Navigating Dysfunction in the Window of Opportunity
-           &#x9;&#x9;
+            | &#x9;&#x9;
           li The Bully Pulpit: Communications in the New Media Age
-           &#x9;&#x9;
+            | &#x9;&#x9;
           li Global Economy: American Leadership or American Decline?
-           &#x9;&#x9;
+            | &#x9;&#x9;
           li Infrastructure: Building a 21st Century America
         p
            This project will start with world-class research and scholarship from Miller Center, the University of Virginia, leading scholars at top research institutions, as well as senior practitioners. The project will look through both historical and contemporary lenses.
@@ -178,8 +169,7 @@ html(lang="en")
           strong
             em Digital dissemination. 
            This project will feature a newly launched free-standing website, which will feature elegant design and interactive features&mdash;as well as an integrated social media capacity.  This effort will preview a large-scale redesign of the Miller Center site, helping to raise the profile of our existing presidential research, analysis and commentary.
-        p
-           Together, this portfolio of public and private events, and new and existing projects, will enable us to develop a comprehensive, bipartisan set of recommendations&mdash;grounded in historical scholarship&mdash;for the next presidential administration.
+        p Together, this portfolio of public and private events, and new and existing projects, will enable us to develop a comprehensive, bipartisan set of recommendations&mdash;grounded in historical scholarship&mdash;for the next presidential administration.
 
 
 
