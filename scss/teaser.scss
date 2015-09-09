@@ -1,9 +1,49 @@
-/* Styles for issue pages only */
+/* Styles for teaser page only */
 body {
-  background-color: #fff;
+  color: #333;
+  font-family: 'Karla', Verdana, sans-serif;
+  font-size: 22px;
+  line-height: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+
 }
 
 
 .hero a {color: #fff;}
+.hero a:visited {color: #fff;}
 
-#about {color: #f00;}
+#about {
+  color: #666;
+  font-size: larger; 
+  font-style: italic; 
+  text-align: center;}
+
+.intro-nav span {
+    max-width: 100%;
+    }
+    
+    
+.hero:before {
+    background-image: linear-gradient(to bottom right,#111,#444);
+    opacity: .55; // was .8 
+  }    
+
+
+#container p {margin-top: 25px;} /*Pad any p that's loose in the container*/
+
+a {color: #3d657d; }
+a:hover {text-decoration: none;}
+a:visited {color: #000;}
+a.important {color: #ff7d34; font-weight: bold;}	/*formerly AB1A25*/
+a.more:after {content: " ➤";}
+
+h1 {
+	font-family: 'Crimson Text', serif;
+	font-size: 62px;
+	line-height: 60px;}
+		
+h2 {font-family: Verdana, sans-serif; font-size: 50px; line-height: 60px;}	
+h3 {font-family: Verdana, sans-serif; font-size: 40px; line-height: 50px;}	
+h4 {font-family: Verdana, sans-serif; font-size: 34px; line-height: 40px;}	
+h5 {font-family: Verdana, sans-serif; font-size: 26px; line-height: 30px;}	
