@@ -52,11 +52,35 @@ $navigation-transition-time: 500ms;
 
 $header-title-fonts: "Lato", sans-serif;
 
+$transparent: rgba(245,245,245,0.0);
 
 
 
 @media #{$small-up} {
+  #navigation-container {
+    background-color: black; // black for mobile
+    height: $navigation-container-height;
+    z-index: $navigation-container-z-index;
+    nav.top-bar {
+      background-color: $transparent;
+      section.logo-section {
+        h1, h4 {
+          color: #eee !important;
+        }
+        h1 {
+          text-transform: uppercase;
+          font-family: $header-title-fonts;
+          line-height: 0.6em;
+          font-weight: 100;
+          font-size: large;
+        }
+        h4 {
+          font-size: medium;
+        }
+      }      
+    }
 
+  } // end navigation-container
 }
 
 @media #{$medium-up} {
@@ -68,13 +92,10 @@ $header-title-fonts: "Lato", sans-serif;
     @include single-transition(padding, $navigation-transition-time, ease-out);
     @include single-transition(margin, $navigation-transition-time, ease-out);
     @include single-transition(background-color, 750ms, ease-out);
-    background-color: $navigation-container-bg-color !important;
-    height: $navigation-container-height;
-    z-index: $navigation-container-z-index;
-    nav {
+    nav.top-bar {
       @include single-transition(padding, $navigation-transition-time, ease-out);
       z-index: $navigation-container-z-index + 1;
-      background-color: rgba(245,245,245,0.0); // transparent; parent has correct style
+      background-color: $transparent !important; // transparent; parent has correct style
        border:none;
       a {
         padding-top:0.6em;
@@ -86,16 +107,13 @@ $header-title-fonts: "Lato", sans-serif;
   #navigation-container {
     section.logo-section {
       margin-left: 0.5em;
+      width: 50%;
       h1, h4 {
-        color: #eee !important;
-        font-weight: 100;
-        line-height: 0.8em;
         font-size: large;
+        line-height: 0.8em;
         @include single-transition(font-size, $navigation-transition-time, ease-out);
       }
       h1 {
-        font-family: $header-title-fonts;
-        text-transform: uppercase;
         font-size: 200%;
         b {
           font-weight: 300;
@@ -123,7 +141,7 @@ $header-title-fonts: "Lato", sans-serif;
     .social-section {
       ul.right {
         list-style-type: none;
-        margin-right: 5em; // align section here
+        margin-right: 18em; // align section here
         position:relative;
         li.menu-option {
           position: absolute;
@@ -245,7 +263,9 @@ $header-title-fonts: "Lato", sans-serif;
 }
 
 @media #{$small-only} {
-  
+  #mobile-menu {
+    list-style-type: none;
+  }
 }
 
 @media #{$medium-only} {
