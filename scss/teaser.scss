@@ -14,20 +14,33 @@ body {
 .hero a:visited {color: #fff;}
 
 #about {
-  color: #666;
+  color: #888;
   font-size: larger; 
   font-style: italic; 
-  text-align: center;}
+  text-align: center;
+  line-height: 1.5em;}
 
-.intro-nav span {
-    max-width: 100%;
-    }
-    
-    
-.hero:before {
+
+
+.hero {
+  // background: url('http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg') no-repeat center center;
+  background: url('../images/heros/white-house.jpg') no-repeat center center;
+  background-size: cover;
+  height: auto;
+  position: relative;
+  &:before {
+    content: '';
+    height: auto;
+    position: absolute;
+    top: 0; // watch out for topbar
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
     background-image: linear-gradient(to bottom right,#111,#444);
     opacity: .55; // was .8 
-  }    
+  }
+}
 
 
 #container p {margin-top: 25px;} /*Pad any p that's loose in the container*/
@@ -38,12 +51,43 @@ a:visited {color: #000;}
 a.important {color: #ff7d34; font-weight: bold;}	/*formerly AB1A25*/
 a.more:after {content: " ➤";}
 
-h1 {
+.hero-title h1.main-title {
 	font-family: 'Crimson Text', serif;
-	font-size: 62px;
-	line-height: 60px;}
+	font-size: 52px;
+	line-height: 56px;
+	margin-bottom: -10px;}
 		
-h2 {font-family: Verdana, sans-serif; font-size: 50px; line-height: 60px;}	
+/*h2 {font-family: Verdana, sans-serif; font-size: 50px; line-height: 60px;}	
 h3 {font-family: Verdana, sans-serif; font-size: 40px; line-height: 50px;}	
 h4 {font-family: Verdana, sans-serif; font-size: 34px; line-height: 40px;}	
-h5 {font-family: Verdana, sans-serif; font-size: 26px; line-height: 30px;}	
+h5 {font-family: Verdana, sans-serif; font-size: 26px; line-height: 30px;}	*/
+
+div#videotrailer {
+	width: 480px; 
+	height: 160px; // 320
+	margin: 0 auto 140px auto;}
+	
+div#videotrailer iframe {	
+	-webkit-box-shadow: 0px 0px 14px 1px #666;
+	-moz-box-shadow: 0px 0px 14px 1px #666;
+	box-shadow: 0px 0px 14px 1px #666;}
+
+
+.intro-nav .columns span {
+	  max-width: 100%;
+	  width: 50%;
+	  $gradient-opacity: 0.7;
+	  $hover-opacity: 0.5;
+	  border: 1px solid rgba(#eee, 0.3);
+	  border-radius: 0px;
+	  background: transparentize(#ddd, $hover-opacity) 25%;
+	  &:hover, &:active {
+		background: transparentize(#666, $hover-opacity) 25%;
+	  }
+	}
+
+.intro-nav {margin-top: 75px;}
+
+.hero-title h2 {
+    font-size: 1rem;
+  }
