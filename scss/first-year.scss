@@ -263,6 +263,7 @@ $fy-blue-1: #84a0b5;
 }
 
 @media #{$large-up} {
+  $hero-z: 1;
   .hero {
     // background: url('http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg') no-repeat center center;
     background: url('../images/heros/white-house.jpg') no-repeat center center;
@@ -270,6 +271,7 @@ $fy-blue-1: #84a0b5;
     height: 75vh;
     top: -($topbar-height);
     position: relative;
+    z-index: $hero-z;
     &:before {
       content: '';
       height: 75vh;
@@ -280,6 +282,7 @@ $fy-blue-1: #84a0b5;
       left: 0;
       background-image: linear-gradient(to bottom right,#222222,#111111);
       opacity: .8; // was .8 
+      z-index: $hero-z + 1;
     }
     .intro {
       padding: 3rem;
