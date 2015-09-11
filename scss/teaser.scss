@@ -9,6 +9,8 @@ body {
 
 }
 
+#innercontent {max-width: 650px; margin: 0 auto;}
+
 
 .hero a {color: #fff;}
 .hero a:visited {color: #fff;}
@@ -40,6 +42,8 @@ body {
     background-image: linear-gradient(to bottom right,#111,#444);
     opacity: .55; // was .8 
   }
+  margin-bottom: -100px;
+  
 }
 
 
@@ -53,8 +57,8 @@ a.more:after {content: " ➤";}
 
 .hero-title h1.main-title {
 	font-family: 'Crimson Text', serif;
-	font-size: 52px;
-	line-height: 56px;
+	font-size: 44px;
+	line-height: 50px;
 	margin-bottom: -10px;}
 		
 /*h2 {font-family: Verdana, sans-serif; font-size: 50px; line-height: 60px;}	
@@ -64,15 +68,14 @@ h5 {font-family: Verdana, sans-serif; font-size: 26px; line-height: 30px;}	*/
 
 div#videotrailer {
 	width: 480px; 
-	height: 160px; // 320
-	margin: 0 auto 140px auto;
+	height: 320px; // 320
+	margin: 0 auto 0 auto;
 }
 	
 div#videotrailer iframe {	
 	-webkit-box-shadow: 0px 0px 14px 1px #666;
 	-moz-box-shadow: 0px 0px 14px 1px #666;
 	box-shadow: 0px 0px 14px 1px #666;}
-
 
 .intro-nav .columns span {
 	  max-width: 100%;
@@ -87,8 +90,44 @@ div#videotrailer iframe {
 	  }
 	}
 
-.intro-nav {margin-top: 75px;}
+.intro-nav {margin-top: 200px;}
+
+#hero-title, 
+#learnabout,
+#teasertext,
+#videotrailer {z-index: 5;}
+
+#teasertext p, #hero-title p {font-size: .8rem;}
+
+#teasertext {padding-bottom: .25rem; padding-top: 1rem;}
 
 .hero-title h2 {
     font-size: 1rem;
   }
+  
+#contribute, #emailsignup, #socialshare {font-size: .8rem;}  
+
+// resize icons
+$social-icon-size: 60px;
+$social-icon-pad: 8px;
+
+div#socialshare {
+	ul {line-height: 60px; width: #{$social-icon-size}}
+	li#header-fb-icon {
+		background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
+		}
+	li#header-tw-icon {
+		background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center;
+      }
+    a {height: #{$social-icon-size}; width: #{$social-icon-size}; display:block;}
+}
+
+
+#emailsignup div#mailglyph {height: #{$social-icon-size}; width: #{$social-icon-size}; background: url('../images/icons/#{$social-icon-size}/mail.png') no-repeat center center;}
+#emailsignup div#mailglyph a {height: #{$social-icon-size}; width: #{$social-icon-size}; display:block;}
+
+footer#bodyFooter.footer {min-height: 150px; background-color: #444;}
+footer {color: #ccc; font-size: smaller;}
+footer a, footer a:visited {color: #fff;}
+footer img {margin: 1.5em; float:left;}
+footer p {margin-top: 1.5em; margin-right: 1.5em;}
