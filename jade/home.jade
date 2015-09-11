@@ -23,21 +23,35 @@ html(lang="en")
 
 		
 		//- topbar nav
-		.sticky#navigation-container
-			nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: large")
-				section.logo-section
+		.fixed#navigation-container
+			nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: [small,medium,large]")
+				section.logo-section.show-for-medium-up
 					a(href="#") 
 						h1 <b>First Year</b> 2017
 						h4 Where successful administrations begin
-				section.top-bar-section.social-section
-					//	Right Nav Section 
+				ul.title-area
+					li.name
+						h1
+							a.logo.show-for-small-only(href="#")
+								img(src="http://placehold.it/50x50")
+					li.toggle-topbar.menu-icon#mobile-menu
+						a(href="#")
+							span Menu
+				section.social-section.show-for-medium-up
 					ul.right
-						li.menu-option#header-fb-icon: a(href="#")
+						li.social-icon#header-fb-icon: a(href="#")
 							| &nbsp;
 							//- img(src="images/icons/lg/facebook-wht.png")
-						li.menu-option#header-tw-icon: a(href="#") 
+						li.social-icon#header-tw-icon: a(href="#") 
 							| &nbsp;
-						li.menu-option.has-dropdown#header-menu-icon
+				section.top-bar-section#navigation-section
+					//	Right Nav Section 
+					ul.right
+						li.hide-for-medium-up
+							a(href="#") Foo 
+						li.hide-for-large-up
+							a(href="#") Barr 
+						li.menu-option.hide-for-small-only.has-dropdown#header-menu-icon
 							a(href="#")
 								span.label Menu
 									span

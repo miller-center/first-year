@@ -1,4 +1,10 @@
-$(document).foundation();
+$(document).foundation({
+  topbar : {
+    custom_back_text: false,
+    is_hover: true,
+    mobile_show_parent_link: false
+  }
+});
 
 $(document).ready(function() {
   // re-initialize Foundation after responsive image loading
@@ -9,6 +15,23 @@ $(document).ready(function() {
   if (currentPosition > 0) {
     $(window).scrollTop(currentPosition + 1 );
   }
+
+  // when clicking outside of navigation header, collapse menus
+  $(document).mouseup(function (e){
+      var container = $(".top-bar");
+      if (!container.is(e.target) // if the target of the click isn't the container...
+          && container.has(e.target).length === 0){ // ... nor a descendant of the container
+          container.removeClass('expanded');
+      }
+  });
+  // same for tap (mobile)
+  $(document).on({'touchend': function (e){
+      var container = $(".top-bar");
+      if (!container.is(e.target) // if the target of the click isn't the container...
+          && container.has(e.target).length === 0){ // ... nor a descendant of the container
+          container.removeClass('expanded');
+      }
+    } });
 
   // navigation header expand/contract
   $('#navigation-container').addClass('shrinkMenu');
