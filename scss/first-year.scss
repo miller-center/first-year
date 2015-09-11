@@ -87,50 +87,7 @@ $fy-blue-1: #84a0b5;
 
   }
 }
-.hero-title {
-  text-align: center;
-  top:0;
-  #hero-title {
-    margin-top: 10%;  //overall vertical placement of title (refactor)
-  }
-  h2 {
-    color: #ccc;
-    font-size: 1.3rem;
-    letter-spacing: 0.15em;
-    font-weight: 100;
-    font-family: "Verdana";
-    text-transform: uppercase;
-  }
-  p {
-    text-shadow: 1px 1px #000000;
-    text-align: center;
-    margin: 0 auto;
-    display: inline-block;
-  }
-  .stars {
-    color: orange;
-    display: inline-block;
-    letter-spacing: 0.5em;
-    padding-bottom: 0.25em;
-  }
-  h1.main-title {
-    font-family: $header-title-fonts;
-    color: #fff;
-    font-size: 2.5rem;
-    line-height: 1em;
-    letter-spacing: 0.025em;
-    font-weight: 300;
-    text-align: center;
-    padding-top: 0em;
-  }
-  p {
-    color: #fff;
-    line-height: 1.75em;
-    font-weight: 200;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-}
+
 .hero {
   // background: url('http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg') no-repeat center center;
   background-size: cover;
@@ -254,11 +211,77 @@ $fy-blue-1: #84a0b5;
 }
 
 @media #{$small-up} {
-
+  .hero-title {
+    text-align: center;
+    margin-top: $topbar-height;
+    h2 {
+      color: #ccc;
+      text-transform: uppercase;
+    }
+    .stars {
+      color: orange;
+      display: inline-block;
+      letter-spacing: 0.25em;
+      padding-bottom: 0.25em;
+    }
+  } // end hero-title
+  .subnav {
+    $window-tint: 0.3;
+    float: none;
+    position: absolute;
+    // top: 4rem;
+    bottom: 0;
+    // text-align: center;
+    margin-bottom: 0;
+    left: 10%;
+    width: 75%;
+    border: thin solid yellow;
+    .tab {
+      border: thin solid red;
+    }
+  }
 }
 
 @media #{$medium-up} {
-  
+  .hero-title {
+    top:0;
+    #hero-title {
+      margin-top: 10%;  //overall vertical placement of title (refactor)
+    }
+    h2 {
+      font-size: 1.3rem;
+      letter-spacing: 0.15em;
+      font-weight: 100;
+      font-family: "Verdana";
+    }
+    p {
+      text-shadow: 1px 1px #000000;
+      text-align: center;
+      margin: 0 auto;
+      display: inline-block;
+    }
+    .stars {
+      letter-spacing: 0.5em;
+      padding-bottom: 0.25em;
+    }
+    h1.main-title {
+      font-family: $header-title-fonts;
+      color: #fff;
+      font-size: 2.5rem;
+      line-height: 1em;
+      letter-spacing: 0.025em;
+      font-weight: 300;
+      text-align: center;
+      padding-top: 0em;
+    }
+    p {
+      color: #fff;
+      line-height: 1.75em;
+      font-weight: 200;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+  }
 }
 
 @media #{$large-up} {
@@ -337,7 +360,16 @@ $fy-blue-1: #84a0b5;
 }
 
 @media #{$small-only} {
-  
+  .subnav#nav-tabs {
+    bottom: 0;
+    margin-bottom: 0;
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+    .tab {
+      // border: thin solid red;
+    }
+  }
 }
 
 @media #{$medium-only} {
