@@ -45,15 +45,29 @@
 
 
 $navigation-container-height: $topbar-height;
-$navigation-container-bg-color: transparentize(#F5F5F5,0.8);
+$navigation-container-bg-color: black;
 $navigation-container-z-index: 1000;
 
 $navigation-transition-time: 500ms;
 
 $header-title-fonts: "Lato", sans-serif;
 
-
-
+/* apply to all */
+#navigation-container {
+  background-color: $navigation-container-bg-color;
+  section.logo-section {
+      h1, h4 {
+        margin-left: 0.5em;
+        position: absolute;
+        display: block;
+        left: 1em;
+      }
+      &::before {
+        background-image: url('../images/logos/mc-white.png') !important;
+        left: -2em;
+      }
+  }
+}
 
 @media #{$small-up} {
 
@@ -109,7 +123,7 @@ $header-title-fonts: "Lato", sans-serif;
         display: block;
         background-repeat: no-repeat;
         position:absolute;
-        left:-($topbar-height);
+        left:-2em;
         top:0;
         background-size: $topbar-height $topbar-height;
         background-image: url('../images/logos/mc-white.png') !important;
