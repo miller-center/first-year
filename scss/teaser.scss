@@ -97,6 +97,8 @@ div#videotrailer iframe {
 #teasertext,
 #videotrailer {z-index: 5;}
 
+#learnabout a {display:block;}
+
 #teasertext p, #hero-title p {font-size: .8rem;}
 
 #teasertext {padding-bottom: .25rem; padding-top: 1rem;}
@@ -105,29 +107,40 @@ div#videotrailer iframe {
     font-size: 1rem;
   }
   
-#contribute, #emailsignup, #socialshare {font-size: .8rem;}  
+#contribute {font-size: .8rem;}  
 
 // resize icons
 $social-icon-size: 60px;
-$social-icon-pad: 8px;
+$social-icon-pad: 10px;
 
 div#socialshare {
 	ul {line-height: 60px; width: #{$social-icon-size}}
 	li#header-fb-icon {
-		background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
+		background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center; display:block; margin-top: #{$social-icon-pad};
 		}
 	li#header-tw-icon {
-		background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center;
+		background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center; display:block; margin-top: #{$social-icon-pad};
       }
     a {height: #{$social-icon-size}; width: #{$social-icon-size}; display:block;}
 }
 
+#emailsignup, #socialshare {
+	display:block; 
+	padding: 15px 2%; 
+	margin: 15px 4%; 
+	height: 200px; 
+	float:left; 
+	text-align: center; 
+	border: 1px solid #ccc;}
 
-#emailsignup div#mailglyph {height: #{$social-icon-size}; width: #{$social-icon-size}; background: url('../images/icons/#{$social-icon-size}/mail.png') no-repeat center center;}
+#emailsignup {width: 61%;}
+#socialshare {width: 20%}
+
+#emailsignup div#mailglyph {height: #{$social-icon-size}; width: #{$social-icon-size}; background: url('../images/icons/#{$social-icon-size}/mail.png') no-repeat center center; margin: #{$social-icon-pad} auto;}
 #emailsignup div#mailglyph a {height: #{$social-icon-size}; width: #{$social-icon-size}; display:block;}
 
-footer#bodyFooter.footer {min-height: 150px; background-color: #444;}
-footer {color: #ccc; font-size: smaller;}
+footer#bodyFooter.footer {min-height: 150px; background-color: #444; }
+footer {color: #ccc; font-size: smaller; clear:both;}
 footer a, footer a:visited {color: #fff;}
 footer img {margin: 1.5em; float:left;}
 footer p {margin-top: 1.5em; margin-right: 1.5em;}
