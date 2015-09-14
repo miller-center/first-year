@@ -45,7 +45,7 @@
 
 
 $navigation-container-height: $topbar-height;
-$navigation-container-bg-color: black;
+$navigation-container-bg-color: transparentize(#F5F5F5,0.8);
 $navigation-container-z-index: 1000;
 
 $navigation-transition-time: 500ms;
@@ -57,7 +57,7 @@ $header-title-fonts: "Lato", sans-serif;
   background-color: $navigation-container-bg-color;
   section.logo-section {
       h1, h4 {
-        margin-left: 0.5em;
+        margin-left: 1em;
         position: absolute;
         display: block;
         left: 1em;
@@ -70,11 +70,18 @@ $header-title-fonts: "Lato", sans-serif;
 }
 
 @media #{$small-up} {
-
+  #navigation-container {
+    background-color: $navigation-container-bg-color;
+    nav {
+      background-color: $navigation-container-bg-color;      
+    }
+  }
 }
 
 @media #{$medium-up} {
-  
+  #navigation-container {
+    background-color: $navigation-container-bg-color;
+  }  
 }
 
 @media #{$large-up} {
@@ -227,6 +234,7 @@ $header-title-fonts: "Lato", sans-serif;
     height: rem-calc(45);
     h1 {
       font-size: 1rem !important;
+      margin-left: 0em !important;
     }
     h4 {
       font-size: 0.9rem !important;
