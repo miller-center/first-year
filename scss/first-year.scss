@@ -255,11 +255,23 @@ $fy-blue-1: #84a0b5;
 }
 
 @media #{$small-up} {
-
+  $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure why. 
+  .hero {
+    z-index: $hero-z;
+    &:before {
+      z-index: $hero-z + 1;
+    }
+  } // end .hero
 }
 
 @media #{$medium-up} {
-  
+  $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure why. 
+  .hero {
+    z-index: $hero-z;
+    &:before {
+      z-index: $hero-z + 1;
+    }
+  } // end .hero
 }
 
 @media #{$large-up} {

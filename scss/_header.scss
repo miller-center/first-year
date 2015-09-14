@@ -45,7 +45,7 @@
 
 
 $navigation-container-height: $topbar-height;
-$navigation-container-bg-color: transparentize(#F5F5F5,0.8);
+$navigation-container-bg-color: transparentize(#000,0.3);
 $navigation-container-z-index: 1000;
 
 $navigation-transition-time: 500ms;
@@ -57,14 +57,14 @@ $header-title-fonts: "Lato", sans-serif;
   background-color: $navigation-container-bg-color;
   section.logo-section {
       h1, h4 {
-        margin-left: 1em;
+        //margin-left: 1em;
         position: absolute;
         display: block;
         left: 1em;
       }
       &::before {
         background-image: url('../images/logos/mc-white.png') !important;
-        left: -2em;
+        //left: -2em;
       }
   }
 }
@@ -106,7 +106,7 @@ $header-title-fonts: "Lato", sans-serif;
 
   #navigation-container {
     section.logo-section {
-      margin-left: 0.5em;
+      //margin-left: 0.5em;
       h1, h4 {
         color: #eee !important;
         font-weight: 100;
@@ -118,6 +118,7 @@ $header-title-fonts: "Lato", sans-serif;
         font-family: $header-title-fonts;
         text-transform: uppercase;
         font-size: 200%;
+        letter-spacing: 4px;
         b {
           font-weight: 300;
         }

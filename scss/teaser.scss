@@ -139,6 +139,8 @@ div#socialshare {
 #emailsignup div#mailglyph {height: #{$social-icon-size}; width: #{$social-icon-size}; background: url('../images/icons/#{$social-icon-size}/mail.png') no-repeat center center; margin: #{$social-icon-pad} auto;}
 #emailsignup div#mailglyph a {height: #{$social-icon-size}; width: #{$social-icon-size}; display:block;}
 
+#navigation-container h1 {color:#fff;}
+
 footer#bodyFooter.footer {min-height: 150px; background-color: #444; }
 footer {color: #ccc; font-size: smaller; clear:both;}
 footer a, footer a:visited {color: #fff;}
