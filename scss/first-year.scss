@@ -353,7 +353,9 @@ $fy-blue-1: #84a0b5;
 }
 
 @media #{$small-only} {
-  
+  .hero {
+    margin-top: 2rem;
+  }
 }
 
 @media #{$medium-only} {
