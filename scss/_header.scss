@@ -55,18 +55,26 @@ $header-title-fonts: "Lato", sans-serif;
 /* apply to all */
 #navigation-container {
   background-color: $navigation-container-bg-color;
-  section.logo-section {
+  nav.top-bar {
+    width: $row-width;
+    margin-left: auto;
+    margin-right: auto;
+    section.logo-section {
       h1, h4 {
         //margin-left: 1em;
         position: absolute;
         display: block;
         left: 1em;
       }
-      &::before {
-        //background-image: url('../images/logos/mc-white.png') !important;
-        //left: -2em;
+      img {
+        position:absolute;
+        top: 0;
+        min-height: ($topbar-height * 0.95) !important;
+        max-height: ($topbar-height * 0.95) !important;
       }
+    }    
   }
+
 }
 
 @media #{$small-up} {
@@ -106,7 +114,7 @@ $header-title-fonts: "Lato", sans-serif;
 
   #navigation-container {
     section.logo-section {
-      //margin-left: 0.5em;
+      /* Text-based logo/tagline styling (deprecated)  */
       h1, h4 {
         color: #eee !important;
         font-weight: 100;
@@ -126,18 +134,28 @@ $header-title-fonts: "Lato", sans-serif;
       h4 {
         letter-spacing: 0.08em;
       }
-      &::before {
-        content: '';
-        display: block;
-        background-repeat: no-repeat;
+      /* img logo styling */
+      img {
         position:absolute;
-        left:-2em;
-        top:0;
-        background-size: $topbar-height $topbar-height;
-        //background-image: url('../images/logos/mc-white.png') !important;
-        min-height: $topbar-height !important;
-        min-width: $topbar-height !important;
+        top: 0;
+        min-height: ($topbar-height * 0.95) !important;
+        max-height: ($topbar-height * 0.95) !important;
       }
+      /* styling for MC House Icon */
+      // &::before {
+      //   content: '';
+      //   display: block;
+      //   background-repeat: no-repeat;
+      //   position:absolute;
+      //   left:-2em;
+      //   top:0;
+      //   background-size: $topbar-height $topbar-height;
+      //   //background-image: url('../images/logos/mc-white.png') !important;
+      //   min-height: $topbar-height !important;
+      //   min-width: $topbar-height !important;
+      //   max-height: $topbar-height !important;
+      //   max-width: $topbar-height !important;
+      // }
     }
     // select size for social icons here
     $social-icon-size: 50px;
@@ -240,12 +258,12 @@ $header-title-fonts: "Lato", sans-serif;
     h4 {
       font-size: 0.9rem !important;
     }
-    section.logo-section {
-      margin-left: -0.5em;    
-      img {
-      height: ($topbar-height * 0.75);
-      }
-    }
+    // section.logo-section {
+    //   margin-left: -0.5em;    
+    //   img {
+    //     height: ($topbar-height * 0.75);
+    //   }
+    // }
     // resize icons
     $social-icon-size: 40px;
     $social-icon-pad: 8px;

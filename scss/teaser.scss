@@ -95,11 +95,21 @@ div#videotrailer iframe {
 #hero-title, 
 #learnabout,
 #teasertext,
-#videotrailer {z-index: 5;}
+#videotrailer {z-index: 5 !important;}
 
 #learnabout a {display:block;}
-#learnabout span {
-  width: 100%;
+#learnabout {
+  z-index: 10 !important;
+  span {
+    position: relative;
+    z-index: 101 !important;
+    width: 100%;
+    a {
+      &:hover, &:active, &.is-active {
+        cursor: pointer; 
+      }
+    }
+  }
 }
 
 #teasertext p, #hero-title p {font-size: .8rem;}
