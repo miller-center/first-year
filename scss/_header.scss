@@ -68,9 +68,10 @@ $header-title-fonts: "Lato", sans-serif;
       }
       img {
         position:absolute;
-        top: 0;
-        min-height: ($topbar-height * 0.95) !important;
-        max-height: ($topbar-height * 0.95) !important;
+        top: 3px;
+		left: 5px;
+        min-height: ($topbar-height * 0.90) !important;
+        max-height: ($topbar-height * 0.90) !important;
       }
     }    
   }
