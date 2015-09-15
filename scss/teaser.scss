@@ -127,14 +127,29 @@ $social-icon-size: 60px;
 $social-icon-pad: 10px;
 
 div#socialshare {
-	ul {line-height: 60px; width: #{$social-icon-size}}
+  position: relative;
+	ul {
+    line-height: 60px;
+    list-style: none;
+    width: $social-icon-size;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  li#header-fb-icon, li#header-tw-icon {
+    position:absolute;
+    margin:0 auto;
+    left: 0;
+    min-width: 100%;
+  }
 	li#header-fb-icon {
 		background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center; display:block; margin-top: #{$social-icon-pad};
 		}
 	li#header-tw-icon {
+    top: 6rem;
 		background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center; display:block; margin-top: #{$social-icon-pad};
       }
-    a {height: #{$social-icon-size}; width: #{$social-icon-size}; display:block;}
+    a {height: #{$social-icon-size}; width: #{$social-icon-size}; display:block;
+  }
 }
 
 #emailsignup, #socialshare {
