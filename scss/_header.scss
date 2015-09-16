@@ -70,7 +70,7 @@ $header-title-fonts: "Lato", sans-serif;
       img {
         position:absolute;
         top: 3px;
-		left: 5px;
+    		left: 5px;
         min-height: ($topbar-height * 0.90) !important;
         max-height: ($topbar-height * 0.90) !important;
       }
@@ -80,6 +80,21 @@ $header-title-fonts: "Lato", sans-serif;
 }
 #navigation-container.belowHero {
   background-color: $bill-rapp-blue !important;
+}
+
+/* iPhone 4s and smaller devices */
+@media (max-width: 320px) and (orientation:portrait) {
+  #navigation-container {
+    nav.top-bar {
+      section.logo-section {
+        img {
+          min-height: ($topbar-height * 0.80) !important;
+          max-height: ($topbar-height * 0.80) !important;
+        }
+      }    
+    }
+
+  }
 }
 
 @media #{$small-up} {
