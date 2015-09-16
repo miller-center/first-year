@@ -153,6 +153,9 @@ div#socialshare {
     margin:0 auto;
     left: 0;
     min-width: 100%;
+    a {
+      width: 100%;
+    }
   }
   li.label {
     background-color: $bill-rapp-blue;
@@ -207,6 +210,7 @@ div#socialshare {
 }
 
 $donate-orange: #D76821;
+$donate-orange-hover: scale-color($donate-orange, $lightness: 20%);
 #emailsignup div#mailglyph {
   height: #{$social-icon-size};
   width: 8rem;
@@ -215,7 +219,11 @@ $donate-orange: #D76821;
   margin: #{$social-icon-pad} auto;
   margin-bottom: 2rem !important;
   a {
+    @include single-transition(background-color, $navigation-transition-time, ease-in);
     background-color: $donate-orange;
+    &:hover {
+      background-color: $donate-orange-hover;
+    }
     line-height: 3rem;
     height: 3rem;
     text-transform: uppercase;
