@@ -1,4 +1,9 @@
 /* Styles for teaser page only */
+@import "settings";
+@import "header";
+@import "foundation";
+$bill-rapp-blue: #0c2b48;
+
 body {
   color: #333;
   font-family: 'Karla', Verdana, sans-serif;
@@ -42,7 +47,8 @@ body {
     background-image: linear-gradient(to bottom right,#111,#444);
     opacity: .55; // was .8 
   }
-  margin-bottom: -100px;
+  /* this margin-bottom positions video within hero image */
+  // margin-bottom: -100px; 
   
 }
 
@@ -114,7 +120,14 @@ div#videotrailer iframe {
 
 #teasertext p, #hero-title p {font-size: .8rem;}
 
-#teasertext {padding-bottom: .25rem; padding-top: 1rem;}
+#teasertext {
+  padding-bottom: .25rem; 
+  padding-top: 1rem;
+  p {
+    text-align: center;
+    padding: 0 1rem;
+  }
+}
 
 .hero-title h2 {
     font-size: 1rem;
@@ -135,42 +148,159 @@ div#socialshare {
     margin-left: 0;
     margin-right: 0;
   }
-  li#header-fb-icon, li#header-tw-icon {
+  li#header-fb-icon, li#header-tw-icon, li#email-icon, li.label {
     position:absolute;
     margin:0 auto;
     left: 0;
     min-width: 100%;
   }
+  li.label {
+    background-color: $bill-rapp-blue;
+    font-size: 100%;
+    font-family: Karla, Verdana, sans-serif;
+  }
+  $top-icon-vert: 15;
+  li.label#share {
+    top: 0;
+  }
 	li#header-fb-icon {
+    top: #{$top-icon-vert}%;
 		background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center; display:block; margin-top: #{$social-icon-pad};
 		}
 	li#header-tw-icon {
-    top: 6rem;
+    top: #{$top-icon-vert + 25}%;
 		background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center; display:block; margin-top: #{$social-icon-pad};
       }
     a {height: #{$social-icon-size}; width: #{$social-icon-size}; display:block;
   }
+  li.label#signUp {
+    top: #{$top-icon-vert + 50}%;
+  }
+  li#email-icon {
+    top: #{$top-icon-vert + 65}%;
+    background: url('../images/icons/#{$social-icon-size}/mail.png') no-repeat center center;
+  }
 }
-
 #emailsignup, #socialshare {
 	display:block; 
 	padding: 15px 2%; 
 	margin: 15px 4%; 
-	height: 200px; 
+	height: 18rem !important; 
 	float:left; 
 	text-align: center; 
 	border: 1px solid #ccc;}
 
-#emailsignup {width: 61%;}
-#socialshare {width: 20%}
+#emailsignup {
+  width: 61%;
+  .explain {
+    color: #333;
+    font-weight: 100;
+    font-size: 1rem;
+  }  
+}
+#socialshare {
+  width: 20%;
+  .label {
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+  }
+}
 
-#emailsignup div#mailglyph {height: #{$social-icon-size}; width: #{$social-icon-size}; background: url('../images/icons/#{$social-icon-size}/mail.png') no-repeat center center; margin: #{$social-icon-pad} auto;}
+$donate-orange: #D76821;
+#emailsignup div#mailglyph {
+  height: #{$social-icon-size};
+  width: 8rem;
+  padding-top: 5%;
+  // background: url('../images/icons/#{$social-icon-size}/mail.png') no-repeat center center;
+  margin: #{$social-icon-pad} auto;
+  margin-bottom: 2rem !important;
+  a {
+    background-color: $donate-orange;
+    line-height: 3rem;
+    height: 3rem;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-variant: italic;
+    border: thin solid $donate-orange;
+    border-radius: 6px;
+    text-align: center;
+    vertical-align: middle;
+    min-width: 8rem;
+    width: 8rem !important;
+    vertical-align: middle;
+    display: block;
+    position: absolute;
+    width: 8rem;
+    color: #00335d;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
 #emailsignup div#mailglyph a {height: #{$social-icon-size}; width: #{$social-icon-size}; display:block;}
+@media #{$medium-up} and (orientation: landscape)  {
+  #emailsignup {
+    line-height: 100% !important;
+    .plea {
+      line-height: 120%;
+    }
+  }
+}
+@media #{$small-only} {
+  #emailsignup {
+    line-height: 0.5rem;
+    .plea, .explain {
+      font-size: 0.7rem !important; 
+      line-height: 0.8rem;
+    }
+    .explain a:first-child {
+      display: none;
+    }
+  }
+  #socialshare {
+    .label {
+      font-size: 80% !important;
+      max-width: 100%;
+    }
+  }
+  #videotrailer iframe {
+    width: 100vw !important;
+  }
+}
+@media #{$small-only} and (orientation: portrait) {
+  #emailsignup {
+    background-color:inherit;
+  }
+}
 
+@media #{$small-only} and (orientation: portrait) {
+  #socialshare {
+    .label {
+      font-size: 70%;
+      padding: 0;
+    }
+  }
+}
+
+@media #{$medium-only} {
+  #emailsignup {
+    line-height: 1.5rem;
+    height: 1rem;
+  }
+}
 #navigation-container h1 {color:#fff;}
 
-footer#bodyFooter.footer {min-height: 150px; background-color: #333; }
+footer#bodyFooter.footer {min-height: 150px; background-color: $bill-rapp-blue; }
 footer {color: #ccc; font-size: smaller; clear:both;}
 footer a, footer a:visited {color: #fff;}
 footer img {margin: 1.5em; float:left;}
-footer p {margin-top: 1.5em; margin-right: 1.5em;}
+footer p {margin-top: 1.5em; margin-right: 1.5em; margin-left: 1em;}
+
+@media #{$small-only} {
+  footer p {
+    font-size: smaller;
+  }
+  footer .hide-for-medium-up img {
+    max-width: 3rem;
+  }
+}

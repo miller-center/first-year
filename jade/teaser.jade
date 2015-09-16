@@ -44,11 +44,11 @@ html(lang="en")
 				//-	 .tech-img
 
 			.intro-nav#learnabout
-				.small-6.small-centered.columns
+				.small-10.medium-6.small-centered.columns
 					span
 						a(href="#about") Learn about First Year 2017 below
 
-			div#teasertext
+			.row#teasertext
 				.small-12.small-centered
 					p On October 15, the Miller Center will launch a new, multi-year initiative to guide the next administration during its critical first year. 
 
@@ -93,36 +93,49 @@ html(lang="en")
 			p <strong><em>Reaching the next administration: </em></strong>The Miller Center will also to bring this work directly to the next president and his or her team. The Miller Center will remain active on each issue through the First Year, until mid-2018.  We will seek the most propitious opportunities to connect with the presidential candidates, the new administration, and other target audiences in each issue area. That includes policymakers, media, private sector leaders, and most importantly, leading officials from contestants of both parties.  The Center is particularly well connected to the alumni networks of previous administrations, thanks largely to our Oral History program (which has worked with every administration since the Gerald Ford White House.) We will deliver The First Year&rsquo;s canon of work to our audiences in a targeted and impactful way through various channels:<strong></strong>
 			p <strong><em>Events.</em></strong> The memos will be released at major events held at the Miller Center and across the country.   Events will begin in October 2015 and extend through 2016 and 2017.
 
-			hr
+			//- hr
 
-			p#contribute
-				a(href="http://millercenter.org/donate") <strong>Click here to support the First Year Project with a donation. </strong>
-				| If you’d like to talk to someone about contributing to the First Year Project, 
-				a(href="mailto:dft6n@eservices.virginia.edu?subject=Please contact me about supporting the First Year Project") click here to contact the Miller Center Foundation
-				| .
+			//- p#contribute
+			//- 	a(href="http://millercenter.org/donate") <strong>Click here to support the First Year Project with a donation. </strong>
+			//- 	| If you’d like to talk to someone about contributing to the First Year Project, 
+			//- 	a(href="mailto:dft6n@eservices.virginia.edu?subject=Please contact me about supporting the First Year Project") click here to contact the Miller Center Foundation
+			//- 	| .
 
-			hr
-			
-			div#emailsignup 
-				strong Sign up for the latest from the First Year Project
-				div#mailglyph 
-					a(href="http://forms.hoosonline.virginia.edu/s/1535/16-uva/index.aspx?sid=1535&gid=16&pgid=9982&cid=17637" target="_blank") &nbsp;
-			
-			div#socialshare 
-				strong Share 
-				ul
-					li#header-fb-icon: a(href="http://www.facebook.com/share.php?u=http://firstyear2017.org" target="_blank") &nbsp;
-					//- img(src="images/icons/lg/facebook-wht.png")
-					li#header-tw-icon: a(href="https://twitter.com/intent/tweet?text=First+Year+Project+to+launch+on+Oct+15+from+UVA’s+@Miller_Center+http%3A%2F%2Ffirstyear2017.org" target="_blank") &nbsp;    
-
+			//- hr
+			.row#sharingRow
+				div.small-12.medium-8.columns#emailsignup 
+					strong.plea Please Help Support the First Year Project
+					div#mailglyph 
+						a(href="http://forms.hoosonline.virginia.edu/s/1535/16-uva/index.aspx?sid=1535&gid=16&pgid=9982&cid=17637" target="_blank") 
+							i Donate
+					span.explain 
+						a(href="http://millercenter.org/donate") Click here to support the First Year Project with a donation. 
+						| If you’d like to talk to someone about contributing to the First Year Project, 
+						a(href="mailto:dft6n@eservices.virginia.edu?subject=Please contact me about supporting the First Year Project")
+							| click here to contact the Miller Center Foundation.
+				
+				div.small-12.medium-4.columns#socialshare 
+					//- strong Share 
+					ul
+						li.label#share Share
+						li#header-fb-icon: a(href="http://www.facebook.com/share.php?u=http://firstyear2017.org" target="_blank") &nbsp;
+						//- img(src="images/icons/lg/facebook-wht.png")
+						li#header-tw-icon: a(href="https://twitter.com/intent/tweet?text=First+Year+Project+to+launch+on+Oct+15+from+UVA’s+@Miller_Center+http%3A%2F%2Ffirstyear2017.org" target="_blank") &nbsp;    
+						li.label#signUp Sign Up
+						li#email-icon: a(href="")
 
 
 footer#bodyFooter.footer
 	.row
-		a(href="http://millercenter.org")
-			img(src="http://staticmc.org/images/template/logo-white.png")
-		p The Miller Center is a nonpartisan affiliate of the University of Virginia that specializes in presidential scholarship, public policy, and political history and strives to apply the lessons of history to the nation’s most pressing contemporary governance challenges. 
-			a(href="http://millercenter.org") Learn more at millercenter.org.
+		.hide-for-small.medium-2.columns
+			a(href="http://millercenter.org")
+				img(src="http://staticmc.org/images/template/logo-white.png")
+		.small-12.medium-10.columns
+			.hide-for-medium-up
+				a(href="http://millercenter.org")
+					img(src="http://staticmc.org/images/template/logo-white.png")
+			p The Miller Center is a nonpartisan affiliate of the University of Virginia that specializes in presidential scholarship, public policy, and political history and strives to apply the lessons of history to the nation’s most pressing contemporary governance challenges. 
+				a(href="http://millercenter.org") Learn more at millercenter.org.
 
 
 

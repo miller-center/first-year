@@ -43,9 +43,10 @@
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
-
+$bill-rapp-blue: #0c2b48;
 $navigation-container-height: $topbar-height;
-$navigation-container-bg-color: transparentize(#000,0.3);
+// $navigation-container-bg-color: transparentize(#000,0.3);
+$navigation-container-bg-color: transparentize($bill-rapp-blue, 0.3);
 $navigation-container-z-index: 1000;
 
 $navigation-transition-time: 500ms;
@@ -76,6 +77,9 @@ $header-title-fonts: "Lato", sans-serif;
     }    
   }
 
+}
+#navigation-container.belowHero {
+  background-color: $bill-rapp-blue !important;
 }
 
 @media #{$small-up} {
@@ -250,7 +254,7 @@ $header-title-fonts: "Lato", sans-serif;
     }    
   }
   #navigation-container.belowHero {
-    background-color: $oil !important;
+    background-color: $bill-rapp-blue !important;
     //height: rem-calc(45);
     h1 {
       font-size: 1rem !important;

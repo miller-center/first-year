@@ -15,7 +15,8 @@ $(document).ready(function() {
 
   $(window).scroll(function() {
 
-    var threshold = $('#hero-container').height() * 0.01;
+    // var threshold = $('#hero-container').height() * 0.01;
+    var threshold = $('#navigation-container').height();
     // if ($(this).scrollTop() <= threshold) { 
     //   $('#navigation-container').addClass('shrinkMenu');
     //   $('#navigation-container').removeClass('expandMenu');
@@ -26,8 +27,8 @@ $(document).ready(function() {
     //   $('#navigation-container').removeClass('shrinkMenu');
     // }
 
-    var belowHero = $('section.hero').scrollTop() + $('section.hero').height() - $('#navigation-container').height();
-    if ($(this).scrollTop() >=  belowHero ) {
+    // var belowHero = $('section.hero').scrollTop() + $('section.hero').height() - $('#navigation-container').height();
+    if ($(this).scrollTop() >=  threshold ) {
       $('#navigation-container').addClass('belowHero');
     } else {
       $('#navigation-container').removeClass('belowHero');
