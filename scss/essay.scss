@@ -20,14 +20,6 @@ figure {
 figure.sm {max-width:30%;} /* 180px */
 figure.lg {max-width: 150%;} /* 900px - extends to the right or left page limit*/
 
-figcaption {display: table-row; }
-figcaption p {
-	font-size: .7rem; 
-	line-height: 1rem; 
-	color: $secondary-color; 
-	padding-top: .4rem; 
-	margin-bottom: 0;} 
-
 figure.right {
 	float:right; 
 	position: relative; 
@@ -39,6 +31,14 @@ figure.left {
 	position: relative; 
 	right: 40%; 
 	margin-right: -35%;}
+
+figcaption {display: table-row;}
+figcaption p {
+	font-size: .7rem; 
+	line-height: 1rem; 
+	color: $secondary-color; 
+	padding-top: .4rem; 
+	margin-bottom: 0;} 
 
 figure img {clear:both; max-width: 100%;}
 
@@ -83,7 +83,14 @@ blockquote:after {content:"”";}
 
 .author {
 	background-color: $primary-color; 
-	width: $essay-full-width;}
+	width: 100%;
+	.author-contact {
+		float:right;
+		}
+	
+	}
+	
+	
 
 .supplementary-content {color: #ccc;}
 

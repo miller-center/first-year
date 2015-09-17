@@ -386,8 +386,13 @@ a:hover {text-decoration: underline;}
 a:visited {color: $secondary-color;}
 a.important {color: $info-color; font-weight: bold;}
 
-a.more {font-size: 14px; line-height: 16px; color: $secondary-color; }
-a.more:after {content: " ➤";}
+a.more {
+	font-size: 14px; 
+	line-height: 16px; 
+	color: $secondary-color; 
+	&:after {content: " ➤";}
+	}
+
 
 	
 ul, ol {margin: 10px 3% 15px 3%; padding: 10px 2% 15px 2%;}
@@ -403,8 +408,20 @@ ul {list-style-type: circle;}
 	height: 0;
 }
 
-.cta, .author {color: #ddd; font-family: $font-family-small; }
-.cta a, .author a {color: #fff;}
+// These are bars of content with dark backgrounds--might be better accomplished with a "dark" class
+
+.cta, .author {
+	color: #ddd; 
+	font-family: $font-family-small; 
+	padding: 1em;
+		a {color: #fff;
+		&:hover {color:#ddd;}
+		}
+	}
+
+.author .author-contact:before{content: url('../images/icons/35px/twitter-wh.png'); }
+
+
 
 
 @media #{$small-up} {
