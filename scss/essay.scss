@@ -1,4 +1,36 @@
 /* Styles for essay pages only */
-body {
-  background-color: whitesmoke;
+
+
+figure {
+	margin: 25px; 
+	padding: 15px;
+	border-top: 1px solid #ff7d34; 
+	border-bottom: 1px solid #ff7d34;
+	display: table;
+	width: 33%; /*This keeps the figure from expanding to fit the caption.*/
+	float:left;}
+
+figure img {width: 100%;}		
+
+figcaption {display: table-row; }
+figcaption, .more {font-size: 14px; line-height: 14px; color: #666; } /*Hopefully this is a universal "small text" standard... author name, blog date, etc.*/
+
+blockquote {
+	margin: 25px 2%; 
+	padding: 0 1%; 
+	border-left: 1px solid #00a; }
+blockquote:before {content:"“";}
+blockquote:after {content:"”";}
+
+.pullquote {
+	font-size: 30px; 
+	line-height: 36px;
+	margin: 25px 3%;
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-align: center;
+	color: #666;
+	border-top: 1px solid #ff7d34;
+	border-bottom: 1px solid #ff7d34;
+	font-style: italic;
 }

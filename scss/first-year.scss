@@ -358,6 +358,54 @@ $fy-blue-1: #84a0b5;
 // MAIN CONTAINER
 //
 
+
+body {
+	color: #333;
+	font-family: 'Karla', Verdana, sans-serif;
+	font-size: 22px;
+	line-height: 32px;
+}
+
+// Pad any p that's loose in the container 
+body p {margin-top: 25px;} 
+
+
+a {color: #3d657d; }
+a:hover {text-decoration: none;}
+a:visited {color: #000;}
+a.important {color: #ff7d34; font-weight: bold;}
+a.more:after {content: " ➤";}
+
+
+h1 {
+	font-family: 'Crimson Text', serif;
+	font-size: 62px;
+	line-height: 60px;}
+	
+
+h2, h3, h4, h5 {font-family: Verdana, sans-serif; }
+h2 {font-size: 50px; line-height: 60px;}	
+h3 {font-size: 40px; line-height: 50px;}	
+h4 {font-size: 34px; line-height: 40px;}	
+h5 {font-size: 26px; line-height: 30px;}	
+	
+ul, ol {margin: 10px 3% 15px 3%; padding: 10px 2% 15px 2%;}
+ul {list-style-type: circle;}
+
+// Clearfix 
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+
+
+
+
 @media #{$small-up} {
   #featured-container {
     background: grey;
