@@ -1,19 +1,44 @@
 /* Styles for essay pages only */
 
+@import "settings";
+@import "header";
+@import "foundation";
+@import "foundation-icons.css";
 
-figure {
-	margin: 25px; 
-	padding: 15px;
-	border-top: 1px solid #ff7d34; 
-	border-bottom: 1px solid #ff7d34;
-	display: table;
-	width: 33%; /*This keeps the figure from expanding to fit the caption.*/
-	float:left;}
+$essay-full-width: 125%;
 
-figure img {width: 100%;}		
+#essay {max-width: 600px; margin: 0 auto;}
+
+p.essay-intro {font-size: larger;}
+
+figure {border-top: 1px solid $info-color; border-bottom: 1px solid $info-color; padding: 10px 15px; max-width: 50%;} /*300px wide*/
+
+figure.sm {max-width:30%;} /* 180px */
+figure.lg {max-width: 150%;} /* 900px - extends to the right or left page limit*/
 
 figcaption {display: table-row; }
-figcaption, .more {font-size: 14px; line-height: 14px; color: #666; } /*Hopefully this is a universal "small text" standard... author name, blog date, etc.*/
+figcaption p, .more {font-size: 14px; line-height: 16px; color: $secondary-color; } /*Hopefully this is a universal "small text" standard... author name, blog date, etc.*/
+figcaption p {padding-top: .4rem; margin-bottom: 0;}
+
+figure.right {float:right; position: relative; left: 40%; margin-left: -35%;}
+
+figure.left {float:left; position: relative; right: 40%; margin-right: -35%;}
+
+figure img {clear:both; max-width: 100%;}
+
+.pullquote {
+	font-size: larger; 
+	line-height: 1.8rem;
+	margin: 50px 0; 
+	clear:both; 
+	width: $essay-full-width;
+	margin-left: -12.5%; 
+	padding: .8rem 0; 
+	text-align: center;
+	font-style: italic;
+	color: $secondary-color;
+	border-top: 1px solid $info-color;
+	border-bottom: 1px solid $info-color;}
 
 blockquote {
 	margin: 25px 2%; 
@@ -22,15 +47,15 @@ blockquote {
 blockquote:before {content:"“";}
 blockquote:after {content:"”";}
 
-.pullquote {
-	font-size: 30px; 
-	line-height: 36px;
-	margin: 25px 3%;
-	padding-top: 25px;
-	padding-bottom: 25px;
-	text-align: center;
-	color: #666;
-	border-top: 1px solid #ff7d34;
-	border-bottom: 1px solid #ff7d34;
-	font-style: italic;
-}
+.essay-continues {display:block; width: 100%; font-size: smaller; color: #ccc; text-align: right; }
+
+/* This shares its width with both author space and pullquote */	
+.cta {background-color: $primary-color; margin: 50px 0; clear:both; width: $essay-full-width; margin-left: -12.5%; padding: 25px; text-size: larger;}
+
+.cta .email-signup {margin: 0 auto;}
+
+.author {background-color: #f00; width: $essay-full-width;}
+
+.supplementary-content {color: #ccc;}
+
+div.resources ul {list-style: none;}

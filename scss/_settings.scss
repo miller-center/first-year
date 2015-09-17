@@ -90,11 +90,12 @@ $column-gutter: rem-calc(30);
 // We use these to define default font stacks
 $font-family-sans-serif: 'Karla', Verdana, sans-serif;
 $font-family-serif: 'Crimson Text', serif;
+$font-family-small: Verdana, sans-serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
 // $font-weight-normal: normal;
-// $font-weight-bold: bold;
+$font-weight-bold: bold;
 
 // $white       : #FFFFFF;
 // $ghost       : #FAFAFA;
@@ -110,15 +111,15 @@ $font-family-serif: 'Crimson Text', serif;
 // $jumbo       : #888888;
 // $monsoon     : #777777;
 // $steel       : #666666;
-// $charcoal    : #555555;
+$charcoal    : #555555;
 // $tuatara     : #444444;
-$oil         : #333333;
+// $oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
 
 // We use these as default colors throughout
 $primary-color: #0c2b48; // medium greyish (bill rapp) blue
-$secondary-color: #666; // grey
+$secondary-color: #aaa; // grey
 $alert-color: #AB1A25; // deep red
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
@@ -126,7 +127,7 @@ $info-color: #ff7d34; // highlight color for info stuff
 
 // We use these to control various global styles
 // $body-bg: $white;
-$body-font-color: $oil;
+$body-font-color: $charcoal;
 $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
@@ -211,14 +212,15 @@ $body-font-family: $font-family-sans-serif;
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
-// $header-font-weight: $font-weight-normal;
+$header-font-family: $body-font-family; 
+$header-font-weight: $font-weight-bold;
 // $header-font-style: normal;
 // $header-font-color: $jet;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
 // $header-text-rendering: optimizeLegibility;
+h1 {font-family: $font-family-serif !important;} //h1 is the only size using a serif font
 
 // We use these to control header font sizes
 // $h1-font-size: rem-calc(44);
@@ -246,6 +248,7 @@ $body-font-family: $font-family-sans-serif;
 // A general <small> styling
 // $small-font-size: 60%;
 // $small-font-color: scale-color($header-font-color, $lightness: 35%);
+
 
 // We use these to style paragraphs
 // $paragraph-font-family: inherit;
