@@ -111,14 +111,14 @@ $font-weight-bold: bold;
 // $jumbo       : #888888;
 // $monsoon     : #777777;
 // $steel       : #666666;
-$charcoal    : #555555;
+// $charcoal    : #555555;
 // $tuatara     : #444444;
-// $oil         : #333333;
+$oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
 
 // We use these as default colors throughout
-$primary-color: #0c2b48; // medium greyish (bill rapp) blue
+$primary-color: #3d657d; // medium greyish blue
 $secondary-color: #aaa; // grey
 $alert-color: #AB1A25; // deep red
 // $success-color: #43AC6A;
@@ -127,7 +127,7 @@ $info-color: #ff7d34; // highlight color for info stuff
 
 // We use these to control various global styles
 // $body-bg: $white;
-$body-font-color: $charcoal;
+$body-font-color: $oil;
 $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;

@@ -381,24 +381,14 @@ body {
 	line-height: 32px;
 }
 
-a {color: #3d657d; }
-a:hover {text-decoration: none;}
-a:visited {color: #000;}
-a.important {color: #ff7d34; font-weight: bold;}
+a {color: $primary-color; }
+a:hover {text-decoration: underline;}
+a:visited {color: $secondary-color;}
+a.important {color: $info-color; font-weight: bold;}
+
+a.more {font-size: 14px; line-height: 16px; color: $secondary-color; }
 a.more:after {content: " ➤";}
 
-
-h1 {
-	font-family: 'Crimson Text', serif;
-	font-size: 62px;
-	line-height: 60px;}
-	
-
-h2, h3, h4, h5 {font-family: Verdana, sans-serif; }
-h2 {font-size: 50px; line-height: 60px;}	
-h3 {font-size: 40px; line-height: 50px;}	
-h4 {font-size: 34px; line-height: 40px;}	
-h5 {font-size: 26px; line-height: 30px;}	
 	
 ul, ol {margin: 10px 3% 15px 3%; padding: 10px 2% 15px 2%;}
 ul {list-style-type: circle;}
@@ -413,8 +403,8 @@ ul {list-style-type: circle;}
 	height: 0;
 }
 
-
-
+.cta, .author {color: #ddd; font-family: $font-family-small; }
+.cta a, .author a {color: #fff;}
 
 
 @media #{$small-up} {
