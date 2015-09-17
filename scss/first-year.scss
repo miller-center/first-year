@@ -56,7 +56,7 @@ $fy-blue-1: #84a0b5;
 //
 // hero stuff needs SERIOUS refactoring
 $hero-height: 30rem;
-$hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure why. 
+$hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure why. 
 .hero {
   background: url('../images/heros/sm/white-house.jpg') no-repeat center center;
   background-size: cover;
@@ -65,7 +65,7 @@ $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure 
   position: relative;
   padding-left: 0;
   padding-right: 0;
-  z-index: $hero-z;
+  // z-index: $hero-z;
   &:before {
     content: '';
     height: $hero-height;
@@ -76,7 +76,7 @@ $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure 
     left: 0;
     background-image: linear-gradient(to bottom right,#222222,#111111);
     opacity: .55;  // was .8 
-    z-index: $hero-z + 1;
+    z-index: $hero-z;
   }
   .intro {
     padding: 3rem;
@@ -87,12 +87,26 @@ $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure 
   }
   /* two buttons side-by-side, below title */
   .intro-nav {
+    z-index: 10;
+    color: #eee;
     border: thin solid red;
+    div {
+      display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -ms-flexbox;      /* TWEENER - IE 10 */
+      display: -webkit-flex;     /* NEW - Chrome */
+      display: flex; 
+    }
     .columns {
       .intro-button {
+        position: relative;
+        z-index: 10;
         text-align: center;
         padding: 0.3em 1em;
         display: inline-block;
+        -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1;
+        -webkit-flex: 1;          /* Chrome */
         flex: 1;
         margin: 0 0.5em;
         min-width: 45%;
@@ -107,13 +121,21 @@ $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure 
         background: -webkit-radial-gradient(transparentize(#000, $gradient-opacity) 5%, transparentize(#333, $gradient-opacity) 25%, transparentize(#888, $gradient-opacity) 95%);
         &:hover, &:active {
           background: -webkit-radial-gradient(transparentize(#000, $hover-opacity) 5%, transparentize(#333, $hover-opacity) 25%, transparentize(#888, $hover-opacity) 95%);
+          color:orange;
         }
-        @include single-transition(background, 500ms, ease-in-out);
-      }
-      .intro-button {
-        &:hover {
+        @include single-transition(background, 300ms, ease-in-out);
+        @include single-transition(color, 300ms, ease-in-out);
+        a {
+          @include single-transition(color, 300ms, ease-in-out);
+          position: inherit;
+          z-index: inherit;
+          color: inherit;
+          &:hover {
+            color:orange;
+          }
         }
       }
+
       // border: thin solid pink;
     }
   }
@@ -133,10 +155,6 @@ $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure 
     margin-bottom: 2rem;
   }
   @media only screen and (min-width: 40.063em) {
-    .tech-img {
-      height: 18rem;
-      width: 18rem;
-    }
     h1 {
       padding-top: 4.5rem;
       text-align: right;
@@ -148,6 +166,7 @@ $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure 
   }
   /* multiple tab-styled option panes */
   #hero-navigation-row {
+    z-index: 10;
     border: thin solid white;
     position:absolute;
     margin:0 auto;
@@ -162,7 +181,15 @@ $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure 
     padding: 0.5em 0;
     min-height: 6rem;
     max-height: 8rem;
+    overflow:visible;
+    /* ul */
     #nav-tabs {
+      &:after {
+        content: "";
+        width: 100%;
+        display: inline-block;
+      }
+      padding-top: 1em;
       $number-of-options: 4; //used to calcluate width below
       $option-width: percentage(((100 / $number-of-options) - 1) / 100);
       li.tab {
@@ -175,25 +202,25 @@ $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure 
           height: 100%;
           width: $option-width;
           padding-right: 1em;
-          background-color:red;
+          background-color:none;
           @include single-transition(background-color, 500ms, ease-in-out);
           &:hover {
             background-color: rgba(250,250,250,$window-tint);
           }
           &.is-active {
             border-top: $active-border-width solid orange;
+            border-bottom: none;
             top: -$active-border-width;
+            height: 110%;
             left: 0;
           }
           a {
-            // @include single-transition(background-color, 500ms, ease-in-out);
             padding: 0;
-            // &:hover, &:active, &.is-active {
-            //   background: rgba(250,250,250,$window-tint);
-            // }
+            padding-left: 0.5em;
           }
           p {
             border:thin solid green;
+            letter-spacing: 0.04em;
             line-height: 100%;
             font-size: 0.9rem;
             text-align: center;
@@ -209,7 +236,7 @@ $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure 
           text-transform: uppercase;
           display: block;
           // font-weight: bold;
-          letter-spacing: 1px;
+          letter-spacing: 0.15em;
           top: 0;
           position: relative;
           &.is-active {
@@ -227,35 +254,7 @@ $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure 
       }
     }
   }
-  .intro-nav {
-    color: #eee;
-    background-color: none;
-    div {
-      display: flex;    
-    }
-    span {
-      text-align: center;
-      padding: 0.3em 1em;
-      display: inline-block;
-      flex: 1;
-      margin: 0 0.5em;
-      min-width: 45%;
-      max-width: 47%;
-      width: 50%;
-      text-transform: uppercase;
-      font-size: 90%;
-      $gradient-opacity: 0.7;
-      $hover-opacity: 0.5;
-      border: 1px solid rgba(#eee, 0.3);
-      border-radius: 1px;
-      background: -webkit-radial-gradient(transparentize(#000, $gradient-opacity) 5%, transparentize(#333, $gradient-opacity) 25%, transparentize(#888, $gradient-opacity) 95%);
-      &:hover, &:active {
-        background: -webkit-radial-gradient(transparentize(#000, $hover-opacity) 5%, transparentize(#333, $hover-opacity) 25%, transparentize(#888, $hover-opacity) 95%);
-      }
-      @include single-transition(background, 500ms, ease-in-out);
 
-    }
-  }
   .hero-title {
     text-align: center;
     top:0;
@@ -309,8 +308,7 @@ $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure 
 @media #{$medium-up} {
   .hero {
     background: url('../images/heros/md/white-house.jpg') no-repeat center center;
-    &:before {
-    }
+
   } // end .hero
 }
 
@@ -318,39 +316,7 @@ $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure 
   .hero {
     // background: url('http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg') no-repeat center center;
     background: url('../images/heros/lg/white-house.jpg') no-repeat center center;
-    .intro {
-      padding: 3rem;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      border:thin solid yellow;
-    }
-    .intro-nav {
-      // border: thin solid yellow;
-      color: #eee;
-      div {
-        display: flex;    
-      }
-      .columns {
-        // border: thin solid pink;
-
-      }
-    }
-    h1 {
-      color: #fff;
-      font-size: 1.5rem;
-      line-height: 1.5em;
-      letter-spacing: -0.025em;
-      font-weight: 300;
-      text-align: center;
-    }
-    p {
-      color: #fff;
-      line-height: 1.75em;
-      font-weight: 200;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+    
   } // end .hero
 }
 
