@@ -4,128 +4,129 @@ doctype html
 - var essay = "What Time Is It?"
 - var project_home = ".."
 html(lang="en")
-  head
-    meta(charset="utf-8")
-    title #{title}
-    meta(name="description", content="")
-    meta(name="author", content="")
-    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
-    link(rel="stylesheet", href="#{project_home}/css/first-year.css")
-    link(rel="stylesheet", href="#{project_home}/css/home.css")
-    link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
-    //- adding Slick Carousel
-    //- link(rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick.css")
-    //- link(rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick-theme.css")
-    //- line(rel="stylesheet",type="text/css",href="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css")
-  
-  body
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(name="description", content="")
+		meta(name="author", content="")
+		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
+		link(rel="stylesheet", href="#{project_home}/css/first-year.css")
+		link(rel="stylesheet", href="#{project_home}/css/home.css")
+		link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
+		link(href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&7CCrimson+Text:400,700,600',rel="stylesheet", type="text/css")
+		//- adding Slick Carousel
+		//- link(rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick.css")
+		//- link(rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick-theme.css")
+		//- line(rel="stylesheet",type="text/css",href="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css")
+	
+	body
 
-    
-    //- topbar nav
-    .sticky.contain-to-grid#navigation-container
-      nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: large")
-        section.logo-section
-          a(href="#") 
-            h1 <b>First Year</b> 2017
-            h4 Where successful administrations begin
-        section.top-bar-section.social-section 
-          //  Right Nav Section 
-          ul.right
-            li.menu-option#header-fb-icon: a(href="#")
-              | &nbsp;
-              //- img(src="images/icons/lg/facebook-wht.png")
-            li.menu-option#header-tw-icon: a(href="#") 
-              | &nbsp;
-            li.menu-option.has-dropdown#header-menu-icon
-              a(href="#")
-                span.label Menu
-                  span
-              ul.dropdown
-                li
-                  a(href="#") First link in dropdown
-                li.featured
-                  a(href="#") Featured link in dropdown
-                li
-                  a(href="#") Third link in dropdown
-                li
-                  a(href="#") Fourth link in dropdown
+		
+		//- topbar nav
+		.sticky.contain-to-grid#navigation-container
+			nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: large")
+				section.logo-section
+					a(href="#") 
+						h1 <b>First Year</b> 2017
+						h4 Where successful administrations begin
+				section.top-bar-section.social-section 
+					//	Right Nav Section 
+					ul.right
+						li.menu-option#header-fb-icon: a(href="#")
+							| &nbsp;
+							//- img(src="images/icons/lg/facebook-wht.png")
+						li.menu-option#header-tw-icon: a(href="#") 
+							| &nbsp;
+						li.menu-option.has-dropdown#header-menu-icon
+							a(href="#")
+								span.label Menu
+									span
+							ul.dropdown
+								li
+									a(href="#") First link in dropdown
+								li.featured
+									a(href="#") Featured link in dropdown
+								li
+									a(href="#") Third link in dropdown
+								li
+									a(href="#") Fourth link in dropdown
 
  
 
-    section.hero
-      .row.hero-title
-        .small-centered.medium-uncentered.small-12.columns#hero-title
-          h2 Issue 1
-          span.stars &#x2605; &#x2605; &#x2605;
-          h1.main-title The Next President's Crucible Year
-          p  Six essays about the promises and pitfalls of the first 365 days in office.
-        //- .small-centered.medium-uncentered.medium-6.large-5.columns
-        //-   .tech-img
+		section.hero
+			.row.hero-title
+				.small-centered.medium-uncentered.small-12.columns#hero-title
+					h2 Issue 1
+					span.stars &#x2605; &#x2605; &#x2605;
+					h1.main-title The Next President's Crucible Year
+					p	Six essays about the promises and pitfalls of the first 365 days in office.
+				//- .small-centered.medium-uncentered.medium-6.large-5.columns
+				//-	 .tech-img
 
-      .intro-nav
-        .small-6.small-centered.columns
-          span.intro-button Explore the essays
-          span.intro-button Learn about First Year 2017
+			.intro-nav
+				.small-6.small-centered.columns
+					span.intro-button Explore the essays
+					span.intro-button Learn about First Year 2017
 
-      ul.subnav#nav-tabs
-        li.tab
-          .tab-entry.is-active
-            a(href="") Issue 1
-            p The Next President's Crucible Year
-        li.tab
-          .tab-entry
-            a(href="") Issue 2
-            p Coming in December: National Security
-        li.tab
-          .tab-entry
-            a(href="") Issue 3
-            p Coming January 2016
-        li.tab
-          .tab-entry
-            a(href="") More →
-            p &nbsp;
-
-
-    .row
-      .small-12.medium-4.columns#featured-container
-        h1 Featured
-      .small-12.medium-8.columns#blog-container
-        h1 Blog
+			ul.subnav#nav-tabs
+				li.tab
+					.tab-entry.is-active
+						a(href="") Issue 1
+						p The Next President's Crucible Year
+				li.tab
+					.tab-entry
+						a(href="") Issue 2
+						p Coming in December: National Security
+				li.tab
+					.tab-entry
+						a(href="") Issue 3
+						p Coming January 2016
+				li.tab
+					.tab-entry
+						a(href="") More →
+						p &nbsp;
 
 
-    .row
-      div  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam hic beatae maiores laboriosam cum soluta iste ipsa quod, nemo modi quae vero veritatis illo ipsum, dicta, saepe accusantium, fuga obcaecati vel tempore! Eius, hic eum laboriosam. Culpa dicta ipsa, aperiam perferendis praesentium minima explicabo nam provident quo sint. Quasi, quo repellat omnis veniam quis. Voluptatum eum dignissimos quis sed cum soluta, debitis repellat maxime ipsum ad. Porro rerum ea assumenda iste deserunt, eos. Molestiae repellat unde soluta maiores, maxime temporibus, expedita totam voluptates laudantium provident repellendus sapiente ex dolore aliquid saepe odit cum repudiandae dolorem dolor voluptatibus assumenda est facere reprehenderit, eveniet! Quas est quos excepturi dolor dolore, pariatur minus reprehenderit cupiditate enim eveniet vero mollitia nam nesciunt explicabo, unde perferendis. Corporis veritatis, laboriosam. Earum sed hic officia vero tempora optio accusantium expedita adipisci vitae modi non eaque deserunt, placeat debitis harum perferendis alias exercitationem blanditiis eveniet possimus itaque sapiente dolore quia quas voluptates. Dignissimos ipsa pariatur autem similique maiores, ea totam rerum. Aliquid aliquam eaque commodi libero id, minus maiores, quis porro vitae quaerat et atque explicabo at, accusantium excepturi quos! Provident ullam, non laboriosam magnam suscipit dolorum voluptatum expedita enim labore nemo, maiores ratione, excepturi dolores cumque dolor autem sunt fugiat at explicabo voluptates animi rerum perferendis, minima earum. Quia dolorem sequi, doloribus facere nulla saepe voluptas eveniet non animi numquam placeat aut consectetur magni nihil deleniti, id amet! Quo doloremque, voluptate eius culpa nostrum enim praesentium provident cum nemo sit accusantium ea quos neque nihil, suscipit commodi reprehenderit odit perferendis eos. Omnis iusto praesentium itaque quis, nulla nesciunt, commodi enim deserunt doloremque vitae. Provident eligendi reprehenderit sequi itaque iusto similique impedit illum omnis totam quasi modi, rem, unde eum nihil! Sed pariatur ipsum error exercitationem necessitatibus quam in dolor velit aut asperiores cupiditate doloribus tempore impedit, quas iure eligendi, vel sunt maiores excepturi. Quos, maiores ea vel alias! Tenetur officiis nisi vero accusantium, commodi magni ab ducimus eveniet culpa delectus perspiciatis cum odio, aliquid iusto doloremque. Quas odio voluptatem maxime officia reiciendis deleniti cupiditate autem a saepe distinctio deserunt totam, atque, in harum quibusdam qui ipsum facilis consectetur ducimus optio eum necessitatibus. Praesentium sed itaque delectus neque commodi libero tempora magni unde tempore cum. Cum quos harum, ex officiis placeat omnis impedit, odit aperiam, sint quam quis distinctio ipsam ea, fuga tempora amet. Tempora ullam quaerat similique recusandae quasi hic fuga molestias itaque, dolorem dignissimos necessitatibus? Consectetur fuga perferendis fugit, laborum, libero aperiam eos dolorem esse explicabo accusantium sit maxime nostrum quibusdam. Nemo labore sit tempore sapiente odio sed iste, praesentium accusamus. Odio, culpa ullam? Aspernatur amet distinctio illo dicta debitis dignissimos quas ea veniam impedit similique, quae, quia architecto quam culpa incidunt, fugit laboriosam minus explicabo quos cupiditate itaque hic omnis laborum, magnam. Quasi natus nemo quo dolorem dignissimos in voluptatum commodi nihil accusamus, porro, voluptate veritatis rerum obcaecati pariatur est nobis qui error alias. Officiis, dolores atque, impedit accusantium debitis ipsa reiciendis eos cumque dicta expedita non velit necessitatibus culpa! Quis eius consequuntur beatae recusandae.
+		.row
+			.small-12.medium-4.columns#featured-container
+				h1 Featured
+			.small-12.medium-8.columns#blog-container
+				h1 Blog
 
-    .row
-      div  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam hic beatae maiores laboriosam cum soluta iste ipsa quod, nemo modi quae vero veritatis illo ipsum, dicta, saepe accusantium, fuga obcaecati vel tempore! Eius, hic eum laboriosam. Culpa dicta ipsa, aperiam perferendis praesentium minima explicabo nam provident quo sint. Quasi, quo repellat omnis veniam quis. Voluptatum eum dignissimos quis sed cum soluta, debitis repellat maxime ipsum ad. Porro rerum ea assumenda iste deserunt, eos. Molestiae repellat unde soluta maiores, maxime temporibus, expedita totam voluptates laudantium provident repellendus sapiente ex dolore aliquid saepe odit cum repudiandae dolorem dolor voluptatibus assumenda est facere reprehenderit, eveniet! Quas est quos excepturi dolor dolore, pariatur minus reprehenderit cupiditate enim eveniet vero mollitia nam nesciunt explicabo, unde perferendis. Corporis veritatis, laboriosam. Earum sed hic officia vero tempora optio accusantium expedita adipisci vitae modi non eaque deserunt, placeat debitis harum perferendis alias exercitationem blanditiis eveniet possimus itaque sapiente dolore quia quas voluptates. Dignissimos ipsa pariatur autem similique maiores, ea totam rerum. Aliquid aliquam eaque commodi libero id, minus maiores, quis porro vitae quaerat et atque explicabo at, accusantium excepturi quos! Provident ullam, non laboriosam magnam suscipit dolorum voluptatum expedita enim labore nemo, maiores ratione, excepturi dolores cumque dolor autem sunt fugiat at explicabo voluptates animi rerum perferendis, minima earum. Quia dolorem sequi, doloribus facere nulla saepe voluptas eveniet non animi numquam placeat aut consectetur magni nihil deleniti, id amet! Quo doloremque, voluptate eius culpa nostrum enim praesentium provident cum nemo sit accusantium ea quos neque nihil, suscipit commodi reprehenderit odit perferendis eos. Omnis iusto praesentium itaque quis, nulla nesciunt, commodi enim deserunt doloremque vitae. Provident eligendi reprehenderit sequi itaque iusto similique impedit illum omnis totam quasi modi, rem, unde eum nihil! Sed pariatur ipsum error exercitationem necessitatibus quam in dolor velit aut asperiores cupiditate doloribus tempore impedit, quas iure eligendi, vel sunt maiores excepturi. Quos, maiores ea vel alias! Tenetur officiis nisi vero accusantium, commodi magni ab ducimus eveniet culpa delectus perspiciatis cum odio, aliquid iusto doloremque. Quas odio voluptatem maxime officia reiciendis deleniti cupiditate autem a saepe distinctio deserunt totam, atque, in harum quibusdam qui ipsum facilis consectetur ducimus optio eum necessitatibus. Praesentium sed itaque delectus neque commodi libero tempora magni unde tempore cum. Cum quos harum, ex officiis placeat omnis impedit, odit aperiam, sint quam quis distinctio ipsam ea, fuga tempora amet. Tempora ullam quaerat similique recusandae quasi hic fuga molestias itaque, dolorem dignissimos necessitatibus? Consectetur fuga perferendis fugit, laborum, libero aperiam eos dolorem esse explicabo accusantium sit maxime nostrum quibusdam. Nemo labore sit tempore sapiente odio sed iste, praesentium accusamus. Odio, culpa ullam? Aspernatur amet distinctio illo dicta debitis dignissimos quas ea veniam impedit similique, quae, quia architecto quam culpa incidunt, fugit laboriosam minus explicabo quos cupiditate itaque hic omnis laborum, magnam. Quasi natus nemo quo dolorem dignissimos in voluptatum commodi nihil accusamus, porro, voluptate veritatis rerum obcaecati pariatur est nobis qui error alias. Officiis, dolores atque, impedit accusantium debitis ipsa reiciendis eos cumque dicta expedita non velit necessitatibus culpa! Quis eius consequuntur beatae recusandae.
 
-    footer#body-footer.footer
-      .row
-        .small-6.large-4.columns
-          ul
-            li About
-            li Contact
-            li Home&nbsp;
-              i.fi-home
-        .small-6.large-4.columns
-          ul
-            li More
-            li To
-            li Click
-        .small-6.large-4.columns
-          ul
-            li Put
-            li Stuff
-            li Here
+		.row
+			div	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam hic beatae maiores laboriosam cum soluta iste ipsa quod, nemo modi quae vero veritatis illo ipsum, dicta, saepe accusantium, fuga obcaecati vel tempore! Eius, hic eum laboriosam. Culpa dicta ipsa, aperiam perferendis praesentium minima explicabo nam provident quo sint. Quasi, quo repellat omnis veniam quis. Voluptatum eum dignissimos quis sed cum soluta, debitis repellat maxime ipsum ad. Porro rerum ea assumenda iste deserunt, eos. Molestiae repellat unde soluta maiores, maxime temporibus, expedita totam voluptates laudantium provident repellendus sapiente ex dolore aliquid saepe odit cum repudiandae dolorem dolor voluptatibus assumenda est facere reprehenderit, eveniet! Quas est quos excepturi dolor dolore, pariatur minus reprehenderit cupiditate enim eveniet vero mollitia nam nesciunt explicabo, unde perferendis. Corporis veritatis, laboriosam. Earum sed hic officia vero tempora optio accusantium expedita adipisci vitae modi non eaque deserunt, placeat debitis harum perferendis alias exercitationem blanditiis eveniet possimus itaque sapiente dolore quia quas voluptates. Dignissimos ipsa pariatur autem similique maiores, ea totam rerum. Aliquid aliquam eaque commodi libero id, minus maiores, quis porro vitae quaerat et atque explicabo at, accusantium excepturi quos! Provident ullam, non laboriosam magnam suscipit dolorum voluptatum expedita enim labore nemo, maiores ratione, excepturi dolores cumque dolor autem sunt fugiat at explicabo voluptates animi rerum perferendis, minima earum. Quia dolorem sequi, doloribus facere nulla saepe voluptas eveniet non animi numquam placeat aut consectetur magni nihil deleniti, id amet! Quo doloremque, voluptate eius culpa nostrum enim praesentium provident cum nemo sit accusantium ea quos neque nihil, suscipit commodi reprehenderit odit perferendis eos. Omnis iusto praesentium itaque quis, nulla nesciunt, commodi enim deserunt doloremque vitae. Provident eligendi reprehenderit sequi itaque iusto similique impedit illum omnis totam quasi modi, rem, unde eum nihil! Sed pariatur ipsum error exercitationem necessitatibus quam in dolor velit aut asperiores cupiditate doloribus tempore impedit, quas iure eligendi, vel sunt maiores excepturi. Quos, maiores ea vel alias! Tenetur officiis nisi vero accusantium, commodi magni ab ducimus eveniet culpa delectus perspiciatis cum odio, aliquid iusto doloremque. Quas odio voluptatem maxime officia reiciendis deleniti cupiditate autem a saepe distinctio deserunt totam, atque, in harum quibusdam qui ipsum facilis consectetur ducimus optio eum necessitatibus. Praesentium sed itaque delectus neque commodi libero tempora magni unde tempore cum. Cum quos harum, ex officiis placeat omnis impedit, odit aperiam, sint quam quis distinctio ipsam ea, fuga tempora amet. Tempora ullam quaerat similique recusandae quasi hic fuga molestias itaque, dolorem dignissimos necessitatibus? Consectetur fuga perferendis fugit, laborum, libero aperiam eos dolorem esse explicabo accusantium sit maxime nostrum quibusdam. Nemo labore sit tempore sapiente odio sed iste, praesentium accusamus. Odio, culpa ullam? Aspernatur amet distinctio illo dicta debitis dignissimos quas ea veniam impedit similique, quae, quia architecto quam culpa incidunt, fugit laboriosam minus explicabo quos cupiditate itaque hic omnis laborum, magnam. Quasi natus nemo quo dolorem dignissimos in voluptatum commodi nihil accusamus, porro, voluptate veritatis rerum obcaecati pariatur est nobis qui error alias. Officiis, dolores atque, impedit accusantium debitis ipsa reiciendis eos cumque dicta expedita non velit necessitatibus culpa! Quis eius consequuntur beatae recusandae.
 
-    script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
-    //- remove http protocol from production version
-    script(src="http://code.jquery.com/jquery-migrate-1.2.1.min.js")
-    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.js")
-    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.topbar.js")
-    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.interchange.js")
-    script(src="#{project_home}/bower_components/slick-carousel/slick/slick.min.js")
-    //- script(src="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")
-    script(src="#{project_home}/js/first-year.js")
-    //- first-year.js initializes Foundation
-    script(src="#{project_home}/js/home.js")
+		.row
+			div	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam hic beatae maiores laboriosam cum soluta iste ipsa quod, nemo modi quae vero veritatis illo ipsum, dicta, saepe accusantium, fuga obcaecati vel tempore! Eius, hic eum laboriosam. Culpa dicta ipsa, aperiam perferendis praesentium minima explicabo nam provident quo sint. Quasi, quo repellat omnis veniam quis. Voluptatum eum dignissimos quis sed cum soluta, debitis repellat maxime ipsum ad. Porro rerum ea assumenda iste deserunt, eos. Molestiae repellat unde soluta maiores, maxime temporibus, expedita totam voluptates laudantium provident repellendus sapiente ex dolore aliquid saepe odit cum repudiandae dolorem dolor voluptatibus assumenda est facere reprehenderit, eveniet! Quas est quos excepturi dolor dolore, pariatur minus reprehenderit cupiditate enim eveniet vero mollitia nam nesciunt explicabo, unde perferendis. Corporis veritatis, laboriosam. Earum sed hic officia vero tempora optio accusantium expedita adipisci vitae modi non eaque deserunt, placeat debitis harum perferendis alias exercitationem blanditiis eveniet possimus itaque sapiente dolore quia quas voluptates. Dignissimos ipsa pariatur autem similique maiores, ea totam rerum. Aliquid aliquam eaque commodi libero id, minus maiores, quis porro vitae quaerat et atque explicabo at, accusantium excepturi quos! Provident ullam, non laboriosam magnam suscipit dolorum voluptatum expedita enim labore nemo, maiores ratione, excepturi dolores cumque dolor autem sunt fugiat at explicabo voluptates animi rerum perferendis, minima earum. Quia dolorem sequi, doloribus facere nulla saepe voluptas eveniet non animi numquam placeat aut consectetur magni nihil deleniti, id amet! Quo doloremque, voluptate eius culpa nostrum enim praesentium provident cum nemo sit accusantium ea quos neque nihil, suscipit commodi reprehenderit odit perferendis eos. Omnis iusto praesentium itaque quis, nulla nesciunt, commodi enim deserunt doloremque vitae. Provident eligendi reprehenderit sequi itaque iusto similique impedit illum omnis totam quasi modi, rem, unde eum nihil! Sed pariatur ipsum error exercitationem necessitatibus quam in dolor velit aut asperiores cupiditate doloribus tempore impedit, quas iure eligendi, vel sunt maiores excepturi. Quos, maiores ea vel alias! Tenetur officiis nisi vero accusantium, commodi magni ab ducimus eveniet culpa delectus perspiciatis cum odio, aliquid iusto doloremque. Quas odio voluptatem maxime officia reiciendis deleniti cupiditate autem a saepe distinctio deserunt totam, atque, in harum quibusdam qui ipsum facilis consectetur ducimus optio eum necessitatibus. Praesentium sed itaque delectus neque commodi libero tempora magni unde tempore cum. Cum quos harum, ex officiis placeat omnis impedit, odit aperiam, sint quam quis distinctio ipsam ea, fuga tempora amet. Tempora ullam quaerat similique recusandae quasi hic fuga molestias itaque, dolorem dignissimos necessitatibus? Consectetur fuga perferendis fugit, laborum, libero aperiam eos dolorem esse explicabo accusantium sit maxime nostrum quibusdam. Nemo labore sit tempore sapiente odio sed iste, praesentium accusamus. Odio, culpa ullam? Aspernatur amet distinctio illo dicta debitis dignissimos quas ea veniam impedit similique, quae, quia architecto quam culpa incidunt, fugit laboriosam minus explicabo quos cupiditate itaque hic omnis laborum, magnam. Quasi natus nemo quo dolorem dignissimos in voluptatum commodi nihil accusamus, porro, voluptate veritatis rerum obcaecati pariatur est nobis qui error alias. Officiis, dolores atque, impedit accusantium debitis ipsa reiciendis eos cumque dicta expedita non velit necessitatibus culpa! Quis eius consequuntur beatae recusandae.
+
+		footer#body-footer.footer
+			.row
+				.small-6.large-4.columns
+					ul
+						li About
+						li Contact
+						li Home&nbsp;
+							i.fi-home
+				.small-6.large-4.columns
+					ul
+						li More
+						li To
+						li Click
+				.small-6.large-4.columns
+					ul
+						li Put
+						li Stuff
+						li Here
+
+		script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
+		//- remove http protocol from production version
+		script(src="http://code.jquery.com/jquery-migrate-1.2.1.min.js")
+		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.js")
+		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.topbar.js")
+		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.interchange.js")
+		script(src="#{project_home}/bower_components/slick-carousel/slick/slick.min.js")
+		//- script(src="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")
+		script(src="#{project_home}/js/first-year.js")
+		//- first-year.js initializes Foundation
+		script(src="#{project_home}/js/home.js")
