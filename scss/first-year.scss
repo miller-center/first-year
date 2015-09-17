@@ -74,9 +74,8 @@ $hero-z: -10; //This is shading the hero text when it's set to 0 or 1, not sure 
     right: 0;
     bottom: 0;
     left: 0;
-    // background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
     background-image: linear-gradient(to bottom right,#222222,#111111);
-    opacity: .8; // was .8 
+    opacity: .55;  // was .8 
     z-index: $hero-z + 1;
   }
   .intro {
