@@ -84,14 +84,30 @@ blockquote:after {content:"”";}
 .author {
 	background-color: $primary-color; 
 	width: 100%;
+	p {
+		font-size: smaller;
+		}
 	.author-contact {
 		float:right;
+		font-size: smaller;
+		&:before {
+			content: url('../images/icons/35px/twitter-wh.png'); 
+			position:relative; top: 13px; 
+			}
 		}
 	
 	}
+
+.author .author-contact:before{}
 	
 	
 
-.supplementary-content {color: #ccc;}
+#supplementary-content, #supplementary-content #resources ul, #supplementary-content #footnotes ol{
+	color: #ccc;
+	font-size: smaller;
+	}
 
-div.resources ul {list-style: circle;}
+#supplementary-content #resources ul {
+	list-style: circle;
+	}
+
