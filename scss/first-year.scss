@@ -1,6 +1,7 @@
 $fy-blue-1: #84a0b5;
 @import "settings";
 @import "header";
+@import "footer";
 @import "foundation";
 @import "foundation-icons.css";
 
@@ -46,6 +47,30 @@ $fy-blue-1: #84a0b5;
 
 
 //
+// Responsive class for JQuery to find
+// Should only contain a 'float' directive
+// And should only appear in the footer
+
+.responsiveFlag {
+  float:none;
+}
+@media #{$small-up} {
+  .responsiveFlag {
+    float:none;
+  }
+}
+@media #{$medium-up} {
+  .responsiveFlag {
+    float:left;
+  }
+}
+@media #{$large-up} {
+  .responsiveFlag {
+    float:right;
+  }
+}
+
+//
 // HEADER (NAVBAR) STYLES
 //
 // see "_header.scss"
@@ -78,13 +103,46 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
     opacity: .55;  // was .8 
     z-index: $hero-z;
   }
-  .intro {
-    padding: 3rem;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    border:thin solid yellow;
+  .news {
+    position: absolute;
+    right: 1rem;
+    top: ($topbar-height) - rem-calc(25);
+    #the-latest {
+      width: 15rem;
+      background-color: transparentize(#111, 0.3);
+      ul {
+        list-style-type: none;
+        color: #ddd;
+        li.label {
+          color: orange;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          background-color: transparent;
+          font-size: 75%;
+        }
+        li {
+          font-size: 85%;
+          font-weight: 100;
+          letter-spacing: 2px;
+          a {
+            color: #eee;
+            z-index: 99;
+            height: 100%;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
   }
+  // .intro {
+  //   padding: 3rem;
+  //   position: relative;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  //   border:thin solid yellow;
+  // }
   /* two buttons side-by-side, below title */
   .intro-nav {
     z-index: 10;
@@ -315,11 +373,14 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
 @media #{$small-only} {
   .hero {
     height: 25rem;
+    &:before {
+      height: 25rem;
+    }
     margin-top: 2rem;
     .hero-title {
       #hero-title {
         h1 {
-          font-size: 1rem;
+          font-size: 1.2rem;
         }
         h2 {
           font-size: 0.75rem;
@@ -416,13 +477,43 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
 // MAIN CONTAINER
 //
 
+// default
+#featured-container, #briefing-room-container {
+  padding-left: 0;
+  padding-right: 0;
+  h1 {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 3rem;
+  }
+}
+#featured-container {
+  background: #ddd;
+  h1 {
+    background-color: orange;
+    color:#eee;
+    letter-spacing: 3px;
+    font-weight: 500;
+  }
+}
+#briefing-room-container {
+  background: #aaa;
+  h1 {
+    background-color: white; 
+    color: black; 
+    font-weight: 200;
+  }
+}
+
 @media #{$small-up} {
-  #featured-container {
-    background: grey;
-  }
-  #blog-container {
-    background: blue;
-  }
+  // #featured-container {
+  //   background: #ddd;
+  // }
+  // #briefing-room-container {
+  //   background: #aaa;
+  // }
 }
 
 @media #{$medium-up} {
