@@ -21,13 +21,13 @@ figure.sm {max-width:30%;} /* 180px */
 figure.lg {max-width: 150%;} /* 900px - extends to the right or left page limit*/
 
 figure.right {
-	float:right; 
+	//float:right; This is built into Foundation's "right" class
 	position: relative; 
 	left: 40%; 
 	margin-left: -35%;}
 
 figure.left {
-	float:left; 
+	//float:left; This is built into Foundation's "left" class
 	position: relative; 
 	right: 40%; 
 	margin-right: -35%;}
@@ -50,7 +50,7 @@ figure img {clear:both; max-width: 100%;}
 	width: $essay-full-width;
 	margin-left: -12.5%; 
 	padding: .8rem 0; 
-	text-align: center;
+	//text-align: center; Build into Foundation
 	font-style: italic;
 	color: $secondary-color;
 	border-top: 1px solid $info-color;
