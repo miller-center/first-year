@@ -1,30 +1,10 @@
 $(document).foundation();
-window.FirstYear = {}; // project globals
 
 $(document).ready(function() {
   // re-initialize Foundation after responsive image loading
   $(document).foundation('interchange', 'reflow');
 
-  // test for screen size, for responsive JS execution
-  FirstYear.viewportSmall = $(window).isSmallDevice();
-  FirstYear.viewportMedium = $(window).isMediumDevice();
-  FirstYear.viewportLarge = $(window).isLargeDevice();
 
-  // reset values upon change in window size
-  $(window).resize(function () {
-    if (FirstYear.viewportSmall !== $(window).isSmallDevice()) {
-      FirstYear.viewportSmall = $(window).isSmallDevice();  
-      console.log('re-setting viewportSmall');
-    }
-    if (FirstYear.viewportMedium !== $(window).isMediumDevice()) {
-      FirstYear.viewportMedium = $(window).isMediumDevice();  
-      console.log('re-setting viewportMedium');
-    }
-    if (FirstYear.viewportLarge !== $(window).isLargeDevice()) {
-      FirstYear.viewportLarge = $(window).isLargeDevice();  
-      console.log('re-setting viewportLarge');
-    }
-  });
 
   // give page a nudge if loading anywhere other than top
   var currentPosition = $(window).scrollTop();
@@ -82,8 +62,7 @@ $(document).ready(function() {
 
   // if window is large enough, active newsfeed
   try {
-    var isSmallDevice = $(window).isSmallDevice();
-    if(! isSmallDevice) {
+    if(Foundation.utils.is_medium_up()) {
       setTimeout(changeNewsItem, timeout);
     } else {
       console.log('news feed disabled for small device');
@@ -94,41 +73,3 @@ $(document).ready(function() {
   }
 
 });
-
-//
-// utilities
-//
-
-// sniff window and detect flag indicating small device
-jQuery.fn.isSmallDevice = function() {
-  var floatValue = $('.responsiveFlag').css("float");
-  if (floatValue !== undefined) {
-    if (floatValue === 'none') {
-      return true;
-    } else {
-      return false;
-    }
-  }
-}
-
-jQuery.fn.isMediumDevice = function() {
-  var floatValue = $('.responsiveFlag').css("float");
-  if (floatValue !== undefined) {
-    if (floatValue === 'left') {
-      return true;
-    } else {
-      return false;
-    }
-  }
-}
-
-jQuery.fn.isLargeDevice = function() {
-  var floatValue = $('.responsiveFlag').css("float");
-  if (floatValue !== undefined) {
-    if (floatValue === 'right') {
-      return true;
-    } else {
-      return false;
-    }
-  }
-}

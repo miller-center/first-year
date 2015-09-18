@@ -46,29 +46,6 @@ $fy-blue-1: #84a0b5;
 //   "foundation/components/visibility";
 
 
-//
-// Responsive class for JQuery to find
-// Should only contain a 'float' directive
-// And should only appear in the footer
-
-.responsiveFlag {
-  float:none;
-}
-@media #{$small-up} {
-  .responsiveFlag {
-    float:none;
-  }
-}
-@media #{$medium-up} {
-  .responsiveFlag {
-    float:left;
-  }
-}
-@media #{$large-up} {
-  .responsiveFlag {
-    float:right;
-  }
-}
 
 //
 // HEADER (NAVBAR) STYLES
