@@ -89,7 +89,10 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
   .intro-nav {
     z-index: 10;
     color: #eee;
-    border: thin solid red;
+    // border: thin solid red; //testing only
+    .row {
+      margin: 0 auto;
+    }
     div {
       display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
       display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
@@ -167,14 +170,14 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
   /* multiple tab-styled option panes */
   #hero-navigation-row {
     z-index: 10;
-    border: thin solid white;
+    // border: thin solid white;
     position:absolute;
     margin:0 auto;
     width: 100%;
     bottom: 0;
   }
   .subnav {
-    border: thin solid yellow !important; //testing
+    // border: thin solid yellow !important; //testing
     $window-tint: 0.3;
     $active-border-width: 5px;
     margin: 0 auto;
@@ -184,23 +187,12 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
     overflow:visible;
     /* ul */
     #nav-tabs {
-      &:after {
-        content: "";
-        width: 100%;
-        display: inline-block;
-      }
-      padding-top: 1em;
-      $number-of-options: 4; //used to calcluate width below
-      $option-width: percentage(((100 / $number-of-options) - 1) / 100);
       li.tab {
-        float: none;
-        display: inline-block;
-        width: $option-width;
         .tab-entry {
           position: absolute;
           top: 0;
           height: 100%;
-          width: $option-width;
+          width: 25%;
           padding-right: 1em;
           background-color:none;
           @include single-transition(background-color, 500ms, ease-in-out);
@@ -217,9 +209,19 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
           a {
             padding: 0;
             padding-left: 0.5em;
+            &.is-active {
+              // background: rgba(250,250,250,$window-tint);
+              color: orange;
+              top: -5px;
+            }
+
+            &:hover {
+              // background: rgba(250,250,250,$window-tint);
+              color: orange;
+              transition: all .25s ease-in-out;
+            }            
           }
           p {
-            border:thin solid green;
             letter-spacing: 0.04em;
             line-height: 100%;
             font-size: 0.9rem;
@@ -239,17 +241,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
           letter-spacing: 0.15em;
           top: 0;
           position: relative;
-          &.is-active {
-            // background: rgba(250,250,250,$window-tint);
-            color: orange;
-            top: -5px;
-          }
 
-          &:hover {
-            // background: rgba(250,250,250,$window-tint);
-            color: orange;
-            transition: all .25s ease-in-out;
-          }
         }
       }
     }
@@ -322,20 +314,101 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
 
 @media #{$small-only} {
   .hero {
+    height: 25rem;
     margin-top: 2rem;
+    .hero-title {
+      #hero-title {
+        h1 {
+          font-size: 1rem;
+        }
+        h2 {
+          font-size: 0.75rem;
+        }
+        p {
+          font-size: 0.6rem;
+        }
+      }
+    }
+    .intro-nav {
+      .row {
+        margin: 0 auto;
+      }
+      a {
+        font-size: 0.6rem;
+        line-height: 1rem;
+      }
+    }
+    #hero-navigation-row {
+      height: 4rem;
+      .subnav {
+        #nav-tabs {
+          .tab {
+            .tab-entry {
+              a, p {
+                font-size: 0.5rem;
+                width: 100%;
+                padding-left: 0.25em;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
 @media #{$medium-only} {
-  
+  .hero {
+    margin-top: 2rem;
+    .hero-title {
+      #hero-title {}
+    }
+    .intro-nav {
+      .row {
+        margin: 0 auto;
+        width: 100% !important;
+        font-size: 0.9rem;
+        line-height: 0.9rem;
+      }
+    }
+    #hero-navigation-row {
+    }
+  }  
 }
 
 @media #{$large-only} {
-  
+  .hero {
+    margin-top: 2rem;
+    .hero-title {
+      #hero-title {}
+    }
+    .intro-nav {
+      .row {
+        margin: 0 auto;
+        width: 100% !important;
+      }
+    }
+    #hero-navigation-row {
+    }
+  }   
 }
 
-@media #{$xlarge-only} {
-  
+@media #{$xlarge-up} {
+  .hero {
+    margin-top: 2rem;
+    .hero-title {
+      #hero-title {}
+    }
+    .intro-nav {
+      .row {
+        width: 100% !important;
+        font-size: 0.9rem;
+        line-height: 0.9rem;
+      }
+    }
+    #hero-navigation-row {
+    }
+  }  
 }
 
 

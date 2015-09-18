@@ -306,7 +306,10 @@ $header-title-fonts: "Lato", sans-serif;
 }
 
 @media #{$small-only} {
-  
+  #navigation-container {
+    background-color: $bill-rapp-blue;
+    color:white;
+  }
 }
 
 @media #{$medium-only} {
