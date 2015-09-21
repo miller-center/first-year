@@ -1,8 +1,9 @@
 $fy-blue-1: #84a0b5;
 @import "settings";
-@import "header";
 @import "foundation";
 @import "foundation-icons.css";
+@import "header";
+@import "footer";
 
 // project-wide styling here
 
@@ -45,6 +46,7 @@ $fy-blue-1: #84a0b5;
 //   "foundation/components/visibility";
 
 
+
 //
 // HEADER (NAVBAR) STYLES
 //
@@ -55,67 +57,124 @@ $fy-blue-1: #84a0b5;
 // HERO IMAGE CONTAINER 
 //
 // hero stuff needs SERIOUS refactoring
-.row.intro {
-  padding-top: 0 !important;
-}
-.intro-nav {
-  color: #eee;
-  background-color: none;
-  div {
-    display: flex;    
-  }
-  span {
-    text-align: center;
-    padding: 0.3em 1em;
-    display: inline-block;
-    flex: 1;
-    margin: 0 0.5em;
-    min-width: 45%;
-    max-width: 47%;
-    width: 50%;
-    text-transform: uppercase;
-    font-size: 90%;
-    $gradient-opacity: 0.7;
-    $hover-opacity: 0.5;
-    border: 1px solid rgba(#eee, 0.3);
-    border-radius: 1px;
-    background: -webkit-radial-gradient(transparentize(#000, $gradient-opacity) 5%, transparentize(#333, $gradient-opacity) 25%, transparentize(#888, $gradient-opacity) 95%);
-    &:hover, &:active {
-      background: -webkit-radial-gradient(transparentize(#000, $hover-opacity) 5%, transparentize(#333, $hover-opacity) 25%, transparentize(#888, $hover-opacity) 95%);
-    }
-    @include single-transition(background, 500ms, ease-in-out);
 
-  }
-}
-
+$hero-height: 30rem;
+$hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure why. 
 .hero {
-  // background: url('http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg') no-repeat center center;
+  background: url('../images/heros/sm/white-house.jpg') no-repeat center center;
   background-size: cover;
-  height: 75vh;
+  height: $hero-height;
   top: -($topbar-height);
   position: relative;
+  padding-left: 0;
+  padding-right: 0;
+  // z-index: $hero-z;
   &:before {
     content: '';
-    height: 75vh;
+    height: $hero-height;
     position: absolute;
     top: 0; // watch out for topbar
     right: 0;
     bottom: 0;
     left: 0;
-    // background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
     background-image: linear-gradient(to bottom right,#222222,#111111);
-    opacity: .8; // was .8 
+    opacity: .55;  // was .8 
+    z-index: $hero-z;
   }
-  .intro {
-    padding: 3rem;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    border:thin solid yellow;
+  .news {
+    position: absolute;
+    right: 1rem;
+    top: ($topbar-height) - rem-calc(25);
+    #the-latest {
+      width: 15rem;
+      background-color: transparentize(#111, 0.3);
+      ul {
+        list-style-type: none;
+        color: #ddd;
+        li.label {
+          color: orange;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          background-color: transparent;
+          font-size: 75%;
+        }
+        li {
+          font-size: 85%;
+          font-weight: 100;
+          letter-spacing: 2px;
+          a {
+            color: #eee;
+            z-index: 99;
+            height: 100%;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
   }
+  // .intro {
+  //   padding: 3rem;
+  //   position: relative;
+  //   top: 50%;
+  //   transform: translateY(-50%);
+  //   border:thin solid yellow;
+  // }
+  /* two buttons side-by-side, below title */
   .intro-nav {
-    // border: thin solid red;
+    z-index: 10;
+    color: #eee;
+    // border: thin solid red; //testing only
+    .row {
+      margin: 0 auto;
+    }
+    div {
+      display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+      display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+      display: -ms-flexbox;      /* TWEENER - IE 10 */
+      display: -webkit-flex;     /* NEW - Chrome */
+      display: flex; 
+    }
     .columns {
+      .intro-button {
+        position: relative;
+        z-index: 10;
+        text-align: center;
+        padding: 0.3em 1em;
+        display: inline-block;
+        -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+        -moz-box-flex: 1;
+        -webkit-flex: 1;          /* Chrome */
+        flex: 1;
+        margin: 0 0.5em;
+        min-width: 45%;
+        max-width: 47%;
+        width: 50%;
+        text-transform: uppercase;
+        font-size: 90%;
+        $gradient-opacity: 0.7;
+        $hover-opacity: 0.5;
+        border: 1px solid rgba(#eee, 0.3);
+        border-radius: 1px;
+        background: -webkit-radial-gradient(transparentize(#000, $gradient-opacity) 5%, transparentize(#333, $gradient-opacity) 25%, transparentize(#888, $gradient-opacity) 95%);
+        &:hover, &:active {
+          background: -webkit-radial-gradient(transparentize(#000, $hover-opacity) 5%, transparentize(#333, $hover-opacity) 25%, transparentize(#888, $hover-opacity) 95%);
+          color:orange;
+        }
+        @include single-transition(background, 300ms, ease-in-out);
+        @include single-transition(color, 300ms, ease-in-out);
+        a {
+          @include single-transition(color, 300ms, ease-in-out);
+          position: inherit;
+          z-index: inherit;
+          color: inherit;
+          &:hover {
+            color:orange;
+          }
+        }
+      }
+
       // border: thin solid pink;
     }
   }
@@ -135,10 +194,6 @@ $fy-blue-1: #84a0b5;
     margin-bottom: 2rem;
   }
   @media only screen and (min-width: 40.063em) {
-    .tech-img {
-      height: 18rem;
-      width: 18rem;
-    }
     h1 {
       padding-top: 4.5rem;
       text-align: right;
@@ -148,64 +203,128 @@ $fy-blue-1: #84a0b5;
       text-align: right;
     }
   }
-  .subnav {
-    $window-tint: 0.3;
-    float: none;
-    position: absolute;
-    // top: 4rem;
+  /* multiple tab-styled option panes */
+  #hero-navigation-row {
+    z-index: 10;
+    // border: thin solid white;
+    position:absolute;
+    margin:0 auto;
+    width: 100%;
     bottom: 0;
-    // text-align: center;
-    margin-bottom: 0;
-    left: 10%;
-    width: 75%;
-    // border: thin solid yellow;
-    min-height: 8rem;
-    li.tab {
-      float: none;
-      display: inline-block;
-      width: 24%;
-      .tab-entry {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 24%;
-        padding-right: 1em;
-        @include single-transition(background-color, 500ms, ease-in-out);
-        &:hover {
-          background: rgba(250,250,250,$window-tint);
-        }
-        &.is-active {
-          border-top: 5px solid orange;
-        }
-      }
-      p {
-        text-align: center;
-        padding: 0 1em;
-        margin-top: 0.5em;
-        padding-left: 0em;
-      }
-      a {
-        padding: 0.9rem 1rem 0.75rem;
-        font-size: 0.875rem;
-        color: #fff;
-        text-transform: uppercase;
-        display: block;
-        // font-weight: bold;
-        letter-spacing: 1px;
-        top: 0;
-        position: relative;
-        &.is-active {
-          // background: rgba(250,250,250,$window-tint);
-          color: orange;
-          top: -5px;
-        }
+  }
+  .subnav {
+    // border: thin solid yellow !important; //testing
+    $window-tint: 0.3;
+    $active-border-width: 5px;
+    margin: 0 auto;
+    padding: 0.5em 0;
+    min-height: 6rem;
+    max-height: 8rem;
+    overflow:visible;
+    /* ul */
+    #nav-tabs {
+      li.tab {
+        .tab-entry {
+          position: absolute;
+          top: 0;
+          height: 100%;
+          width: 25%;
+          padding-right: 1em;
+          background-color:none;
+          @include single-transition(background-color, 500ms, ease-in-out);
+          &:hover {
+            background-color: rgba(250,250,250,$window-tint);
+          }
+          &.is-active {
+            border-top: $active-border-width solid orange;
+            border-bottom: none;
+            top: -$active-border-width;
+            height: 110%;
+            left: 0;
+          }
+          a {
+            padding: 0;
+            padding-left: 0.5em;
+            &.is-active {
+              // background: rgba(250,250,250,$window-tint);
+              color: orange;
+              top: -5px;
+            }
 
-        &:hover {
-          // background: rgba(250,250,250,$window-tint);
-          color: orange;
-          transition: all .25s ease-in-out;
+            &:hover {
+              // background: rgba(250,250,250,$window-tint);
+              color: orange;
+              transition: all .25s ease-in-out;
+            }            
+          }
+          p {
+            letter-spacing: 0.04em;
+            line-height: 100%;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 0 1em 0 0;
+            margin-top: 0.5em;
+          }
+        }
+        
+        a {
+          padding: 0.9rem 1rem 0.75rem;
+          font-size: 0.875rem;
+          color: #fff;
+          text-transform: uppercase;
+          display: block;
+          // font-weight: bold;
+          letter-spacing: 0.15em;
+          top: 0;
+          position: relative;
+
         }
       }
+    }
+  }
+
+  .hero-title {
+    text-align: center;
+    top:0;
+    #hero-title {
+      margin-top: 10%;  //overall vertical placement of title (refactor)
+    }
+    h2 {
+      color: #ccc;
+      font-size: 1.3rem;
+      letter-spacing: 0.15em;
+      font-weight: 100;
+      font-family: "Verdana";
+      text-transform: uppercase;
+    }
+    p {
+      text-shadow: 1px 1px #000000;
+      text-align: center;
+      margin: 0 auto;
+      display: inline-block;
+    }
+    .stars {
+      color: orange;
+      display: inline-block;
+      letter-spacing: 0.5em;
+      padding-bottom: 0.25em;
+    }
+    h1.main-title {
+      font-family: $header-title-fonts;
+      color: #fff;
+      font-size: 2.5rem;
+      line-height: 1em;
+      letter-spacing: 0.025em;
+      font-weight: 300;
+      text-align: center;
+      padding-top: 0em;
+    }
+    p {
+      color: #fff;
+      line-height: 1.75em;
+      font-weight: 200;
+      text-align: center;
+      margin-bottom: 2rem;
     }
   }
 }
@@ -235,153 +354,126 @@ $fy-blue-1: #84a0b5;
     margin-bottom: 0;
     left: 10%;
     width: 75%;
-    border: thin solid yellow;
     .tab {
-      border: thin solid red;
     }
   }
 }
 
 @media #{$medium-up} {
-  .hero-title {
-    top:0;
-    #hero-title {
-      margin-top: 10%;  //overall vertical placement of title (refactor)
-    }
-    h2 {
-      font-size: 1.3rem;
-      letter-spacing: 0.15em;
-      font-weight: 100;
-      font-family: "Verdana";
-    }
-    p {
-      text-shadow: 1px 1px #000000;
-      text-align: center;
-      margin: 0 auto;
-      display: inline-block;
-    }
-    .stars {
-      letter-spacing: 0.5em;
-      padding-bottom: 0.25em;
-    }
-    h1.main-title {
-      font-family: $header-title-fonts;
-      color: #fff;
-      font-size: 2.5rem;
-      line-height: 1em;
-      letter-spacing: 0.025em;
-      font-weight: 300;
-      text-align: center;
-      padding-top: 0em;
-    }
-    p {
-      color: #fff;
-      line-height: 1.75em;
-      font-weight: 200;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-  }
+  .hero {
+    background: url('../images/heros/md/white-house.jpg') no-repeat center center;
+
+  } // end .hero
 }
 
 @media #{$large-up} {
   .hero {
     // background: url('http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg') no-repeat center center;
-    background: url('../images/heros/white-house.jpg') no-repeat center center;
-    background-size: cover;
-    height: 75vh;
-    top: -($topbar-height);
-    position: relative;
-    &:before {
-      content: '';
-      height: 75vh;
-      position: absolute;
-      top: 0; // watch out for topbar
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: linear-gradient(to bottom right,#222222,#111111);
-      opacity: .8; // was .8 
-    }
-    .intro {
-      padding: 3rem;
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      border:thin solid yellow;
-    }
-    .intro-nav {
-      // border: thin solid yellow;
-      color: #eee;
-      div {
-        display: flex;    
-      }
-      .columns {
-        // border: thin solid pink;
-        span.intro-button {
-          text-align: center;
-          padding: 0.3em 1em;
-          display: inline-block;
-          flex: 1;
-          margin: 0 0.5em;
-          min-width: 45%;
-          max-width: 47%;
-          width: 50%;
-          text-transform: uppercase;
-          font-size: 90%;
-          $gradient-opacity: 0.7;
-          $hover-opacity: 0.5;
-          border: 1px solid rgba(#eee, 0.3);
-          border-radius: 1px;
-          background: -webkit-radial-gradient(transparentize(#000, $gradient-opacity) 5%, transparentize(#333, $gradient-opacity) 25%, transparentize(#888, $gradient-opacity) 95%);
-          &:hover, &:active {
-            background: -webkit-radial-gradient(transparentize(#000, $hover-opacity) 5%, transparentize(#333, $hover-opacity) 25%, transparentize(#888, $hover-opacity) 95%);
-          }
-          @include single-transition(background, 500ms, ease-in-out);
-        }
-      }
-    }
-    h1 {
-      color: #fff;
-      font-size: 1.5rem;
-      line-height: 1.5em;
-      letter-spacing: -0.025em;
-      font-weight: 300;
-      text-align: center;
-    }
-    p {
-      color: #fff;
-      line-height: 1.75em;
-      font-weight: 200;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+    background: url('../images/heros/lg/white-house.jpg') no-repeat center center;
+    
   } // end .hero
 }
 
 @media #{$small-only} {
-  .subnav#nav-tabs {
-    bottom: 0;
-    margin-bottom: 0;
-    left: 0;
-    margin-left: 0;
-    width: 100%;
-    .tab {
-      // border: thin solid red;
+  .hero {
+    height: 25rem;
+    &:before {
+      height: 25rem;
+    }
+    margin-top: 2rem;
+    .hero-title {
+      #hero-title {
+        h1 {
+          font-size: 1.2rem;
+        }
+        h2 {
+          font-size: 0.75rem;
+        }
+        p {
+          font-size: 0.6rem;
+        }
+      }
+    }
+    .intro-nav {
+      .row {
+        margin: 0 auto;
+      }
+      a {
+        font-size: 0.6rem;
+        line-height: 1rem;
+      }
+    }
+    #hero-navigation-row {
+      height: 4rem;
+      .subnav {
+        #nav-tabs {
+          .tab {
+            .tab-entry {
+              a, p {
+                font-size: 0.5rem;
+                width: 100%;
+                padding-left: 0.25em;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
 
 @media #{$medium-only} {
-  
+  .hero {
+    margin-top: 2rem;
+    .hero-title {
+      #hero-title {}
+    }
+    .intro-nav {
+      .row {
+        margin: 0 auto;
+        width: 100% !important;
+        font-size: 0.9rem;
+        line-height: 0.9rem;
+      }
+    }
+    #hero-navigation-row {
+    }
+  }  
 }
 
 @media #{$large-only} {
-  
+  .hero {
+    margin-top: 2rem;
+    .hero-title {
+      #hero-title {}
+    }
+    .intro-nav {
+      .row {
+        margin: 0 auto;
+        width: 100% !important;
+      }
+    }
+    #hero-navigation-row {
+    }
+  }   
 }
 
-@media #{$xlarge-only} {
-  
+@media #{$xlarge-up} {
+  .hero {
+    margin-top: 2rem;
+    .hero-title {
+      #hero-title {}
+    }
+    .intro-nav {
+      .row {
+        width: 100% !important;
+        font-size: 0.9rem;
+        line-height: 0.9rem;
+      }
+    }
+    #hero-navigation-row {
+    }
+  }  
 }
 
 
@@ -389,13 +481,97 @@ $fy-blue-1: #84a0b5;
 // MAIN CONTAINER
 //
 
+//
+// default
+//
+
+body {
+	font-size: 22px;
+	line-height: 32px;
+}
+
+a {color: $primary-color; }
+a:hover {text-decoration: underline;}
+a:visited {color: $secondary-color;}
+a.important {color: $info-color; font-weight: bold;}
+
+a.more {
+	font-size: 14px; 
+	line-height: 16px; 
+	color: $secondary-color; 
+	&:after {content: " ➤";}
+	}
+
+
+	
+ul, ol {margin: 10px 3% 15px 3%; padding: 10px 2% 15px 2%;}
+ul {list-style-type: circle;}
+
+// Clearfix 
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+// These are bars of content with dark backgrounds--might be better accomplished with a "dark" class
+
+.cta, .author {
+	color: #ddd; 
+	font-family: $font-family-small; 
+	padding: 1em;
+		a {color: #fff;
+		&:hover {color:#ddd;}
+		}
+	}
+
+#featured-container, #briefing-room-container {
+  padding-left: 0;
+  padding-right: 0;
+  h1 {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 3rem;
+  }
+}
+
+
+
 @media #{$small-up} {
   #featured-container {
     background: grey;
   }
-  #blog-container {
-    background: blue;
+}
+#featured-container {
+  background: #ddd;
+  h1 {
+    background-color: orange;
+    color:#eee;
+    letter-spacing: 3px;
+    font-weight: 500;
   }
+}
+#briefing-room-container {
+  background: #aaa;
+  h1 {
+    background-color: white; 
+    color: black; 
+    font-weight: 200;
+  }
+}
+
+@media #{$small-up} {
+  // #featured-container {
+  //   background: #ddd;
+  // }
+  // #briefing-room-container {
+  //   background: #aaa;
+  // }
 }
 
 @media #{$medium-up} {
