@@ -58,8 +58,8 @@ figure img {clear:both; max-width: 100%;}
 
 blockquote {
 	margin: 25px 0 25px 3%; 
-	padding-left: 3%; 
-	border-left: 1px solid $primary-color; 
+	padding: 0 0 0 3%; 
+	border-left: 1px solid $info-color; 
 	font-family: $font-family-small;
 	font-size: smaller;}
 //blockquote:before {content:"“";}
