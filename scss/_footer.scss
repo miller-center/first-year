@@ -9,9 +9,17 @@ footer#bodyFooter {
   background-color: $bill-rapp-blue; 
 }
 footer {
+  p, h1, h2, h3, h4, h5, h6 {
+    color: #ccc;
+  }
+}
+footer {
   color: #ccc;
   font-size: smaller;
   clear:both;
+  ul {
+    list-style-type: none;
+  }
 }
 footer a, footer a:visited {
   color: #fff;
@@ -25,20 +33,173 @@ footer p {
   margin-right: 1.5em; 
   margin-left: 1em;
 }
+// row advertising upcoming issues
+footer .footerTeaser {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+// footer navigation links
+footer .footerNav {
+  .get-involved {
+    padding-bottom: 1em;
+    h3 {
+      text-align: center;
+      width:100%;
+      margin: 0 auto;
+    }
+  }
+  .footer-form {
+    padding-top: 1em;
+    #footer-email-button {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    button {
+      margin: 0 auto;
+      background-color: $secondary-color;
+    }
+  }
+  // background-color:red;
+}
+// MC logo and blurb
+footer .footerLogo {
+}
+footer label {
+  color: #eee;
+  font-size: 1.2rem;
+  margin: 0 0 1rem 0;
+  font-weight: bold;
+}
+$social-icon-size: 45;
+footer {
+  .social-email-icon, .social-fb-icon, .social-tw-icon {
+    min-width: #{$social-icon-size}px;
+    min-height: #{$social-icon-size}px;
+    padding: 0;
+    vertical-align: middle;
+    a {
+      color: transparent;
+      height: 100%;
+      width: 100%;
+      &:hover {
+        color: transparent;
+      }
+    }
+  }
+}
+footer .social-options {
+  margin-bottom: 1em;
+  padding: 0;
+  ul {
+    position:relative;
+    text-align: center;
+    li.social-option {
+      padding-left: 2em !important;
+      padding-right: 2em !important;
+      float:none;
+      margin: 0;
+      position:relative;
+      display: inline-block !important;      
+    }
+    margin-bottom: 0;
+  }
+}
+footer .social-email-icon {
+  background: url('../images/icons/#{$social-icon-size}px/mail.png') no-repeat center center;
+}
+footer .social-fb-icon {
+  background: url('../images/icons/#{$social-icon-size}px/facebook.png') no-repeat center center;
+}
+footer .social-tw-icon {
+  background: url('../images/icons/#{$social-icon-size}px/twitter.png') no-repeat center center;
+}
 
 //
 // Responsive styles
 //
 
 @media #{$small-up} {
-
+  footer img {
+    margin: 1em;
+    margin-bottom: 0; 
+    float:left;
+  }
+  #footer-email {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem; // match button padding
+  }
 }
 
 @media #{$medium-up} {
+  footer.footer {
+    .footerNav {
+      .social-options-section {
+        min-height: 100%;
+      }
+    }
+    .footer-form {
+      #footer-email-button {
+        button.submit {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media #{$medium-up-portrait} {
+  footer.footer {
+    .footerNav {
+      .social-options-section {
+        margin-top: 5%;
+        .social-options {
+          width: 50%;
+          right: 0;
+        }
+      }
+    }
+
+  }
+}
+
+@media #{$medium-up-landscape} {
+  footer.footer {
+   .social-options {
+    max-width: 50%;
+      ul {
+        li.social-option {
+          padding-left: 1.5em !important;
+          padding-right: 1.5em !important;
+        }        
+      }
+    }   
+  }
   
+  div:first-child {
+    margin-right: 0;
+    padding-right: 0;
+  }
+  label.contact {
+    font-size: 0.8rem;
+  }
 }
 
 @media #{$large-up} {
+  footer.footer {
+   .social-options {
+      width: 100%;
+      ul {
+        li.social-option {
+          padding-left: 2em !important;
+          padding-right: 2em !important;
+        }        
+      }
+    }
+    label.contact {
+      font-size: 1.25rem;
+    } 
+  }
 
 }
 
@@ -52,7 +213,15 @@ footer p {
   }
   footer .hide-for-medium-up img {
     max-width: 3rem;
-  }  
+  }
+  .footerNav {
+    #footer-email-button {
+      button.submit {
+        width: 75%;
+      }      
+    }
+
+  }
 }
 
 @media #{$medium-only} {

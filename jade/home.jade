@@ -112,7 +112,43 @@ html(lang="en")
 
 
 		footer.footer#bodyFooter
-			.row
+			.row.footerTeaser
+				.small-12.medium-6.columns
+					ul.inline-list
+						li Issue 1: The First Year 
+						li Coming in January 2016: National Security 
+				.small-12.medium-6.columns
+					ul.inline-list
+						li Coming in March 2016: Fiscal Policy
+						li Coming in June 2016: Something Awesome	
+			.row.footerNav
+				.small-12.medium-3.columns.project-menu-section
+					ul
+						li: a(href="#") Home&nbsp;
+							
+						li About the Project
+							ul
+								li: a(href="") Contact
+								li: a(href="") Advisory Council
+								li: a(href="") Scholars
+				.small-12.medium-9.columns.social-options-section
+					.row
+						.small-12.medium-8.large-4.columns.right.social-options
+							ul.inline-list
+								li.social-option.social-email-icon: a(href="#") &nbsp;
+								li.social-option.social-fb-icon: a(href="#") &nbsp;
+								li.social-option.social-tw-icon: a(href="#") &nbsp;
+						.small-12.columns.get-involved
+							//- h3 Get Involved
+							form.footer-form
+								.row
+									//- .small-12.medium-3.columns.hide-for-small-only
+									//- 	label(for="email").contact.left Contact Us
+									.small-12.medium-8.columns
+										input#footer-email(type="email",placeholder="Join our email list for exclusive alerts")
+									.small-12.medium-4.columns.text-center#footer-email-button
+										button.submit(type="submit",value="Submit") Sign Up &gt;
+			.row.footerLogo
 				.hide-for-small.medium-2.columns
 					a(href="http://millercenter.org")
 						img(src="http://staticmc.org/images/template/logo-white.png")
