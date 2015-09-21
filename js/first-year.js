@@ -35,31 +35,7 @@ $(document).ready(function() {
       }
     } });
 
-  // navigation header expand/contract
-  // $('#navigation-container').addClass('shrinkMenu');
 
-  $(window).scroll(function() {
-
-    // var threshold = $('#hero-container').height() * 0.01;
-    var threshold = $('#navigation-container').height();
-    // if ($(this).scrollTop() <= threshold) { 
-    //   $('#navigation-container').addClass('shrinkMenu');
-    //   $('#navigation-container').removeClass('expandMenu');
-    // }
-    // else {
-    //   // $('#navigation-container').show(); 
-    //   $('#navigation-container').addClass('expandMenu');
-    //   $('#navigation-container').removeClass('shrinkMenu');
-    // }
-
-    // var belowHero = $('section.hero').scrollTop() + $('section.hero').height() - $('#navigation-container').height();
-    if ($(this).scrollTop() >=  threshold ) {
-      $('#navigation-container').addClass('belowHero');
-    } else {
-      $('#navigation-container').removeClass('belowHero');
-    }
-
-  });
 
   //
   // News Ticker Animation

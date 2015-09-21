@@ -79,9 +79,6 @@ $transparent: rgba(245,245,245,0.0);
   }
 }
 
-#navigation-container.belowHero {
-  background-color: $bill-rapp-blue !important;
-}
 
 /* iPhone 4s and smaller devices */
 @media (max-width: 320px) and (orientation:portrait) {
@@ -328,40 +325,6 @@ $transparent: rgba(245,245,245,0.0);
       padding: 0;
       margin-left: 5%;
     }    
-  }
-  #navigation-container.belowHero {
-    background-color: $bill-rapp-blue !important;
-    //height: rem-calc(45);
-    h1 {
-      font-size: 1rem !important;
-      margin-left: 0em !important;
-    }
-    h4 {
-      font-size: 0.9rem !important;
-    }
-    // section.logo-section {
-    //   margin-left: -0.5em;    
-    //   img {
-    //     height: ($topbar-height * 0.75);
-    //   }
-    // }
-    // resize icons
-    $social-icon-size: 40px;
-    $social-icon-pad: 8px;
-
-    section.social-section {
-      li.menu-option {
-        position: absolute;
-        top: -($topbar-height) + rem-calc(15px);
-      }
-      li#header-fb-icon {
-        background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
-      }
-      li#header-tw-icon {
-        background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center;
-        left: $social-icon-size + $social-icon-pad;
-      }
-    }
   }
 
 }
