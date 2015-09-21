@@ -57,11 +57,13 @@ figure img {clear:both; max-width: 100%;}
 	border-bottom: 1px solid $info-color;}
 
 blockquote {
-	margin: 25px 2%; 
-	padding: 0 1%; 
-	border-left: 1px solid #00a; }
-blockquote:before {content:"“";}
-blockquote:after {content:"”";}
+	margin: 25px 0 25px 3%; 
+	padding-left: 3%; 
+	border-left: 1px solid $primary-color; 
+	font-family: $font-family-small;
+	font-size: smaller;}
+//blockquote:before {content:"“";}
+//blockquote:after {content:"”";}
 
 .essay-continues {
 	display:block; 
