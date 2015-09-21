@@ -1,5 +1,22 @@
 // footer styles
 
+// Mixins
+
+@mixin placeholderModify($property: color, $value: #000) {
+  &.placeholder {
+    #{$property}: $value;
+  }
+  &::-webkit-input-placeholder {
+    #{$property}: $value;
+  }
+  &:-moz-placeholder {
+    #{$property}: $value;
+  }
+  &:-ms-input-placeholder {
+    #{$property}: $value;
+  }
+}
+
 //
 // Defaults
 // 
@@ -51,6 +68,10 @@ footer .footerNav {
   }
   .footer-form {
     padding-top: 1em;
+    #footer-email {
+      @include placeholderModify('color', transparentize($bill-rapp-blue, 0.3));
+      @include placeholderModify('font-size', 120%);
+    }
     #footer-email-button {
       padding-left: 0 !important;
       padding-right: 0 !important;
@@ -82,6 +103,8 @@ footer {
       color: transparent;
       height: 100%;
       width: 100%;
+      min-width: 100%;
+      min-height: 100%;
       &:hover {
         color: transparent;
       }
@@ -95,8 +118,9 @@ footer .social-options {
     position:relative;
     text-align: center;
     li.social-option {
-      padding-left: 2em !important;
-      padding-right: 2em !important;
+      min-width: #{$social-icon-size}px;
+      margin-left: 1em !important;
+      margin-right: 1em !important;
       float:none;
       margin: 0;
       position:relative;
@@ -156,6 +180,12 @@ footer .social-tw-icon {
         .social-options {
           width: 50%;
           right: 0;
+          ul {
+            li.social-option {
+              margin-left: 1em !important;
+              margin-right: 1em !important;
+            }        
+          }
         }
       }
     }
@@ -167,12 +197,7 @@ footer .social-tw-icon {
   footer.footer {
    .social-options {
     max-width: 50%;
-      ul {
-        li.social-option {
-          padding-left: 1.5em !important;
-          padding-right: 1.5em !important;
-        }        
-      }
+
     }   
   }
   
@@ -187,9 +212,18 @@ footer .social-tw-icon {
       width: 100%;
       ul {
         li.social-option {
-          padding-left: 2em !important;
-          padding-right: 2em !important;
+          margin-left: 2em !important;
+          margin-right: 2em !important;
         }        
+      }     
+      // reduce for iPad 2
+      @media screen and (max-width: ($large-breakpoint + em-calc(1))) {
+        ul {
+          li.social-option {
+            margin-left: 1.5em !important;
+            margin-right: 1.5em !important;
+          }        
+        }      
       }
     }
     label.contact {

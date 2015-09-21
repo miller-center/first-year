@@ -160,6 +160,10 @@ $medium-breakpoint: em-calc(1024);
 $large-breakpoint:  em-calc(1440);
 $xlarge-breakpoint: em-calc(1920);
 
+// additional breakpoints
+$ipad2-width-breakpoint: em-calc(768);
+
+
 $small-range:   (0, $small-breakpoint);
 $medium-range:  ($small-breakpoint  + em-calc(1), $medium-breakpoint);
 $large-range:   ($medium-breakpoint + em-calc(1), $large-breakpoint);
