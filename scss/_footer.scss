@@ -1,0 +1,68 @@
+// footer styles
+
+//
+// Defaults
+// 
+
+footer#bodyFooter {
+  min-height: 150px; 
+  background-color: $bill-rapp-blue; 
+}
+footer {
+  color: #ccc;
+  font-size: smaller;
+  clear:both;
+}
+footer a, footer a:visited {
+  color: #fff;
+}
+footer img {
+  margin: 1.5em; 
+  float:left;
+}
+footer p {
+  margin-top: 1.5em; 
+  margin-right: 1.5em; 
+  margin-left: 1em;
+}
+
+//
+// Responsive styles
+//
+
+@media #{$small-up} {
+
+}
+
+@media #{$medium-up} {
+  
+}
+
+@media #{$large-up} {
+
+}
+
+//
+// Viewport-specific styles
+//
+
+@media #{$small-only} {
+  footer p {
+    font-size: smaller;
+  }
+  footer .hide-for-medium-up img {
+    max-width: 3rem;
+  }  
+}
+
+@media #{$medium-only} {
+  
+}
+
+@media #{$large-only} {
+  
+}
+
+@media #{$xlarge-only} {
+  
+}

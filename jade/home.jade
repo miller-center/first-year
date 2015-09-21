@@ -111,24 +111,17 @@ html(lang="en")
 
 
 
-		footer#body-footer.footer
+		footer.footer#bodyFooter
 			.row
-				.small-6.large-4.columns
-					ul
-						li About
-						li Contact
-						li Home&nbsp;
-							i.fi-home
-				.small-6.large-4.columns
-					ul
-						li More
-						li To
-						li Click
-				.small-6.large-4.columns
-					ul
-						li Put
-						li Stuff
-						li Here
+				.hide-for-small.medium-2.columns
+					a(href="http://millercenter.org")
+						img(src="http://staticmc.org/images/template/logo-white.png")
+				.small-12.medium-10.columns
+					.hide-for-medium-up
+						a(href="http://millercenter.org")
+							img(src="http://staticmc.org/images/template/logo-white.png")
+					p The Miller Center is a nonpartisan affiliate of the University of Virginia that specializes in presidential scholarship, public policy, and political history and strives to apply the lessons of history to the nation’s most pressing contemporary governance challenges. 
+						a(href="http://millercenter.org") Learn more at millercenter.org.
 
 		script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
 		//- remove http protocol from production version
