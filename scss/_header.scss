@@ -209,7 +209,9 @@ $transparent: rgba(245,245,245,0.0);
           a {
             background-color: rgba(255,255,255,0.0);
             &:active, &:hover, &.is-active {
-              background-color: $navigation-container-bg-color;
+              background-color: $transparent;
+              color:none;
+              text-decoration: none;
             }
           }
 
