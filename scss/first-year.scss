@@ -454,7 +454,53 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
 // MAIN CONTAINER
 //
 
+//
 // default
+//
+
+body {
+	font-size: 22px;
+	line-height: 32px;
+}
+
+a {color: $primary-color; }
+a:hover {text-decoration: underline;}
+a:visited {color: $secondary-color;}
+a.important {color: $info-color; font-weight: bold;}
+
+a.more {
+	font-size: 14px; 
+	line-height: 16px; 
+	color: $secondary-color; 
+	&:after {content: " ➤";}
+	}
+
+
+	
+ul, ol {margin: 10px 3% 15px 3%; padding: 10px 2% 15px 2%;}
+ul {list-style-type: circle;}
+
+// Clearfix 
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+// These are bars of content with dark backgrounds--might be better accomplished with a "dark" class
+
+.cta, .author {
+	color: #ddd; 
+	font-family: $font-family-small; 
+	padding: 1em;
+		a {color: #fff;
+		&:hover {color:#ddd;}
+		}
+	}
+
 #featured-container, #briefing-room-container {
   padding-left: 0;
   padding-right: 0;
@@ -464,6 +510,14 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
     margin: 0 auto;
     text-align: center;
     line-height: 3rem;
+  }
+}
+
+
+
+@media #{$small-up} {
+  #featured-container {
+    background: grey;
   }
 }
 #featured-container {
