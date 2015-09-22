@@ -35,6 +35,22 @@ $(document).ready(function() {
       }
     } });
 
+  //
+  // Side (Sharing) Bar Animation
+  //
+  $(window).scroll(function() {
+    var wScroll = $(this).scrollTop();
+
+    // reveal point for social sharing bar
+    var sbReveal = ( $('.hero').height() );
+
+    // slide in social sharing bar from off canvas
+    if (wScroll > sbReveal) {
+      $('#share-bar').addClass('shareBarReveal');
+    } else {
+      $('#share-bar').removeClass('shareBarReveal');      
+    }
+  });
 
 
   //
@@ -42,27 +58,39 @@ $(document).ready(function() {
   //
 
   // rotate through the list of 'The Latest' headlines
-  var listItems = $('#the-latest ul li:not(.label)');
-      length = listItems.length;
-      current = 0;
-      timeout = 5000;
-
   function changeNewsItem() {
-    listItems.eq(current++).fadeOut(300, function() {
+    fadeTime = 300;
+    listItems.eq(current++).fadeOut(fadeTime, function() {
       if (current === length) {
         current = 0;
       }
-      listItems.eq(current).fadeIn(300);
+      listItems.eq(current).fadeIn(fadeTime);
 
     });
     setTimeout(changeNewsItem, timeout);
   }
 
+  function rotateNewsItem() {
+    fadeTime = 300;
+    listItems.eq(current++).fadeOut(fadeTime, function() {
+      if (current === length) {
+        current = 0;
+      }
+      listItems.eq(current).fadeIn(fadeTime);      
+    });
+  }
+
+
 
   // if window is large enough, active newsfeed
   try {
     if(Foundation.utils.is_medium_up()) {
-      setTimeout(changeNewsItem, timeout);
+      var listItems = $('#the-latest ul li:not(.label)');
+      length = listItems.length;
+      var current = 0;
+      timeout = 5000;
+      // setTimeout(changeNewsItem, timeout);
+      setInterval(rotateNewsItem, timeout);
     } else {
       console.log('news feed disabled for small device');
     }
