@@ -33,7 +33,7 @@ html(lang="en")
 					li.name
 						h1
 							a.logo.show-for-small-only(href="#")
-								img(src="http://placehold.it/50x50")
+								img(src="../images/logos/fy2017_logo_horiz_wh_sm.png")
 					li.toggle-topbar.menu-icon#mobile-menu
 						a(href="#")
 							span Menu 
@@ -43,9 +43,13 @@ html(lang="en")
 					//	Right Nav Section 
 					ul.right
 						li.hide-for-medium-up
-							a(href="#") Foo 
+							a(href="#") First link in Mobile Menu  
+						li.hide-for-medium-up.active
+							a(href="#") Featured link in Mobile Menu  
 						li.hide-for-medium-up
-							a(href="#") Bar 
+							a(href="#") Third link in Mobile Menu  
+						li.hide-for-medium-up
+							a(href="#") Fourth link in Mobile Menu  
 
 						li.menu-option.hide-for-small-only.has-dropdown#header-menu-icon
 							a(href="#")
@@ -54,7 +58,7 @@ html(lang="en")
 							ul.dropdown
 								li
 									a(href="#") First link in dropdown
-								li.featured
+								li.active
 									a(href="#") Featured link in dropdown
 								li
 									a(href="#") Third link in dropdown
