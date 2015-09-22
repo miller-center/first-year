@@ -14,8 +14,8 @@ p.essay-intro {font-size: larger;}
 #essay > p {padding-right: 200px; padding-left: 200px;}
 
 figure {
-	border-top: 1px solid $info-color; 
-	border-bottom: 1px solid $info-color; 
+	/*border-top: 1px solid $info-color; 
+	border-bottom: 1px solid $info-color; */
 	padding: 10px 15px; 
 	max-width: 30%;} 
 
@@ -24,16 +24,10 @@ figure.lg {max-width: 100%;}
 
 figure.right {
 	//float:right; This is built into Foundation's "right" class
-	//position: relative; 
-	//left: 40%; 
-	//margin-left: -35%;
 	}
 
 figure.left {
 	//float:left; This is built into Foundation's "left" class
-	//position: relative; 
-	//right: 40%; 
-	//margin-right: -35%;
 	}
 
 figcaption {display: table-row;}
@@ -51,11 +45,8 @@ figure img {clear:both; max-width: 100%;}
 	line-height: 1.8rem;
 	margin: 50px 0; 
 	clear:both; 
-	//width: $essay-full-width;
-	//margin-left: -12.5%; 
-	padding: .8rem 0; 
-	//text-align: center; Built into Foundation
 	font-style: italic;
+	padding: .8rem 0; 
 	color: $secondary-color;
 	border-top: 1px solid $info-color;
 	border-bottom: 1px solid $info-color;}
@@ -123,14 +114,16 @@ blockquote {
 
 @media #{$small-only} {
 	#essay p {padding-left: 1em; padding-right: 1em;}
-	#essay figure {max-width: 100%; text-align: center;}
+	#essay figure {max-width: 100%; text-align: center; border-top: 1px solid $info-color; border-bottom: 1px solid $info-color; }
 	#essay figure.right, #essay figure.left {float:none !important; clear:both; position: static; left: 0; margin-left: 0; }  
 }
 
 @media #{$medium-only} {
 	#essay p {padding-left: 1em; padding-right: 1em;}
-	#essay figure {max-width: 100%; text-align: center;}
+	#essay figure {max-width: 100%; text-align: center; border-top: 1px solid $info-color; border-bottom: 1px solid $info-color; }
 	#essay figure.right, #essay figure.left {float:none !important; clear:both; position: static; left: 0; margin-left: 0; }  
+
+
 }
 
 @media #{$large-only} {
