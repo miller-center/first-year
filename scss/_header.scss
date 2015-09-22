@@ -84,6 +84,7 @@ $transparent: rgba(245,245,245,0.0);
 @media (max-width: 320px) and (orientation:portrait) {
   #navigation-container {
     nav.top-bar {
+      width: 100%;
       section.logo-section {
         img {
           min-height: ($topbar-height * 0.80) !important;
@@ -101,6 +102,7 @@ $transparent: rgba(245,245,245,0.0);
     height: $navigation-container-height;
     z-index: $navigation-container-z-index;
     nav.top-bar {
+      width: 100%;
       background-color: $navigation-container-bg-color;
       section.logo-section {
         h1, h4 {
@@ -137,6 +139,7 @@ $transparent: rgba(245,245,245,0.0);
     background-color: $navigation-container-bg-color;
     height: $navigation-container-height;
     nav.top-bar {
+      width: $row-width;
       @include single-transition(padding, $navigation-transition-time, ease-out);
       z-index: $navigation-container-z-index + 1;
       background-color: $transparent !important; // transparent; parent has correct style
@@ -196,25 +199,27 @@ $transparent: rgba(245,245,245,0.0);
     $social-icon-size: 50px;
     $social-icon-pad: 10px;
     .social-section {
-      ul.right {
-        list-style-type: none;
-        margin-right: 5.5em; // align section here
-        position:relative;
+      position:relative;
+      left:0;
+      ul { 
+        padding-top: 0;
+        margin-top: 0;
         li.social-icon {
           position: absolute;
+          left:0;
           height: $social-icon-size;
           width: $social-icon-size;
-          // top: -($topbar-height - rem-calc($social-icon-pad * 2));
-          float:right;
+          top: rem-calc($social-icon-pad / 2);
+        }
+        li#header-fb-icon, li#header-tw-icon {
           a {
-            background-color: rgba(255,255,255,0.0);
-            &:active, &:hover, &.is-active {
+            background-color: $transparent;
+            &:hover, &:active, &.active {
               background-color: $transparent;
               color:none;
               text-decoration: none;
             }
           }
-
         }
         li#header-fb-icon {
           background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
@@ -223,6 +228,12 @@ $transparent: rgba(245,245,245,0.0);
           background: url('../images/icons/#{$social-icon-size}/twitter-dk.png') no-repeat center center;
           left: $social-icon-size + $social-icon-pad;
         }
+
+      }
+    }
+    .main-menu-section {
+      margin-right: 5.5rem !important; // align section here
+      ul {
         li#header-menu-icon {
           left: (($social-icon-size) * 2) + $social-icon-pad; 
           color: $navigation-white;
@@ -259,17 +270,24 @@ $transparent: rgba(245,245,245,0.0);
               color: orange;
             }
           }
-      
         }
+      }
+    }
+    .social-section, .main-menu-section {
+      ul.right {
+        list-style-type: none;
+        position:relative;
+
+        
       }
 
     } // end .social-section
     #navigation-section {
       ul.right {
         li.menu-option {
-          left: (($social-icon-size) * 0.1) + $social-icon-pad; 
+          // left: (($social-icon-size) * 0.1) + $social-icon-pad; 
           color: $navigation-white;
-          top: - ( $topbar-height - rem-calc($social-icon-pad) );
+          // top: - ( $topbar-height - rem-calc($social-icon-pad) );
           // padding-top: $social-icon-size * 0.2;
           background-color: rgba(255,255,255,0.0);
           &:hover, &:active, &.is-active {
@@ -282,7 +300,7 @@ $transparent: rgba(245,245,245,0.0);
             min-height: $topbar-height;
             position: relative;
             top: -($topbar-height * 0.05);
-            background-color: rgba(255,255,255,0.0);
+            // background-color: rgba(255,255,255,0.0);
             span.label {
               color:$navigation-white;
               min-width: 8rem;
@@ -293,14 +311,14 @@ $transparent: rgba(245,245,245,0.0);
               font-size: 200%;
               font-family: $header-title-fonts;
               font-weight: 300;
-              background-color: rgba(255,255,255,0.0);
+              // background-color: rgba(255,255,255,0.0);
             }
           }
           ul.dropdown {
             li {
-              background-color:black;
+              // background-color:black;
               &:hover, &:active, &.active {
-                background-color: $navigation-container-bg-color;
+                // background-color: $navigation-container-bg-color;
               }
             }
           }
