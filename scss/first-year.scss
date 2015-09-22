@@ -428,6 +428,25 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
     .hero-title {
       #hero-title {}
     }
+    .news {
+      #the-latest {
+        margin-top: -0.5em;
+        width: 12rem;
+        ul {
+          padding-top: 0;
+          li.label {
+            letter-spacing: 1.5px;
+            font-size: 60%;
+          }
+          li {
+            font-size: 70%;
+            font-weight: 100;
+            letter-spacing: 1.5px;
+          }
+        }
+      }
+
+    }
     .intro-nav {
       .row {
         margin: 0 auto;
@@ -437,8 +456,23 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
       }
     }
     #hero-navigation-row {
+      .subnav {
+        #nav-tabs {
+          .tab {
+            .tab-entry {
+              a, p {
+                font-size: 0.8rem;
+                width: 100%;
+                font-weight: 100;
+                padding-left: 0.25em;
+              }
+            }
+          }
+        }
+      }
     }
-  }  
+
+  } // end .hero 
 }
 
 @media #{$large-only} {
