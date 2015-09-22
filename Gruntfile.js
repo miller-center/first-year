@@ -16,9 +16,6 @@ module.exports = function(grunt) {
         files: {
           'css/first-year.css': 'scss/first-year.scss',
           'css/home.css': 'scss/home.scss',
-          'css/_header.css': 'scss/_header.scss',
-          'css/_footer.css': 'scss/_footer.scss',
-          'css/_sidebar.css': 'scss/_sidebar.scss',
           'css/issue.css': 'scss/issue.scss',
           'css/essay.css': 'scss/essay.scss',
           'css/teaser.css': 'scss/teaser.scss'
