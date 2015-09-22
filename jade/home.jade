@@ -22,22 +22,32 @@ html(lang="en")
 	body
 
 		
-		//- topbar nav
-		.sticky.contain-to-grid#navigation-container
+		//- Header: Navigation & Logo
+		.fixed#navigation-container
 			nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: large")
-				section.logo-section
+				section.logo-section.show-for-medium-up
 					a(href="#") 
-						h1 <b>First Year</b> 2017
-						h4 Where successful administrations begin
-				section.top-bar-section.social-section 
+						img(src="../images/logos/fy2017_logo_horiz_wh.png")
+
+				ul.title-area
+					li.name
+						h1
+							a.logo.show-for-small-only(href="#")
+								img(src="http://placehold.it/50x50")
+					li.toggle-topbar.menu-icon#mobile-menu
+						a(href="#")
+							span Menu 
+
+
+				section.top-bar-section.main-menu-section#navigation-section
 					//	Right Nav Section 
 					ul.right
-						li.menu-option#header-fb-icon: a(href="#")
-							| &nbsp;
-							//- img(src="images/icons/lg/facebook-wht.png")
-						li.menu-option#header-tw-icon: a(href="#") 
-							| &nbsp;
-						li.menu-option.has-dropdown#header-menu-icon
+						li.hide-for-medium-up
+							a(href="#") Foo 
+						li.hide-for-medium-up
+							a(href="#") Bar 
+
+						li.menu-option.hide-for-small-only.has-dropdown#header-menu-icon
 							a(href="#")
 								span.label Menu
 									span
@@ -51,73 +61,122 @@ html(lang="en")
 								li
 									a(href="#") Fourth link in dropdown
 
+
+				section.social-section.show-for-medium-up
+					ul.right
+						li.social-icon#header-fb-icon: a(href="#")
+							| &nbsp;
+							//- img(src="images/icons/lg/facebook-wht.png")
+						li.social-icon#header-tw-icon: a(href="#") 
+							| &nbsp;
  
+		//- Hero Image Section
+		.row
+			//- .small-12.columns
+			//- 	h1
+			//- 		a(href="#") LINK
+			.small-12.columns.hero
+				.row.news
+					.small-6.medium-2.small-centered.columns.hide-for-small-only.right#the-latest
+						ul
+							li.label The Latest
+							li <a href="#">Lorem ipsum dolor sit amet.</a>
+							li.hide <a href="#">Consectetur adipisicing elit. </a>
+							li.hide <a href="#">Veniam hic beatae maiores laboriosam cum soluta</a>
 
-		section.hero
-			.row.hero-title
-				.small-centered.medium-uncentered.small-12.columns#hero-title
-					h2 Issue 1
-					span.stars &#x2605; &#x2605; &#x2605;
-					h1.main-title The Next President's Crucible Year
-					p	Six essays about the promises and pitfalls of the first 365 days in office.
-				//- .small-centered.medium-uncentered.medium-6.large-5.columns
-				//-	 .tech-img
+				.row.hero-title
+					.small-12.small-centered.medium-uncentered.columns#hero-title
+						h2 Issue 1
+						span.stars &#x2605; &#x2605; &#x2605;
+						h1.main-title The Next President's Crucible Year
+						p Six essays about the promises and pitfalls of the first 365 days in office.
 
-			.intro-nav
-				.small-6.small-centered.columns
-					span.intro-button Explore the essays
-					span.intro-button Learn about First Year 2017
+				.row.intro-nav
+					.small-11.small-centered.medium-10.large-8.xlarge-7.large-centered.columns
+						.row
+							.intro-button.small-6.columns
+								a(href="#") Explore the essays
+							.intro-button.small-6.columns
+								a(href="#") Learn about First Year 2017
 
-			ul.subnav#nav-tabs
-				li.tab
-					.tab-entry.is-active
-						a(href="") Issue 1
-						p The Next President's Crucible Year
-				li.tab
-					.tab-entry
-						a(href="") Issue 2
-						p Coming in December: National Security
-				li.tab
-					.tab-entry
-						a(href="") Issue 3
-						p Coming January 2016
-				li.tab
-					.tab-entry
-						a(href="") More →
-						p &nbsp;
+				.row#hero-navigation-row
+					.subnav.small-12.medium-10.medium-centered.columns
+						ul.small-block-grid-4#nav-tabs
+							li.tab
+								.tab-entry.is-active
+									a(href="#") Issue 1
+									p The Next President's Crucible Year
+							li.tab
+								.tab-entry
+									a(href="#") Issue 2
+									p Coming in December: National Security
+							li.tab
+								.tab-entry
+									a(href="#") Issue 3
+									p Coming January 2016
+							li.tab
+								.tab-entry
+									a(href="#") More →
+									p &nbsp;
 
 
 		.row
-			.small-12.medium-4.columns#featured-container
+			.small-12.medium-8.columns#featured-container
 				h1 Featured
-			.small-12.medium-8.columns#blog-container
-				h1 Blog
+				div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam hic beatae maiores laboriosam cum soluta iste ipsa quod, nemo modi quae vero veritatis illo ipsum, dicta, saepe accusantium, fuga obcaecati vel tempore! Eius, hic eum laboriosam. Culpa dicta ipsa, aperiam perferendis praesentium minima explicabo nam provident quo sint. Quasi, quo repellat omnis veniam quis. Voluptatum eum dignissimos quis sed cum soluta, debitis repellat maxime ipsum ad. Porro rerum ea assumenda iste deserunt, eos. Molestiae repellat unde soluta maiores, maxime temporibus, expedita totam voluptates laudantium provident repellendus sapiente ex dolore aliquid saepe odit cum repudiandae dolorem dolor voluptatibus assumenda est facere reprehenderit, eveniet! Quas est quos excepturi dolor dolore, pariatur minus reprehenderit cupiditate enim eveniet vero mollitia nam nesciunt explicabo, unde perferendis. Corporis veritatis, laboriosam. Earum sed hic officia vero tempora optio accusantium expedita adipisci vitae modi non eaque deserunt, placeat debitis harum perferendis alias exercitationem blanditiis eveniet possimus itaque sapiente dolore quia quas voluptates. Dignissimos ipsa pariatur autem similique maiores, ea totam rerum. Aliquid aliquam eaque commodi libero id, minus maiores, quis porro vitae quaerat et atque explicabo at, accusantium excepturi quos! Provident ullam, non laboriosam magnam suscipit dolorum voluptatum expedita enim labore nemo, maiores ratione, excepturi dolores cumque dolor autem sunt fugiat at explicabo voluptates animi rerum perferendis, minima earum. Quia dolorem sequi, doloribus facere nulla saepe voluptas eveniet non animi numquam placeat aut consectetur magni nihil deleniti, id amet! Quo doloremque, voluptate eius culpa nostrum enim praesentium provident cum nemo sit accusantium ea quos neque nihil, suscipit commodi reprehenderit odit perferendis eos. Omnis iusto praesentium itaque quis, nulla nesciunt, commodi enim deserunt doloremque vitae. Provident eligendi reprehenderit sequi itaque iusto similique impedit illum omnis totam quasi modi, rem, unde eum nihil! Sed pariatur ipsum error exercitationem necessitatibus quam in dolor velit aut asperiores cupiditate doloribus tempore impedit, quas iure eligendi, vel sunt maiores excepturi. Quos, maiores ea vel alias! Tenetur officiis nisi vero accusantium, commodi magni ab ducimus eveniet culpa delectus perspiciatis cum odio, aliquid iusto doloremque. Quas odio voluptatem maxime officia reiciendis deleniti cupiditate autem a saepe distinctio deserunt totam, atque, in harum quibusdam qui ipsum facilis consectetur ducimus optio eum necessitatibus. Praesentium sed itaque delectus neque commodi libero tempora magni unde tempore cum. Cum quos harum, ex officiis placeat omnis impedit, odit aperiam, sint quam quis distinctio ipsam ea, fuga tempora amet. Tempora ullam quaerat similique recusandae quasi hic fuga molestias itaque, dolorem dignissimos necessitatibus? Consectetur fuga perferendis fugit, laborum, libero aperiam eos dolorem esse explicabo accusantium sit maxime nostrum quibusdam. Nemo labore sit tempore sapiente odio sed iste, praesentium accusamus. Odio, culpa ullam? Aspernatur amet distinctio illo dicta debitis dignissimos quas ea veniam impedit similique, quae, quia architecto quam culpa incidunt, fugit laboriosam minus explicabo quos cupiditate itaque hic omnis laborum, magnam. Quasi natus nemo quo dolorem dignissimos in voluptatum commodi nihil accusamus, porro, voluptate veritatis rerum obcaecati pariatur est nobis qui error alias. Officiis, dolores atque, impedit accusantium debitis ipsa reiciendis eos cumque dicta expedita non velit necessitatibus culpa! Quis eius consequuntur beatae recusandae.
+			.small-12.medium-4.columns#briefing-room-container
+				h1 Briefing Room 
+				div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam hic beatae maiores laboriosam cum soluta iste ipsa quod, nemo modi quae vero veritatis illo ipsum, dicta, saepe accusantium, fuga obcaecati vel tempore! Eius, hic eum laboriosam. Culpa dicta ipsa, aperiam perferendis praesentium minima explicabo nam provident quo sint. Quasi, quo repellat omnis veniam quis. Voluptatum eum dignissimos quis sed cum soluta, debitis repellat maxime ipsum ad. Porro rerum ea assumenda iste deserunt, eos. Molestiae repellat unde soluta maiores, maxime temporibus, expedita totam voluptates laudantium provident repellendus sapiente ex dolore aliquid saepe odit cum repudiandae dolorem dolor voluptatibus assumenda est facere reprehenderit, eveniet! Quas est quos excepturi dolor dolore, pariatur minus reprehenderit cupiditate enim eveniet vero mollitia nam nesciunt explicabo, unde perferendis. Corporis veritatis, laboriosam. Earum sed hic officia vero tempora optio accusantium expedita adipisci vitae modi non eaque deserunt, placeat debitis harum perferendis alias exercitationem blanditiis eveniet possimus itaque sapiente dolore quia quas voluptates. Dignissimos ipsa pariatur autem similique maiores, ea totam rerum. Aliquid aliquam eaque commodi libero id, minus maiores, quis porro vitae quaerat et atque explicabo at, accusantium excepturi quos! Provident ullam, non laboriosam magnam suscipit dolorum voluptatum expedita enim labore nemo, maiores ratione, excepturi dolores cumque dolor autem sunt fugiat at explicabo voluptates animi rerum perferendis, minima earum. Quia dolorem sequi, doloribus facere nulla saepe voluptas eveniet non animi numquam placeat aut consectetur magni nihil deleniti, id amet! Quo doloremque, voluptate eius culpa nostrum enim praesentium provident cum nemo sit accusantium ea quos neque nihil, suscipit commodi reprehenderit odit perferendis eos. Omnis iusto praesentium itaque quis, nulla nesciunt, commodi enim deserunt doloremque vitae. Provident eligendi reprehenderit sequi itaque iusto similique impedit illum omnis totam quasi modi, rem, unde eum nihil! Sed pariatur ipsum error exercitationem necessitatibus quam in dolor velit aut asperiores cupiditate doloribus tempore impedit, quas iure eligendi, vel sunt maiores excepturi. Quos, maiores ea vel alias! Tenetur officiis nisi vero accusantium, commodi magni ab ducimus eveniet culpa delectus perspiciatis cum odio, aliquid iusto doloremque. Quas odio voluptatem maxime officia reiciendis deleniti cupiditate autem a saepe distinctio deserunt totam, atque, in harum quibusdam qui ipsum facilis consectetur ducimus optio eum necessitatibus. Praesentium sed itaque delectus neque commodi libero tempora magni unde tempore cum. Cum quos harum, ex officiis placeat omnis impedit, odit aperiam, sint quam quis distinctio ipsam ea, fuga tempora amet. Tempora ullam quaerat similique recusandae quasi hic fuga molestias itaque, dolorem dignissimos necessitatibus? Consectetur fuga perferendis fugit, laborum, libero aperiam eos dolorem esse explicabo accusantium sit maxime nostrum quibusdam. Nemo labore sit tempore sapiente odio sed iste, praesentium accusamus. Odio, culpa ullam? Aspernatur amet distinctio illo dicta debitis dignissimos quas ea veniam impedit similique, quae, quia architecto quam culpa incidunt, fugit laboriosam minus explicabo quos cupiditate itaque hic omnis laborum, magnam. Quasi natus nemo quo dolorem dignissimos in voluptatum commodi nihil accusamus, porro, voluptate veritatis rerum obcaecati pariatur est nobis qui error alias. Officiis, dolores atque, impedit accusantium debitis ipsa reiciendis eos cumque dicta expedita non velit necessitatibus culpa! Quis eius consequuntur beatae recusandae.
 
 
-		.row
-			div	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam hic beatae maiores laboriosam cum soluta iste ipsa quod, nemo modi quae vero veritatis illo ipsum, dicta, saepe accusantium, fuga obcaecati vel tempore! Eius, hic eum laboriosam. Culpa dicta ipsa, aperiam perferendis praesentium minima explicabo nam provident quo sint. Quasi, quo repellat omnis veniam quis. Voluptatum eum dignissimos quis sed cum soluta, debitis repellat maxime ipsum ad. Porro rerum ea assumenda iste deserunt, eos. Molestiae repellat unde soluta maiores, maxime temporibus, expedita totam voluptates laudantium provident repellendus sapiente ex dolore aliquid saepe odit cum repudiandae dolorem dolor voluptatibus assumenda est facere reprehenderit, eveniet! Quas est quos excepturi dolor dolore, pariatur minus reprehenderit cupiditate enim eveniet vero mollitia nam nesciunt explicabo, unde perferendis. Corporis veritatis, laboriosam. Earum sed hic officia vero tempora optio accusantium expedita adipisci vitae modi non eaque deserunt, placeat debitis harum perferendis alias exercitationem blanditiis eveniet possimus itaque sapiente dolore quia quas voluptates. Dignissimos ipsa pariatur autem similique maiores, ea totam rerum. Aliquid aliquam eaque commodi libero id, minus maiores, quis porro vitae quaerat et atque explicabo at, accusantium excepturi quos! Provident ullam, non laboriosam magnam suscipit dolorum voluptatum expedita enim labore nemo, maiores ratione, excepturi dolores cumque dolor autem sunt fugiat at explicabo voluptates animi rerum perferendis, minima earum. Quia dolorem sequi, doloribus facere nulla saepe voluptas eveniet non animi numquam placeat aut consectetur magni nihil deleniti, id amet! Quo doloremque, voluptate eius culpa nostrum enim praesentium provident cum nemo sit accusantium ea quos neque nihil, suscipit commodi reprehenderit odit perferendis eos. Omnis iusto praesentium itaque quis, nulla nesciunt, commodi enim deserunt doloremque vitae. Provident eligendi reprehenderit sequi itaque iusto similique impedit illum omnis totam quasi modi, rem, unde eum nihil! Sed pariatur ipsum error exercitationem necessitatibus quam in dolor velit aut asperiores cupiditate doloribus tempore impedit, quas iure eligendi, vel sunt maiores excepturi. Quos, maiores ea vel alias! Tenetur officiis nisi vero accusantium, commodi magni ab ducimus eveniet culpa delectus perspiciatis cum odio, aliquid iusto doloremque. Quas odio voluptatem maxime officia reiciendis deleniti cupiditate autem a saepe distinctio deserunt totam, atque, in harum quibusdam qui ipsum facilis consectetur ducimus optio eum necessitatibus. Praesentium sed itaque delectus neque commodi libero tempora magni unde tempore cum. Cum quos harum, ex officiis placeat omnis impedit, odit aperiam, sint quam quis distinctio ipsam ea, fuga tempora amet. Tempora ullam quaerat similique recusandae quasi hic fuga molestias itaque, dolorem dignissimos necessitatibus? Consectetur fuga perferendis fugit, laborum, libero aperiam eos dolorem esse explicabo accusantium sit maxime nostrum quibusdam. Nemo labore sit tempore sapiente odio sed iste, praesentium accusamus. Odio, culpa ullam? Aspernatur amet distinctio illo dicta debitis dignissimos quas ea veniam impedit similique, quae, quia architecto quam culpa incidunt, fugit laboriosam minus explicabo quos cupiditate itaque hic omnis laborum, magnam. Quasi natus nemo quo dolorem dignissimos in voluptatum commodi nihil accusamus, porro, voluptate veritatis rerum obcaecati pariatur est nobis qui error alias. Officiis, dolores atque, impedit accusantium debitis ipsa reiciendis eos cumque dicta expedita non velit necessitatibus culpa! Quis eius consequuntur beatae recusandae.
 
-		.row
-			div	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam hic beatae maiores laboriosam cum soluta iste ipsa quod, nemo modi quae vero veritatis illo ipsum, dicta, saepe accusantium, fuga obcaecati vel tempore! Eius, hic eum laboriosam. Culpa dicta ipsa, aperiam perferendis praesentium minima explicabo nam provident quo sint. Quasi, quo repellat omnis veniam quis. Voluptatum eum dignissimos quis sed cum soluta, debitis repellat maxime ipsum ad. Porro rerum ea assumenda iste deserunt, eos. Molestiae repellat unde soluta maiores, maxime temporibus, expedita totam voluptates laudantium provident repellendus sapiente ex dolore aliquid saepe odit cum repudiandae dolorem dolor voluptatibus assumenda est facere reprehenderit, eveniet! Quas est quos excepturi dolor dolore, pariatur minus reprehenderit cupiditate enim eveniet vero mollitia nam nesciunt explicabo, unde perferendis. Corporis veritatis, laboriosam. Earum sed hic officia vero tempora optio accusantium expedita adipisci vitae modi non eaque deserunt, placeat debitis harum perferendis alias exercitationem blanditiis eveniet possimus itaque sapiente dolore quia quas voluptates. Dignissimos ipsa pariatur autem similique maiores, ea totam rerum. Aliquid aliquam eaque commodi libero id, minus maiores, quis porro vitae quaerat et atque explicabo at, accusantium excepturi quos! Provident ullam, non laboriosam magnam suscipit dolorum voluptatum expedita enim labore nemo, maiores ratione, excepturi dolores cumque dolor autem sunt fugiat at explicabo voluptates animi rerum perferendis, minima earum. Quia dolorem sequi, doloribus facere nulla saepe voluptas eveniet non animi numquam placeat aut consectetur magni nihil deleniti, id amet! Quo doloremque, voluptate eius culpa nostrum enim praesentium provident cum nemo sit accusantium ea quos neque nihil, suscipit commodi reprehenderit odit perferendis eos. Omnis iusto praesentium itaque quis, nulla nesciunt, commodi enim deserunt doloremque vitae. Provident eligendi reprehenderit sequi itaque iusto similique impedit illum omnis totam quasi modi, rem, unde eum nihil! Sed pariatur ipsum error exercitationem necessitatibus quam in dolor velit aut asperiores cupiditate doloribus tempore impedit, quas iure eligendi, vel sunt maiores excepturi. Quos, maiores ea vel alias! Tenetur officiis nisi vero accusantium, commodi magni ab ducimus eveniet culpa delectus perspiciatis cum odio, aliquid iusto doloremque. Quas odio voluptatem maxime officia reiciendis deleniti cupiditate autem a saepe distinctio deserunt totam, atque, in harum quibusdam qui ipsum facilis consectetur ducimus optio eum necessitatibus. Praesentium sed itaque delectus neque commodi libero tempora magni unde tempore cum. Cum quos harum, ex officiis placeat omnis impedit, odit aperiam, sint quam quis distinctio ipsam ea, fuga tempora amet. Tempora ullam quaerat similique recusandae quasi hic fuga molestias itaque, dolorem dignissimos necessitatibus? Consectetur fuga perferendis fugit, laborum, libero aperiam eos dolorem esse explicabo accusantium sit maxime nostrum quibusdam. Nemo labore sit tempore sapiente odio sed iste, praesentium accusamus. Odio, culpa ullam? Aspernatur amet distinctio illo dicta debitis dignissimos quas ea veniam impedit similique, quae, quia architecto quam culpa incidunt, fugit laboriosam minus explicabo quos cupiditate itaque hic omnis laborum, magnam. Quasi natus nemo quo dolorem dignissimos in voluptatum commodi nihil accusamus, porro, voluptate veritatis rerum obcaecati pariatur est nobis qui error alias. Officiis, dolores atque, impedit accusantium debitis ipsa reiciendis eos cumque dicta expedita non velit necessitatibus culpa! Quis eius consequuntur beatae recusandae.
-
-		footer#body-footer.footer
-			.row
-				.small-6.large-4.columns
+		footer.footer#bodyFooter
+			.row.footerTeaser
+				.small-12.medium-6.columns
+					ul.inline-list
+						li Issue 1: The First Year 
+						li Coming in January 2016: National Security 
+				.small-12.medium-6.columns
+					ul.inline-list
+						li Coming in March 2016: Fiscal Policy
+						li Coming in June 2016: Something Awesome	
+			.row.footerNav
+				.small-12.medium-3.columns.project-menu-section
 					ul
-						li About
-						li Contact
-						li Home&nbsp;
-							i.fi-home
-				.small-6.large-4.columns
-					ul
-						li More
-						li To
-						li Click
-				.small-6.large-4.columns
-					ul
-						li Put
-						li Stuff
-						li Here
+						li: a(href="#") Home&nbsp;
+							
+						li About the Project
+							ul
+								li: a(href="") Contact
+								li: a(href="") Advisory Council
+								li: a(href="") Scholars
+				.small-12.medium-9.columns.social-options-section
+					.row
+						.small-12.medium-8.large-4.columns.right.social-options
+							ul.inline-list
+								li.social-option.social-email-icon: a(href="#") &nbsp;
+								li.social-option.social-fb-icon: a(href="#") &nbsp;
+								li.social-option.social-tw-icon: a(href="#") &nbsp;
+						.small-12.columns.get-involved
+							//- h3 Get Involved
+							form.footer-form
+								.row
+									//- .small-12.medium-3.columns.hide-for-small-only
+									//- 	label(for="email").contact.left Contact Us
+									.small-12.medium-8.columns
+										input#footer-email(type="email",placeholder="Join our email list for exclusive alerts")
+									.small-12.medium-4.columns.text-center#footer-email-button
+										button.submit(type="submit",value="Submit") Sign Up &gt;
+			.row.footerLogo
+				.hide-for-small.medium-2.columns
+					a(href="http://millercenter.org")
+						img(src="http://staticmc.org/images/template/logo-white.png")
+				.small-12.medium-10.columns
+					.hide-for-medium-up
+						a(href="http://millercenter.org")
+							img(src="http://staticmc.org/images/template/logo-white.png")
+					p The Miller Center is a nonpartisan affiliate of the University of Virginia that specializes in presidential scholarship, public policy, and political history and strives to apply the lessons of history to the nation’s most pressing contemporary governance challenges. 
+						a(href="http://millercenter.org") Learn more at millercenter.org.
 
 		script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
 		//- remove http protocol from production version
