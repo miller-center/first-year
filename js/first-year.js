@@ -38,18 +38,30 @@ $(document).ready(function() {
   //
   // Side (Sharing) Bar Animation
   //
+
   $(window).scroll(function() {
     var wScroll = $(this).scrollTop();
 
     // reveal point for social sharing bar
     var sbReveal = ( $('.hero').height() );
-
+    var sbConceal = $(document).height() - $('#bodyFooter').height() - ( $(window).height() / 1.05 );
+    console.log("breakpoint: " + sbConceal + " window top: " + wScroll);
     // slide in social sharing bar from off canvas
     if (wScroll > sbReveal) {
       $('#share-bar').addClass('shareBarReveal');
     } else {
-      $('#share-bar').removeClass('shareBarReveal');      
+      $('#share-bar').removeClass('shareBarReveal');
     }
+
+    // gracefully exit at footer
+    if (wScroll > sbConceal) {
+      $('#share-bar').addClass('shareBarExit');
+      $('#share-bar').removeClass('shareBarReveal');
+    } else {
+      $('#share-bar').addClass('shareBarReveal');
+      $('#share-bar').removeClass('shareBarExit');      
+    }
+
   });
 
 

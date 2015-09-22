@@ -1,4 +1,5 @@
 $fy-blue-1: #84a0b5;
+$hero-height: 30rem;
 @import "settings";
 @import "foundation";
 @import "foundation-icons.css";
@@ -46,7 +47,9 @@ $fy-blue-1: #84a0b5;
 //   "foundation/components/offcanvas",
 //   "foundation/components/visibility";
 
-
+body {
+  z-index: 0;
+}
 
 //
 // HEADER (NAVBAR) STYLES
@@ -59,7 +62,7 @@ $fy-blue-1: #84a0b5;
 //
 // hero stuff needs SERIOUS refactoring
 
-$hero-height: 30rem;
+
 $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure why. 
 .hero {
   background: url('../images/heros/sm/white-house.jpg') no-repeat center center;

@@ -1,9 +1,10 @@
 // sharing side bar
-aside.sharing-options {
+.sharing-options {
+  position:absolute;
+  top: $hero-height * 1.5;
+  z-index: -1; // prevents overlap with content
   background-color: rgba(255,255,255, 0.75);
-  position:fixed;
-  right: -5em;
-  top: 40%;
+  right: -5rem; // off-canvas
   @include single-transition(right, 500ms, ease-in);
   ul {
     li {
@@ -21,6 +22,12 @@ aside.sharing-options {
   }
 }
 .shareBarReveal {
+  position:fixed;
+  top: 40%;
   right: 0.5em !important;
-  z-index: -1; // prevents overlap with content
+}
+.shareBarExit {
+  position:fixed;
+  top: 40%;
+  right: -5em !important;
 }
