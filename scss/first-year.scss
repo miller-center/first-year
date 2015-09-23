@@ -557,7 +557,7 @@ ul {list-style-type: circle;}
 
 // These are bars of content with dark backgrounds--might be better accomplished with a "dark" class
 
-.cta, .author {
+.cta {
 	color: #ddd; 
 	font-family: $font-family-small; 
 	padding: 1em;
@@ -566,17 +566,7 @@ ul {list-style-type: circle;}
 		}
 	}
 
-#featured-container, #briefing-room-container {
-  padding-left: 0;
-  padding-right: 0;
-  h1 {
-    display: inline-block;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 3rem;
-  }
-}
+
 
 
 
@@ -585,23 +575,7 @@ ul {list-style-type: circle;}
     background: grey;
   }
 }
-#featured-container {
-  background: #ddd;
-  h1 {
-    background-color: orange;
-    color:#eee;
-    letter-spacing: 3px;
-    font-weight: 500;
-  }
-}
-#briefing-room-container {
-  background: #aaa;
-  h1 {
-    background-color: white; 
-    color: black; 
-    font-weight: 200;
-  }
-}
+
 
 @media #{$small-up} {
   // #featured-container {

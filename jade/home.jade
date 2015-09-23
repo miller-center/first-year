@@ -125,54 +125,88 @@ html(lang="en")
 
 
 		.row
-			.small-12.medium-8.columns#featured-container
-				h1 Featured
-				div
-					h2 Featured Item Longer Title
-					img(src="http://placehold.it/500x300")
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt at est corporis error quis, veniam, rerum dolore mollitia dolores facere.
-				div
-					h2 Featured Item Longer Title
-					img(src="http://placehold.it/500x300")
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt at est corporis error quis, veniam, rerum dolore mollitia dolores facere.
-				div
-					h2 Featured Item Longer Title
-					img(src="http://placehold.it/500x300")
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt at est corporis error quis, veniam, rerum dolore mollitia dolores facere.
-				div
-					h2 Featured Item Longer Title
-					img(src="http://placehold.it/500x300")
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt at est corporis error quis, veniam, rerum dolore mollitia dolores facere.
-				div
-					h2 Featured Item Longer Title
-					img(src="http://placehold.it/500x300")
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt at est corporis error quis, veniam, rerum dolore mollitia dolores facere.
+			.small-0.large-1.columns.spacer &nbsp;
+			
+			.small-12.medium-8.large-7.columns#featured
+					h2 Featured
+					.small-6.featured-item
+						.media
+								.media-item 
+									img(src="http://lorempixel.com/325/200/")
+								.media-credit Photo courtesy lorem ipsum dolor sit amet
+						.featured-item-text
+							h4 Featured Item 1
+							p.content Lorem ipsum dolor sit amet, fermentum hendrerit eros sit amet congue. Proin eleifend vel neque laoreet ullamcorper. 
+								a.more(href="") more 
 
-			.small-12.medium-4.columns#briefing-room-container
-				h1 Briefing Room 
-				div 
-					h2 Item title
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores consectetur beatae doloribus consequatur quae enim, facilis eligendi commodi voluptatem esse quos quaerat optio nihil minus libero quam, blanditiis nobis, magni dolorum quasi explicabo. 
-				div 
-					h2 Item title
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores consectetur beatae doloribus consequatur quae enim, facilis eligendi commodi voluptatem esse quos quaerat optio nihil minus libero quam, blanditiis nobis, magni dolorum quasi explicabo. 
-				div 
-					h2 Item title
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores consectetur beatae doloribus consequatur quae enim, facilis eligendi commodi voluptatem esse quos quaerat optio nihil minus libero quam, blanditiis nobis, magni dolorum quasi explicabo. 
-				div 
-					h2 Item title
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores consectetur beatae doloribus consequatur quae enim, facilis eligendi commodi voluptatem esse quos quaerat optio nihil minus libero quam, blanditiis nobis, magni dolorum quasi explicabo. 
-				div 
-					h2 Item title
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores consectetur beatae doloribus consequatur quae enim, facilis eligendi commodi voluptatem esse quos quaerat optio nihil minus libero quam, blanditiis nobis, magni dolorum quasi explicabo. 
-				div 
-					h2 Item title
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores consectetur beatae doloribus consequatur quae enim, facilis eligendi commodi voluptatem esse quos quaerat optio nihil minus libero quam, blanditiis nobis, magni dolorum quasi explicabo. 
-				div 
-					h2 Item title
-					p  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores consectetur beatae doloribus consequatur quae enim, facilis eligendi commodi voluptatem esse quos quaerat optio nihil minus libero quam, blanditiis nobis, magni dolorum quasi explicabo. 
+					.small-6.featured-item
+						.media
+								.media-item 
+									img(src="http://lorempixel.com/325/200/")
+								.media-credit Photo courtesy dolor sit amet
+						.featured-item-text
+							h4 Featured Item 2
+							p.content Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
+								a.more(href="") more 
+
+					.small-6.featured-item
+						.media
+								.media-item 
+									img(src="http://lorempixel.com/325/200/")
+								.media-credit Photo courtesy lorem ipsum dolor sit amet
+						.featured-item-text
+							h4 Featured Item 3
+							p.content Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum hendrerit eros sit amet congue. Proin eleifend vel neque laoreet ullamcorper. 
+								a.more(href="") more 	
+
+					.small-6.featured-item
+						.media
+								.media-item 
+									img(src="http://lorempixel.com/325/200/")
+								.media-credit Lorem ipsum dolor sit amet
+						.featured-item-text
+							h4 Featured Item 4
+							p.content Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum hendrerit eros sit amet congue laoreet ullamcorper. 
+								a.more(href="") more 
 
 
+
+			.small-12.medium-4.large-3.columns#blog
+					h2 Briefing Room
+					.blog-item
+						h4 
+							a(href="zzz") Consectetur Adipiscing Elit
+					
+						.blog-item-info
+							span.date January 1, 2016
+							span.author Jeff Chidester
+
+					.blog-item
+						h4 
+							a(href="xxx") Consectetur Adipiscing Elit Sed Fermentum Hendrerit Eros Sit Amet Congue
+					
+						.blog-item-info
+							span.date January 1, 2016
+							span.author Joe Biden
+
+					.blog-item
+						h4 
+							a(href="ccc") Dolor sit amet?
+					
+						.blog-item-info
+							span.date January 1, 2016
+							span.author Bill Antholis
+
+					.blog-item
+						h4 
+							a(href="aaa") Proin eleifend vel neque laoreet ullamcorper
+					
+						.blog-item-info
+							span.date January 1, 2016
+							span.author Amber Lautigar Reichert
+	
+			.small-0.large-1.columns.spacer &nbsp;
+					
 		aside#share-bar.sharing-options.right
 			ul.no-bullet
 				li: a(href="#",title="share on Facebook")
@@ -191,7 +225,7 @@ html(lang="en")
 					div.sharing-item
 						img(data-interchange="[../images/icons/45px/mail.png, (default)], [../images/icons/55px/mail.png, (large)]")
 						noscript: img(src="../images/icons/md/mail.png")
-	
+
 
 		footer.footer#bodyFooter
 			.row.footerTeaser
