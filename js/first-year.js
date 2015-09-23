@@ -38,33 +38,40 @@ $(document).ready(function() {
   //
   // Side (Sharing) Bar Animation
   //
+  function animateSharingBar(showClass, hideClass, revealPoint) {
 
-  $(window).scroll(function() {
-    var wScroll = Number( $(this).scrollTop() );
+    showClass = showClass || "shareBarReveal"; 
+    hideClass = hideClass || "shareBarExit";
 
-    // reveal point for social sharing bar
-    var sbReveal  = Number( $('.hero').height() );
-    var sbConceal = $(document).height() - $('#bodyFooter').height() - ( $(window).height() / 1.05 );
+    $(window).scroll(function() {
+      var wScroll = Number( $(this).scrollTop() );
 
-    // slide in social sharing bar from off canvas
-    if (wScroll > sbReveal) {
-      $('#share-bar').addClass('shareBarReveal');
-      $('#share-bar').removeClass('shareBarExit');      
-    } else {
-      $('#share-bar').addClass('shareBarExit');
-      $('#share-bar').removeClass('shareBarReveal');
-    }
+      // reveal point for social sharing bar
+      var sbReveal  = revealPoint || Number( $('.hero').height() );
+      var sbConceal = $(document).height() - $('#bodyFooter').height() - ( $(window).height() / 1.05 );
 
-    // gracefully exit at footer
-    if (wScroll > sbConceal || wScroll < sbReveal) {
-      $('#share-bar').addClass('shareBarExit');
-      $('#share-bar').removeClass('shareBarReveal');
-    } else {
-      $('#share-bar').addClass('shareBarReveal');
-      $('#share-bar').removeClass('shareBarExit');      
-    }
+      // slide in social sharing bar from off canvas
+      if (wScroll > sbReveal) {
+        $('#share-bar').addClass(showClass);
+        $('#share-bar').removeClass(hideClass);      
+      } else {
+        $('#share-bar').addClass(hideClass);
+        $('#share-bar').removeClass(showClass);
+      }
 
-  });
+      // gracefully exit at footer
+      if (wScroll > sbConceal || wScroll < sbReveal) {
+        $('#share-bar').addClass(hideClass);
+        $('#share-bar').removeClass(showClass);
+      } else {
+        $('#share-bar').addClass(showClass);
+        $('#share-bar').removeClass(hideClass);      
+      }
+
+    });
+    return true;
+
+  }
 
 
   //
@@ -96,17 +103,20 @@ $(document).ready(function() {
 
 
 
-  // if window is large enough, active newsfeed
+  // if window is large enough do the following:
+  //   1. activate newsfeed rotation
+  //   2. reveal/conceal sharing sidebar
+
   try {
     if(Foundation.utils.is_medium_up()) {
       var listItems = $('#the-latest ul li:not(.label)');
       length = listItems.length;
       var current = 0;
       timeout = 5000;
-      // setTimeout(changeNewsItem, timeout);
       setInterval(rotateNewsItem, timeout);
+      animateSharingBar();
     } else {
-      console.log('news feed disabled for small device');
+      console.log('some animations disabled for small device');
     }
   }
   catch(err) {
