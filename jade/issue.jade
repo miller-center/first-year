@@ -11,13 +11,13 @@ html(lang="en")
 		meta(name="author", content="")
 		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
 		link(rel="stylesheet", href="#{project_home}/css/first-year.css")
-		link(rel="stylesheet", href="#{project_home}/css/home.css")
+		link(rel="stylesheet", href="#{project_home}/css/issue.css")
 		link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
 		link(href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&7CCrimson+Text:400,700,600',rel="stylesheet", type="text/css")
 		//- adding Slick Carousel
-		//- link(rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick.css")
-		//- link(rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick-theme.css")
-		//- line(rel="stylesheet",type="text/css",href="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css")
+		link(rel="stylesheet" type="text/css" href="#{project_home}/bower_components/slick-carousel/slick/slick.css")
+		link(rel="stylesheet" type="text/css" href="#{project_home}/bower_components/slick-carousel/slick/slick-theme.css")
+		line(rel="stylesheet",type="text/css",href="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css")
 	
 	body
 
@@ -72,25 +72,39 @@ html(lang="en")
  
 		//- Hero Image Section
 		.row
-			//- .small-12.columns
-			//- 	h1
-			//- 		a(href="#") LINK
 			.small-12.columns.hero
 
 
 				.row.hero-title
-					.small-12.small-centered.medium-uncentered.columns#hero-title
+					.small-12.small-centered.medium-centered.columns#hero-title
 						h2 Issue 1
 						span.stars &#x2605; &#x2605; &#x2605;
 						h1.main-title The Next President's Crucible Year
 						p Six essays about the promises and pitfalls of the first 365 days in office.
 
-
-
+				.row.hero-slider-row
+					.small-10.large-10.small-centered.columns#hero-slider						
+						div.large-4.small-12.columns.slider-panel One
+							img(src="http://placehold.it/1600x900")
+						div.large-4.small-12.columns.slider-panel Two 
+							img(src="http://placehold.it/1600x900")
+						div.large-4.small-12.columns.slider-panel Three
+							img(src="http://placehold.it/1600x900")
+						div.large-4.small-12.columns.slider-panel Four 
+							img(src="http://placehold.it/1600x900")
+						div.large-4.small-12.columns.slider-panel Five 
+							img(src="http://placehold.it/1600x900")
+						div.large-4.small-12.columns.slider-panel Six 
+							img(src="http://placehold.it/1600x900")
+						div.large-4.small-12.columns.slider-panel Seven
+							img(src="http://placehold.it/1600x900")
+						div.large-4.small-12.columns.slider-panel Eight
+							img(src="http://placehold.it/1600x900")
+		//- Content Section
 		.row
-			.small-0.medium-1.columns.spacer &nbsp;
+			//- .small-0.medium-1.columns.spacer &nbsp;
 
-			.small-12.medium-10.columns#blog-large
+			.small-12.medium-10.medium-centered.columns#blog-large
 					h2 Briefing Room
 					.blog-item
 						h4 
@@ -188,5 +202,6 @@ html(lang="en")
 		script(src="#{project_home}/bower_components/slick-carousel/slick/slick.min.js")
 		//- script(src="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")
 		script(src="#{project_home}/js/first-year.js")
+		script(src="#{project_home}/js/issue.js")
 		//- first-year.js initializes Foundation
 		script(src="#{project_home}/js/home.js")

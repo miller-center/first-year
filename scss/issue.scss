@@ -1,4 +1,77 @@
 /* Styles for issue pages only */
+@import "settings";
+@import "foundation";
+$hero-height: 27rem;
+
 body {
   background-color: whitesmoke;
+}
+
+//
+// defaults
+//
+
+// Hero Section
+.hero {
+  height: $hero-height;
+  &:before {
+    height: $hero-height;
+  }
+  .hero-title { // row
+    #hero-title {  // column
+
+    }
+  }
+  .hero-slider-row {
+    color: $info-color;
+    background-color: transparentize(#111, 0.3);
+    min-height: 25%;
+    max-height: 45%;
+    #hero-slider {
+      .slider-panel {
+        background-color: transparentize(#111, 0.5);;
+      }
+    }
+  }
+}
+
+// Main Content Section
+
+//
+// media queries
+//
+
+@media #{$small-up} {
+  #featured-container {
+    background: grey;
+  }
+}
+
+
+@media #{$small-up} {
+
+}
+
+@media #{$medium-up} {
+  
+}
+
+@media #{$large-up} {
+
+}
+
+@media #{$small-only} {
+  
+}
+
+@media #{$medium-only} {
+  
+}
+
+@media #{$large-only} {
+  
+}
+
+@media #{$xlarge-only} {
+  
 }

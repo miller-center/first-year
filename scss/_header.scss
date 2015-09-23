@@ -38,6 +38,9 @@ $transparent: rgba(245,245,245,0.0);
       }
     }
     .social-section {
+      ul {
+        padding: 0 2%;
+      }
       a {
         display: inline-block;
         margin: 0 auto !important;
@@ -107,6 +110,8 @@ $transparent: rgba(245,245,245,0.0);
       ul { 
         padding-top: 0;
         margin-top: 0;
+        margin-left: 2%;
+        margin-right: 2%;
         li.social-icon {
           position: absolute;
           left:0;
@@ -140,10 +145,8 @@ $transparent: rgba(245,245,245,0.0);
         li#header-menu-icon {
           left: (($social-icon-size) * 2) + $social-icon-pad; 
           color: $navigation-white;
-          // padding-top: $social-icon-size * 0.2;
           background-color: $navigation-container-bg-color; 
           a {
-            // border:thin solid yellow;
             min-width: 150px;
             max-height: $topbar-height;
             min-height: $topbar-height;
@@ -152,6 +155,7 @@ $transparent: rgba(245,245,245,0.0);
           }
           span.label {
             min-width: 6rem;
+            margin-top: 10%;
             text-align: left;
             line-height: ($topbar-height * .5);
             padding-bottom: 0.4em;
@@ -307,6 +311,7 @@ $transparent: rgba(245,245,245,0.0);
           span.label {
             min-width: 8rem;
             text-align: left;
+            margin-top: 7.5%;
             line-height: ($topbar-height * .5);
             padding-bottom: 0.4em;
             @include hamburger(16px, false, 0, 1px, 6px, $topbar-menu-icon-color, "", false);
