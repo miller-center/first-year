@@ -1,5 +1,5 @@
 doctype html
-- var title = "The First Year Project"
+- var title = "First Year 2017"
 - var issue = "The Crucible Year"
 - var essay = "What Time Is It?"
 - var project_home = ".."
@@ -68,10 +68,10 @@ html(lang="en")
 
 				section.social-section.show-for-medium-up
 					ul.right
-						li.social-icon#header-fb-icon: a(href="#")
+						li.social-icon#header-fb-icon: a(href="#",title="Visit #{title} on Facebook")
 							| &nbsp;
 							//- img(src="images/icons/lg/facebook-wht.png")
-						li.social-icon#header-tw-icon: a(href="#") 
+						li.social-icon#header-tw-icon: a(href="#",title="Follow #{title} on Twitter") 
 							| &nbsp;
  
 		//- Hero Image Section
@@ -217,9 +217,9 @@ html(lang="en")
 					.row
 						.small-12.medium-8.large-4.columns.right.social-options
 							ul.inline-list
-								li.social-option.social-email-icon: a(href="#") &nbsp;
-								li.social-option.social-fb-icon: a(href="#") &nbsp;
-								li.social-option.social-tw-icon: a(href="#") &nbsp;
+								li.social-option.social-email-icon: a(href="#",title="Email Us") &nbsp;
+								li.social-option.social-fb-icon: a(href="#",title="Contact #{title} on Facebook") &nbsp;
+								li.social-option.social-tw-icon: a(href="#",title="Send #{title} a message on Twitter") &nbsp;
 						.small-12.columns.get-involved
 							//- h3 Get Involved
 							form.footer-form
