@@ -64,29 +64,3 @@
 	}
 }
 
-#blog-large {
-	.blog-item {
-		.blog-item-info {
-			text-align: left;
-			.author:before {content: " · ";}
-			span {display:inline;}
-		}
-		.media {
-			float:right;
-			margin-left: 1rem;
-			width: 50%;
-			.media-item {width: 100%;}
-			.media-credit {
-				display:block;
-				font-family: $font-family-monospace; 
-				font-size: .5rem; 
-				color: #ccc;
-				text-align: right;
-			}
-		}
-
-
-	}
-}
-
-
