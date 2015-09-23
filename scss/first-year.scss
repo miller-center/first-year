@@ -9,43 +9,6 @@ $hero-height: 30rem;
 
 // project-wide styling here
 
-// Or selectively include components
-// @import
-//   "foundation/components/accordion",
-//   "foundation/components/alert-boxes",
-//   "foundation/components/block-grid",
-//   "foundation/components/breadcrumbs",
-//   "foundation/components/button-groups",
-//   "foundation/components/buttons",
-//   "foundation/components/clearing",
-//   "foundation/components/dropdown",
-//   "foundation/components/dropdown-buttons",
-//   "foundation/components/flex-video",
-//   "foundation/components/forms",
-//   "foundation/components/grid",
-//   "foundation/components/inline-lists",
-//   "foundation/components/joyride",
-//   "foundation/components/keystrokes",
-//   "foundation/components/labels",
-//   "foundation/components/magellan",
-//   "foundation/components/orbit",
-//   "foundation/components/pagination",
-//   "foundation/components/panels",
-//   "foundation/components/pricing-tables",
-//   "foundation/components/progress-bars",
-//   "foundation/components/reveal",
-//   "foundation/components/side-nav",
-//   "foundation/components/split-buttons",
-//   "foundation/components/sub-nav",
-//   "foundation/components/switches",
-//   "foundation/components/tables",
-//   "foundation/components/tabs",
-//   "foundation/components/thumbs",
-//   "foundation/components/tooltips",
-//   "foundation/components/top-bar",
-//   "foundation/components/type",
-//   "foundation/components/offcanvas",
-//   "foundation/components/visibility";
 
 body {
   z-index: 0;
@@ -118,18 +81,11 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
       }
     }
   }
-  // .intro {
-  //   padding: 3rem;
-  //   position: relative;
-  //   top: 50%;
-  //   transform: translateY(-50%);
-  //   border:thin solid yellow;
-  // }
+
   /* two buttons side-by-side, below title */
   .intro-nav {
     z-index: 10;
     color: #eee;
-    // border: thin solid red; //testing only
     .row {
       margin: 0 auto;
     }
@@ -179,7 +135,6 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
         }
       }
 
-      // border: thin solid pink;
     }
   }
   h1 {
@@ -207,17 +162,16 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
       text-align: right;
     }
   }
+
   /* multiple tab-styled option panes */
   #hero-navigation-row {
     z-index: 10;
-    // border: thin solid white;
     position:absolute;
     margin:0 auto;
     width: 100%;
     bottom: 0;
   }
   .subnav {
-    // border: thin solid yellow !important; //testing
     $window-tint: 0.3;
     $active-border-width: 5px;
     margin: 0 auto;
@@ -250,13 +204,10 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
             padding: 0;
             padding-left: 0.5em;
             &.is-active {
-              // background: rgba(250,250,250,$window-tint);
               color: $info-color;
               top: -5px;
             }
-
             &:hover {
-              // background: rgba(250,250,250,$window-tint);
               color: $info-color;
               transition: all .25s ease-in-out;
             }            
@@ -277,7 +228,6 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
           color: #fff;
           text-transform: uppercase;
           display: block;
-          // font-weight: bold;
           letter-spacing: 0.15em;
           top: 0;
           position: relative;
@@ -372,9 +322,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
 
 @media #{$large-up} {
   .hero {
-    // background: url('http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg') no-repeat center center;
-    background: url('../images/heros/lg/white-house.jpg') no-repeat center center;
-    
+    background: url('../images/heros/lg/white-house.jpg') no-repeat center center;    
   } // end .hero
 }
 
@@ -578,12 +526,7 @@ ul {list-style-type: circle;}
 
 
 @media #{$small-up} {
-  // #featured-container {
-  //   background: #ddd;
-  // }
-  // #briefing-room-container {
-  //   background: #aaa;
-  // }
+
 }
 
 @media #{$medium-up} {
