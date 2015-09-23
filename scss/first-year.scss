@@ -58,6 +58,8 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
       ul {
         list-style-type: none;
         color: #ddd;
+        margin-bottom: 2px;
+        padding-bottom: 0.5em;
         li.label {
           color: $info-color;
           letter-spacing: 2px;

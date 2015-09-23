@@ -1,7 +1,26 @@
 /* Styles for issue pages only */
+
+/* override First Year defaults here */
+
 @import "settings";
+/* override Foundation defaults here */
+
 @import "foundation";
+
+/* override Slick Carousel defaults */
+$slick-dot-color: white;
+$slick-dot-color-active: $info-color;
+$slick-dot-size: 15px;
+$slick-arrow-size: 35px;
+$slick-font-path: "../fonts/";
+$slick-loader-path: "../";
+$slick-ajax-loader-gif-path: "../images/ajax-loader.gif"; // this will change!
+@import "slick.scss";
+@import "slick-theme.scss";
+
+/* add other global settings here */
 $hero-height: 27rem;
+
 
 body {
   background-color: whitesmoke;
@@ -10,6 +29,36 @@ body {
 //
 // defaults
 //
+
+/* this overrides a URL hardcoded in the Slick Carousel Theme */
+.slick-list {
+    .slick-loading & {
+        background: #fff slick-image-url($slick-ajax-loader-gif-path) center center no-repeat !important;
+    }
+}
+
+.slick-prev, .slick-next {
+  height: $slick-arrow-size;
+  width: $slick-arrow-size;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+}
+.slick-dots li {
+  transform: translateX(-1em); // fix centering bug
+}
+.slick-prev:before, .slick-next:before {
+  font-size: ($slick-arrow-size / 1.1);
+}
+.slick-prev {
+  // left: -60px;
+  left: -( $slick-arrow-size * 1.25 );
+  right: auto;
+}
+.slick-next {
+  right: -( $slick-arrow-size * 1.25 );
+  left: auto;
+}
 
 // Hero Section
 .hero {
@@ -22,14 +71,43 @@ body {
 
     }
   }
+  // Slick Carousel Slider
   .hero-slider-row {
+    $panel-gutter: rem-calc(5px);
     color: $info-color;
     background-color: transparentize(#111, 0.3);
     min-height: 25%;
     max-height: 45%;
     #hero-slider {
       .slider-panel {
-        background-color: transparentize(#111, 0.5);;
+        background-color: transparentize(#111, 0.5);
+        border-bottom: 5px solid $info-color;
+        padding-left: 0;
+        padding-right: 0;
+        margin-left: $panel-gutter;
+        margin-right: $panel-gutter;
+        h2, p {
+          color:$body-font-color;
+        }
+        h2 {
+          position:absolute;
+          line-height: 0.75rem;
+          font-size: 0.75rem;
+          margin-top: 0.5rem;
+          top: 0;
+        }
+        p {
+          position:absolute;
+          font-size: 0.75rem;
+          top: 80%;
+          right:0;
+        }
+      }
+      .slick-dots {
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 0;
+        padding-left: 0;
       }
     }
   }
