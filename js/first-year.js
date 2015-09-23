@@ -6,7 +6,10 @@ $(document).foundation({
   }
 });
 
+window.FirstYear = {}; // project globals
+
 $(document).ready(function() {
+
   // re-initialize Foundation after responsive image loading
   $(document).foundation('interchange', 'reflow');
 
@@ -38,7 +41,8 @@ $(document).ready(function() {
   //
   // Side (Sharing) Bar Animation
   //
-  function animateSharingBar(showClass, hideClass, revealPoint) {
+  
+  FirstYear.sharingBar = function animateSharingBar(showClass, hideClass, revealPoint) {
 
     showClass = showClass || "shareBarReveal"; 
     hideClass = hideClass || "shareBarExit";
@@ -74,34 +78,6 @@ $(document).ready(function() {
   }
 
 
-  //
-  // News Ticker Animation
-  //
-
-  // rotate through the list of 'The Latest' headlines
-  function changeNewsItem() {
-    fadeTime = 300;
-    listItems.eq(current++).fadeOut(fadeTime, function() {
-      if (current === length) {
-        current = 0;
-      }
-      listItems.eq(current).fadeIn(fadeTime);
-
-    });
-    setTimeout(changeNewsItem, timeout);
-  }
-
-  function rotateNewsItem() {
-    fadeTime = 300;
-    listItems.eq(current++).fadeOut(fadeTime, function() {
-      if (current === length) {
-        current = 0;
-      }
-      listItems.eq(current).fadeIn(fadeTime);      
-    });
-  }
-
-
 
   // if window is large enough do the following:
   //   1. activate newsfeed rotation
@@ -109,12 +85,11 @@ $(document).ready(function() {
 
   try {
     if(Foundation.utils.is_medium_up()) {
-      var listItems = $('#the-latest ul li:not(.label)');
-      length = listItems.length;
-      var current = 0;
-      timeout = 5000;
-      setInterval(rotateNewsItem, timeout);
-      animateSharingBar();
+      // var listItems = $('#the-latest ul li:not(.label)');
+      // length = listItems.length;
+      // var current = 0;
+      // timeout = 5000;
+      // FirstYear.newsTickerId = setInterval(FirstYear.animateNews, timeout);
     } else {
       console.log('some animations disabled for small device');
     }
@@ -124,3 +99,5 @@ $(document).ready(function() {
   }
 
 });
+
+
