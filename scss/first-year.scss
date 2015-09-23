@@ -7,6 +7,8 @@ $hero-height: 30rem;
 @import "sidebar";
 @import "footer";
 
+// project-wide styling here
+
 
 body {
   z-index: 0;
@@ -57,7 +59,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
         list-style-type: none;
         color: #ddd;
         li.label {
-          color: orange;
+          color: $info-color;
           letter-spacing: 2px;
           text-transform: uppercase;
           background-color: transparent;
@@ -84,7 +86,6 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
   .intro-nav {
     z-index: 10;
     color: #eee;
-    // border: thin solid red; //testing only
     .row {
       margin: 0 auto;
     }
@@ -119,7 +120,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
         background: -webkit-radial-gradient(transparentize(#000, $gradient-opacity) 5%, transparentize(#333, $gradient-opacity) 25%, transparentize(#888, $gradient-opacity) 95%);
         &:hover, &:active {
           background: -webkit-radial-gradient(transparentize(#000, $hover-opacity) 5%, transparentize(#333, $hover-opacity) 25%, transparentize(#888, $hover-opacity) 95%);
-          color:orange;
+          color:$info-color;
         }
         @include single-transition(background, 300ms, ease-in-out);
         @include single-transition(color, 300ms, ease-in-out);
@@ -129,7 +130,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
           z-index: inherit;
           color: inherit;
           &:hover {
-            color:orange;
+            color:$info-color;
           }
         }
       }
@@ -161,17 +162,16 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
       text-align: right;
     }
   }
+
   /* multiple tab-styled option panes */
   #hero-navigation-row {
     z-index: 10;
-    // border: thin solid white;
     position:absolute;
     margin:0 auto;
     width: 100%;
     bottom: 0;
   }
   .subnav {
-    // border: thin solid yellow !important; //testing
     $window-tint: 0.3;
     $active-border-width: 5px;
     margin: 0 auto;
@@ -194,7 +194,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
           }
           &.is-active {
             a {
-              color: orange !important;
+              color: $info-color !important;
             }
             a::after {
               $bar-width-ratio: 45;
@@ -205,9 +205,8 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
               width: #{$bar-width-ratio}%;
               left: #{(100 - $bar-width-ratio) / 2}%;
               margin: -1.8em auto 15px auto;
-              background-color: orange;
+              background-color: $info-color;
             }
-            // border-top: $active-border-width solid orange;
             border-bottom: none;
             top: -$active-border-width;
             height: 110%;
@@ -219,10 +218,8 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
             display: inline-block;
             width: 100%;
             text-align: center;
-
             &:hover {
-              // background: rgba(250,250,250,$window-tint);
-              color: orange;
+              color: $info-color;
               transition: all .25s ease-in-out;
             }            
           }
@@ -242,7 +239,6 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
           color: #fff;
           text-transform: uppercase;
           display: block;
-          // font-weight: bold;
           letter-spacing: 0.15em;
           top: 0;
           position: relative;
@@ -273,7 +269,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
       display: inline-block;
     }
     .stars {
-      color: orange;
+      color: $info-color;
       display: inline-block;
       letter-spacing: 0.5em;
       padding-bottom: 0.25em;
@@ -307,7 +303,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
       text-transform: uppercase;
     }
     .stars {
-      color: orange;
+      color: $info-color;
       display: inline-block;
       letter-spacing: 0.25em;
       padding-bottom: 0.25em;
@@ -337,9 +333,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
 
 @media #{$large-up} {
   .hero {
-    // background: url('http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg') no-repeat center center;
-    background: url('../images/heros/lg/white-house.jpg') no-repeat center center;
-    
+    background: url('../images/heros/lg/white-house.jpg') no-repeat center center;    
   } // end .hero
 }
 
@@ -522,7 +516,7 @@ ul {list-style-type: circle;}
 
 // These are bars of content with dark backgrounds--might be better accomplished with a "dark" class
 
-.cta, .author {
+.cta {
 	color: #ddd; 
 	font-family: $font-family-small; 
 	padding: 1em;
@@ -531,17 +525,7 @@ ul {list-style-type: circle;}
 		}
 	}
 
-#featured-container, #briefing-room-container {
-  padding-left: 0;
-  padding-right: 0;
-  h1 {
-    display: inline-block;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 3rem;
-  }
-}
+
 
 
 
@@ -550,31 +534,10 @@ ul {list-style-type: circle;}
     background: grey;
   }
 }
-#featured-container {
-  background: #ddd;
-  h1 {
-    background-color: orange;
-    color:#eee;
-    letter-spacing: 3px;
-    font-weight: 500;
-  }
-}
-#briefing-room-container {
-  background: #aaa;
-  h1 {
-    background-color: white; 
-    color: black; 
-    font-weight: 200;
-  }
-}
+
 
 @media #{$small-up} {
-  // #featured-container {
-  //   background: #ddd;
-  // }
-  // #briefing-room-container {
-  //   background: #aaa;
-  // }
+
 }
 
 @media #{$medium-up} {

@@ -84,6 +84,12 @@ blockquote:after {content:"”";}
 .author {
 	background-color: $primary-color; 
 	width: 100%;
+	color: #ddd; 
+	font-family: $font-family-small; 
+	padding: 1em;	
+		a {color: #fff;
+		&:hover {color:#ddd;}
+		}	
 	p {
 		font-size: smaller;
 		}
@@ -97,6 +103,7 @@ blockquote:after {content:"”";}
 		}
 	
 	}
+
 
 	
 	

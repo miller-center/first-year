@@ -91,7 +91,7 @@ $column-gutter: rem-calc(30);
 $font-family-sans-serif: 'Karla', Verdana, sans-serif;
 $font-family-serif: 'Crimson Text', serif;
 $font-family-small: Verdana, sans-serif;
-// $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
+$font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
 // $font-weight-normal: normal;
@@ -112,7 +112,7 @@ $font-weight-bold: bold;
 // $monsoon     : #777777;
 // $steel       : #666666;
 // $charcoal    : #555555;
-// $tuatara     : #444444;
+$tuatara     : #444444;
 $oil         : #333333;
 // $jet         : #222222;
 // $black       : #000000;
@@ -125,11 +125,11 @@ $secondary-color: #aaa; // grey
 $alert-color: #AB1A25; // deep red
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
-$info-color: #ff7d34; // highlight color for info stuff
+$info-color: #ff7d34; // highlight color for info stuff (orange)
 
 // We use these to control various global styles
 // $body-bg: $white;
-$body-font-color: $oil;
+$body-font-color: $tuatara;
 $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
