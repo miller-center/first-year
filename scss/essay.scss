@@ -5,19 +5,20 @@
 @import "foundation";
 @import "foundation-icons.css";
 
-//$essay-full-width: 125%;
 
-#essay {/*max-width: 600px; */ margin: 0 auto;}
+#essay {margin: 0 auto; }
 
 p.essay-intro {font-size: larger;}
 
-#essay > p {padding-right: 200px; padding-left: 200px;}
+#essay > p {padding-right: 150px; padding-left: 150px;}
 
 figure {
 	/*border-top: 1px solid $info-color; 
 	border-bottom: 1px solid $info-color; */
 	padding: 10px 15px; 
 	max-width: 30%;} 
+
+figure.video {max-width: initial;}
 
 figure.sm {max-width:30%;} 
 figure.lg {max-width: 100%;} 
@@ -80,16 +81,13 @@ blockquote {
 .author {
 	background-color: $primary-color; 
 	width: 100%;
-<<<<<<< HEAD
 	margin-bottom: 3rem;
-=======
 	color: #ddd; 
 	font-family: $font-family-small; 
 	padding: 1em;	
 		a {color: #fff;
 		&:hover {color:#ddd;}
-		}	
->>>>>>> master
+		}
 	p {
 		font-size: smaller;
 		}
