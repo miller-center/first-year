@@ -70,11 +70,19 @@ blockquote {
 // Call to action	
 .cta {
 	background-color: $primary-color; 
-	margin: 50px 0; 
+	color: #fff;
+	margin: 0 0 50px 0; 
 	clear:both; 
-	//width: $essay-full-width; 
-	padding: 25px; 
-	text-size: larger;}
+	padding: 15px 25px; 
+	text-align: center;
+		h4 {
+			text-transform: uppercase;
+			letter-spacing: 10px;
+			font-weight: 100;
+			color: #ddd;
+		}
+	.more {color: $info-color;}
+	}
 
 .cta .email-signup {margin: 0 auto;}
 
