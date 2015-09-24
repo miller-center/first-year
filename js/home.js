@@ -15,15 +15,24 @@ $(document).ready(function() {
       listItems.eq(newsListCounter).fadeIn(fadeTime);      
     });
   }
+  function newSetInterval(callback, duration, callbackArguments) {
+    callback.apply(this, callbackArguments);
+    var args = arguments,
+        scope = this;
+
+    setTimeout(function() {
+        newSetInterval.apply(scope, args);
+    }, duration);
+  }
 
   // if window is large enough do the following:
   //   1. activate newsfeed rotation
   //   2. reveal/conceal sharing sidebar
-
   try {
     if(Foundation.utils.is_medium_up()) {
-      timeout = 5000;
-      FirstYear.newsTickerId = setInterval(FirstYear.animateNews, timeout);
+      delay = 5000;
+      FirstYear.newsTickerId = newSetInterval(FirstYear.animateNews, delay);
+
       FirstYear.sharingBar();
 
     } else {
