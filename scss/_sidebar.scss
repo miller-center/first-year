@@ -1,0 +1,33 @@
+// sharing side bar
+.sharing-options {
+  position:absolute;
+  top: $hero-height * 1.5;
+  z-index: -1; // prevents overlap with content
+  background-color: rgba(255,255,255, 0.75);
+  right: -5rem; // off-canvas
+  @include single-transition(right, 500ms, ease-in);
+  ul {
+    li {
+      padding: .75em;
+      div.sharing-item {
+        background-color: transparent;
+        border-radius: 50%;
+        padding: 3px;
+        @include single-transition(background-color, 100ms, ease-in);
+        &:hover {
+          background-color: $secondary-color;
+        }
+      }
+    }
+  }
+}
+.shareBarReveal {
+  position:fixed;
+  top: 40%;
+  right: 0.5em !important;
+}
+.shareBarExit {
+  position:fixed;
+  top: 40%;
+  right: -5em !important;
+}

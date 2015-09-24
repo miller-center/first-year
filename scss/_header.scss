@@ -1,49 +1,10 @@
 @import "settings";
 @import "foundation";
-@import "foundation-icons.css";
 
-// project-wide styling here
+// header styles
 
-// Or selectively include components
-// @import
-//   "foundation/components/accordion",
-//   "foundation/components/alert-boxes",
-//   "foundation/components/block-grid",
-//   "foundation/components/breadcrumbs",
-//   "foundation/components/button-groups",
-//   "foundation/components/buttons",
-//   "foundation/components/clearing",
-//   "foundation/components/dropdown",
-//   "foundation/components/dropdown-buttons",
-//   "foundation/components/flex-video",
-//   "foundation/components/forms",
-//   "foundation/components/grid",
-//   "foundation/components/inline-lists",
-//   "foundation/components/joyride",
-//   "foundation/components/keystrokes",
-//   "foundation/components/labels",
-//   "foundation/components/magellan",
-//   "foundation/components/orbit",
-//   "foundation/components/pagination",
-//   "foundation/components/panels",
-//   "foundation/components/pricing-tables",
-//   "foundation/components/progress-bars",
-//   "foundation/components/reveal",
-//   "foundation/components/side-nav",
-//   "foundation/components/split-buttons",
-//   "foundation/components/sub-nav",
-//   "foundation/components/switches",
-//   "foundation/components/tables",
-//   "foundation/components/tabs",
-//   "foundation/components/thumbs",
-//   "foundation/components/tooltips",
-//   "foundation/components/top-bar",
-//   "foundation/components/type",
-//   "foundation/components/offcanvas",
-//   "foundation/components/visibility";
 
 $navigation-container-height: $topbar-height;
-// $navigation-container-bg-color: transparentize($bill-rapp-blue, 0.3);
 $navigation-container-bg-color: $bill-rapp-blue;
 $navigation-white: #eee;
 $navigation-container-z-index: 1000;
@@ -61,7 +22,7 @@ $transparent: rgba(245,245,245,0.0);
     width: $row-width;
     margin-left: auto;
     margin-right: auto;
-    section.logo-section {
+    .logo-section {
       h1, h4 {
         //margin-left: 1em;
         position: absolute;
@@ -74,6 +35,14 @@ $transparent: rgba(245,245,245,0.0);
     		left: 5px;
         min-height: ($topbar-height * 0.90) !important;
         max-height: ($topbar-height * 0.90) !important;
+      }
+    }
+    .social-section {
+      a {
+        display: inline-block;
+        margin: 0 auto !important;
+        min-height: 100%;
+        min-width: 100%;
       }
     }    
   }
@@ -159,7 +128,7 @@ $transparent: rgba(245,245,245,0.0);
           background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
         }
         li#header-tw-icon {
-          background: url('../images/icons/#{$social-icon-size}/twitter-dk.png') no-repeat center center;
+          background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center;
           left: $social-icon-size + $social-icon-pad;
         }
 
@@ -194,7 +163,7 @@ $transparent: rgba(245,245,245,0.0);
           }
           a + ul.dropdown {
             width: 200px;
-            left: 0;
+            right: 0;
             li a {
               min-width: 100% !important;
               // background-color: transparentize(#ddd, 0.9);
@@ -208,6 +177,15 @@ $transparent: rgba(245,245,245,0.0);
       }
     }
   } 
+}
+
+// this is for odd cases where viewport is 'large' but smaller than our grid
+@media #{$large-below-1080-range} {
+  #navigation-container {
+    nav.top-bar {
+      max-width: 100%;
+    }
+  }
 }
 
 @media #{$large-up} {
@@ -224,7 +202,7 @@ $transparent: rgba(245,245,245,0.0);
       background-color: $transparent !important; // transparent; parent has correct style
        border:none;
       a {
-        padding-top:0.6em;
+        // padding-top:0.6em;
       }
     }
   }
@@ -304,7 +282,7 @@ $transparent: rgba(245,245,245,0.0);
           background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
         }
         li#header-tw-icon {
-          background: url('../images/icons/#{$social-icon-size}/twitter-dk.png') no-repeat center center;
+          background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center;
           left: $social-icon-size + $social-icon-pad;
         }
 
@@ -356,10 +334,7 @@ $transparent: rgba(245,245,245,0.0);
       ul.right {
         list-style-type: none;
         position:relative;
-
-        
       }
-
     } // end .social-section
     #navigation-section {
       ul.right {
@@ -418,7 +393,24 @@ $transparent: rgba(245,245,245,0.0);
 }
 
 @media #{$medium-only} {
-  
+  #navigation-container {
+    .logo-section {
+      width: 60%;
+    }
+    .social-section {
+      ul {
+        @media #{$landscape} {
+          position:relative;
+          left: -60%;
+        }
+        @media #{$portrait} {
+          position:relative;
+          left: -60% !important;
+        }
+
+      }
+    }
+  }
 }
 
 @media #{$large-only} {

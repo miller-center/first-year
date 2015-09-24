@@ -1,0 +1,192 @@
+doctype html
+- var title = "The First Year Project"
+- var issue = "The Crucible Year"
+- var essay = "What Time Is It?"
+- var project_home = ".."
+html(lang="en")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(name="description", content="")
+		meta(name="author", content="")
+		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
+		link(rel="stylesheet", href="#{project_home}/css/first-year.css")
+		link(rel="stylesheet", href="#{project_home}/css/home.css")
+		link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
+		link(href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&7CCrimson+Text:400,700,600',rel="stylesheet", type="text/css")
+		//- adding Slick Carousel
+		//- link(rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick.css")
+		//- link(rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick-theme.css")
+		//- line(rel="stylesheet",type="text/css",href="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css")
+	
+	body
+
+		
+		//- Header: Navigation & Logo
+		.fixed#navigation-container
+			nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: large")
+				section.logo-section.show-for-medium-up
+					a(href="#") 
+						img(src="../images/logos/fy2017_logo_horiz_wh.png")
+
+				ul.title-area
+					li.name
+						h1
+							a.logo.show-for-small-only(href="#")
+								img(src="http://placehold.it/50x50")
+					li.toggle-topbar.menu-icon#mobile-menu
+						a(href="#")
+							span Menu 
+
+
+				section.top-bar-section.main-menu-section#navigation-section
+					//	Right Nav Section 
+					ul.right
+						li.hide-for-medium-up
+							a(href="#") Foo 
+						li.hide-for-medium-up
+							a(href="#") Bar 
+
+						li.menu-option.hide-for-small-only.has-dropdown#header-menu-icon
+							a(href="#")
+								span.label Menu
+									span
+							ul.dropdown
+								li
+									a(href="#") First link in dropdown
+								li.featured
+									a(href="#") Featured link in dropdown
+								li
+									a(href="#") Third link in dropdown
+								li
+									a(href="#") Fourth link in dropdown
+
+
+				section.social-section.show-for-medium-up
+					ul.right
+						li.social-icon#header-fb-icon: a(href="#")
+							| &nbsp;
+							//- img(src="images/icons/lg/facebook-wht.png")
+						li.social-icon#header-tw-icon: a(href="#") 
+							| &nbsp;
+ 
+		//- Hero Image Section
+		.row
+			//- .small-12.columns
+			//- 	h1
+			//- 		a(href="#") LINK
+			.small-12.columns.hero
+
+
+				.row.hero-title
+					.small-12.small-centered.medium-uncentered.columns#hero-title
+						h2 Issue 1
+						span.stars &#x2605; &#x2605; &#x2605;
+						h1.main-title The Next President's Crucible Year
+						p Six essays about the promises and pitfalls of the first 365 days in office.
+
+
+
+		.row
+			.small-0.medium-1.columns.spacer &nbsp;
+
+			.small-12.medium-10.columns#blog-large
+					h2 Briefing Room
+					.blog-item
+						h4 
+							a(href="zzz") Consectetur Adipiscing Elit
+						p.content This is a teaser sentence about what you'll find here. 				
+						.blog-item-info
+							span.date January 1, 2016
+							span.author Jeff Chidester
+
+					.blog-item
+						h4 
+							a(href="xxx") Consectetur Adipiscing Elit Sed Fermentum Hendrerit Eros Sit Amet Congue
+						p.content This is a teaser sentence about what you'll find here. 
+						.blog-item-info
+							span.date January 1, 2016
+							span.author Joe Biden
+
+					.blog-item
+						h4 
+							a(href="ccc") Dolor sit amet?
+						p.content This is a teaser sentence about what you'll find here. 					
+						.blog-item-info
+							span.date January 1, 2016
+							span.author Bill Antholis
+
+					.blog-item
+						h4 
+							a(href="aaa") Proin eleifend vel neque laoreet ullamcorper
+						p.content This is a teaser sentence about what you'll find here. 					
+						.blog-item-info
+							span.date January 1, 2016
+							span.author Amber Lautigar Reichert
+	
+			.small-0.medium-1.columns.spacer &nbsp;
+					
+					
+
+
+
+
+		footer.footer#bodyFooter
+			.row.footerTeaser
+				.small-12.medium-6.columns
+					ul.inline-list
+						li Issue 1: The First Year 
+						li Coming in January 2016: National Security 
+				.small-12.medium-6.columns
+					ul.inline-list
+						li Coming in March 2016: Fiscal Policy
+						li Coming in June 2016: Something Awesome	
+			.row.footerNav
+				.small-12.medium-3.columns.project-menu-section
+					ul
+						li: a(href="#") Home&nbsp;
+							
+						li About the Project
+							ul
+								li: a(href="") Contact
+								li: a(href="") Advisory Council
+								li: a(href="") Scholars
+				.small-12.medium-9.columns.social-options-section
+					.row
+						.small-12.medium-8.large-4.columns.right.social-options
+							ul.inline-list
+								li.social-option.social-email-icon: a(href="#") &nbsp;
+								li.social-option.social-fb-icon: a(href="#") &nbsp;
+								li.social-option.social-tw-icon: a(href="#") &nbsp;
+						.small-12.columns.get-involved
+							//- h3 Get Involved
+							form.footer-form
+								.row
+									//- .small-12.medium-3.columns.hide-for-small-only
+									//- 	label(for="email").contact.left Contact Us
+									.small-12.medium-8.columns
+										input#footer-email(type="email",placeholder="Join our email list for exclusive alerts")
+									.small-12.medium-4.columns.text-center#footer-email-button
+										button.submit(type="submit",value="Submit") Sign Up &gt;
+			.row.footerLogo
+				.hide-for-small.medium-2.columns
+					a(href="http://millercenter.org")
+						img(src="http://staticmc.org/images/template/logo-white.png")
+				.small-12.medium-10.columns
+					.hide-for-medium-up
+						a(href="http://millercenter.org")
+							img(src="http://staticmc.org/images/template/logo-white.png")
+					p The Miller Center is a nonpartisan affiliate of the University of Virginia that specializes in presidential scholarship, public policy, and political history and strives to apply the lessons of history to the nation’s most pressing contemporary governance challenges. 
+						a(href="http://millercenter.org") Learn more at millercenter.org.
+
+		script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
+		//- remove http protocol from production version
+		script(src="http://code.jquery.com/jquery-migrate-1.2.1.min.js")
+		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.js")
+		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.topbar.js")
+		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.interchange.js")
+		script(src="#{project_home}/bower_components/slick-carousel/slick/slick.min.js")
+		//- script(src="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")
+		script(src="#{project_home}/js/first-year.js")
+		//- first-year.js initializes Foundation
+		script(src="#{project_home}/js/home.js")

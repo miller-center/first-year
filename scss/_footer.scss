@@ -178,7 +178,8 @@ footer .social-tw-icon {
       .social-options-section {
         margin-top: 5%;
         .social-options {
-          width: 50%;
+          min-width: 50%;
+          width: 100%;
           right: 0;
           ul {
             li.social-option {

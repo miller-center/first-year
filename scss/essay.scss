@@ -80,7 +80,16 @@ blockquote {
 .author {
 	background-color: $primary-color; 
 	width: 100%;
+<<<<<<< HEAD
 	margin-bottom: 3rem;
+=======
+	color: #ddd; 
+	font-family: $font-family-small; 
+	padding: 1em;	
+		a {color: #fff;
+		&:hover {color:#ddd;}
+		}	
+>>>>>>> master
 	p {
 		font-size: smaller;
 		}
@@ -88,12 +97,13 @@ blockquote {
 		float:right;
 		font-size: smaller;
 		&:before {
-			content: url('../images/icons/35px/twitter-wh.png'); 
+			content: url('../images/icons/35px/twitter-wh-sm.png'); 
 			position:relative; top: 13px; 
 			}
 		}
 	
 	}
+
 
 	
 	
