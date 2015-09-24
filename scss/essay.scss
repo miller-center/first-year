@@ -5,32 +5,30 @@
 @import "foundation";
 @import "foundation-icons.css";
 
-$essay-full-width: 125%;
+//$essay-full-width: 125%;
 
-#essay {max-width: 600px; margin: 0 auto;}
+#essay {/*max-width: 600px; */ margin: 0 auto;}
 
 p.essay-intro {font-size: larger;}
 
-figure {
-	border-top: 1px solid $info-color; 
-	border-bottom: 1px solid $info-color; 
-	padding: 10px 15px; 
-	max-width: 50%;} /*300px wide*/
+#essay > p {padding-right: 200px; padding-left: 200px;}
 
-figure.sm {max-width:30%;} /* 180px */
-figure.lg {max-width: 150%;} /* 900px - extends to the right or left page limit*/
+figure {
+	/*border-top: 1px solid $info-color; 
+	border-bottom: 1px solid $info-color; */
+	padding: 10px 15px; 
+	max-width: 30%;} 
+
+figure.sm {max-width:30%;} 
+figure.lg {max-width: 100%;} 
 
 figure.right {
 	//float:right; This is built into Foundation's "right" class
-	position: relative; 
-	left: 40%; 
-	margin-left: -35%;}
+	}
 
 figure.left {
 	//float:left; This is built into Foundation's "left" class
-	position: relative; 
-	right: 40%; 
-	margin-right: -35%;}
+	}
 
 figcaption {display: table-row;}
 figcaption p {
@@ -47,21 +45,20 @@ figure img {clear:both; max-width: 100%;}
 	line-height: 1.8rem;
 	margin: 50px 0; 
 	clear:both; 
-	width: $essay-full-width;
-	margin-left: -12.5%; 
-	padding: .8rem 0; 
-	//text-align: center; Built into Foundation
 	font-style: italic;
+	padding: .8rem 0; 
 	color: $secondary-color;
 	border-top: 1px solid $info-color;
 	border-bottom: 1px solid $info-color;}
 
 blockquote {
-	margin: 25px 2%; 
-	padding: 0 1%; 
-	border-left: 1px solid #00a; }
-blockquote:before {content:"“";}
-blockquote:after {content:"”";}
+	margin: 25px 0 25px 3%; 
+	padding: 0 0 0 3%; 
+	border-left: 1px solid $info-color; 
+	font-family: $font-family-small;
+	font-size: smaller;}
+//blockquote:before {content:"“";}
+//blockquote:after {content:"”";}
 
 .essay-continues {
 	display:block; 
@@ -74,8 +71,7 @@ blockquote:after {content:"”";}
 	background-color: $primary-color; 
 	margin: 50px 0; 
 	clear:both; 
-	width: $essay-full-width; 
-	margin-left: -12.5%; 
+	//width: $essay-full-width; 
 	padding: 25px; 
 	text-size: larger;}
 
@@ -90,6 +86,7 @@ blockquote:after {content:"”";}
 		a {color: #fff;
 		&:hover {color:#ddd;}
 		}	
+	//margin-bottom: 3rem;
 	p {
 		font-size: smaller;
 		}
@@ -116,4 +113,31 @@ blockquote:after {content:"”";}
 #supplementary-content #resources ul {
 	list-style: circle;
 	}
+
+
+//
+// Viewport-specific styles
+//
+
+@media #{$small-only} {
+	#essay p {padding-left: 1em; padding-right: 1em;}
+	#essay figure {max-width: 100%; text-align: center; border-top: 1px solid $info-color; border-bottom: 1px solid $info-color; }
+	#essay figure.right, #essay figure.left {float:none !important; clear:both; position: static; left: 0; margin-left: 0; }  
+}
+
+@media #{$medium-only} {
+	#essay p {padding-left: 1em; padding-right: 1em;}
+	#essay figure {max-width: 100%; text-align: center; border-top: 1px solid $info-color; border-bottom: 1px solid $info-color; }
+	#essay figure.right, #essay figure.left {float:none !important; clear:both; position: static; left: 0; margin-left: 0; }  
+
+
+}
+
+@media #{$large-only} {
+}
+
+@media #{$xlarge-only} {
+}
+
+
 
