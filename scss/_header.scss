@@ -151,7 +151,6 @@ $transparent: rgba(245,245,245,0.0);
             max-height: $topbar-height;
             min-height: $topbar-height;
             position: relative;
-            top: -($topbar-height * 0.05);
           }
           span.label {
             min-width: 6rem;
@@ -306,7 +305,6 @@ $transparent: rgba(245,245,245,0.0);
             max-height: $topbar-height;
             min-height: $topbar-height;
             position: relative;
-            top: -($topbar-height * 0.05);
           }
           span.label {
             min-width: 8rem;
@@ -350,7 +348,6 @@ $transparent: rgba(245,245,245,0.0);
             max-height: $topbar-height;
             min-height: $topbar-height;
             position: relative;
-            top: -($topbar-height * 0.05);
             span.label {
               color:$navigation-white;
               min-width: 8rem;
