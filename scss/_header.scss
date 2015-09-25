@@ -172,6 +172,14 @@ $transparent: rgba(245,245,245,0.0);
               // background-color: transparentize(#ddd, 0.9);
               width: ($social-icon-size + $social-icon-pad) * 2 !important;
             }
+			span {font-size: .65rem; padding-left: 1rem; padding-right: 1rem; }
+			li {
+				ul {
+					li {
+					text-align: right; 
+					}
+				}
+			}
             li.featured a {
               color: orange;
             }
@@ -325,6 +333,9 @@ $transparent: rgba(245,245,245,0.0);
               min-width: 100% !important;
               // background-color: transparentize(#ddd, 0.9);
               width: ($social-icon-size + $social-icon-pad) * 2 !important;
+              &:hover { 
+              	text-decoration: none;
+              }
             }
             li.featured a {
               color: orange;
