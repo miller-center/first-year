@@ -7,6 +7,15 @@ $hero-height: 30rem;
 @import "sidebar";
 @import "footer";
 
+// mixins, including overriding default ones
+@mixin single-transition($property:all, $speed:300ms, $ease:ease-out) {
+  transition: $property $speed $ease;
+  -webkit-transition: $property $speed $ease;
+  -moz-transition: $property $speed $ease;
+  -ms-transition: $property $speed $ease;
+  -o-transition: $property $speed $ease;
+}
+
 // project-wide styling here
 
 
@@ -546,7 +555,7 @@ ul {list-style-type: circle;}
 }
 
 @media #{$medium-up} {
-  
+
 }
 
 @media #{$large-up} {
