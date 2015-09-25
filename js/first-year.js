@@ -1,7 +1,7 @@
 $(document).foundation({
   topbar : {
     custom_back_text: false,
-    is_hover: true,
+    is_hover: false,
     mobile_show_parent_link: false
   }
 });
