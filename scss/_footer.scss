@@ -38,7 +38,7 @@ footer {
     list-style-type: none;
   }
 }
-footer a, footer a:visited {
+footer a, footer a:visited, footer a:active, footer a:hover {
   color: #fff;
 }
 footer img {
@@ -105,13 +105,13 @@ footer {
     padding: 0;
     vertical-align: middle;
     a {
-      color: transparent;
-      height: 100%;
-      width: 100%;
-      min-width: 100%;
-      min-height: 100%;
-      &:hover {
-        color: transparent;
+    	color: transparent;
+    	height: 100%;
+    	width: 100%;
+		min-width: 100%;
+    	min-height: 100%;
+    	&:hover {
+    		//color: transparent;
       }
     }
   }
