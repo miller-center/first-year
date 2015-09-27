@@ -71,11 +71,14 @@ blockquote {
 	background-color: $primary-color; 
 	margin: 50px 0; 
 	clear:both; 
-	//width: $essay-full-width; 
 	padding: 25px; 
-	text-size: larger;}
+	text-size: larger;
+	text-align:center;
+	.email-signup {margin: 0 auto;}	
+	
+	}
 
-.cta .email-signup {margin: 0 auto;}
+
 
 .author {
 	background-color: $primary-color; 
