@@ -93,6 +93,10 @@ footer label {
   margin: 0 0 1rem 0;
   font-weight: bold;
 }
+
+//R+V Copyright statement
+footer .copyright p {text-align: center; font-size: .6rem;}
+
 $social-icon-size: 50;
 footer {
   .social-email-icon, .social-fb-icon, .social-tw-icon {
