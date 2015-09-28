@@ -36,74 +36,15 @@ $(document).ready(function() {
           && container.has(e.target).length === 0){ // ... nor a descendant of the container
           container.removeClass('expanded');
       }
-<<<<<<< HEAD
-    } });
-
-<<<<<<< HEAD
-  //
-  // Side (Sharing) Bar Animation
-  //
-  function animateSharingBar(showClass, hideClass, revealPoint) {
-
-    showClass = showClass || "shareBarReveal"; 
-    hideClass = hideClass || "shareBarExit";
-
-    $(window).scroll(function() {
-      var wScroll = Number( $(this).scrollTop() );
-
-      // reveal point for social sharing bar
-      var sbReveal  = revealPoint || Number( $('.hero').height() );
-      var sbConceal = $(document).height() - $('#bodyFooter').height() - ( $(window).height() / 1.05 );
-
-      // slide in social sharing bar from off canvas
-      if (wScroll > sbReveal) {
-        $('#share-bar').addClass(showClass);
-        $('#share-bar').removeClass(hideClass);      
-      } else {
-        $('#share-bar').addClass(hideClass);
-        $('#share-bar').removeClass(showClass);
-      }
-
-      // gracefully exit at footer
-      if (wScroll > sbConceal || wScroll < sbReveal) {
-        $('#share-bar').addClass(hideClass);
-        $('#share-bar').removeClass(showClass);
-      } else {
-        $('#share-bar').addClass(showClass);
-        $('#share-bar').removeClass(hideClass);      
-      }
-
-    });
-    return true;
-
-  }
-
-
-=======
->>>>>>> master
-=======
     } 
   });
 
->>>>>>> master
+
   //
   // Side (Sharing) Bar Animation
   //
   FirstYear.sharingBar = function animateSharingBar(showClass, hideClass, revealPoint) {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  // rotate through the list of 'The Latest' headlines
-  function changeNewsItem() {
-    fadeTime = 300;
-    listItems.eq(current++).fadeOut(fadeTime, function() {
-      if (current === length) {
-        current = 0;
-      }
-      listItems.eq(current).fadeIn(fadeTime);
-=======
-=======
->>>>>>> master
     showClass = showClass || "shareBarReveal"; 
     hideClass = hideClass || "shareBarExit";
 
@@ -131,17 +72,10 @@ $(document).ready(function() {
         $('#share-bar').addClass(showClass);
         $('#share-bar').removeClass(hideClass);      
       }
-<<<<<<< HEAD
->>>>>>> master
-=======
->>>>>>> master
 
     });
-    return true;
-
   }
 
-<<<<<<< HEAD
   function rotateNewsItem() {
     fadeTime = 300;
     listItems.eq(current++).fadeOut(fadeTime, function() {
@@ -158,7 +92,6 @@ $(document).ready(function() {
   //   1. activate newsfeed rotation
   //   2. reveal/conceal sharing sidebar
 
-<<<<<<< HEAD
   try {
     if(Foundation.utils.is_medium_up()) {
       var listItems = $('#the-latest ul li:not(.label)');
@@ -166,27 +99,8 @@ $(document).ready(function() {
       var current = 0;
       timeout = 5000;
       setInterval(rotateNewsItem, timeout);
-      animateSharingBar();
-=======
 
-=======
->>>>>>> master
-  // if window is large enough do the following:
-  //   1. activate newsfeed rotation
-  //   2. reveal/conceal sharing sidebar
-
-  try {
-    if(Foundation.utils.is_medium_up()) {
-<<<<<<< HEAD
-      // var listItems = $('#the-latest ul li:not(.label)');
-      // length = listItems.length;
-      // var current = 0;
-      // timeout = 5000;
-      // FirstYear.newsTickerId = setInterval(FirstYear.animateNews, timeout);
->>>>>>> master
-=======
       FirstYear.sharingBar();
->>>>>>> master
     } else {
       console.log('some animations disabled for small device');
     }
