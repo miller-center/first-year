@@ -102,8 +102,8 @@ $transparent: rgba(245,245,245,0.0);
     background-color: $navigation-container-bg-color;
 
     // select size for social icons here
-    $social-icon-size: 50px;
-    $social-icon-pad: 10px;
+    $social-icon-size: 40px;
+    $social-icon-pad: 15px;
     .social-section {
       position:relative;
       left:66%;
@@ -130,10 +130,10 @@ $transparent: rgba(245,245,245,0.0);
           }
         }
         li#header-fb-icon {
-          background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
+          background: url('../images/icons/#{$social-icon-size}/facebook-wh.png') no-repeat center center;
         }
         li#header-tw-icon {
-          background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center;
+          background: url('../images/icons/#{$social-icon-size}/twitter-wh.png') no-repeat center center;
           left: $social-icon-size + $social-icon-pad;
         }
 
@@ -267,8 +267,8 @@ $transparent: rgba(245,245,245,0.0);
       // }
     }
     // select size for social icons here
-    $social-icon-size: 50px;
-    $social-icon-pad: 10px;
+    $social-icon-size: 40px;
+    $social-icon-pad: 15px;
     .social-section {
       position:relative;
       left:0;
@@ -293,10 +293,10 @@ $transparent: rgba(245,245,245,0.0);
           }
         }
         li#header-fb-icon {
-          background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
+          background: url('../images/icons/#{$social-icon-size}/facebook-wh.png') no-repeat center center;
         }
         li#header-tw-icon {
-          background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center;
+          background: url('../images/icons/#{$social-icon-size}/twitter-wh.png') no-repeat center center;
           left: $social-icon-size + $social-icon-pad;
         }
 
