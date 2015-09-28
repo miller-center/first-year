@@ -5,19 +5,20 @@
 @import "foundation";
 @import "foundation-icons.css";
 
-//$essay-full-width: 125%;
 
-#essay {/*max-width: 600px; */ margin: 0 auto;}
+#essay {margin: 0 auto; }
 
 p.essay-intro {font-size: larger;}
 
-#essay > p {padding-right: 200px; padding-left: 200px;}
+#essay > p {padding-right: 150px; padding-left: 150px;}
 
 figure {
 	/*border-top: 1px solid $info-color; 
 	border-bottom: 1px solid $info-color; */
 	padding: 10px 15px; 
 	max-width: 30%;} 
+
+figure.video {max-width: initial;}
 
 figure.sm {max-width:30%;} 
 figure.lg {max-width: 100%;} 
@@ -69,15 +70,18 @@ blockquote {
 // Call to action	
 .cta {
 	background-color: $primary-color; 
-	margin: 50px 0; 
+	color: #fff;
+	margin: 0 0 50px 0; 
 	clear:both; 
-	padding: 25px; 
-	text-size: larger;
-	text-align:center;
-	.email-signup {margin: 0 auto;}	
-	
+	padding: 15px 25px; 
+	text-align: center;
+		h4 {
+			text-transform: uppercase;
+			letter-spacing: 10px;
+			color: #aaa;
+		}
+	.more {color: $info-color;}
 	}
-
 
 
 .author {
@@ -86,10 +90,12 @@ blockquote {
 	color: #ddd; 
 	font-family: $font-family-small; 
 	padding: 1em;	
-		a {color: #fff;
-		&:hover {color:#ddd;}
-		}	
-	//margin-bottom: 3rem;
+	a {
+		color: #fff;
+		&:hover {
+			color:#ddd;
+		}
+	}
 	p {
 		font-size: smaller;
 		}
