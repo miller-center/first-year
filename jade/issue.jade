@@ -82,6 +82,10 @@ html(lang="en")
 						h1.main-title The Next President's Crucible Year
 						p Six essays about the promises and pitfalls of the first 365 days in office.
 
+		.row
+			.small-0.medium-1.columns.spacer &nbsp;
+
+			.small-12.medium-10.columns#blog-large
 				.row.hero-slider-row
 					.small-10.large-10.small-centered.columns#hero-slider
 						div.large-4.small-12.columns.slider-panel
@@ -168,27 +172,7 @@ html(lang="en")
 					.blog-item-info
 						span.date January 1, 2016
 						span.author Dwight D. Eisenhower
-
-			.small-0.medium-1.columns.spacer &nbsp;
 					
-		aside#share-bar.sharing-options.right
-			ul.no-bullet
-				li: a(href="#",title="share on Facebook")
-					div.sharing-item
-						img(data-interchange="[../images/icons/45px/facebook.png, (default)], [../images/icons/55px/facebook.png, (large)]")
-						noscript: img(src="../images/icons/md/facebook.png")
-				li: a(href="#",title="share on Twitter")
-					div.sharing-item
-						img(data-interchange="[../images/icons/45px/twitter.png, (default)], [../images/icons/55px/twitter.png, (large)]")
-						noscript: img(src="../images/icons/md/twitter.png")
-				li: a(href="#",title="share on LinkedIn")
-					div.sharing-item
-						img(data-interchange="[../images/icons/45px/linkedin.png, (default)], [../images/icons/55px/linkedin.png, (large)]")
-						noscript: img(src="../images/icons/md/linkedin.png")
-				li: a(href="#",title="share via Email")
-					div.sharing-item
-						img(data-interchange="[../images/icons/45px/mail.png, (default)], [../images/icons/55px/mail.png, (large)]")
-						noscript: img(src="../images/icons/md/mail.png")
 
 		include ./sidebar.jade
 
@@ -196,6 +180,7 @@ html(lang="en")
 
 		script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
 		//- remove http protocol from production version
+		script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
 		script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.topbar.js")
