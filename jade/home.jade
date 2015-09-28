@@ -22,7 +22,7 @@ html(lang="en")
 	body
 
 		
-		//- Header: Navigation & Logo
+		// Header (Topbar): Navigation Menu, Logo and Sharing Options
 		.fixed#navigation-container
 			nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: large")
 				section.logo-section.show-for-medium-up
@@ -44,6 +44,7 @@ html(lang="en")
 					ul.right
 						li.hide-for-medium-up
 <<<<<<< HEAD
+<<<<<<< HEAD
 							a(href="#") First link in Mobile Menu  
 						li.hide-for-medium-up.active
 							a(href="#") Featured link in Mobile Menu  
@@ -52,13 +53,18 @@ html(lang="en")
 						li.hide-for-medium-up
 							a(href="#") Fourth link in Mobile Menu  
 =======
+=======
+>>>>>>> master
 							a(href="about") About the Project
 						li.hide-for-medium-up
 							a(href="issue/why-the-first-year") Issue 1: The First Year
 						li.hide-for-medium-up <!--.active class was applied here--I like it but want to apply globally. UntilI figure that out, commenting it out. -->
 							a(href="get-involved") Get Involved
+<<<<<<< HEAD
 >>>>>>> master
 
+=======
+>>>>>>> master
 						li.menu-option.hide-for-small-only.has-dropdown#header-menu-icon
 							a(href="#")
 								span.label Menu
@@ -66,10 +72,13 @@ html(lang="en")
 							ul.dropdown
 								li
 <<<<<<< HEAD
+<<<<<<< HEAD
 									a(href="#") First link in dropdown
 								li.active
 									a(href="#") Featured link in dropdown
 =======
+=======
+>>>>>>> master
 									a(href="about") About the Project
 									ul 
 										li 
@@ -78,6 +87,9 @@ html(lang="en")
 											a(href="about#advisory") Advisory Council
 										li 
 											a(href="about#scholars") Scholars
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 								li
 									span Issues
@@ -194,7 +206,10 @@ html(lang="en")
 							p.content Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum hendrerit eros sit amet congue laoreet ullamcorper. 
 								a.more(href="") more 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
 =======
 >>>>>>> master
 
@@ -291,6 +306,7 @@ html(lang="en")
 	
 			.small-0.large-1.columns.spacer &nbsp;
 					
+<<<<<<< HEAD
 		aside#share-bar.sharing-options.right
 			ul.no-bullet
 				li: a(href="#",title="share on Facebook")
@@ -378,6 +394,11 @@ html(lang="en")
 						a(href="http://millercenter.org") Learn more at millercenter.org.
 			.row.copyright
 				p Copyright 2015 Rector and Visitors of the University of Virginia
+=======
+		include ./sidebar.jade
+
+		include ./footer.jade
+>>>>>>> master
 
 		script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
 		//- remove http protocol from production version
