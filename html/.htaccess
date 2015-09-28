@@ -1,0 +1,5 @@
+AuthUserFile /etc/httpd/secure/htpasswd
+AuthType Basic
+AuthName "Valid Username/Password Required"
+Require valid-user
+Options +Indexes

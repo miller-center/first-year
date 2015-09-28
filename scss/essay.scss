@@ -73,6 +73,7 @@ blockquote {
 	color: #fff;
 	margin: 0 0 50px 0; 
 	clear:both; 
+<<<<<<< HEAD
 	padding: 15px 25px; 
 	text-align: center;
 		h4 {
@@ -82,19 +83,35 @@ blockquote {
 		}
 	.more {color: $info-color;}
 	}
+=======
+	padding: 25px; 
+	text-size: larger;
+	text-align:center;
+	.email-signup {margin: 0 auto;}	
+	
+	}
 
-.cta .email-signup {margin: 0 auto;}
+>>>>>>> master
+
 
 .author {
 	background-color: $primary-color; 
 	width: 100%;
+<<<<<<< HEAD
 	margin-bottom: 3rem;
+=======
+>>>>>>> master
 	color: #ddd; 
 	font-family: $font-family-small; 
 	padding: 1em;	
 		a {color: #fff;
 		&:hover {color:#ddd;}
+<<<<<<< HEAD
 		}
+=======
+		}	
+	//margin-bottom: 3rem;
+>>>>>>> master
 	p {
 		font-size: smaller;
 		}

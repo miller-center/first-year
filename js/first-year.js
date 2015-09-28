@@ -1,12 +1,15 @@
 $(document).foundation({
   topbar : {
     custom_back_text: false,
-    is_hover: true,
+    is_hover: false,
     mobile_show_parent_link: false
   }
 });
 
+window.FirstYear = {}; // project globals
+
 $(document).ready(function() {
+
   // re-initialize Foundation after responsive image loading
   $(document).foundation('interchange', 'reflow');
 
@@ -35,6 +38,7 @@ $(document).ready(function() {
       }
     } });
 
+<<<<<<< HEAD
   //
   // Side (Sharing) Bar Animation
   //
@@ -74,10 +78,15 @@ $(document).ready(function() {
   }
 
 
+=======
+>>>>>>> master
   //
-  // News Ticker Animation
+  // Side (Sharing) Bar Animation
   //
+  
+  FirstYear.sharingBar = function animateSharingBar(showClass, hideClass, revealPoint) {
 
+<<<<<<< HEAD
   // rotate through the list of 'The Latest' headlines
   function changeNewsItem() {
     fadeTime = 300;
@@ -86,9 +95,39 @@ $(document).ready(function() {
         current = 0;
       }
       listItems.eq(current).fadeIn(fadeTime);
+=======
+    showClass = showClass || "shareBarReveal"; 
+    hideClass = hideClass || "shareBarExit";
+
+    $(window).scroll(function() {
+      var wScroll = Number( $(this).scrollTop() );
+
+      // reveal point for social sharing bar
+      var sbReveal  = revealPoint || Number( $('.hero').height() );
+      var sbConceal = $(document).height() - $('#bodyFooter').height() - ( $(window).height() / 1.05 );
+
+      // slide in social sharing bar from off canvas
+      if (wScroll > sbReveal) {
+        $('#share-bar').addClass(showClass);
+        $('#share-bar').removeClass(hideClass);      
+      } else {
+        $('#share-bar').addClass(hideClass);
+        $('#share-bar').removeClass(showClass);
+      }
+
+      // gracefully exit at footer
+      if (wScroll > sbConceal || wScroll < sbReveal) {
+        $('#share-bar').addClass(hideClass);
+        $('#share-bar').removeClass(showClass);
+      } else {
+        $('#share-bar').addClass(showClass);
+        $('#share-bar').removeClass(hideClass);      
+      }
+>>>>>>> master
 
     });
-    setTimeout(changeNewsItem, timeout);
+    return true;
+
   }
 
   function rotateNewsItem() {
@@ -107,6 +146,7 @@ $(document).ready(function() {
   //   1. activate newsfeed rotation
   //   2. reveal/conceal sharing sidebar
 
+<<<<<<< HEAD
   try {
     if(Foundation.utils.is_medium_up()) {
       var listItems = $('#the-latest ul li:not(.label)');
@@ -115,6 +155,20 @@ $(document).ready(function() {
       timeout = 5000;
       setInterval(rotateNewsItem, timeout);
       animateSharingBar();
+=======
+
+  // if window is large enough do the following:
+  //   1. activate newsfeed rotation
+  //   2. reveal/conceal sharing sidebar
+
+  try {
+    if(Foundation.utils.is_medium_up()) {
+      // var listItems = $('#the-latest ul li:not(.label)');
+      // length = listItems.length;
+      // var current = 0;
+      // timeout = 5000;
+      // FirstYear.newsTickerId = setInterval(FirstYear.animateNews, timeout);
+>>>>>>> master
     } else {
       console.log('some animations disabled for small device');
     }
@@ -124,3 +178,5 @@ $(document).ready(function() {
   }
 
 });
+
+

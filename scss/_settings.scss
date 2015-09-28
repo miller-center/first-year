@@ -118,8 +118,8 @@ $oil         : #333333;
 // $black       : #000000;
 
 // We use these as default colors throughout
-$primary-color: #3d657d; // medium greyish blue
 $bill-rapp-blue: #0c2b48;
+$primary-color: $bill-rapp-blue; // formerly medium greyish blue 3d657d
 
 $secondary-color: #aaa; // grey
 $alert-color: #AB1A25; // deep red

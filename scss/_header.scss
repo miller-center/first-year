@@ -38,6 +38,12 @@ $transparent: rgba(245,245,245,0.0);
       }
     }
     .social-section {
+<<<<<<< HEAD
+=======
+      ul {
+        padding: 0 2%;
+      }
+>>>>>>> master
       a {
         display: inline-block;
         margin: 0 auto !important;
@@ -99,14 +105,16 @@ $transparent: rgba(245,245,245,0.0);
     background-color: $navigation-container-bg-color;
 
     // select size for social icons here
-    $social-icon-size: 50px;
-    $social-icon-pad: 10px;
+    $social-icon-size: 40px;
+    $social-icon-pad: 15px;
     .social-section {
       position:relative;
       left:66%;
       ul { 
         padding-top: 0;
         margin-top: 0;
+        margin-left: 2%;
+        margin-right: 2%;
         li.social-icon {
           position: absolute;
           left:0;
@@ -125,10 +133,14 @@ $transparent: rgba(245,245,245,0.0);
           }
         }
         li#header-fb-icon {
-          background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
+          background: url('../images/icons/#{$social-icon-size}/facebook-wh.png') no-repeat center center;
         }
         li#header-tw-icon {
+<<<<<<< HEAD
           background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center;
+=======
+          background: url('../images/icons/#{$social-icon-size}/twitter-wh.png') no-repeat center center;
+>>>>>>> master
           left: $social-icon-size + $social-icon-pad;
         }
 
@@ -140,18 +152,16 @@ $transparent: rgba(245,245,245,0.0);
         li#header-menu-icon {
           left: (($social-icon-size) * 2) + $social-icon-pad; 
           color: $navigation-white;
-          // padding-top: $social-icon-size * 0.2;
           background-color: $navigation-container-bg-color; 
           a {
-            // border:thin solid yellow;
             min-width: 150px;
             max-height: $topbar-height;
             min-height: $topbar-height;
             position: relative;
-            top: -($topbar-height * 0.05);
           }
           span.label {
             min-width: 6rem;
+            margin-top: 10%;
             text-align: left;
             line-height: ($topbar-height * .5);
             padding-bottom: 0.4em;
@@ -165,10 +175,21 @@ $transparent: rgba(245,245,245,0.0);
             width: 200px;
             right: 0;
             li a {
-              min-width: 100% !important;
-              // background-color: transparentize(#ddd, 0.9);
-              width: ($social-icon-size + $social-icon-pad) * 2 !important;
+				min-width: 100% !important;
+				// background-color: transparentize(#ddd, 0.9);
+				width: ($social-icon-size + $social-icon-pad) * 2 !important;
+              	&:hover { 
+              		text-decoration: none;
+              		}
             }
+			span {font-size: .65rem; padding-left: 1rem; padding-right: 1rem; }
+			li {
+				ul {
+					li {
+					text-align: right; 
+					}
+				}
+			}
             li.featured a {
               color: orange;
             }
@@ -253,8 +274,8 @@ $transparent: rgba(245,245,245,0.0);
       // }
     }
     // select size for social icons here
-    $social-icon-size: 50px;
-    $social-icon-pad: 10px;
+    $social-icon-size: 40px;
+    $social-icon-pad: 15px;
     .social-section {
       position:relative;
       left:0;
@@ -279,10 +300,14 @@ $transparent: rgba(245,245,245,0.0);
           }
         }
         li#header-fb-icon {
-          background: url('../images/icons/#{$social-icon-size}/facebook.png') no-repeat center center;
+          background: url('../images/icons/#{$social-icon-size}/facebook-wh.png') no-repeat center center;
         }
         li#header-tw-icon {
+<<<<<<< HEAD
           background: url('../images/icons/#{$social-icon-size}/twitter.png') no-repeat center center;
+=======
+          background: url('../images/icons/#{$social-icon-size}/twitter-wh.png') no-repeat center center;
+>>>>>>> master
           left: $social-icon-size + $social-icon-pad;
         }
 
@@ -302,11 +327,11 @@ $transparent: rgba(245,245,245,0.0);
             max-height: $topbar-height;
             min-height: $topbar-height;
             position: relative;
-            top: -($topbar-height * 0.05);
           }
           span.label {
             min-width: 8rem;
             text-align: left;
+            margin-top: 7.5%;
             line-height: ($topbar-height * .5);
             padding-bottom: 0.4em;
             @include hamburger(16px, false, 0, 1px, 6px, $topbar-menu-icon-color, "", false);
@@ -322,6 +347,9 @@ $transparent: rgba(245,245,245,0.0);
               min-width: 100% !important;
               // background-color: transparentize(#ddd, 0.9);
               width: ($social-icon-size + $social-icon-pad) * 2 !important;
+              &:hover { 
+              	text-decoration: none;
+              }
             }
             li.featured a {
               color: orange;
@@ -345,7 +373,6 @@ $transparent: rgba(245,245,245,0.0);
             max-height: $topbar-height;
             min-height: $topbar-height;
             position: relative;
-            top: -($topbar-height * 0.05);
             span.label {
               color:$navigation-white;
               min-width: 8rem;
@@ -389,7 +416,16 @@ $transparent: rgba(245,245,245,0.0);
 @media #{$small-only} {
   #mobile-menu {
     list-style-type: none;
-  }
+    a:hover {text-decoration: none;}
+    }
+
+	#navigation-section 
+		ul 
+			li
+			{border-top: 1px solid #aaa;}
+			li:hover a {text-decoration: none;}
+	
+
 }
 
 @media #{$medium-only} {

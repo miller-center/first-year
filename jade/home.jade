@@ -43,6 +43,7 @@ html(lang="en")
 					//	Right Nav Section 
 					ul.right
 						li.hide-for-medium-up
+<<<<<<< HEAD
 							a(href="#") First link in Mobile Menu  
 						li.hide-for-medium-up.active
 							a(href="#") Featured link in Mobile Menu  
@@ -50,6 +51,13 @@ html(lang="en")
 							a(href="#") Third link in Mobile Menu  
 						li.hide-for-medium-up
 							a(href="#") Fourth link in Mobile Menu  
+=======
+							a(href="about") About the Project
+						li.hide-for-medium-up
+							a(href="issue/why-the-first-year") Issue 1: The First Year
+						li.hide-for-medium-up <!--.active class was applied here--I like it but want to apply globally. UntilI figure that out, commenting it out. -->
+							a(href="get-involved") Get Involved
+>>>>>>> master
 
 						li.menu-option.hide-for-small-only.has-dropdown#header-menu-icon
 							a(href="#")
@@ -57,13 +65,29 @@ html(lang="en")
 									span
 							ul.dropdown
 								li
+<<<<<<< HEAD
 									a(href="#") First link in dropdown
 								li.active
 									a(href="#") Featured link in dropdown
+=======
+									a(href="about") About the Project
+									ul 
+										li 
+											a(href="about#contact") Contact Us
+										li 
+											a(href="about#advisory") Advisory Council
+										li 
+											a(href="about#scholars") Scholars
+>>>>>>> master
 								li
-									a(href="#") Third link in dropdown
-								li
-									a(href="#") Fourth link in dropdown
+									span Issues
+									ul
+										li
+											a(href="issue/why-the-first-year") Issue 1: The First Year
+										li
+											span Issue 2: Coming Jan '16
+								li <!--active class was applied here--I like it but want to apply globally. UntilI figure that out, commenting it out. -->
+									a(href="get-involved") Get Involved
 
 
 				section.social-section.show-for-medium-up
@@ -89,7 +113,7 @@ html(lang="en")
 							li.hide <a href="#">Veniam hic beatae maiores laboriosam cum soluta</a>
 
 				.row.hero-title
-					.small-12.small-centered.medium-uncentered.columns#hero-title
+					.small-12.small-centered.medium-centered.columns#hero-title
 						h2 Issue 1
 						span.stars &#x2605; &#x2605; &#x2605;
 						h1.main-title The Next President's Crucible Year
@@ -120,7 +144,8 @@ html(lang="en")
 									p Coming January 2016
 							li.tab
 								.tab-entry
-									a(href="#") More →
+									p 
+										a(href="#") More →
 									p &nbsp;
 
 
@@ -168,7 +193,66 @@ html(lang="en")
 							h4 Featured Item 4
 							p.content Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum hendrerit eros sit amet congue laoreet ullamcorper. 
 								a.more(href="") more 
+<<<<<<< HEAD
 
+=======
+>>>>>>> master
+
+
+			.small-12.medium-4.large-3.columns#blog
+					h2 Briefing Room
+					.blog-item
+						h4 
+							a(href="zzz") Consectetur Adipiscing Elit
+					
+						.blog-item-info
+							span.date January 1, 2016
+							span.author Jeff Chidester
+
+					.blog-item
+						h4 
+							a(href="xxx") Consectetur Adipiscing Elit Sed Fermentum Hendrerit Eros Sit Amet Congue
+					
+						.blog-item-info
+							span.date January 1, 2016
+							span.author Joe Biden
+
+					.blog-item
+						h4 
+							a(href="ccc") Dolor sit amet?
+					
+						.blog-item-info
+							span.date January 1, 2016
+							span.author Bill Antholis
+
+					.blog-item
+						h4 
+							a(href="aaa") Proin eleifend vel neque laoreet ullamcorper
+					
+						.blog-item-info
+							span.date January 1, 2016
+							span.author Amber Lautigar Reichert
+	
+			.small-0.large-1.columns.spacer &nbsp;
+					
+		aside#share-bar.sharing-options.right
+			ul.no-bullet
+				li: a(href="#",title="share on Facebook")
+					div.sharing-item
+						img(data-interchange="[../images/icons/45px/facebook.png, (default)], [../images/icons/55px/facebook.png, (large)]")
+						noscript: img(src="../images/icons/md/facebook.png")
+				li: a(href="#",title="share on Twitter")
+					div.sharing-item
+						img(data-interchange="[../images/icons/45px/twitter.png, (default)], [../images/icons/55px/twitter.png, (large)]")
+						noscript: img(src="../images/icons/md/twitter.png")
+				li: a(href="#",title="share on LinkedIn")
+					div.sharing-item
+						img(data-interchange="[../images/icons/45px/linkedin.png, (default)], [../images/icons/55px/linkedin.png, (large)]")
+						noscript: img(src="../images/icons/md/linkedin.png")
+				li: a(href="#",title="share via Email")
+					div.sharing-item
+						img(data-interchange="[../images/icons/45px/mail.png, (default)], [../images/icons/55px/mail.png, (large)]")
+						noscript: img(src="../images/icons/md/mail.png")
 
 
 			.small-12.medium-4.large-3.columns#blog
@@ -230,16 +314,16 @@ html(lang="en")
 		footer.footer#bodyFooter
 			.row.footerTeaser
 				.small-12.medium-6.columns
-					ul.inline-list
-						li Issue 1: The First Year 
-						li Coming in January 2016: National Security 
-				.small-12.medium-6.columns
-					ul.inline-list
-						li Coming in March 2016: Fiscal Policy
-						li Coming in June 2016: Something Awesome	
-			.row.footerNav
-				.small-12.medium-3.columns.project-menu-section
 					ul
+						li: a(href="#") The First Year Project&nbsp;						
+						li: a(href="about") About the Project
+						li: a(href="about#contact") Contact
+						li: a(href="about#advisory") Advisory Council
+						li: a(href="about#scholars") Scholars
+						li: a(href="get-involved") Get Involved
+				.small-12.medium-6.columns
+					ul
+<<<<<<< HEAD
 						li: a(href="#") Home&nbsp;
 							
 						li About the Project
@@ -264,6 +348,24 @@ html(lang="en")
 										input#footer-email(type="email",placeholder="Join our email list for exclusive alerts")
 									.small-12.medium-4.columns.text-center#footer-email-button
 										button.submit(type="submit",value="Submit") Sign Up &gt;
+=======
+						li: a(href="issue/first-year") Issue 1: The First Year 
+						li 
+							em Issue 2: National Security (coming January '16)
+						li 
+							em Issue 3 (coming March '16)
+					ul.inline-list#social-options 
+						<!--very unclear where these will point at launch time. may comment them out for initial launch. -->
+						li.social-option.social-email-icon: a(href="#",title="Email Us") &nbsp;
+						li.social-option.social-fb-icon: a(href="#",title="Contact #{title} on Facebook") &nbsp;
+						li.social-option.social-tw-icon: a(href="#",title="Send #{title} a message on Twitter") &nbsp;
+
+
+			.row.footerNav
+				.small-12.large-6.large-offset-6.columns.get-involved
+					a(href="http://forms.hoosonline.virginia.edu/s/1535/16-uva/index.aspx?sid=1535&gid=16&pgid=9982&cid=17637" target="_blank") 
+						button Join our email list for exclusive alerts. Sign up&nbsp;&gt;
+>>>>>>> master
 			.row.footerLogo
 				.hide-for-small.medium-2.columns
 					a(href="http://millercenter.org")
@@ -274,10 +376,12 @@ html(lang="en")
 							img(src="http://staticmc.org/images/template/logo-white.png")
 					p The Miller Center is a nonpartisan affiliate of the University of Virginia that specializes in presidential scholarship, public policy, and political history and strives to apply the lessons of history to the nation’s most pressing contemporary governance challenges. 
 						a(href="http://millercenter.org") Learn more at millercenter.org.
+			.row.copyright
+				p Copyright 2015 Rector and Visitors of the University of Virginia
 
 		script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
 		//- remove http protocol from production version
-		script(src="http://code.jquery.com/jquery-migrate-1.2.1.min.js")
+		script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.topbar.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.interchange.js")

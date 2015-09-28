@@ -63,5 +63,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks("grunt-contrib-jade");
 
   grunt.registerTask('build', ['sass']);
+  grunt.registerTask('scss', ['sass']);
   grunt.registerTask('default', ['build','watch']);
 }
