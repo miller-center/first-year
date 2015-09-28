@@ -22,7 +22,7 @@ html(lang="en")
 	body
 
 		
-		//- Header: Navigation & Logo
+		// Header (Topbar): Navigation Menu, Logo and Sharing Options
 		.fixed#navigation-container
 			nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: large")
 				section.logo-section.show-for-medium-up
@@ -270,66 +270,9 @@ html(lang="en")
 	
 			.small-0.large-1.columns.spacer &nbsp;
 					
-		aside#share-bar.sharing-options.right
-			ul.no-bullet
-				li: a(href="#",title="share on Facebook")
-					div.sharing-item
-						img(data-interchange="[../images/icons/45px/facebook.png, (default)], [../images/icons/55px/facebook.png, (large)]")
-						noscript: img(src="../images/icons/md/facebook.png")
-				li: a(href="#",title="share on Twitter")
-					div.sharing-item
-						img(data-interchange="[../images/icons/45px/twitter.png, (default)], [../images/icons/55px/twitter.png, (large)]")
-						noscript: img(src="../images/icons/md/twitter.png")
-				li: a(href="#",title="share on LinkedIn")
-					div.sharing-item
-						img(data-interchange="[../images/icons/45px/linkedin.png, (default)], [../images/icons/55px/linkedin.png, (large)]")
-						noscript: img(src="../images/icons/md/linkedin.png")
-				li: a(href="#",title="share via Email")
-					div.sharing-item
-						img(data-interchange="[../images/icons/45px/mail.png, (default)], [../images/icons/55px/mail.png, (large)]")
-						noscript: img(src="../images/icons/md/mail.png")
+		include ./sidebar.jade
 
-
-		footer.footer#bodyFooter
-			.row.footerTeaser
-				.small-12.medium-6.columns
-					ul
-						li: a(href="#") The First Year Project&nbsp;						
-						li: a(href="about") About the Project
-						li: a(href="about#contact") Contact
-						li: a(href="about#advisory") Advisory Council
-						li: a(href="about#scholars") Scholars
-						li: a(href="get-involved") Get Involved
-				.small-12.medium-6.columns
-					ul
-						li: a(href="issue/first-year") Issue 1: The First Year 
-						li 
-							em Issue 2: National Security (coming January '16)
-						li 
-							em Issue 3 (coming March '16)
-					ul.inline-list#social-options 
-						<!--very unclear where these will point at launch time. may comment them out for initial launch. -->
-						li.social-option.social-email-icon: a(href="#",title="Email Us") &nbsp;
-						li.social-option.social-fb-icon: a(href="#",title="Contact #{title} on Facebook") &nbsp;
-						li.social-option.social-tw-icon: a(href="#",title="Send #{title} a message on Twitter") &nbsp;
-
-
-			.row.footerNav
-				.small-12.large-6.large-offset-6.columns.get-involved
-					a(href="http://forms.hoosonline.virginia.edu/s/1535/16-uva/index.aspx?sid=1535&gid=16&pgid=9982&cid=17637" target="_blank") 
-						button Join our email list for exclusive alerts. Sign up&nbsp;&gt;
-			.row.footerLogo
-				.hide-for-small.medium-2.columns
-					a(href="http://millercenter.org")
-						img(src="http://staticmc.org/images/template/logo-white.png")
-				.small-12.medium-10.columns
-					.hide-for-medium-up
-						a(href="http://millercenter.org")
-							img(src="http://staticmc.org/images/template/logo-white.png")
-					p The Miller Center is a nonpartisan affiliate of the University of Virginia that specializes in presidential scholarship, public policy, and political history and strives to apply the lessons of history to the nation’s most pressing contemporary governance challenges. 
-						a(href="http://millercenter.org") Learn more at millercenter.org.
-			.row.copyright
-				p Copyright 2015 Rector and Visitors of the University of Virginia
+		include ./footer.jade
 
 		script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
 		//- remove http protocol from production version
