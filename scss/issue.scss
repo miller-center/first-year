@@ -25,6 +25,31 @@ $hero-height: 27rem;
 body {
 }
 
+#about-this-issue {
+	.editor {
+		float:left; 
+		clear:right;
+		width: 33%;
+		img {
+			float:left; 
+			max-width: 2.5rem;
+			margin-right: 1rem;
+			-moz-border-radius:5px;
+			-webkit-border-radius:5px;
+			border-radius:1.25rem;}
+		.editor-name {}
+		.editor-title {font-size: smaller;}
+		span {display:block;}
+	}
+	.partners {
+		float:left; 
+		clear:right;
+		width: 33%;
+		padding-top: .5rem;
+	}
+}
+
+
 
 #blog-large {
 		.blog-item {
