@@ -30,7 +30,7 @@
 
 {if:else}
 
-{embed="potus/header" header-title="{title}"}
+{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/home.css" css-hero-include="{potus-home-css}" kind="home"}
 
 	
     <div class="row">
@@ -100,7 +100,7 @@
  
 			{potus-bl-image}
  			<div class="media">
-				<div class="media-item">{potus-bl-image:potus-bl-imagefile}</div>
+				<div class="media-item"><img src="{potus-bl-image:potus-bl-imagefile}"></div>
 				<div class="media-credit">{potus-bl-image:potus-bl-imagecredit}</div>
           	</div>
           	{/potus-bl-image}
