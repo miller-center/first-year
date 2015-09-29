@@ -9,8 +9,13 @@
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   <link rel="stylesheet" href="//{exp:string name='asset_path'}/css/first-year.css">
-  <link rel="stylesheet" href="//exp:string name='asset_path'}/css/essay.css">
-  <link rel="icon" type="image/png" href="//exp:string name='asset_path'}/images/favicon.ico">
+  {if embed:css-include != ""}
+  <link rel="stylesheet" href="//{embed:css-include}">
+  {/if}
+  {if embed:css-hero-include != ""}
+  <link rel="stylesheet" href="//{embed:css-hero-include}">
+  {/if}
+  <link rel="icon" type="image/png" href="//{exp:string name='asset_path'}/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&amp;7CCrimson+Text:400,700,600" rel="stylesheet" type="text/css">
 
 </head>

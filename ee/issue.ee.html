@@ -1,8 +1,7 @@
 {exp:string:set name="asset_path"}staticmc.org/potus{/exp:string:set}
 {exp:channel:entries channel="potus" limit="1"}
 
-	{embed="potus/header" header-title="{title}"}	
-
+{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/issue.css" css-hero-include="{potus-issue-css}"}	
 	Issue {potus-number}: {title}<br>
 	Hero image: {potus-hero}<br>
 
