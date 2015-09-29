@@ -10,8 +10,8 @@ html(lang="en")
 		meta(name="description", content="")
 		meta(name="author", content="")
 		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
-		link(rel="stylesheet", href="#{project_home}/css/first-year.css")
-		link(rel="stylesheet", href="#{project_home}/css/issue.css")
+		link(rel="stylesheet", href="#{project_home}/css/first-year.css") 
+		link(rel="stylesheet", href="#{project_home}/css/issue.css") 
 		link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
 		link(href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&7CCrimson+Text:400,700,600',rel="stylesheet", type="text/css")
 		//- adding Slick Carousel
@@ -72,20 +72,45 @@ html(lang="en")
 							h2 Eight
 							p.text-right
 		//- Content Section
+
+		.row
+			.small-12.medium-10.medium-centered.columns#about-this-issue
+				.editor
+					img(src="http://lorempixel.com/200/200/")
+					.editor-info
+						a(href='')
+							span.editor-name John Doe
+						span.editor-title Issue Editor
+	
+				.editor
+					img(src="http://lorempixel.com/200/200/")
+					.editor-info
+						a(href='')
+							span.editor-name John Doe
+						span.editor-title Issue Editor
+			
+				.partners
+					p 
+						a(href="http://forms.hoosonline.virginia.edu/s/1535/16-uva/index.aspx?sid=1535&gid=16&pgid=9982&cid=17637" target="_blank") Sign up for exclusive alerts&nbsp;»
+
+
 		.row
 			//- .small-0.medium-1.columns.spacer &nbsp;
 
 			.small-12.medium-10.medium-centered.columns#blog-large
 				h2 Briefing Room
-				.blog-item
+				.blog-item.clearfix
 					h4 
 						a(href="zzz") Consectetur Adipiscing Elit
+					.media
+						.media-item <img src="http://lorempixel.com/480/320/">
+						.media-credit Image courtesy John Doe
 					p.content This is a teaser sentence about what you'll find here. 				
 					.blog-item-info
 						span.date January 1, 2016
 						span.author Jeff Chidester
 
-				.blog-item
+				.blog-item.clearfix
 					h4 
 						a(href="xxx") Consectetur Adipiscing Elit Sed Fermentum Hendrerit Eros Sit Amet Congue
 					p.content This is a teaser sentence about what you'll find here. 
@@ -93,15 +118,19 @@ html(lang="en")
 						span.date January 1, 2016
 						span.author Joe Biden
 
-				.blog-item
+
+				.blog-item.clearfix
 					h4 
 						a(href="ccc") Dolor sit amet?
-					p.content This is a teaser sentence about what you'll find here. 					
+					.media
+						.media-item <img src="http://lorempixel.com/500/300/">
+						.media-credit Image courtesy John Doe
+					p.content This is a teaser sentence about what you'll find here. 			
 					.blog-item-info
 						span.date January 1, 2016
 						span.author Bill Antholis
 
-				.blog-item
+				.blog-item.clearfix
 					h4 
 						a(href="aaa") Proin eleifend vel neque laoreet ullamcorper
 					p.content This is a teaser sentence about what you'll find here. 					
@@ -109,7 +138,7 @@ html(lang="en")
 						span.date January 1, 2016
 						span.author Amber Lautigar Reichert
 
-				.blog-item
+				.blog-item.clearfix
 					h4 
 						a(href="aaa") Proin eleifend vel neque laoreet ullamcorper
 					p.content This is a teaser sentence about what you'll find here. 					
@@ -117,7 +146,7 @@ html(lang="en")
 						span.date January 1, 2016
 						span.author Woody Sherman		
 						
-				.blog-item
+				.blog-item.clearfix
 					h4 
 						a(href="aaa") Proin eleifend vel neque laoreet ullamcorper
 					p.content This is a teaser sentence about what you'll find here. 					
