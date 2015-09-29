@@ -3,6 +3,11 @@
 /* override First Year defaults here */
 
 @import "settings";
+
+/* import blog styles */
+
+@import "blog";
+
 /* override Foundation defaults here */
 
 @import "foundation";
@@ -27,9 +32,9 @@ body {
 
 #about-this-issue {
 	.editor {
-		float:left; 
-		clear:right;
-		width: 33%;
+		//float:left; 
+		//clear:right;
+		//width: 33%;
 		img {
 			float:left; 
 			max-width: 2.5rem;
@@ -42,10 +47,10 @@ body {
 		span {display:block;}
 	}
 	.partners {
-		float:left; 
-		clear:right;
-		width: 33%;
-		padding-top: .5rem;
+		//float:left; 
+		//clear:right;
+		//width: 33%;
+		padding-top: 1rem;
 	}
 }
 
@@ -73,6 +78,7 @@ body {
 		}
 	}
 }
+
 
 
 

@@ -6,11 +6,28 @@
 @import "foundation-icons.css";
 
 
+.hero {height: 25rem;}
+.hero:before {height: 100%;}
+
+
 #essay {margin: 0 auto; }
 
 p.essay-intro {font-size: larger;}
 
 #essay > p, #essay > h3, #essay > h4 {padding-right: 150px; padding-left: 150px;}
+
+.lateral-nav p {
+	font-size: .7rem; 
+	line-height: 1rem; 
+	color: $secondary-color;
+	}
+	
+.lateral-nav .lateral-nav-next {
+		text-align:right;
+		&::after {content:" »";}
+	}
+.lateral-nav .lateral-nav-prev:before {content: "« ";}
+
 
 figure {
 	/*border-top: 1px solid $info-color; 
@@ -80,11 +97,12 @@ blockquote {
 			letter-spacing: 10px;
 			color: #aaa;
 		}
+	button {background-color: $info-color;}
 	.more {color: $info-color;}
 	padding: 25px; 
 	text-size: larger;
 	text-align:center;
-	.email-signup {margin: 0 auto;}	
+	
 	
 	}
 
@@ -128,7 +146,7 @@ blockquote {
 	
 
 #supplementary-content, #supplementary-content #resources ul, #supplementary-content #footnotes ol{
-	color: #ccc;
+	color: $secondary-color;
 	font-size: smaller;
 	}
 
@@ -153,6 +171,10 @@ blockquote {
 	#essay figure.right, #essay figure.left {float:none !important; clear:both; position: static; left: 0; margin-left: 0; }  
 
 
+}
+
+@media #{$medium-up} {
+	p.essay-intro {font-size: 28px;}
 }
 
 @media #{$large-only} {
