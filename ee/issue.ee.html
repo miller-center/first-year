@@ -2,7 +2,7 @@
 {exp:channel:entries channel="potus" limit="1"}
 
 <!-- Topbar Navigation Section-->
-{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/essay.css" css-hero-include="{potus-issue-css}" kind="issue"}
+{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/issue.css" css-hero-include="{potus-issue-css}" kind="issue"}
 
 <!-- Hero Image Section-->
 <div class="row">
@@ -13,45 +13,33 @@
           <h1 class="main-title"><a href="/expressionengine.php/potus/issue/{url_title}">{title}</a></h1>
           <p>{potus-shortdescription}</p>
         </div>
-      </div>
-      <div class="row hero-slider-row">
+      </div><!-- close .hero-title -->
+
+	    {!--This is EE code to render the slider on Issue home pages --}
+	    <div class="row hero-slider-row">
         <div id="hero-slider" class="small-10 large-10 small-centered columns">
-          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
-            <h2>WATCH: The Next President's Crucible Year</h2>
+        	{potus-video}
+        	<div class="large-4 small-12 columns slider-panel">
+						<a href="{potus-video:potus-vid}">
+	        		<img src="{potus-video:potus-vid-image}">
+	            <h2>WATCH: The Next President's Crucible Year</h2>
+	          </a>
           </div>
-          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
-            <h2>Ten Lessons From Presidential Oral History</h2>
-            <p class="text-right">Michael Nelson</p>
+        	{/potus-video}
+
+        	{potus-essays}
+        	<div class="large-4 small-12 columns slider-panel"><img src="{potus-essays:potus-es-hero}">
+        		<a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">
+	            <h2>{potus-essays:potus-es-shorttitle}</h2>
+	            <p class="text-right">{potus-essays:potus-es-author}{potus-essays:potus-es-author:potus-es-authorname}{/potus-essays:potus-es-author}</p>
+	          </a>
           </div>
-          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
-            <h2>The Promise and Peril of a President's First Year </h2>
-            <p class="text-right">H. W. Brands</p>
-          </div>
-          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
-            <h2>What Time Is It? </h2>
-            <p class="text-right">Stephen Scowronek</p>
-          </div>
-          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
-            <h2>Five </h2>
-            <p class="text-right"></p>
-          </div>
-          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
-            <h2>Six </h2>
-            <p class="text-right"></p>
-          </div>
-          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
-            <h2>Seven</h2>
-            <p class="text-right"></p>
-          </div>
-          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
-            <h2>Eight</h2>
-            <p class="text-right"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        	{/potus-essays}
+        </div><!-- close .hero-slider -->
+      </div><!-- close .hero-slider-row -->
+
+  </div> <!-- close .hero -->
+</div> <!-- close .row -->
 	
 <!-- Editors Section-->
 
@@ -99,50 +87,6 @@
 
 
 
-{potus-sharing-sidebar}
-{embed="potus/footer" kind="issue"}
-
-<!-- end of page constuction -->
-
-
-
-
-
-
-
-
-{!--This is EE code to render the slider on Issue home pages --}
-{exp:channel:entries channel="potus" limit="1"}
-
-        <div class="row hero-slider-row">
-          <div id="hero-slider" class="small-10 large-10 small-centered columns">						
-
-			{!--First display the video (how do we want this to work? still frame + vimeo link? --}
-			{potus-video}
-			<a href="{potus-video:potus-vid}"> {!--This field allows for local (ex: #video) or non-local (ex: youtube.com) links. If local, need to embed video below.--}
-				<div class="large-4 small-12 columns slider-panel"><img src="{potus-video:potus-vid-image}">
-					<h2>WATCH: The Next President's Crucible Year</h2>
-				</div>
-			</a>
-			{/potus-video}
-
-			{potus-essays} {!--cycles through essays to show them all--}
-				<a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">
-					<div class="large-4 small-12 columns slider-panel"><img src="{potus-essays:potus-es-hero}"><!--<img src="http://placehold.it/1600x900">-->
-					  <h2>{potus-essays:potus-es-shorttitle}</h2>
-					  <p class="text-right">{potus-essays:potus-es-author}{potus-essays:potus-es-author:potus-es-authorname}{/potus-essays:potus-es-author}</p>
-					</div>
-				</a>
-			{/potus-essays}
-	
-          </div> <!--close #hero-slider div-->
-        </div> <!--close .row.hero-slider-row-->
-
-{/exp:channel:entries}
-
-  
-
-
 {!--This is EE code to render the blog entries on the Issue home page --}
 
     <div class="row">
@@ -173,5 +117,10 @@
 
 {!--end blog entries--}
 
+<!-- sidebar, footer and Javascript includes -->
 
+{potus-sharing-sidebar}
+{embed="potus/footer" kind="issue"}
+
+<!-- end of page construction -->
 
