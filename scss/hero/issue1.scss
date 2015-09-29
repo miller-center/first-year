@@ -1,5 +1,5 @@
 // default
-$filename = "white-house.jpg";
+$filename: "white-house.jpg";
 .hero {
   background: url('path/to/file/#{$filename}') ;
 
