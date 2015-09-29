@@ -1,0 +1,104 @@
+{exp:string:set name="asset_path"}staticmc.org/potus{/exp:string:set}
+{if segment_2==""}
+
+	{exp:channel:entries channel="potus" limit="1" orderby="potus-released" sort="desc"}
+
+		{embed="potus/header" header-title="The First Year Project"}
+
+		Issue {potus-number}: <h1><a href="/expressionengine.php/potus/issue/{url_title}">{title}</a></h1>
+		shortdescription: {potus-shortdescription}<br>
+		hero: {potus-hero}<br>
+	
+	{/exp:channel:entries}
+
+<hr>
+<h4>Issue list</h4>
+	{exp:channel:entries channel="potus" sort="asc"}
+		Issue {potus-number}: <p><a href="/expressionengine.php/potus/issue/{url_title}">{potus-shorttitle}</a> (Released? {potus-released})</p>	
+	{/exp:channel:entries}	
+<hr>	
+	
+<div id="blog">	
+
+	<h2>Briefing Room</h2>	
+	{exp:channel:entries channel="potus_blog" category="not 447"}		
+		<div class="blog-item">
+			<h4><a href="/expressionengine.php/potus/blog/{url_title}">{title}</a></h4>
+			
+			<!--<div class="media">
+				{potus-bl-image}
+					<div class="media-item">{potus-bl-image:potus-bl-imagefile}</div>
+					<div class="media-credit">{potus-bl-image:potus-bl-imagecredit}</div>
+				{/potus-bl-image}
+			</div>
+			
+			<p class="content">{potus-bl-teaser} <a href="/expressionengine.php/potus/blog/{url_title}" class="more">read »</a></p>-->
+			
+			<div class="blog-item-info">
+				<span class="date">{entry_date format='%F %j, %Y'}</span> | <span class="author">{author}</span>
+			</div>
+			
+		</div>
+	
+	{/exp:channel:entries}	
+		
+</div>	
+	
+
+
+<h2>Featured</h2>
+	{exp:channel:entries channel="potus_blog" category="447" limit="4"}		
+	<div id="featured">
+		<div class="featured-item">		
+			<div class="media">
+				{potus-bl-image}
+					<div class="media-item">{potus-bl-image:potus-bl-imagefile}</div>
+					<div class="media-credit">{potus-bl-image:potus-bl-imagecredit}</div>
+				{/potus-bl-image}
+			</div>
+
+			<div class="featured-item-text">
+				<h4><a href="/expressionengine.php/potus/blog/{url_title}">{title}</a></h4>
+				<p class="content">{potus-bl-teaser} <a href="/expressionengine.php/potus/blog/{url_title}" class="more">more »</a></p>
+			</div>
+			
+	</div>
+	
+	{/exp:channel:entries}	
+
+
+
+
+
+{if:else}
+	
+	{!-- This is a misc or "about" page. Display its contents. --}
+	{exp:channel:entries channel="potus_about" require_entry="yes" cache="yes" refresh="120"}
+
+		{embed="potus/header" header-title="{title}"}	
+
+		{!-- Create a variable to store our meta keywords. --}
+		{exp:string:set name="meta_keywords"}{meta_keywords}{/exp:string:set}
+		
+		{!-- Create a variable to store our meta description. --}
+		{exp:string:set name="meta_description"}{meta_description}{/exp:string:set}
+
+		{!-- Create a variable to store our custom CSS. --}
+		{exp:string:set name="css"}{css}{/exp:string:set}
+				
+		{!-- Show the title. --}
+			<h1>{title}</h1>
+			
+		{!-- Display the body. --}
+		{exp:allow_eecode}
+			{body}
+		{/exp:allow_eecode}
+			
+	{/exp:channel:entries}
+
+
+{/if}
+
+
+{potus-sharing-sidebar}
+{embed="potus/footer"}

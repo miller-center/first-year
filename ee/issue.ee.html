@@ -1,0 +1,131 @@
+{exp:string:set name="asset_path"}staticmc.org/potus{/exp:string:set}
+{exp:channel:entries channel="potus" limit="1"}
+
+	{embed="potus/header" header-title="{title}"}	
+
+	Issue {potus-number}: {title}<br>
+	Hero image: {potus-hero}<br>
+
+<hr>
+
+{potus-editors}
+	<div class="editor">
+			<a href="/expressionengine.php/potus/about#scholars-{potus-editors:potus-edlink} "><img src="{potus-editors:potus-edphoto}"></a>
+			<div class="editor-info">
+				<div class="editor-name">
+					{potus-editors:potus-ed}
+				</div>
+				<div class="editor-title">
+					Issue Editor
+				</div>
+			</div>
+	</div>
+{/potus-editors}
+
+
+<hr>
+
+<p>essays:</p>	
+	Video file: {potus-video}{potus-video:potus-vid}{potus-video:potus-vid-image}{potus-video:potus-vid-file}{/potus-video}<br>
+
+	{potus-essays}
+		<a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">{potus-essays:title} ({potus-essays:potus-es-author}{potus-essays:potus-es-author:potus-es-authorname}{/potus-essays:potus-es-author})</a><br>
+	{/potus-essays}
+
+{/exp:channel:entries}
+
+
+
+<div id="blog-large">	
+	<h2>Briefing Room</h2>	
+		{exp:channel:entries channel="potus_blog" dynamic="no" category="438"} {!--this needs some development before issue2. maybe a php variable?--}	
+		
+			<h4><a href="/expressionengine.php/potus/blog/{url_title}">{title}</a></h4>
+			image: {potus-bl-image}{potus-bl-image:potus-bl-imagefile}, {potus-bl-image:potus-bl-imagecaption}, {potus-bl-image:potus-bl-imagecredit}{/potus-bl-image}<br>
+			teaser: {potus-bl-teaser}
+			
+		{/exp:channel:entries}	
+		
+</div>	
+
+
+
+{potus-sharing-sidebar}
+{embed="potus/footer"}
+
+
+<hr>
+<hr> 
+<hr> 
+
+
+
+
+
+
+
+
+{!--This is EE code to render the slider on Issue home pages --}
+{exp:channel:entries channel="potus" limit="1"}
+
+        <div class="row hero-slider-row">
+          <div id="hero-slider" class="small-10 large-10 small-centered columns">						
+
+			{!--First display the video (how do we want this to work? still frame + vimeo link? --}
+			{potus-video}
+			<a href="{potus-video:potus-vid}"> {!--This field allows for local (ex: #video) or non-local (ex: youtube.com) links. If local, need to embed video below.--}
+				<div class="large-4 small-12 columns slider-panel"><img src="{potus-video:potus-vid-image}">
+					<h2>WATCH: The Next President's Crucible Year</h2>
+				</div>
+			</a>
+			{/potus-video}
+
+			{potus-essays} {!--cycles through essays to show them all--}
+				<a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">
+					<div class="large-4 small-12 columns slider-panel"><img src="{potus-essays:potus-es-hero}"><!--<img src="http://placehold.it/1600x900">-->
+					  <h2>{potus-essays:potus-es-shorttitle}</h2>
+					  <p class="text-right">{potus-essays:potus-es-author}{potus-essays:potus-es-author:potus-es-authorname}{/potus-essays:potus-es-author}</p>
+					</div>
+				</a>
+			{/potus-essays}
+	
+          </div> <!--close #hero-slider div-->
+        </div> <!--close .row.hero-slider-row-->
+
+{/exp:channel:entries}
+
+  
+
+
+{!--This is EE code to render the blog entries on the Issue home page --}
+
+    <div class="row">
+      <div class="small-0 medium-1 columns spacer">&nbsp;</div>
+      <div id="blog-large" class="small-12 medium-10 columns">
+        <h2>Briefing Room</h2>
+  
+
+		{exp:channel:entries channel="potus_blog" dynamic="no" category="438"} {!--this needs some development before issue2. maybe a php variable?--}	
+			<div class="blog-item clearfix">
+			  <h4><a href="/expressionengine.php/potus/blog/{url_title}">{title}</a></h4>
+			  <div class="media">
+				{potus-bl-image}
+					<div class="media-item"><img src="{potus-bl-image:potus-bl-imagefile}"></div>
+					<div class="media-credit">	{potus-bl-image:potus-bl-imagecredit}</div>
+				{/potus-bl-image}
+			  </div>
+			  <p class="content">{potus-bl-teaser}</p>
+			  <div class="blog-item-info"><span class="date">{entry_date format='%F %d, %Y'}</span><span class="author">{author}</span></div>
+			</div>
+  		{/exp:channel:entries}	
+
+  
+      </div>
+      <div class="small-0 medium-1 columns spacer">&nbsp;</div>
+    </div>
+
+
+{!--end blog entries--}
+
+
+
