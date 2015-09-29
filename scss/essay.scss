@@ -6,6 +6,10 @@
 @import "foundation-icons.css";
 
 
+.hero {height: 25rem;}
+.hero:before {height: 100%;}
+
+
 #essay {margin: 0 auto; }
 
 p.essay-intro {font-size: larger;}
@@ -128,7 +132,7 @@ blockquote {
 	
 
 #supplementary-content, #supplementary-content #resources ul, #supplementary-content #footnotes ol{
-	color: #ccc;
+	color: $secondary-color;
 	font-size: smaller;
 	}
 

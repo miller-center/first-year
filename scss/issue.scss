@@ -3,6 +3,11 @@
 /* override First Year defaults here */
 
 @import "settings";
+
+/* import blog styles */
+
+@import "blog";
+
 /* override Foundation defaults here */
 
 @import "foundation";
@@ -73,6 +78,7 @@ body {
 		}
 	}
 }
+
 
 
 
