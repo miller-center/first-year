@@ -23,52 +23,8 @@ html(lang="en")
 
 		
 		//- Header: Navigation, Social Icons and Logo
-		.fixed#navigation-container
-			nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: large")
-				section.logo-section.show-for-medium-up
-					a(href="#") 
-						img(src="../images/logos/fy2017_logo_horiz_wh.png")
+		include ./navbar.jade
 
-				ul.title-area
-					li.name
-						h1
-							a.logo.show-for-small-only(href="#")
-								img(src="../images/logos/fy2017_logo_horiz_wh_sm.png")
-					li.toggle-topbar.menu-icon#mobile-menu
-						a(href="#")
-							span Menu 
-
-
-				section.top-bar-section.main-menu-section#navigation-section
-					//	Right Nav Section 
-					ul.right
-						li.hide-for-medium-up
-							a(href="#") Foo 
-						li.hide-for-medium-up
-							a(href="#") Bar 
-
-						li.menu-option.hide-for-small-only.has-dropdown#header-menu-icon
-							a(href="#")
-								span.label Menu
-									span
-							ul.dropdown
-								li
-									a(href="#") First link in dropdown
-								li.featured
-									a(href="#") Featured link in dropdown
-								li
-									a(href="#") Third link in dropdown
-								li
-									a(href="#") Fourth link in dropdown
-
-
-				section.social-section.show-for-medium-up
-					ul.right
-						li.social-icon#header-fb-icon: a(href="#")
-							| &nbsp;
-							//- img(src="images/icons/lg/facebook-wht.png")
-						li.social-icon#header-tw-icon: a(href="#") 
-							| &nbsp;
  
 		//- Hero Image Section
 		.row
