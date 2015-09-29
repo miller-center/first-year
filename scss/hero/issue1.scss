@@ -1,0 +1,21 @@
+// default
+$filename = "";
+.hero {
+  background: url('path/to/file/#{$filename}') ;
+
+}
+
+@media #{$small-only} {
+  background: url('path/to/file/sm/#{$filename}') ;
+  
+}
+
+@media #{$medium-only} {
+  background: url('path/to/file/md/#{$filename}') ;
+  
+}
+
+@media #{$large-only} {
+  background: url('path/to/file/lg/#{$filename}') ;
+  
+}
