@@ -16,6 +16,19 @@ p.essay-intro {font-size: larger;}
 
 #essay > p, #essay > h3, #essay > h4 {padding-right: 150px; padding-left: 150px;}
 
+.lateral-nav p {
+	font-size: .7rem; 
+	line-height: 1rem; 
+	color: $secondary-color;
+	}
+	
+.lateral-nav .lateral-nav-next {
+		float:right;
+		&::after {content:" »";}
+	}
+.lateral-nav .lateral-nav-prev:before {content: "« ";}
+
+
 figure {
 	/*border-top: 1px solid $info-color; 
 	border-bottom: 1px solid $info-color; */

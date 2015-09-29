@@ -43,6 +43,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
   position: relative;
   padding-left: 0;
   padding-right: 0;
+  margin-bottom: -2em;
   // z-index: $hero-z;
   &:before {
     content: '';
