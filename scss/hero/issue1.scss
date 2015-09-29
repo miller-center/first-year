@@ -4,21 +4,21 @@
 // default
 $filename: "white-house.jpg";
 .hero {
-  background: url('../../../images/heros/#{$filename}') ;
+  background: url('../../images/heros/#{$filename}') ;
 
 }
 
 @media #{$small-only} {
-  background: url('../../../images/heros/sm/#{$filename}') ;
+  background: url('../../images/heros/sm/#{$filename}') ;
   
 }
 
 @media #{$medium-only} {
-  background: url('../../../images/heros/md/#{$filename}') ;
+  background: url('../../images/heros/md/#{$filename}') ;
   
 }
 
 @media #{$large-only} {
-  background: url('../../../images/heros/lg/#{$filename}') ;
+  background: url('../../images/heros/lg/#{$filename}') ;
   
 }
