@@ -41,9 +41,17 @@ html(lang="en")
 						p by H.W. Brands
 			//- end hero
 
-		.row.lateral-nav 
-			p.lateral-nav-next Next essay: <a href="">The Promise and Peril of a President’s First Year</a>
-			p.lateral-nav-prev Previous essay: <a href="test.html">Ten Lessons From Presidential Oral History</a>
+		.row.lateral-nav.hide-for-small
+			.columns.small-6
+				p.lateral-nav-prev Previous essay: <a href="test.html">Ten Lessons From Presidential Oral History</a>
+			.columns.small-6
+				p.lateral-nav-next Next essay: <a href="">The Promise and Peril of a President’s First Year</a>
+
+		.row.lateral-nav.show-for-small
+			.columns.small-6
+				p.lateral-nav-prev <a href="test.html">Previous Essay</a>
+			.columns.small-6
+				p.lateral-nav-next <a href="">Next Essay</a>
 
 
 		.row

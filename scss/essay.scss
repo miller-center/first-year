@@ -23,7 +23,7 @@ p.essay-intro {font-size: larger;}
 	}
 	
 .lateral-nav .lateral-nav-next {
-		float:right;
+		text-align:right;
 		&::after {content:" »";}
 	}
 .lateral-nav .lateral-nav-prev:before {content: "« ";}
@@ -170,6 +170,10 @@ blockquote {
 	#essay figure.right, #essay figure.left {float:none !important; clear:both; position: static; left: 0; margin-left: 0; }  
 
 
+}
+
+@media #{$medium-up} {
+	p.essay-intro {font-size: 28px;}
 }
 
 @media #{$large-only} {
