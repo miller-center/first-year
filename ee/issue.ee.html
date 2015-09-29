@@ -1,11 +1,60 @@
 {exp:string:set name="asset_path"}staticmc.org/potus{/exp:string:set}
 {exp:channel:entries channel="potus" limit="1"}
 
-{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/issue.css" css-hero-include="{potus-issue-css}"}	
-	Issue {potus-number}: {title}<br>
-	Hero image: {potus-hero}<br>
+<!-- Topbar Navigation Section-->
+{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/essay.css" css-hero-include="{potus-issue-css}" kind="issue"}
 
-<hr>
+<!-- Hero Image Section-->
+<div class="row">
+    <div class="small-12 columns hero">
+      <div class="row hero-title">
+        <div id="hero-title" class="small-12 small-centered medium-centered columns">
+          <h2>Issue {potus-number}</h2><span class="stars">&#x2605; &#x2605; &#x2605;</span>
+          <h1 class="main-title"><a href="/expressionengine.php/potus/issue/{url_title}">{title}</a></h1>
+          <p>{potus-shortdescription}</p>
+        </div>
+      </div>
+      <div class="row hero-slider-row">
+        <div id="hero-slider" class="small-10 large-10 small-centered columns">
+          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
+            <h2>WATCH: The Next President's Crucible Year</h2>
+          </div>
+          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
+            <h2>Ten Lessons From Presidential Oral History</h2>
+            <p class="text-right">Michael Nelson</p>
+          </div>
+          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
+            <h2>The Promise and Peril of a President's First Year </h2>
+            <p class="text-right">H. W. Brands</p>
+          </div>
+          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
+            <h2>What Time Is It? </h2>
+            <p class="text-right">Stephen Scowronek</p>
+          </div>
+          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
+            <h2>Five </h2>
+            <p class="text-right"></p>
+          </div>
+          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
+            <h2>Six </h2>
+            <p class="text-right"></p>
+          </div>
+          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
+            <h2>Seven</h2>
+            <p class="text-right"></p>
+          </div>
+          <div class="large-4 small-12 columns slider-panel"><img src="http://placehold.it/1600x900">
+            <h2>Eight</h2>
+            <p class="text-right"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+	
+<!-- Editors Section-->
+
 
 {potus-editors}
 	<div class="editor">
@@ -22,7 +71,8 @@
 {/potus-editors}
 
 
-<hr>
+<!-- Briefing Room Section-->
+
 
 <p>essays:</p>	
 	Video file: {potus-video}{potus-video:potus-vid}{potus-video:potus-vid-image}{potus-video:potus-vid-file}{/potus-video}<br>
@@ -50,12 +100,9 @@
 
 
 {potus-sharing-sidebar}
-{embed="potus/footer"}
+{embed="potus/footer" kind="issue"}
 
-
-<hr>
-<hr> 
-<hr> 
+<!-- end of page constuction -->
 
 
 
