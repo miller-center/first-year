@@ -143,7 +143,7 @@ body {
         margin-left: $panel-gutter;
         margin-right: $panel-gutter;
         h2, p {
-          color:$body-font-color;
+          color:darken($body-font-color, 99%);
         }
         h2 {
           position:absolute;
@@ -157,6 +157,15 @@ body {
           font-size: 0.75rem;
           top: 80%;
           right:0;
+        }
+        &:before {
+          background-color: transparentize(#FFF, 0.4);
+          content: '';
+          position:absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
         }
       }
       .slick-dots {
