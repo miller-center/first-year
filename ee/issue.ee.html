@@ -44,8 +44,9 @@
 
 <!-- Editors Section-->
 <div id="about-this-issue" class="row">
+	<div class="large-1 columns">&nbsp;</div>
 {potus-editors}
-	<div class="editor small-6 medium-4 large-3 large-offset-1 columns">
+	<div class="editor small-6 medium-4 large-3 columns">
 		<a href="/expressionengine.php/potus/about#scholars-{potus-editors:potus-edlink} "><img src="{potus-editors:potus-edphoto}"></a>
 		<div class="editor-info">
 			<div class="editor-name">
@@ -66,16 +67,22 @@
   </div>
 </div>
 
+<!-- Video -->
+<!-- <p>essays:</p>	 -->
+	<!-- Video file: {potus-video}{potus-video:potus-vid}{potus-video:potus-vid-image}{potus-video:potus-vid-file}{/potus-video}<br> -->
 
 <!-- Briefing Room Section-->
 
-
-<p>essays:</p>	
-	Video file: {potus-video}{potus-video:potus-vid}{potus-video:potus-vid-image}{potus-video:potus-vid-file}{/potus-video}<br>
-
-	{potus-essays}
-		<a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">{potus-essays:title} ({potus-essays:potus-es-author}{potus-essays:potus-es-author:potus-es-authorname}{/potus-essays:potus-es-author})</a><br>
-	{/potus-essays}
+<div class="row">
+	<div id="blog-large" class="small-12 medium-9 medium-offset-1 large-10 columns">
+    <h2>Briefing Room</h2>
+	  {potus-essays}
+	  <div class="blog-item clearfix">
+	  	<h4><a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">{potus-essays:title} ({potus-essays:potus-es-author}{potus-essays:potus-es-author:potus-es-authorname}{/potus-essays:potus-es-author})</a></h4>
+	  </div>
+	  {/potus-essays}
+  </div>
+</div>
 
 {/exp:channel:entries}
 
