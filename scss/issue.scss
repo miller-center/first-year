@@ -179,7 +179,27 @@ body {
 }
 
 // Main Content Section
-
+#essays-row {
+  div:first-child {
+    border-bottom: none;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+  div {
+    margin-bottom: 2rem;
+    border-bottom: 4px solid grey; 
+  }
+  .columns {
+    h2, h3, p {
+    }
+    h2 {}
+    h3 { margin-bottom: 0;}
+    p {
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+  }
+}
 //
 // media queries
 //

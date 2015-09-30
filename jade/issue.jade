@@ -2,6 +2,18 @@ doctype html
 - var title = "The First Year Project"
 - var issue = "The Crucible Year"
 - var essay = "What Time Is It?"
+- var essay1 = "The Promise and Peril of a President’s First Year"
+- var essay2 = "The First Year: Avoiding Failure By Getting to Know the Government You Run"
+- var essay3 = "The Experience Of Others: Ten Lessons From Presidential Oral History"
+- var essay4 = "What Time Is It?"
+- var essay5 = "Letter to the New President on Your First Year"
+- var essay6 = "The Crucible: The First 365 Days"
+- var author1 = "H. W. Brands"
+- var author2 = "Elaine C. Kamarck"
+- var author3 = "Michael Nelson"
+- var author4 = "Stephen Scowronek"
+- var author5 = "Peter Wehner"
+- var author6 = "Sidney Milkis"
 - var project_home = ".."
 html(lang="en")
 	head
@@ -42,28 +54,28 @@ html(lang="en")
 					.small-10.large-10.small-centered.columns#hero-slider
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-brands.jpg")
-							h2 The Promise and Peril of a President’s First Year
-							p.text-right H. W. Brands
+							h2= essay1
+							p.text-right= author1
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-kamarck.jpg")
-							h2 The First Year: Avoiding Failure By Getting to Know the Government You Run
-							p.text-right Elaine C. Kamarck
+							h2= essay2
+							p.text-right= author2
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-nelson.jpg")
-							h2 The Experience Of Others: Ten Lessons From Presidential Oral History 
-							p.text-right Michael Nelson
+							h2= essay3 
+							p.text-right= author3
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-scowronek.jpg")
-							h2 What Time Is It? 
-							p.text-right Stephen Scowronek
+							h2= essay4 
+							p.text-right= author4
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-wehner.jpg")
-							h2 Letter to the New President on Your First Yea 
-							p.text-right Peter Wehner
+							h2= essay5 
+							p.text-right= author5
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-milkis.jpg")
-							h2 The Crucible: The First 365 Days
-							p.text-right Sidney Milkis
+							h2= essay6
+							p.text-right= author6
 						div.large-4.small-12.columns.slider-panel
 							img(src="http://placehold.it/1600x900")
 							h2 Seven
@@ -81,7 +93,7 @@ html(lang="en")
 		.row#about-this-issue
 			.editor.small-6.medium-4.large-3.large-offset-1.columns
 				a(href='')
-					img(src="http://lorempixel.com/200/200/")
+					img(src="../images/headshots/perry.jpg")
 				.editor-info
 					a(href='')
 						span.editor-name John Doe
@@ -89,7 +101,7 @@ html(lang="en")
 						
 			
 			.editor.small-6.medium-4.large-3.columns
-				img(src="http://lorempixel.com/200/200/")
+				img(src="../images/headshots/milkis.jpg")
 				.editor-info
 					a(href='')
 						span.editor-name John Doe
@@ -158,7 +170,41 @@ html(lang="en")
 					.blog-item-info
 						span.date January 1, 2016
 						span.author Dwight D. Eisenhower
-					
+	
+		// Essays
+		.row#essays-row
+			.small-12.medium-8.medium-centered.large-8.columns
+				h2.text-center= issue + ': Essays'
+			.small-12.medium-8.medium-centered.large-8.columns
+				a(href="essay.html")
+					img(src="../images/heros/hero-brands.jpg",data-interchange="[../images/heros/hero-brands.jpg, (default)], [../images/heros/lg/hero-brands.jpg, (large)]")
+					h3= essay1
+					p=  author1
+			.small-12.medium-8.medium-centered.large-8.columns
+				a(href="essay.html")
+					img(src="../images/heros/hero-kamarck.jpg",data-interchange="[../images/heros/hero-kamarck.jpg, (default)], [../images/heros/lg/hero-kamarck.jpg, (large)]")
+					h3= essay2
+					p=  author2
+			.small-12.medium-8.medium-centered.large-8.columns
+				a(href="essay.html")
+					img(src="../images/heros/hero-nelson.jpg",data-interchange="[../images/heros/hero-nelson.jpg, (default)], [../images/heros/lg/hero-nelson.jpg, (large)]")
+					h3= essay3
+					p=  author3
+			.small-12.medium-8.medium-centered.large-8.columns
+				a(href="essay.html")
+					img(src="../images/heros/hero-scowronek.jpg",data-interchange="[../images/heros/hero-scowronek.jpg, (default)], [../images/heros/lg/hero-scowronek.jpg, (large)]")
+					h3= essay4
+					p=  author4
+			.small-12.medium-8.medium-centered.large-8.columns
+				a(href="essay.html")
+					img(src="../images/heros/hero-wehner.jpg",data-interchange="[../images/heros/hero-wehner.jpg, (default)], [../images/heros/lg/hero-wehner.jpg, (large)]")
+					h3= essay5
+					p=  author5
+			.small-12.medium-8.medium-centered.large-8.columns
+				a(href="essay.html")
+					img(src="../images/heros/hero-milkis.jpg",data-interchange="[../images/heros/hero-milkis.jpg, (default)], [../images/heros/lg/hero-milkis.jpg, (large)]")
+					h3= essay6
+					p=  author6
 
 		// Sidebar, Footer, and Javascript includes
 
