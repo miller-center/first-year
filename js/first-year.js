@@ -94,11 +94,11 @@ $(document).ready(function() {
 
   try {
     if(Foundation.utils.is_medium_up()) {
-      var listItems = $('#the-latest ul li:not(.label)');
-      length = listItems.length;
-      var current = 0;
-      timeout = 5000;
-      setInterval(rotateNewsItem, timeout);
+      // var listItems = $('#the-latest ul li:not(.label)');
+      // length = listItems.length;
+      // var current = 0;
+      // timeout = 5000;
+      // setInterval(rotateNewsItem, timeout);
 
       FirstYear.sharingBar();
     } else {
