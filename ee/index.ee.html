@@ -5,6 +5,9 @@
 	{!-- This is a misc or "about" page. Display its contents. --}
 	{exp:channel:entries channel="potus_about" require_entry="yes" cache="yes" refresh="120"}
 
+	<div class="row">
+	<div class="medium-10 small-12 columns">
+
 		{embed="potus/header" header-title="{title}"}	
 
 		{!-- Create a variable to store our meta keywords. --}
@@ -23,6 +26,8 @@
 		{exp:allow_eecode}
 			{body}
 		{/exp:allow_eecode}
+	</div> <!--close columns-->
+	</div> <!--close row-->
 			
 	{/exp:channel:entries}
 
@@ -30,7 +35,8 @@
 
 {if:else}
 
-{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/home.css" css-hero-include="{potus-home-css}" kind="home"}
+{exp:channel:entries channel="potus" limit="1" orderby="potus-released" sort="desc"}
+	{embed="potus/header" header-title="The First Year Project" css-include="{exp:string name='asset_path'}/css/home.css" css-hero-include="{potus-home-css}" kind="home"}
 
 	
     <div class="row">
@@ -47,16 +53,16 @@
         </div>
         <div class="row hero-title">
           <div id="hero-title" class="small-12 small-centered medium-centered columns">
-            <h2>Issue 1</h2><span class="stars">&#x2605; &#x2605; &#x2605;</span>
-            <h1 class="main-title">The Next President's Crucible Year</h1>
-            <p>Six essays about the promises and pitfalls of the first 365 days in office.</p>
+            <h2>Issue {potus-number}</h2><span class="stars">&#x2605; &#x2605; &#x2605;</span>
+            <h1 class="main-title">{title}</h1>
+            <p>{potus-shortdescription}</p>
           </div>
         </div>
         <div class="row intro-nav">
           <div class="small-11 small-centered medium-10 large-8 xlarge-7 large-centered columns">
             <div class="row">
-              <div class="intro-button small-6 columns"><a href="#">Explore the essays</a></div>
-              <div class="intro-button small-6 columns"><a href="#">Learn about First Year 2017</a></div>
+              <div class="intro-button small-6 columns"><a href="/expressionengine.php/potus/issue/{url_title}">Explore the essays</a></div>
+              <div class="intro-button small-6 columns"><a href="about">Learn about First Year 2017</a></div>
             </div>
           </div>
         </div>
@@ -89,6 +95,9 @@
         </div>
       </div>
     </div>
+    
+{/exp:channel:entries}    
+    
     <div class="row">
       <div class="small-0 large-1 columns spacer">&nbsp;</div>
       <div id="featured" class="small-12 medium-8 large-7 columns">
