@@ -116,7 +116,7 @@
           	
 			<div class="featured-item-text">
 				<h4><a href="/expressionengine.php/potus/blog/{url_title}">{title}</a></h4>
-				<p class="content">{potus-bl-teaser} <a href="/expressionengine.php/potus/blog/{url_title}" class="more">more »</a></p>
+				<p class="content">{potus-bl-teaser} <a href="/expressionengine.php/potus/blog/{url_title}" class="more">more </a></p>
 			</div>
         </div>
         {/exp:channel:entries}	
@@ -126,7 +126,7 @@
       
       <div id="blog" class="small-12 medium-4 large-3 columns">
         <h2>Briefing Room</h2>
-		{exp:channel:entries channel="potus_blog" category="not 447"}	
+		{exp:channel:entries channel="potus_blog" category="not 447" limit="7"}	
         <div class="blog-item">
           <h4> <a href="/expressionengine.php/potus/blog/{url_title}">{title}</a></h4>
           <div class="blog-item-info"><span class="date">{entry_date format='%F %j, %Y'}</span><span class="author">{author}</span></div>
