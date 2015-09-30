@@ -2,13 +2,14 @@
 {if segment_2!=""}
 
 
-	{!-- This is a misc or "about" page. Display its contents. --}
-	{exp:channel:entries channel="potus_about" require_entry="yes" cache="yes" refresh="120"}
+{!-- This is a misc or "about" page. Display its contents. --}
+{exp:channel:entries channel="potus_about" require_entry="yes" cache="yes" refresh="120"}
+
+	{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/about.css"}	
 
 	<div class="row">
 	<div class="medium-10 small-12 columns">
 
-		{embed="potus/header" header-title="{title}"}	
 
 		{!-- Create a variable to store our meta keywords. --}
 		{exp:string:set name="meta_keywords"}{meta_keywords}{/exp:string:set}
