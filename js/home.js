@@ -31,7 +31,7 @@ $(document).ready(function() {
   try {
     if(Foundation.utils.is_medium_up()) {
       delay = 5000;
-      FirstYear.newsTickerId = newSetInterval(FirstYear.animateNews, delay);
+//      FirstYear.newsTickerId = newSetInterval(FirstYear.animateNews, delay);
 
       FirstYear.sharingBar();
 
