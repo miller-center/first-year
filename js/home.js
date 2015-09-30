@@ -25,13 +25,32 @@ $(document).ready(function() {
     }, duration);
   }
 
+  var listItems = $("#the-latest ul > li:not(.label)");
+  listItems.not(":eq(0)").hide();
+
+  var startSlideShow = function() { 
+        $("#the-latest ul > li:not(.label):eq(0)")
+            .fadeOut(300)
+            .next()
+            .fadeIn(300)
+            .end()
+            .appendTo('#the-latest ul');
+        }, interval = setInterval(startSlideShow,  2000);
+
+  $('#stopSlide').mouseover(function() {
+      clearInterval(interval);
+  });
+
+  $('#stopSlide').mouseout(function() {
+      interval = setInterval(startSlideShow, 2000);
+  });
   // if window is large enough do the following:
   //   1. activate newsfeed rotation
   //   2. reveal/conceal sharing sidebar
   try {
     if(Foundation.utils.is_medium_up()) {
       delay = 5000;
-//      FirstYear.newsTickerId = newSetInterval(FirstYear.animateNews, delay);
+     // FirstYear.newsTickerId = newSetInterval(FirstYear.animateNews, delay);
 
       FirstYear.sharingBar();
 
