@@ -133,9 +133,11 @@ blockquote {
 	.author-contact {
 		float:right;
 		font-size: smaller;
-		&:before {
-			content: url('../images/icons/35px/twitter-wh-sm.png'); 
-			position:relative; top: 13px; 
+			.tw {
+			&:before {
+				content: url('../images/icons/35px/twitter-wh-sm.png'); 
+				position:relative; top: 13px; 
+				}
 			}
 		}
 	

@@ -3,17 +3,17 @@
       <div class="row footerTeaser">
         <div class="small-12 medium-6 columns">
           <ul>
-            <li><a href="#">The First Year Project&nbsp;</a></li>
-            <li><a href="about">About the Project</a></li>
-            <li><a href="about#contact">Contact</a></li>
-            <li><a href="about#advisory">Advisory Council</a></li>
-            <li><a href="about#scholars">Scholars</a></li>
-            <li><a href="get-involved">Get Involved</a></li>
+            <li><a href="/expressionengine.php/potus">The First Year Project&nbsp;</a></li>
+            <li><a href="/expressionengine.php/potus/about">About the Project</a></li>
+            <li><a href="/expressionengine.php/potus/about#contact">Contact</a></li>
+            <li><a href="/expressionengine.php/potus/about#advisory">Advisory Council</a></li>
+            <li><a href="/expressionengine.php/potus/about#scholars">Scholars</a></li>
+            <li><a href="/expressionengine.php/potus/about#getinvolved">Get Involved</a></li>
           </ul>
         </div>
         <div class="small-12 medium-6 columns">
           <ul>
-            <li><a href="issue/first-year">Issue 1: The First Year </a></li>
+            <li><a href="/expressionengine.php/potus/issue/why-the-first-year">Issue 1: The First Year </a></li>
             <li> <em>Issue 2: National Security (coming January '16)</em></li>
             <li> <em>Issue 3 (coming March '16)</em></li>
           </ul>
@@ -48,7 +48,13 @@
     <script src="//{exp:string name='asset_path'}/bower_components/foundation/js/foundation/foundation.interchange.js"></script>
     <script src="//{exp:string name='asset_path'}/bower_components/slick-carousel/slick/slick.min.js"></script>
     <script src="//{exp:string name='asset_path'}/js/first-year.js"></script>
-    <script src="//{exp:string name='asset_path'}/js/home.js"></script><!-- this will vary -->
+    {if embed:kind == ""}
+    <script src="//{exp:string name='asset_path'}/js/home.js"></script>
+    {if:elseif embed:kind == "issue"}
+    <script src="//{exp:string name='asset_path'}/js/issue.js"></script>
+    {if:elseif embed:kind == "essay"}
+    <script src="//{exp:string name='asset_path'}/js/essay.js"></script>
+    {/if}
   </body>
 
 </html>

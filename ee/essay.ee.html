@@ -64,8 +64,8 @@
         <div class="author"> 
         {potus-es-author} {!-- If there's a Tw acct, show that. If not, show email. If neither, show nothing.--}
           <div class="author-contact"> 
- 			{if potus-es-author:potus-es-authortw}<a href="http://twitter.com/{potus-es-author:potus-es-authortw}">{potus-es-author:potus-es-authortw}</a>
-			{if:elseif potus-es-author:potus-es-authoremail}<a href="mailto:{potus-es-author:potus-es-authoremail}">{potus-es-author:potus-es-authoremail}</a>
+ 			{if potus-es-author:potus-es-authortw}<a href="http://twitter.com/{potus-es-author:potus-es-authortw}" class="tw">{potus-es-author:potus-es-authortw}</a>
+			{if:elseif potus-es-author:potus-es-authoremail}<a href="mailto:{potus-es-author:potus-es-authoremail}" class="email">{potus-es-author:potus-es-authoremail}</a>
 			{/if}
           </div>
           <p> <strong>About the Author</strong></p>
