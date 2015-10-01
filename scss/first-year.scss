@@ -300,6 +300,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
       font-weight: 300;
       text-align: center;
       padding-top: 0em;
+      a, a:visited {color: #fff; text-decoration: none;}
     }
     p {
       color: #fff;
