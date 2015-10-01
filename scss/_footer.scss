@@ -120,8 +120,10 @@ footer #social-options {
 	margin-top: 3em;
 	margin-bottom: 1em;
 	padding: 0;
-    float: right;
-
+  float: right;
+  li.label:first-child {
+    top: #{$social-icon-size/4}px;
+  }
 }
 footer .social-email-icon {
   background: url('../images/icons/#{$social-icon-size}px/mail.png') no-repeat center center;
