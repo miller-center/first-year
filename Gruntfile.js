@@ -26,7 +26,8 @@ module.exports = function(grunt) {
           'css/hero/issue1/essay4.css': 'scss/hero/issue1/essay4.scss',
           'css/hero/issue1/essay5.css': 'scss/hero/issue1/essay5.scss',
           'css/hero/issue1/essay6.css': 'scss/hero/issue1/essay6.scss',
-          'css/teaser.css': 'scss/teaser.scss'
+          'css/teaser.css': 'scss/teaser.scss',
+          'css/blog-entry.css': 'scss/blog-entry.scss'
         }
       }
     },
