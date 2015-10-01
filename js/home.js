@@ -5,52 +5,48 @@ $(document).ready(function() {
   //
 
   var newsListCounter = 0;
-  FirstYear.animateNews = function rotateNewsItem() {
-    var listItems = jQuery('#the-latest ul li:not(.label)');
-    var fadeTime  = 300;
-    listItems.eq(newsListCounter++).fadeOut(fadeTime, function() {
-      if (newsListCounter === listItems.length) {
-        newsListCounter = 0;
-      }
-      listItems.eq(newsListCounter).fadeIn(fadeTime);      
-    });
-  }
-  function newSetInterval(callback, duration, callbackArguments) {
-    callback.apply(this, callbackArguments);
-    var args = arguments,
-        scope = this;
 
-    setTimeout(function() {
-        newSetInterval.apply(scope, args);
-    }, duration);
+  function hideSiblings(list, index) {
+    list.not(":eq("+index+")").hide();
   }
 
   var listItems = $("#the-latest ul > li:not(.label)");
   listItems.not(":eq(0)").hide();
+  item = 0;
 
-  var startSlideShow = function() { 
-        $("#the-latest ul > li:not(.label):eq(0)")
-            .fadeOut(300)
-            .next()
-            .fadeIn(300)
-            .end()
-            .appendTo('#the-latest ul');
-        }, interval = setInterval(startSlideShow,  2000);
+  var startSlideShow = function() {
+    listItems.eq(item++).each(function (e) {
 
-  $('#stopSlide').mouseover(function() {
-      clearInterval(interval);
-  });
+        me = listItems.index($(this));
+        hideSiblings(listItems, me);
 
-  $('#stopSlide').mouseout(function() {
-      interval = setInterval(startSlideShow, 2000);
-  });
+        $(this).fadeOut('300', function() {
+        if (item === 3) {
+          item = 0;
+        }
+        listItems.not(":eq("+item+")").hide();
+        listItems.eq(item).fadeIn('400');
+      })
+    });
+  };
+
+
   // if window is large enough do the following:
   //   1. activate newsfeed rotation
   //   2. reveal/conceal sharing sidebar
   try {
     if(Foundation.utils.is_medium_up()) {
       delay = 5000;
-     // FirstYear.newsTickerId = newSetInterval(FirstYear.animateNews, delay);
+
+      var interval = setInterval(startSlideShow,  delay);
+
+      $('#stopSlide').mouseover(function() {
+          clearInterval(interval);
+      });
+
+      $('#stopSlide').mouseout(function() {
+          interval = setInterval(startSlideShow, delay);
+      });
 
       FirstYear.sharingBar();
 

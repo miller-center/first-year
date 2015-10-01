@@ -64,6 +64,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
     #the-latest {
       width: 15rem;
       background-color: transparentize(#111, 0.3);
+      z-index: 100;
       ul {
         list-style-type: none;
         color: #ddd;
