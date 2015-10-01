@@ -11,7 +11,7 @@ html(lang="en")
 		meta(name="author", content="")
 		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
 		link(rel="stylesheet", href="#{project_home}/css/first-year.css")
-		link(rel="stylesheet", href="#{project_home}/css/blog.css")
+		link(rel="stylesheet", href="#{project_home}/css/blog-entry.css")
 		link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
 		link(href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&7CCrimson+Text:400,700,600',rel="stylesheet", type="text/css")
 	
@@ -20,34 +20,32 @@ html(lang="en")
 
 		.row#blog-single-entry
 			.small-12.medium-offset-1.medium-10.columns
-			.blog-item
-				h1 Infographic: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-				.blog-item-info
-				span.date September 4, 2015
-				span.author Amber Lautigar Reichert
-				p
-				| Teaser: Teaser text proin fringilla ultricies dolor vitae pellentesque. Cras fringilla eros quis nisl vehicula volutpat.
-				p
-				| image: http://millercenter.org/images/blog/149px-Mfillmore.jpeg, Millard Fillmore, Public domain.
-				br
-				| 	video: 
-				br
-				| 	video image: 
-				br
-				| 	audio: 
-				br
-				| 	embed code: 
-				br
-				| 	content:
-				p
-				| Nullam quis iaculis arcu. Integer a arcu in tellus tempor semper sed quis diam. Nam a purus in velit elementum cursus. Sed pretium justo ipsum. Nullam vitae dolor nec lectus lobortis luctus tincidunt eget eros. Fusce et tellus dignissim, lobortis nibh ac, ultricies tortor. Donec sed leo mi. Praesent eget auctor dui. Morbi feugiat dolor diam, eu viverra nisi elementum eget.
-				p
-				| Donec ultrices eros ac mauris placerat, id faucibus tortor luctus. Donec nisi augue, pulvinar id erat vel, consequat venenatis felis. Nulla libero tellus, sagittis id odio id, accumsan eleifend ligula. Integer finibus augue non mi tristique, vel luctus felis congue. Maecenas gravida, massa et facilisis pharetra, libero nisl consequat leo, ut vestibulum nibh nunc quis nulla. Quisque tempus felis erat, nec blandit elit tincidunt vel. Curabitur nec vulputate turpis. Morbi quam est, ultrices quis hendrerit et, laoreet at erat. Nam interdum tincidunt felis quis blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-				p
-				| Nunc aliquam leo a fringilla venenatis. Praesent commodo, risus sit amet mattis imperdiet, nisi augue hendrerit felis, mollis imperdiet nisi nisi ut libero. Nullam sed nisl lectus. Sed aliquet vel nisl eu feugiat. Quisque volutpat odio vitae consectetur porta. Donec viverra enim vitae vulputate fermentum. Aenean sed egestas odio. Ut mattis arcu ut arcu feugiat, sed eleifend augue vehicula. Aliquam vitae libero in lacus faucibus bibendum non vitae diam. Nam ac tincidunt dui, quis laoreet orci. In pharetra, tellus a sodales lacinia, mi lectus efficitur turpis, fringilla varius tellus odio at ante. Curabitur quam quam, aliquet at ipsum quis, ultricies eleifend odio. Fusce pulvinar turpis vitae nulla pellentesque, mattis bibendum est posuere. Proin odio metus, consequat vel nibh id, suscipit porta mi. Suspendisse vestibulum rutrum tellus sed molestie. Nam pulvinar nibh interdum elit porttitor, in lobortis purus commodo.
-				p
-
-
+				.blog-item
+					h1 Infographic: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+					.blog-item-info
+						span.date September 4, 2015
+						span.author Amber Lautigar Reichert
+					.media
+						.media-item
+							img(src='http://millercenter.org/images/blog/149px-Mfillmore.jpeg')
+						.media-credit Public domain.
+						.media-caption Millard Fillmore
+					p
+						| Nullam quis iaculis arcu. Integer a arcu in tellus tempor semper sed quis diam. Nam a purus in velit elementum cursus. Sed pretium justo ipsum. Nullam vitae dolor nec lectus lobortis luctus tincidunt eget eros. Fusce et tellus dignissim, lobortis nibh ac, ultricies tortor. Donec sed leo mi. Praesent eget auctor dui. Morbi feugiat dolor diam, eu viverra nisi elementum eget.
+					p
+						| Donec ultrices eros ac mauris placerat, id faucibus tortor luctus. Donec nisi augue, pulvinar id erat vel, consequat venenatis felis. Nulla libero tellus, sagittis id odio id, accumsan eleifend ligula. Integer finibus augue non mi tristique, vel luctus felis congue. Maecenas gravida, massa et facilisis pharetra, libero nisl consequat leo, ut vestibulum nibh nunc quis nulla. Quisque tempus felis erat, nec blandit elit tincidunt vel. Curabitur nec vulputate turpis. Morbi quam est, ultrices quis hendrerit et, laoreet at erat. Nam interdum tincidunt felis quis blandit. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+					p
+						| Nunc aliquam leo a fringilla venenatis. Praesent commodo, risus sit amet mattis imperdiet, nisi augue hendrerit felis, mollis imperdiet nisi nisi ut libero. Nullam sed nisl lectus. Sed aliquet vel nisl eu feugiat. Quisque volutpat odio vitae consectetur porta. Donec viverra enim vitae vulputate fermentum. Aenean sed egestas odio. Ut mattis arcu ut arcu feugiat, sed eleifend augue vehicula. Aliquam vitae libero in lacus faucibus bibendum non vitae diam. Nam ac tincidunt dui, quis laoreet orci. In pharetra, tellus a sodales lacinia, mi lectus efficitur turpis, fringilla varius tellus odio at ante. Curabitur quam quam, aliquet at ipsum quis, ultricies eleifend odio. Fusce pulvinar turpis vitae nulla pellentesque, mattis bibendum est posuere. Proin odio metus, consequat vel nibh id, suscipit porta mi. Suspendisse vestibulum rutrum tellus sed molestie. Nam pulvinar nibh interdum elit porttitor, in lobortis purus commodo.
+					p
+						| image: 
+						br
+						| 	video: 
+						br
+						| 	video image: 
+						br
+						| 	audio: 
+						br
+						| 	embed code:
 
 
 		include ./sidebar.jade
