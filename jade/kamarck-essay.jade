@@ -12,6 +12,7 @@ html(lang="en")
 		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
 		link(rel="stylesheet", href="#{project_home}/css/first-year.css")
 		link(rel="stylesheet", href="#{project_home}/css/essay.css")
+		link(rel="stylesheet", href="#{project_home}/css/hero/issue1/essay2.css")
 		link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
 		link(href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&7CCrimson+Text:400,700,600',rel="stylesheet", type="text/css")
 	
@@ -185,3 +186,15 @@ html(lang="en")
 		include ./sidebar.jade
 
 		include ./footer.jade
+		
+		script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
+		//- remove http protocol from production version
+		script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.js")
+		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.topbar.js")
+		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.interchange.js")
+		script(src="#{project_home}/bower_components/slick-carousel/slick/slick.min.js")
+		//- script(src="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")
+		script(src="#{project_home}/js/first-year.js")
+		script(src="#{project_home}/js/essay.js")
+		//- first-year.js initializes Foundation
