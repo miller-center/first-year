@@ -140,6 +140,30 @@ body {
     min-height: 25%;
     max-height: 45%;
     #hero-slider {
+      .slider-panel.slick-active.video-slide {
+        &:after {
+          background: url('../images/icons/play_film.png') no-repeat center center;
+          background-size: 64px 64px;
+          display: block;
+          content: "";
+          top: 25%;
+          left: 35%;
+          height: 64px !important;
+          width: 64px !important;
+          position:absolute;
+        }
+        a {
+          position: absolute;
+          height: 75%;
+          width: 67%;
+          left: percentage(0.33/2); // split 100 - 66 between left and right
+          h2 { // make up for this left gutter
+            margin-left: -15%;
+          }
+          top: 0;
+          margin: 0 auto;
+        }
+      }
       .slider-panel {
         background-color: transparentize(#111, 0.5);
         border-bottom: 5px solid $info-color;
