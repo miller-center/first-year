@@ -1,3 +1,4 @@
+- var organization="The First Year Project"
 // Header (Topbar): Navigation Menu, Logo and Sharing Options
 .fixed#navigation-container
   nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: large")
@@ -51,9 +52,10 @@
 
     section.social-section.show-for-medium-up
       ul.right
-        li.social-icon#header-fb-icon: a(href="#",title="Visit #{title} on Facebook")
+        li.label(style="left: -6rem;top: 0.6rem;") Follow Us!
+        li.social-icon#header-fb-icon: a(href="#",title="Visit #{organization} on Facebook")
           | &nbsp;
           //- img(src="images/icons/lg/facebook-wht.png")
-        li.social-icon#header-tw-icon: a(href="#",title="Follow #{title} on Twitter") 
+        li.social-icon#header-tw-icon: a(href="#",title="Follow #{organization} on Twitter") 
           | &nbsp;
  
