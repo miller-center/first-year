@@ -2,7 +2,7 @@
 @import "foundation/components/grid";
 
 // default
-$author-last-name: "kamarch";
+$author-last-name: "kamarck";
 $filename: "hero-#{$author-last-name}.jpg";
 .hero {
   background: url('../../../images/heros/#{$filename}') ;
