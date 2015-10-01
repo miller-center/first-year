@@ -107,7 +107,12 @@ $transparent: rgba(245,245,245,0.0);
     .social-section {
       position:relative;
       left:66%;
-      ul { 
+      ul {
+        li.label:first-child {
+          position: absolute;
+          left: -4rem;
+          top: 0.7rem;
+        }
         padding-top: 0;
         margin-top: 0;
         margin-left: 2%;
@@ -407,7 +412,6 @@ $transparent: rgba(245,245,245,0.0);
     list-style-type: none;
     a:hover {text-decoration: none;}
     }
-
 	#navigation-section 
 		ul 
 			li
