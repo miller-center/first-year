@@ -8,6 +8,10 @@ $sidebar-z: 10;
   right: -5rem; // off-canvas
   @include single-transition(right, 500ms, ease-in);
   ul {
+    margin-top: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
     li {
       padding: .75em;
       div.sharing-item {

@@ -23,7 +23,9 @@
 
 footer#bodyFooter {
   min-height: 150px; 
-  background-color: $bill-rapp-blue; 
+  background-color: $first-year-blue;
+  position: inherit;
+  z-index: 9999; 
 }
 footer {
   p, h1, h2, h3, h4, h5, h6 {
@@ -70,7 +72,7 @@ footer .footerNav {
   .footer-form {
     padding-top: 1em;
     #footer-email {
-      @include placeholderModify('color', transparentize($bill-rapp-blue, 0.3));
+      @include placeholderModify('color', transparentize($first-year-blue, 0.3));
       @include placeholderModify('font-size', 120%);
     }
     #footer-email-button {

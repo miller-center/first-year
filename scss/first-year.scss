@@ -34,7 +34,7 @@ body {
 // hero stuff needs SERIOUS refactoring
 
 
-$hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure why. 
+$hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1, not sure why. 
 .hero {
   background: url('../images/heros/sm/white-house.jpg') no-repeat center center;
   background-size: cover;
@@ -44,7 +44,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
   padding-left: 0;
   padding-right: 0;
   margin-bottom: -2em;
-  // z-index: $hero-z;
+  z-index: $hero-z;
   &:before {
     content: '';
     height: $hero-height;
@@ -57,6 +57,9 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
     opacity: .55;  // was .8 
     z-index: $hero-z;
   }
+  * {
+    z-index: $hero-z + 1;
+  }
   .news {
     position: absolute;
     right: 1rem;
@@ -64,7 +67,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
     #the-latest {
       width: 15rem;
       background-color: transparentize(#111, 0.3);
-      z-index: 100;
+      z-index: $hero-z + 100;
       ul {
         list-style-type: none;
         color: #ddd;
@@ -83,7 +86,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
           letter-spacing: 2px;
           a {
             color: #eee;
-            z-index: 99;
+            z-index: $hero-z + 101;
             height: 100%;
             &:hover {
               text-decoration: underline;
@@ -96,7 +99,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
 
   /* two buttons side-by-side, below title */
   .intro-nav {
-    z-index: 10;
+    z-index: $hero-z + 10;
     color: #eee;
     .row {
       margin: 0 auto;
@@ -177,7 +180,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
 
   /* multiple tab-styled option panes */
   #hero-navigation-row {
-    z-index: 10;
+    z-index: $hero-z + 10;
     position:absolute;
     margin:0 auto;
     width: 100%;

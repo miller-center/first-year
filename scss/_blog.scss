@@ -17,6 +17,9 @@
 		top: -.8rem;
 	}
 	.blog-item {
+		position: inherit;
+		background-color: $body-bg;
+		z-index: 999;
 		border-bottom: 1px solid #ccc;
 		margin-bottom: 1rem;
 		.blog-item-info {

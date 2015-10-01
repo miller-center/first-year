@@ -25,7 +25,8 @@ $slick-ajax-loader-gif-path: "../images/ajax-loader.gif"; // this will change!
 
 /* add other global settings here */
 $hero-height: 27rem;
-
+$sidebar-z: 10;
+$hero-z: $sidebar-z + 1;
 
 body {
 }
@@ -132,6 +133,7 @@ body {
   }
   // Slick Carousel Slider
   .hero-slider-row {
+    z-index: $hero-z + 100;
     $panel-gutter: rem-calc(5px);
     color: $info-color;
     background-color: transparentize(#111, 0.3);

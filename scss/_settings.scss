@@ -97,7 +97,7 @@ $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 // $font-weight-normal: normal;
 $font-weight-bold: bold;
 
-// $white       : #FFFFFF;
+$white       : #FFFFFF;
 // $ghost       : #FAFAFA;
 // $snow        : #F9F9F9;
 // $vapor       : #F6F6F6;
@@ -118,8 +118,8 @@ $oil         : #333333;
 // $black       : #000000;
 
 // We use these as default colors throughout
-$bill-rapp-blue: #0c2b48;
-$primary-color: $bill-rapp-blue; // formerly medium greyish blue 3d657d
+$first-year-blue: #0c2b48;
+$primary-color: $first-year-blue; // formerly medium greyish blue 3d657d
 
 $secondary-color: #aaa; // grey
 $alert-color: #AB1A25; // deep red
@@ -128,7 +128,7 @@ $alert-color: #AB1A25; // deep red
 $info-color: #ff7d34; // highlight color for info stuff (orange)
 
 // We use these to control various global styles
-// $body-bg: $white;
+$body-bg: $white;
 $body-font-color: $tuatara;
 $body-font-family: $font-family-sans-serif;
 // $body-font-weight: $font-weight-normal;
@@ -1420,7 +1420,7 @@ $label-font-sizing: rem-calc(18);
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-$topbar-bg-color: $bill-rapp-blue;
+$topbar-bg-color: $first-year-blue;
 $topbar-bg: $topbar-bg-color;
 
 // Height and margin
