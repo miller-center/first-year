@@ -539,6 +539,8 @@ ul {list-style-type: circle;}
 // These are bars of content with dark backgrounds--might be better accomplished with a "dark" class
 
 .cta {
+  position: inherit; // works with z-index below
+  z-index: 100; // ensure greater than $sidebar-z
 	color: #ddd; 
 	font-family: $font-family-small; 
 	padding: 1em;

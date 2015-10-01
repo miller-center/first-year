@@ -1,8 +1,9 @@
 // sharing side bar
+$sidebar-z: 10;
 .sharing-options {
   position:absolute;
   top: $hero-height * 1.5;
-  z-index: -1; // prevents overlap with content
+  z-index: $sidebar-z; // may overlap with content
   background-color: rgba(255,255,255, 0.75);
   right: -5rem; // off-canvas
   @include single-transition(right, 500ms, ease-in);

@@ -33,6 +33,8 @@ p.essay-intro {font-size: larger;}
 figure {
 	/*border-top: 1px solid $info-color; 
 	border-bottom: 1px solid $info-color; */
+  position: inherit; // works with z-index below
+  z-index: 100; // ensure greater than $sidebar-z
 	padding: 10px 15px; 
 	max-width: 30%;} 
 
@@ -110,6 +112,8 @@ blockquote {
 
 
 .author {
+	position: inherit;
+	z-index: 100; // ensure greater than $sidebar-z
 	background-color: $primary-color; 
 	width: 100%;
 	margin-bottom: 3rem;
