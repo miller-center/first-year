@@ -1,0 +1,22 @@
+/* Styles for about pages only */
+
+@import "settings";
+@import "header";
+@import "foundation";
+@import "foundation-icons.css";
+
+#videotrailer {margin: 0 auto;}
+
+p {margin-right: 100px;}
+
+.pullquote {
+	font-size: larger; 
+	line-height: 1.8rem;
+	margin: 50px 0; 
+	clear:both; 
+	font-style: italic;
+	padding: .8rem 0; 
+	color: $secondary-color;
+	border-top: 1px solid $info-color;
+	border-bottom: 1px solid $info-color;}
+

@@ -1,0 +1,131 @@
+{exp:string:set name="asset_path"}staticmc.org/potus{/exp:string:set}
+{exp:channel:entries channel="potus" limit="1"}
+
+<!-- Topbar Navigation Section-->
+{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/issue.css" css-hero-include="{potus-issue-css}" kind="issue"}
+
+<!-- Hero Image Section-->
+<div class="row">
+    <div class="small-12 columns hero">
+      <div class="row hero-title">
+        <div id="hero-title" class="small-12 small-centered medium-centered columns">
+          <h2>Issue {potus-number}</h2><span class="stars">&#x2605; &#x2605; &#x2605;</span>
+          <h1 class="main-title">{title}</h1>
+          <p>{potus-shortdescription}</p>
+        </div>
+      </div><!-- close .hero-title -->
+
+	    {!--This is EE code to render the slider on Issue home pages --}
+	    <div class="row hero-slider-row">
+        <div id="hero-slider" class="small-10 large-10 small-centered columns">
+        	{potus-video}
+        	<div class="large-4 small-12 columns slider-panel">
+						<a href="{potus-video:potus-vid}">
+	        		<img src="{potus-video:potus-vid-image}">
+	            <h2>WATCH: The Next President's Crucible Year</h2>
+	          </a>
+          </div>
+        	{/potus-video}
+
+        	{potus-essays}
+        	<div class="large-4 small-12 columns slider-panel">
+        		{if potus-essays:potus-es-hero != ''}
+	        		<img src="//{exp:string name="asset_path"}/images/heros/{potus-essays:potus-es-hero}">
+        		{if:else}
+	        		<img src="https://placehold.it/400x225">
+        		{/if}
+        		<a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">
+	            <h2>{potus-essays:potus-es-shorttitle}</h2>
+	            <p class="text-right">{potus-essays:potus-es-author}{potus-essays:potus-es-author:potus-es-authorname}{/potus-essays:potus-es-author}</p>
+	          </a>
+          </div>
+        	{/potus-essays}
+        </div><!-- close .hero-slider -->
+      </div><!-- close .hero-slider-row -->
+
+  </div> <!-- close .hero -->
+</div> <!-- close .row -->
+	
+
+<!-- Editors Section-->
+<div id="about-this-issue" class="row">
+	<div class="large-1 columns">&nbsp;</div>
+{potus-editors}
+	<div class="editor small-6 medium-4 large-3 columns">
+		<a href="/expressionengine.php/potus/about#scholars-{potus-editors:potus-edlink} "><img src="{potus-editors:potus-edphoto}"></a>
+		<div class="editor-info">
+			<div class="editor-name">
+				<a href="/expressionengine.php/potus/about#scholars-{potus-editors:potus-edlink} ">
+					{potus-editors:potus-ed}
+				</a>
+			</div>
+			<div class="editor-title">
+				Issue Editor
+			</div>
+		</div>
+	</div>
+{/potus-editors}
+
+  <!-- partners information -->
+  <div class="partners small-12 medium-4 large-4 columns">
+    <p> <a href="http://forms.hoosonline.virginia.edu/s/1535/16-uva/index.aspx?sid=1535&amp;gid=16&amp;pgid=9982&amp;cid=17637" target="_blank" class="important">Sign up for exclusive alerts&nbsp;»</a></p>
+  </div>
+</div>
+
+<!-- Video -->
+<!-- <p>essays:</p>	 -->
+	<!-- Video file: {potus-video}{potus-video:potus-vid}{potus-video:potus-vid-image}{potus-video:potus-vid-file}{/potus-video}<br> -->
+{/exp:channel:entries}
+
+<!-- Briefing Room Section-->
+
+<div class="row">
+	<div id="blog-large" class="small-12 medium-9 medium-offset-1 large-10 columns">
+    <h2>Briefing Room</h2>
+	  {!-- Other (Blog) Entries --}
+		{exp:channel:entries channel="potus_blog" dynamic="no" category="438"} {!--this needs some development before issue2. maybe a php variable?--}	
+			<div class="blog-item clearfix">
+			  <h4><a href="/expressionengine.php/potus/blog/{url_title}">{title}</a></h4>
+			  <div class="media">
+				{potus-bl-image}
+					<div class="media-item"><img src="{potus-bl-image:potus-bl-imagefile}"></div>
+					<div class="media-credit">	{potus-bl-image:potus-bl-imagecredit}</div>
+				{/potus-bl-image}
+			  </div>
+			  <p class="content">{potus-bl-teaser}</p>
+			  <div class="blog-item-info"><span class="date">{entry_date format='%F %d, %Y'}</span><span class="author">{author}</span></div>
+			</div>
+		{/exp:channel:entries}
+  </div>
+</div>
+
+
+{!-- Essays --}
+<!-- Essays Section-->
+
+{exp:channel:entries channel="potus" limit="1"}
+
+<div id="essays-row" class="row">
+	<div class="small-12 medium-8 medium-centered large-8 columns">
+    <h2 class="text-center">{title}: Essays</h2>
+  </div>
+  {!-- Essay Entries For This Issue --}
+	{potus-essays}	
+	<div class="small-12 medium-8 medium-centered large-8 columns">
+	  <a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">
+	  	<img src="//staticmc.org/potus/images/heros/{potus-essays:potus-es-hero}" data-interchange="[//staticmc.org/potus/images/heros/{potus-essays:potus-es-hero}, (default)], [//staticmc.org/potus/images/heros/lg/{potus-essays:potus-es-hero}, (large)]">
+	  	<h3>{potus-essays:title}</h3>
+	  	<p>{potus-essays:potus-es-author}{potus-essays:potus-es-author:potus-es-authorname}{/potus-essays:potus-es-author}</p>
+  	</a>
+	</div>
+	{/potus-essays}
+</div>    
+
+<!-- sidebar, footer and Javascript includes -->
+
+{embed="potus/sharing-sidebar" target-url='{url_title}' literal='some information hard-coded'}
+{/exp:channel:entries}
+
+{embed="potus/footer" kind="issue"}
+
+<!-- end of page construction -->

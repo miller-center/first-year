@@ -9,8 +9,13 @@
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   <link rel="stylesheet" href="//{exp:string name='asset_path'}/css/first-year.css">
-  <link rel="stylesheet" href="//exp:string name='asset_path'}/css/essay.css">
-  <link rel="icon" type="image/png" href="//exp:string name='asset_path'}/images/favicon.ico">
+  {if embed:css-include != ""}
+  <link rel="stylesheet" href="//{embed:css-include}">
+  {/if}
+  {if embed:css-hero-include != ""}
+  <link rel="stylesheet" href="//{embed:css-hero-include}">
+  {/if}
+  <link rel="icon" type="image/png" href="//{exp:string name='asset_path'}/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&amp;7CCrimson+Text:400,700,600" rel="stylesheet" type="text/css">
 
 </head>
@@ -19,43 +24,43 @@
   <!-- Header (Topbar): Navigation and Logo -->
     <div id="navigation-container" class="fixed">
       <nav data-topbar role="navigation" data-options="sticky_on: large" class="top-bar">
-        <section class="logo-section show-for-medium-up"><a href="#"> <img src="//{exp:string name="asset_path"}/images/logos/fy2017_logo_horiz_wh.png"></a></section>
+        <section class="logo-section show-for-medium-up"><a href="/expressionengine.php/potus"> <img src="//{exp:string name="asset_path"}/images/logos/fy2017_logo_horiz_wh.png"></a></section>
         <ul class="title-area">
           <li class="name">
-            <h1><a href="#" class="logo show-for-small-only"><img src="//{exp:string name="asset_path"}/images/logos/fy2017_logo_horiz_wh_sm.png"></a></h1>
+            <h1><a href="/expressionengine.php/potus" class="logo show-for-small-only"><img src="//{exp:string name="asset_path"}/images/logos/fy2017_logo_horiz_wh_sm.png"></a></h1>
           </li>
           <li id="mobile-menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu </span></a></li>
         </ul>
         <section id="navigation-section" class="top-bar-section main-menu-section">
           <!--  Right Nav Section -->
           <ul class="right">
-            <li class="hide-for-medium-up"><a href="about">About the Project</a></li>
-            <li class="hide-for-medium-up"><a href="issue/why-the-first-year">Issue 1: The First Year</a></li>
-            <li class="hide-for-medium-up"><!--.active class was applied here--I like it but want to apply globally. UntilI figure that out, commenting it out. --><a href="get-involved">Get Involved</a></li>
+            <li class="hide-for-medium-up"><a href="/expressionengine.php/potus/about">About the Project</a></li>
+            <li class="hide-for-medium-up"><a href="/expressionengine.php/potus/issue/why-the-first-year">Issue 1: The First Year</a></li>
+            <li class="hide-for-medium-up"><!--.active class was applied here--I like it but want to apply globally. UntilI figure that out, commenting it out. --><a href="/expressionengine.php/potus/about#getinvolved">Get Involved</a></li>
             <li id="header-menu-icon" class="menu-option hide-for-small-only has-dropdown"><a href="#"><span class="label">Menu<span></span></span></a>
               <ul class="dropdown">
-                <li><a href="about">About the Project</a>
+                <li><a href="/expressionengine.php/potus/about">About the Project</a>
                   <ul> 
-                    <li> <a href="about#contact">Contact Us</a></li>
-                    <li> <a href="about#advisory">Advisory Council</a></li>
-                    <li> <a href="about#scholars">Scholars</a></li>
+                    <li> <a href="/expressionengine.php/potus/about#contact">Contact Us</a></li>
+                    <li> <a href="/expressionengine.php/potus/about#advisory">Advisory Council</a></li>
+                    <li> <a href="/expressionengine.php/potus/about#scholars">Scholars</a></li>
                   </ul>
                 </li>
                 <li><span>Issues</span>
                   <ul>
-                    <li><a href="issue/why-the-first-year">Issue 1: The First Year</a></li>
+                    <li><a href="/expressionengine.php/potus/issue/why-the-first-year">Issue 1: The First Year</a></li>
                     <li><span>Issue 2: Coming Jan '16</span></li>
                   </ul>
                 </li>
-                <li><!--active class was applied here--I like it but want to apply globally. Until I figure that out, commenting it out. --><a href="get-involved">Get Involved</a></li>
+                <li><!--active class was applied here--I like it but want to apply globally. Until I figure that out, commenting it out. --><a href="/expressionengine.php/potus/about#getinvolved">Get Involved</a></li>
               </ul>
             </li>
           </ul>
         </section>
         <section class="social-section show-for-medium-up">
           <ul class="right">
-            <li id="header-fb-icon" class="social-icon"><a href="#" title="Visit First Year 2017 on Facebook">&nbsp;</a></li>
-            <li id="header-tw-icon" class="social-icon"><a href="#" title="Follow First Year 2017 on Twitter">&nbsp;</a></li>
+            <li id="header-fb-icon" class="social-icon"><a href="http://www.facebook.com/share.php?u=http://firstyear2017.org" target="_blank" title="Share The First Year Project on Facebook">&nbsp;</a></li>
+            <li id="header-tw-icon" class="social-icon"><a href="https://twitter.com/intent/tweet?text=First+Year+Project+http%3A%2F%2Ffirstyear2017.org" target="_blank" title="Tweet about The First Year Project">&nbsp;</a></li>
           </ul>
         </section>
       </nav>

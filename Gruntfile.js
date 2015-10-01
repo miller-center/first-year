@@ -5,7 +5,8 @@ module.exports = function(grunt) {
     sass: {
       options: {
         includePaths: [ 'bower_components/foundation/scss',
-                        'bower_components/slick-carousel/slick'
+                        'bower_components/slick-carousel/slick',
+                        'scss',
 	]
       },
       dist: {
@@ -18,7 +19,15 @@ module.exports = function(grunt) {
           'css/home.css': 'scss/home.scss',
           'css/issue.css': 'scss/issue.scss',
           'css/essay.css': 'scss/essay.scss',
-          'css/teaser.css': 'scss/teaser.scss'
+          'css/hero/issue1.css': 'scss/hero/issue1.scss',
+          'css/hero/issue1/essay1.css': 'scss/hero/issue1/essay1.scss',
+          'css/hero/issue1/essay2.css': 'scss/hero/issue1/essay2.scss',
+          'css/hero/issue1/essay3.css': 'scss/hero/issue1/essay3.scss',
+          'css/hero/issue1/essay4.css': 'scss/hero/issue1/essay4.scss',
+          'css/hero/issue1/essay5.css': 'scss/hero/issue1/essay5.scss',
+          'css/hero/issue1/essay6.css': 'scss/hero/issue1/essay6.scss',
+          'css/teaser.css': 'scss/teaser.scss',
+          'css/blog-entry.css': 'scss/blog-entry.scss'
         }
       }
     },

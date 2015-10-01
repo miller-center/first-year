@@ -1,21 +1,24 @@
+@import "settings";
+@import "foundation/components/grid";
+
 // default
-$filename = "";
+$filename: "white-house.jpg";
 .hero {
-  background: url('path/to/file/#{$filename}') ;
+  background: url('../../images/heros/#{$filename}') no-repeat center center;
 
 }
 
 @media #{$small-only} {
-  background: url('path/to/file/sm/#{$filename}') ;
+  background: url('../../images/heros/sm/#{$filename}') no-repeat center center;
   
 }
 
 @media #{$medium-only} {
-  background: url('path/to/file/md/#{$filename}') ;
+  background: url('../../images/heros/md/#{$filename}') no-repeat center center;
   
 }
 
 @media #{$large-only} {
-  background: url('path/to/file/lg/#{$filename}') ;
+  background: url('../../images/heros/lg/#{$filename}') no-repeat center center;
   
 }

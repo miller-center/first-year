@@ -1,22 +1,25 @@
+@import "settings";
+@import "foundation/components/grid";
+
 // default
-$author-last-name: "kamarch";
+$author-last-name: "kamarck";
 $filename: "hero-#{$author-last-name}.jpg";
 .hero {
-  background: url('../images/heros/#{$filename}') ;
+  background: url('../../../images/heros/#{$filename}') ;
 
 }
 
 @media #{$small-only} {
-  background: url('../images/heros/sm/#{$filename}') ;
+  background: url('../../../images/heros/sm/#{$filename}') ;
   
 }
 
 @media #{$medium-only} {
-  background: url('../images/heros/md/#{$filename}') ;
+  background: url('../../../images/heros/md/#{$filename}') ;
   
 }
 
 @media #{$large-only} {
-  background: url('../images/heros/lg/#{$filename}') ;
+  background: url('../../../images/heros/lg/#{$filename}') ;
   
 }
