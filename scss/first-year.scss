@@ -236,6 +236,7 @@ $hero-z: 0; //This is shading the hero text when it's set to 0 or 1, not sure wh
             &:hover {
               color: $info-color;
               transition: all .25s ease-in-out;
+              text-decoration: none;
             }            
           }
           p {
