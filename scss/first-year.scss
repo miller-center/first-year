@@ -328,6 +328,7 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
       color: #ccc;
       text-transform: uppercase;
     }
+    h3 {color: #fff; font-weight: initial;}
     .stars {
       color: $info-color;
       display: inline-block;
