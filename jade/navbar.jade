@@ -1,15 +1,16 @@
 // Header (Topbar): Navigation Menu, Logo and Sharing Options
+- var logo = "fy2017_logo.png"
 .fixed#navigation-container
   nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: large")
     section.logo-section.show-for-medium-up
       a(href="#") 
-        img(src="../images/logos/fy2017_logo_horiz_wh.png")
+        img(src="../images/logos/#{logo}",data-interchange="[../images/logos/sm/#{logo}, (default)], [../images/logos/md/#{logo}, (medium)], [../images/logos/lg/#{logo}, (large)]")
 
     ul.title-area
       li.name
         h1
           a.logo.show-for-small-only(href="#")
-            img(src="../images/logos/fy2017_logo_horiz_wh_sm.png")
+            img(src="../images/logos/sm/#{logo}")
       li.toggle-topbar.menu-icon#mobile-menu
         a(href="#")
           span Menu 
@@ -49,6 +50,7 @@
 
     section.social-section.show-for-medium-up
       ul.right
+        li.label Follow
         li.social-icon#header-fb-icon: a(href="#",title="Visit #{title} on Facebook")
           | &nbsp;
           //- img(src="images/icons/lg/facebook-wht.png")
