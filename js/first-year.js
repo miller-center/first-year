@@ -8,11 +8,16 @@ $(document).foundation({
 
 window.FirstYear = {}; // project globals
 
+//
+// do the following when page loads...
+//
 $(document).ready(function() {
 
   // re-initialize Foundation after responsive image loading
   $(document).foundation('interchange', 'reflow');
 
+  // Intercept all anchor clicks
+  $("body").on("click", "a[href^='#']", scroll_if_anchor);
 
 
   // give page a nudge if loading anywhere other than top
@@ -87,22 +92,45 @@ $(document).ready(function() {
   }
 
 
+  // correct linking targets to accommodate topbar nav strip
+  function scroll_if_anchor(href) {
+    href = typeof(href) == "string" ? href : $(this).attr("href")
+    console.log('scroll_if_anchor called successfully');
+    // If href missing, ignore
+    if(!href) return;
+    console.log('scroll_if_anchor parameter passed');
+
+    // Amount of padding to add (in pixels)
+    var topbarHeight = $('nav').height();
+    var fromTop =  topbarHeight + 5;
+
+    // If our Href points to a valid, non-empty anchor, and is on the same page
+    var $target = $(href);
+
+    // Redirect scroll point to desired position
+    if($target.length) {
+      $('html body').animate({ scrollTop: $target.offset().top - fromTop });
+      if(history && "pushstate" in history) {
+        history.pushState({}, document.title, window.location.pathname + href);
+        return false;
+      }
+    }
+
+  } // end function scroll_if_anchor
+
+  // Check to see if requested href contained anchor
+  // (this is intentionally called BEFORE $(document).ready() )
+  scroll_if_anchor(window.location.hash);
+
 
   // if window is large enough do the following:
-  //   1. activate newsfeed rotation
-  //   2. reveal/conceal sharing sidebar
+  //   1. describe your function here
 
   try {
     if(Foundation.utils.is_medium_up()) {
-      // var listItems = $('#the-latest ul li:not(.label)');
-      // length = listItems.length;
-      // var current = 0;
-      // timeout = 5000;
-      // setInterval(rotateNewsItem, timeout);
 
-      FirstYear.sharingBar();
     } else {
-      console.log('some animations disabled for small device');
+      // console.log('some animations disabled for small device');
     }
   }
   catch(err) {

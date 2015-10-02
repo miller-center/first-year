@@ -25,7 +25,8 @@ $slick-ajax-loader-gif-path: "../images/ajax-loader.gif"; // this will change!
 
 /* add other global settings here */
 $hero-height: 27rem;
-
+$sidebar-z: 10;
+$hero-z: $sidebar-z + 1;
 
 body {
 }
@@ -132,12 +133,37 @@ body {
   }
   // Slick Carousel Slider
   .hero-slider-row {
+    z-index: $hero-z + 100;
     $panel-gutter: rem-calc(5px);
     color: $info-color;
     background-color: transparentize(#111, 0.3);
     min-height: 25%;
     max-height: 45%;
     #hero-slider {
+      .slider-panel.slick-active.video-slide {
+        &:after {
+          background: url('../images/icons/play_film.png') no-repeat center center;
+          background-size: 64px 64px;
+          display: block;
+          content: "";
+          top: 25%;
+          left: 35%;
+          height: 64px !important;
+          width: 64px !important;
+          position:absolute;
+        }
+        a {
+          position: absolute;
+          height: 75%;
+          width: 67%;
+          left: percentage(0.33/2); // split 100 - 66 between left and right
+          h2 { // make up for this left gutter
+            margin-left: -15%;
+          }
+          top: 0;
+          margin: 0 auto;
+        }
+      }
       .slider-panel {
         background-color: transparentize(#111, 0.5);
         border-bottom: 5px solid $info-color;
@@ -265,6 +291,32 @@ body {
         padding-right: 0.25em;
       }
     }
+    .slider-panel.slick-active.video-slide {
+      &:after {
+        background: url('../images/icons/sm/play_film.png') no-repeat center center;
+        background-size: 48px 48px !important;
+        display: block;
+        content: "";
+        top: 15% !important;
+        left: 25% !important;
+        height: 48px !important;
+        width: 48px !important;
+        position:absolute;
+      }
+      a {
+        position: absolute;
+        height: 75%;
+        width: 67%;
+        left: percentage(0.33/2); // split 100 - 66 between left and right
+        h2 { // make up for this left gutter
+          position: absolute;
+          margin-left: -25% !important;
+          margin-right: -25% !important;
+        }
+        top: 0;
+        margin: 0 auto;
+      }
+    }   
   }
 
   #about-this-issue {
