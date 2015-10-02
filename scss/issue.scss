@@ -211,6 +211,9 @@ body {
 // Main Content Section
 #video-container-1 {
   margin-bottom: 3rem;
+  .flex-video.widescreen {
+    padding-bottom: 53% !important; // customization for our first issue vid
+  }
 }
 #essays-row {
   div:first-child {
