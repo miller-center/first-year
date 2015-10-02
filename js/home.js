@@ -35,24 +35,30 @@ $(document).ready(function() {
   //   1. activate newsfeed rotation
   //   2. reveal/conceal sharing sidebar
   try {
-    if(Foundation.utils.is_medium_up()) {
-      delay = 5000;
-
-      var interval = setInterval(startSlideShow,  delay);
-
-      $('#stopSlide').mouseover(function() {
-          clearInterval(interval);
-      });
-
-      $('#stopSlide').mouseout(function() {
-          interval = setInterval(startSlideShow, delay);
-      });
-
+    delay = 5000;
+    if (Foundation.utils.is_large_up()) {
       FirstYear.sharingBar();
 
+      if(Foundation.utils.is_medium_up()) {
+
+        var interval = setInterval(startSlideShow,  delay);
+
+        $('#stopSlide').mouseover(function() {
+            clearInterval(interval);
+        });
+
+        $('#stopSlide').mouseout(function() {
+            interval = setInterval(startSlideShow, delay);
+        });
+
+
+      } else {
+        console.log('news feed animations disabled for small device');
+      }
     } else {
-      console.log('some animations disabled for small device');
+      console.log('sharing sidebar disabled for medium/small device');
     }
+
   }
   catch(err) {
     console.log(err);
