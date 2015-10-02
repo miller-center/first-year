@@ -88,9 +88,9 @@ body {
 
 /* this overrides a URL hardcoded in the Slick Carousel Theme */
 .slick-list {
-    .slick-loading & {
-        background: #fff slick-image-url($slick-ajax-loader-gif-path) center center no-repeat !important;
-    }
+  .slick-loading & {
+      background: #fff slick-image-url($slick-ajax-loader-gif-path) center center no-repeat !important;
+  }
 }
 
 .slick-prev, .slick-next {
@@ -210,8 +210,13 @@ body {
 
 // Main Content Section
 #video-container-1 {
+  background-color: #fff;
+  position: relative;
+  z-index: $sidebar-z + 10;  
   margin-bottom: 3rem;
   .flex-video.widescreen {
+    position: inherit;
+    z-index: $sidebar-z + 10;  
     padding-bottom: 53% !important; // customization for our first issue vid
   }
 }
@@ -244,6 +249,11 @@ body {
   #featured-container {
 
   }
+  #video-container-1 {
+    .flex-video.widescreen {
+      padding-bottom: 49% !important; // customization for our first issue vid
+    }
+  }
 }
 
 
@@ -252,11 +262,19 @@ body {
 }
 
 @media #{$medium-up} {
-  
+  #video-container-1 {
+    .flex-video.widescreen {
+      padding-bottom: 50% !important; // customization for our first issue vid
+    }
+  }  
 }
 
 @media #{$large-up} {
-
+  #video-container-1 {
+    .flex-video.widescreen {
+      padding-bottom: 53% !important; // customization for our first issue vid
+    }
+  }
 }
 
 @media #{$small-only} {
