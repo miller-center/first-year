@@ -305,6 +305,9 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
       padding-top: 0em;
       a {
         color: #fff;
+        &:hover {
+          text-decoration: none;
+        }
       }
     }
     p {
