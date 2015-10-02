@@ -410,15 +410,32 @@ $transparent: rgba(245,245,245,0.0);
 @media #{$small-only} {
   #mobile-menu {
     list-style-type: none;
-    a:hover {text-decoration: none;}
+    a:hover {
+      text-decoration: none;
     }
-	#navigation-section 
-		ul 
-			li
-			{border-top: 1px solid #aaa;}
-			li:hover a {text-decoration: none;}
-	
+  }
+	#navigation-section {
+		ul {
+			li {
+        border-top: 1px solid #aaa;
+      }
+			li:hover a {
+        text-decoration: none;
+      }
+    }
+  }
+} // end @media #{$small-only}
 
+// custom query for newer phones, based on iPhone 6
+// this one is to deal with landscape rendering our 'medium device' navigation bar
+@media only screen and (min-width:$small-breakpoint) and (max-height:375px) and (orientation:landscape) {
+  .social-section {
+    ul {
+      li.label:first-child {
+        display:none;
+      }
+    }
+  }
 }
 
 @media #{$medium-only} {

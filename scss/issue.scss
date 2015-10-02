@@ -291,6 +291,32 @@ body {
         padding-right: 0.25em;
       }
     }
+    .slider-panel.slick-active.video-slide {
+      &:after {
+        background: url('../images/icons/sm/play_film.png') no-repeat center center;
+        background-size: 48px 48px !important;
+        display: block;
+        content: "";
+        top: 15% !important;
+        left: 25% !important;
+        height: 48px !important;
+        width: 48px !important;
+        position:absolute;
+      }
+      a {
+        position: absolute;
+        height: 75%;
+        width: 67%;
+        left: percentage(0.33/2); // split 100 - 66 between left and right
+        h2 { // make up for this left gutter
+          position: absolute;
+          margin-left: -25% !important;
+          margin-right: -25% !important;
+        }
+        top: 0;
+        margin: 0 auto;
+      }
+    }   
   }
 
   #about-this-issue {
