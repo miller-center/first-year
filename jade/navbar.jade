@@ -1,16 +1,15 @@
-- var organization="The First Year Project"
 // Header (Topbar): Navigation Menu, Logo and Sharing Options
 .fixed#navigation-container
   nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: large")
     section.logo-section.show-for-medium-up
       a(href="#") 
-        img(src="../images/logos/sm/fy2017_logo.png",data-interchange="[../images/logos/sm/fy2017_logo.png, (default)], [../images/logos/md/fy2017_logo.png, (medium)], [../images/logos/lg/fy2017_logo.png, (large)]")
+        img(src="../images/logos/fy2017_logo_horiz_wh.png")
 
     ul.title-area
       li.name
         h1
           a.logo.show-for-small-only(href="#")
-            img(src="../images/logos/sm/fy2017_logo.png")
+            img(src="../images/logos/fy2017_logo_horiz_wh_sm.png")
       li.toggle-topbar.menu-icon#mobile-menu
         a(href="#")
           span Menu 
@@ -50,10 +49,9 @@
 
     section.social-section.show-for-medium-up
       ul.right
-        li.label Follow
-        li.social-icon#header-fb-icon: a(href="#",title="Visit #{organization} on Facebook")
+        li.social-icon#header-fb-icon: a(href="#",title="Visit #{title} on Facebook")
           | &nbsp;
           //- img(src="images/icons/lg/facebook-wht.png")
-        li.social-icon#header-tw-icon: a(href="#",title="Follow #{organization} on Twitter") 
+        li.social-icon#header-tw-icon: a(href="#",title="Follow #{title} on Twitter") 
           | &nbsp;
  
