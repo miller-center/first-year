@@ -1,5 +1,7 @@
 // sharing side bar
-$sidebar-z: 10;
+// see _settings.scss for $sidebar-z value
+
+@import "settings";
 .sharing-options {
   position:absolute;
   top: $hero-height * 1.5;

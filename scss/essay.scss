@@ -59,7 +59,7 @@ figcaption p {
 	padding-top: .4rem; 
 	margin-bottom: 0;} 
 
-figure img {clear:both; max-width: 100%;}
+figure img {clear:both; max-width: 100%;z-index:$sidebar-z + 10;}
 
 .pullquote {
 	font-size: larger; 
@@ -70,7 +70,11 @@ figure img {clear:both; max-width: 100%;}
 	padding: .8rem 0; 
 	color: $secondary-color;
 	border-top: 1px solid $info-color;
-	border-bottom: 1px solid $info-color;}
+	border-bottom: 1px solid $info-color;
+	background-color: #fff;
+	position:inherit;
+	z-index:$sidebar-z + 10;
+}
 
 blockquote {
 	margin: 25px 150px 25px 175px; 
@@ -170,6 +174,21 @@ blockquote {
 	#essay p {padding-left: 1em; padding-right: 1em;}
 	#essay figure {max-width: 100%; text-align: center; border-top: 1px solid $info-color; border-bottom: 1px solid $info-color; }
 	#essay figure.right, #essay figure.left {float:none !important; clear:both; position: static; left: 0; margin-left: 0; }  
+
+	// keep embeded videos within a 375px (width) viewport
+	#essay {
+		figure.video {
+			iframe {
+				width: 300px !important;
+				height: 225px !important;				
+			}
+		}
+		figure.video.widescreen {
+			iframe {
+				height: 169px !important;
+			}		
+		}
+	}
 }
 
 @media #{$medium-only} {
