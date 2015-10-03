@@ -29,11 +29,11 @@ footer#bodyFooter {
 }
 footer {
   p, h1, h2, h3, h4, h5, h6 {
-    color: #ccc;
+    color: $first-year-grey;
   }
 }
 footer {
-  color: #ccc;
+  color: $first-year-grey;
   font-size: smaller;
   clear:both;
   ul {

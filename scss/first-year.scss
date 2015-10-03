@@ -1,4 +1,3 @@
-$fy-blue-1: #84a0b5;
 $hero-height: 30rem;
 @import "settings";
 @import "foundation";
@@ -275,7 +274,7 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
       margin-top: 10%;  //overall vertical placement of title (refactor)
     }
     h2 {
-      color: #ccc;
+      color: $first-year-grey;
       font-size: 1.3rem;
       letter-spacing: 0.15em;
       font-weight: 100;
@@ -325,7 +324,7 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
     text-align: center;
     margin-top: $topbar-height;
     h2 {
-      color: #ccc;
+      color: $first-year-grey;
       text-transform: uppercase;
     }
     h3 {color: #fff; font-weight: initial;}
