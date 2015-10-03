@@ -558,14 +558,21 @@ ul {list-style-type: circle;}
 
 
 
-
-
-@media #{$small-up} {
-  #featured-container {
-    background: grey;
+@media screen and (max-width: 375px) and (orientation: portrait) {
+  $iphone-6-max-w: 395;
+  #navigation-container {
+    max-width: #{$iphone-6-max-w}px;
+    width: #{$iphone-6-max-w}px;
   }
-}
-
+  body {
+    max-width: #{$iphone-6-max-w}px;
+    width: #{$iphone-6-max-w}px;
+  }
+  body > .row {
+    max-width: #{$iphone-6-max-w}px;
+    width: #{$iphone-6-max-w}px;
+  }
+} // end custom media query
 
 @media #{$small-up} {
 
