@@ -19,6 +19,10 @@ $(document).ready(function() {
   // Intercept all anchor clicks
   $("body").on("click", "a[href^='#']", scroll_if_anchor);
 
+  // Disable linking behavior on topbar Menu label
+  $("#header-menu-icon").click(function(e) {
+    e.preventDefault();
+  });
 
   // give page a nudge if loading anywhere other than top
   var currentPosition = $(window).scrollTop();
