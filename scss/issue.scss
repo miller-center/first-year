@@ -103,6 +103,7 @@ body {
 .slick-dots {
   li {
     transform: translateX(-1em); // fix centering bug
+    -webkit-transform: translateX(-1em); // fix centering bug
     vertical-align: bottom;
   }
 }
@@ -290,7 +291,9 @@ body {
   }
   .slick-dots {
     margin-bottom: 5px;
-    left: 0;
+    li {
+      -webkit-transform: translateX(-0.8em); // fix centering bug
+    }
   }
   #hero-slider {
     $panel-gutter: rem-calc(5px);
