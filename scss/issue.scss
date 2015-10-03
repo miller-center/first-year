@@ -171,6 +171,17 @@ body {
         padding-right: 0;
         margin-left: $panel-gutter;
         margin-right: $panel-gutter;
+        a {
+          position: absolute;
+          height: 75%;
+          width: 67%;
+          left: percentage(0.33/2); // split 100 - 66 between left and right
+          h2 { // make up for this left gutter
+            margin-left: -15%;
+          }
+          top: 0;
+          margin: 0 auto;
+        }
         h2, p {
           color:darken($body-font-color, 99%);
         }
