@@ -37,6 +37,15 @@ $transparent: rgba(245,245,245,0.0);
         max-height: ($topbar-height * 0.90) !important;
       }
     }
+    .menu-option {
+      .dropdown {
+        border-bottom: thin solid $first-year-grey;
+        &.below-hero {
+          border-left:  thin solid $first-year-grey;
+          border-right: thin solid $first-year-grey;
+        }
+      }
+    }
     .social-section {
       ul {
         padding: 0 2%;
