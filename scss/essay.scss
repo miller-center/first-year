@@ -189,6 +189,10 @@ blockquote {
 	}
 }
 
+@media #{$small-up} {
+	#essay > p, #essay > h3, #essay > h4 {padding-right: 0.25em; padding-left: 0.25em;}
+}
+
 @media #{$medium-only} {
 	#essay p {padding-left: 1em; padding-right: 1em;}
 	#essay figure {max-width: 100%; text-align: center; border-top: 1px solid $info-color; border-bottom: 1px solid $info-color; }
@@ -199,9 +203,12 @@ blockquote {
 
 @media #{$medium-up} {
 	p.essay-intro {font-size: 28px;}
+	#essay > p, #essay > h3, #essay > h4 {padding-right: 1em; padding-left: 1em;}
+
 }
 
 @media #{$large-only} {
+	#essay > p, #essay > h3, #essay > h4 {padding-right: rem-calc(150px); padding-left: rem-calc(150px);}
 }
 
 @media #{$xlarge-only} {
