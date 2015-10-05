@@ -29,3 +29,26 @@
 		}
 	}
 }
+
+.social-options {
+	margin-top: 3em;
+	margin-bottom: 3em;
+	padding: 0;
+	li.label {margin-top: 15px;}
+	li a {width: 55px; height: 55px;}
+	.social-email-icon {
+	background: url('../images/icons/55px/mail.png') no-repeat center center;
+	}
+	.social-fb-icon {
+	background: url('../images/icons/55px/facebook.png') no-repeat center center;
+	}
+	.social-tw-icon {
+	background: url('../images/icons/55px/twitter.png') no-repeat center center;
+	}
+	.social-mail-icon {
+	background: url('../images/icons/55px/mail.png') no-repeat center center;
+	}
+	.social-linkedin-icon {
+	background: url('../images/icons/55px/linkedin.png') no-repeat center center;
+	}
+}
