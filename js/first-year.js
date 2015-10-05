@@ -20,7 +20,7 @@ $(document).ready(function() {
   $("body").on("click", "a[href^='#']", scroll_if_anchor);
 
   // Disable linking behavior on topbar Menu label
-  $("#header-menu-icon").click(function(e) {
+  $("#header-menu-icon a:first").click(function(e) {
     e.preventDefault();
   });
 
