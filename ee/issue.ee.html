@@ -36,7 +36,7 @@
         		{/if}
         		<a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">
 	            <h2>{potus-essays:potus-es-shorttitle}</h2>
-            </a>
+	          </a>
 	            <p class="text-right">{potus-essays:potus-es-author}{potus-essays:potus-es-author:potus-es-authorname}{/potus-essays:potus-es-author}</p>
           </div>
         	{/potus-essays}
@@ -72,8 +72,7 @@
   </div>
 </div>
 
-<!-- <p>essays:</p>	 -->
-	<!-- Video file: {potus-video}{potus-video:potus-vid}{potus-video:potus-vid-image}{potus-video:potus-vid-file}{/potus-video}<br> -->
+
 {/exp:channel:entries}
 
 <!-- Briefing Room Section-->
@@ -109,7 +108,7 @@
   <div id="video-container-1" class="small-12 medium-8 medium-centered large-10 columns">
     <h2 class="text-center">Title Introducing This Video</h2>
     <div class="flex-video widescreen" id="video-1">
-      <iframe width="720" height="360" src="{potus-video}{potus-video:potus-vid}{/potus-video}" frameborder="0" allowfullscreen></iframe>
+      <iframe width="720" height="360" src="{potus-video}{potus-video:potus-vid-file}{/potus-video}" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
 </div>
