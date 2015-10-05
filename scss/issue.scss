@@ -25,7 +25,6 @@ $slick-ajax-loader-gif-path: "../images/ajax-loader.gif"; // this will change!
 
 /* add other global settings here */
 $hero-height: 27rem;
-$sidebar-z: 10;
 $hero-z: $sidebar-z + 1;
 
 body {
@@ -73,7 +72,7 @@ body {
 				display:block;
 				font-family: $font-family-monospace; 
 				font-size: .5rem; 
-				color: #ccc;
+				color: $first-year-grey;
 				text-align: right;
 			}
 		}
@@ -89,9 +88,9 @@ body {
 
 /* this overrides a URL hardcoded in the Slick Carousel Theme */
 .slick-list {
-    .slick-loading & {
-        background: #fff slick-image-url($slick-ajax-loader-gif-path) center center no-repeat !important;
-    }
+  .slick-loading & {
+      background: #fff slick-image-url($slick-ajax-loader-gif-path) center center no-repeat !important;
+  }
 }
 
 .slick-prev, .slick-next {
@@ -104,6 +103,7 @@ body {
 .slick-dots {
   li {
     transform: translateX(-1em); // fix centering bug
+    -webkit-transform: translateX(-1em); // fix centering bug
     vertical-align: bottom;
   }
 }
@@ -171,6 +171,17 @@ body {
         padding-right: 0;
         margin-left: $panel-gutter;
         margin-right: $panel-gutter;
+        a {
+          position: absolute;
+          height: 75%;
+          width: 67%;
+          left: percentage(0.33/2); // split 100 - 66 between left and right
+          h2 { // make up for this left gutter
+            margin-left: -15%;
+          }
+          top: 0;
+          margin: 0 auto;
+        }
         h2, p {
           color:darken($body-font-color, 99%);
         }
@@ -211,7 +222,15 @@ body {
 
 // Main Content Section
 #video-container-1 {
+  background-color: #fff;
+  position: relative;
+  z-index: $sidebar-z + 10;  
   margin-bottom: 3rem;
+  .flex-video.widescreen {
+    position: inherit;
+    z-index: $sidebar-z + 10;  
+    padding-bottom: 53% !important; // customization for our first issue vid
+  }
 }
 #essays-row {
   div:first-child {
@@ -242,6 +261,11 @@ body {
   #featured-container {
 
   }
+  #video-container-1 {
+    .flex-video.widescreen {
+      padding-bottom: 49% !important; // customization for our first issue vid
+    }
+  }
 }
 
 
@@ -250,11 +274,19 @@ body {
 }
 
 @media #{$medium-up} {
-  
+  #video-container-1 {
+    .flex-video.widescreen {
+      padding-bottom: 50% !important; // customization for our first issue vid
+    }
+  }  
 }
 
 @media #{$large-up} {
-
+  #video-container-1 {
+    .flex-video.widescreen {
+      padding-bottom: 53% !important; // customization for our first issue vid
+    }
+  }
 }
 
 @media #{$small-only} {
@@ -270,7 +302,9 @@ body {
   }
   .slick-dots {
     margin-bottom: 5px;
-    left: 0;
+    li {
+      -webkit-transform: translateX(-0.8em); // fix centering bug
+    }
   }
   #hero-slider {
     $panel-gutter: rem-calc(5px);

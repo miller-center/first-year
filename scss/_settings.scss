@@ -119,7 +119,13 @@ $oil         : #333333;
 
 // We use these as default colors throughout
 $first-year-blue: #0c2b48;
+$first-year-grey: #ccc;
+$first-year-gray: $first-year-grey;
 $primary-color: $first-year-blue; // formerly medium greyish blue 3d657d
+
+// Other settings for the project
+$sidebar-z: 10;
+
 
 $secondary-color: #aaa; // grey
 $alert-color: #AB1A25; // deep red

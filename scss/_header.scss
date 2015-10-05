@@ -68,7 +68,7 @@ $transparent: rgba(245,245,245,0.0);
 }
 
 
-@media #{$small-up} {
+@media #{$small-up} {  
   #navigation-container {
     background-color: $navigation-container-bg-color;
     height: $navigation-container-height;
@@ -438,7 +438,7 @@ $transparent: rgba(245,245,245,0.0);
   }
 }
 
-@media #{$medium-only} {
+@media #{$medium-only} { 
   #navigation-container {
     .logo-section {
       width: 60%;
