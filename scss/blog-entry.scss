@@ -9,14 +9,15 @@
 #blog-single-entry {
 		.blog-item {
 			.blog-item-info {
-				text-align: left;
+				color: $secondary-color;
+				text-align: right;
 				.author:before {content: " · ";}
 				span {display:inline;}
 			}
 			.media {
 				float:right;
 				margin-left: 1rem;
-				width: 50%;
+				//width: 50%;
 				.media-item {width: 100%;}
 				.media-credit {
 					display:block;

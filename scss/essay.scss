@@ -31,8 +31,6 @@ p.essay-intro {font-size: larger;}
 
 
 figure {
-	/*border-top: 1px solid $info-color; 
-	border-bottom: 1px solid $info-color; */
   position: inherit; // works with z-index below
   z-index: 100; // ensure greater than $sidebar-z
 	padding: 10px 15px; 
@@ -93,10 +91,10 @@ blockquote {
 
 // Call to action	
 .cta {
+	max-width: 40%;
 	background-color: $primary-color; 
 	color: #fff;
-	margin: 0 0 50px 0; 
-	clear:both; 
+	margin: 10px 15px; 
 	padding: 15px 25px; 
 	text-align: center;
 		h4 {
@@ -107,7 +105,7 @@ blockquote {
 	button {background-color: $info-color;}
 	.more {color: $info-color;}
 	padding: 25px; 
-	text-size: larger;
+	/*text-size: larger;*/
 	text-align:center;
 	
 	
@@ -208,6 +206,3 @@ blockquote {
 
 @media #{$xlarge-only} {
 }
-
-
-
