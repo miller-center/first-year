@@ -21,7 +21,7 @@
         	{potus-video}
         	<div class="large-4 small-12 columns slider-panel video-slide">
         	  <img src="{potus-video:potus-vid-image}">
-  		      <a href="#video-1">
+  		      <a href="#" data-reveal-id="videoModal" title="Learn about First Year 2017">
 	            <h2>WATCH: The Next President's Crucible Year</h2>
 	          </a>
           </div>
@@ -45,7 +45,17 @@
 
   </div> <!-- close .hero -->
 </div> <!-- close .row -->
-	
+
+<!-- Modal (hidden at page load)-->
+<div id="videoModal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal">
+  <h2 id="modalTitle">Why the First Year Matters</h2>
+  <div id="videotrailer" class="flex-video widescreen"><iframe width="500" height="281" src="https://www.youtube.com/embed/Ga5Afau5B0U?autoplay=0" frameborder="0" allowfullscreen></iframe></div><a aria-label="Close" class="close-reveal-modal">&#215;</a>
+</div>
+
+<!--                 -->
+<!-- Content Section -->
+<!--                 -->
+
 
 <!-- Editors Section-->
 <div id="about-this-issue" class="row">
@@ -104,6 +114,7 @@
 {exp:channel:entries channel="potus" limit="1"}
 
 <!-- Video -->
+<!--
 <div class="row">
   <div id="video-container-1" class="small-12 medium-8 medium-centered large-10 columns">
     <h2 class="text-center">Title Introducing This Video</h2>
@@ -112,6 +123,7 @@
     </div>
   </div>
 </div>
+-->
 
 <div id="essays-row" class="row">
 	<div class="small-12 medium-8 medium-centered large-8 columns">

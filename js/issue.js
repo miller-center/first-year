@@ -1,22 +1,30 @@
 $(document).ready(function() {
 
   // turn on auto play when reveal anchor clicked
-  // do this by rewriting URL in iframe
-  var modalName = '#videoModal';
-  $('#videoRevealAnchor').on('click', function() {
-    var link = $(modalName + ' iframe').attr('src');
-    link = link.replace("autoplay=0", "autoplay=1");
-    $(modalName + ' iframe').attr('src', link);
+  // using Foundation's reveal callbacks
+  $(document).on('open.fndtn.reveal', '[data-reveal]', function () {
+    var modal = $(this);
+    var iframe = modal.find('iframe');
+    var url = iframe.attr('src');
+    url = url.replace('autoplay=0', 'autoplay=1');
+    iframe.attr('src', url);
   });
 
-  $(document).mouseup(function (e) {
-    if (e.target != $('#videoRevealAnchor')) {
-      console.log(e.target);
-      var link = $(modalName + ' iframe').attr('src');
-      link = link.replace("autoplay=1", "autoplay=0");
-      $(modalName + ' iframe').attr('src', link);
-    }
+  // $(document).on('opened.fndtn.reveal', '[data-reveal]', function () {
+  //   var modal = $(this);
+  // });
+
+  $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
+    var modal = $(this);
+    var iframe = modal.find('iframe');
+    var url = iframe.attr('src');
+    url = url.replace('autoplay=1', 'autoplay=0');
+    iframe.attr('src', url);
   });
+
+  // $(document).on('closed.fndtn.reveal', '[data-reveal]', function () {
+  //   var modal = $(this);
+  // });
 
   // initialize slick carousel
   // with three break points, we configure for
