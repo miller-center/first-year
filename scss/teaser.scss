@@ -101,7 +101,7 @@ div#videotrailer iframe {
 
 .intro-nav {margin-top: 200px;}
 
-#hero-title, #learnabout, #teasertext, #videotrailer {
+#hero-title, #learnabout, #teasertext, #videotrailer, #videobutton {
   position:relative;
   z-index: $sidebar-z + 5 !important;
 }
@@ -316,6 +316,9 @@ footer p {margin-top: 1.5em; margin-right: 1.5em; margin-left: 1em;}
   }
 }
 @media #{$small-up} {
+  .hero * {
+    z-index: $hero-z +1 !important;
+  }
   .flex-video.widescreen {
     padding-bottom: 49% !important; // customization for our first issue vid
   }

@@ -1,0 +1,18 @@
+#featured-container h1 {
+  border: thin solid red;
+  &:hover {
+    cursor: pointer;
+    &:after {
+      width: 25%;
+    }
+  } 
+  &:after {
+    @include single-transition(width, 0.3s, ease-in-out);
+    width: 0%;
+    content: "";
+    display: block;
+    margin: -12px auto 15px auto;
+    height: 2px;
+    background-color: black !important;
+  }
+}
