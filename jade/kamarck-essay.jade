@@ -1,18 +1,20 @@
 doctype html
 - var title = "The First Year Project"
 - var issue = "The Crucible Year"
-- var essay = "ESSAYTITLE"
+- var essay = "The First Year: Avoiding Failure"
+- var essay_no = "2"
+- var essay_title ="Avoiding Failure By Getting to Know the Government You Run"
 - var project_home = ".."
 html(lang="en")
 	head
 		meta(charset="utf-8")
-		title #{title}
+		title #{title}: #{essay}
 		meta(name="description", content="")
 		meta(name="author", content="")
 		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
 		link(rel="stylesheet", href="#{project_home}/css/first-year.css")
 		link(rel="stylesheet", href="#{project_home}/css/essay.css")
-		link(rel="stylesheet", href="#{project_home}/css/hero/issue1/essay2.css")
+		link(rel="stylesheet", href="#{project_home}/css/hero/issue1/essay#{essay_no}.css")
 		link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
 		link(href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&7CCrimson+Text:400,700,600',rel="stylesheet", type="text/css")
 	
@@ -38,9 +40,22 @@ html(lang="en")
 					.small-12.small-centered.medium-uncentered.columns#hero-title
 						h2 Issue 1
 						span.stars &#x2605; &#x2605; &#x2605;
-						h1.main-title The First Year:  Avoiding Failure By Getting to Know the Government You Run
+						h1.main-title #{essay_title}
 						p by Elaine Kamarck
 			//- end hero
+
+		.row.lateral-nav.hide-for-small
+			.columns.small-6
+				p.lateral-nav-prev <a href="nelson-essay.html">Previous essay: Ten Lessons From Presidential Oral History</a>
+			.columns.small-6
+				p.lateral-nav-next <a href="wehner-essay.html">Next essay: Letter to the New President on Your First Year</a>
+
+		.row.lateral-nav.show-for-small
+			.columns.small-6
+				p.lateral-nav-prev <a href="nelson-essay.html">Previous Essay</a>
+			.columns.small-6
+				p.lateral-nav-next <a href="wehner-essay.html">Next Essay</a>
+
 
 		.row
 			.small-12.columns#essay

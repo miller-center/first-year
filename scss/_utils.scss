@@ -22,3 +22,22 @@
 .size-60 { font-size: 60px; }
 
 .size-72 { font-size: 72px; }
+
+// these tweaks make Foundation's flex video look better
+@media #{$small-up} {
+  .flex-video.widescreen {
+    padding-bottom: 49% !important; // customization for our first issue vid
+  }
+}
+
+@media #{$medium-up} {
+  .flex-video.widescreen {
+    padding-bottom: 50% !important; // customization for our first issue vid
+  }
+}
+
+@media #{$large-up} {
+  .flex-video.widescreen {
+    padding-bottom: 53% !important; // customization for our first issue vid
+  }
+}
