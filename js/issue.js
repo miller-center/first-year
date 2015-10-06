@@ -1,5 +1,23 @@
 $(document).ready(function() {
 
+  // turn on auto play when reveal anchor clicked
+  // do this by rewriting URL in iframe
+  var modalName = '#videoModal';
+  $('#videoRevealAnchor').on('click', function() {
+    var link = $(modalName + ' iframe').attr('src');
+    link = link.replace("autoplay=0", "autoplay=1");
+    $(modalName + ' iframe').attr('src', link);
+  });
+
+  $(document).mouseup(function (e) {
+    if (e.target != $('#videoRevealAnchor')) {
+      console.log(e.target);
+      var link = $(modalName + ' iframe').attr('src');
+      link = link.replace("autoplay=1", "autoplay=0");
+      $(modalName + ' iframe').attr('src', link);
+    }
+  });
+
   // initialize slick carousel
   // with three break points, we configure for
   // x-large, large, medium and small viewports
