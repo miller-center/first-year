@@ -2,7 +2,8 @@
 @import "settings";
 @import "header";
 @import "foundation";
-$bill-rapp-blue: #0c2b48;
+$first-year-blue: #0c2b48;
+$hero-height: 30rem;
 
 body {
   color: #333;
@@ -11,7 +12,8 @@ body {
   line-height: 32px;
   max-width: $row-width;
   margin: 0 auto;
-
+  position:relative;
+  z-index: 0;
 }
 
 #innercontent {max-width: 650px; margin: 0 auto;}
@@ -28,12 +30,10 @@ body {
   line-height: 1.5em;}
 
 
-
+$hero-z: $sidebar-z + 1; //
 .hero {
-  // background: url('http://wallpoper.com/images/00/34/39/15/circuit-pcb_00343915.jpg') no-repeat center center;
-  background: url('../images/heros/white-house.jpg') no-repeat center center;
-  background-size: cover;
-  height: auto;
+  height: $hero-height;
+  top: 0;
   position: relative;
   max-width: $row-width;
   &:before {
@@ -60,7 +60,12 @@ a {color: #3d657d; }
 a:hover {text-decoration: none;}
 a:visited {color: #000;}
 a.important {color: #ff7d34; font-weight: bold;}	/*formerly AB1A25*/
-a.more:after {content: " ➤";}
+a.more {
+  font-size: 1rem;
+  &:after {
+    content: " ➤";
+  }
+} 
 
 .hero-title h1.main-title {
 	font-family: 'Crimson Text', serif;
@@ -74,9 +79,6 @@ h4 {font-family: Verdana, sans-serif; font-size: 34px; line-height: 40px;}
 h5 {font-family: Verdana, sans-serif; font-size: 26px; line-height: 30px;}	*/
 
 div#videotrailer {
-	width: 480px; 
-	height: 320px; // 320
-	margin: 0 auto 0 auto;
 }
 	
 div#videotrailer iframe {	
@@ -99,10 +101,10 @@ div#videotrailer iframe {
 
 .intro-nav {margin-top: 200px;}
 
-#hero-title, 
-#learnabout,
-#teasertext,
-#videotrailer {z-index: 5 !important;}
+#hero-title, #learnabout, #teasertext, #videotrailer {
+  position:relative;
+  z-index: $sidebar-z + 5 !important;
+}
 
 #learnabout a {display:block;}
 #learnabout {
@@ -159,7 +161,7 @@ div#socialshare {
     }
   }
   li.label {
-    background-color: $bill-rapp-blue;
+    background-color: $first-year-blue;
     font-size: 100%;
     font-family: Karla, Verdana, sans-serif;
   }
@@ -299,7 +301,7 @@ $donate-orange-hover: scale-color($donate-orange, $lightness: 20%);
 }
 #navigation-container h1 {color:#fff;}
 
-footer#bodyFooter.footer {min-height: 150px; background-color: $bill-rapp-blue; }
+footer#bodyFooter.footer {min-height: 150px; background-color: $first-year-blue; }
 footer {color: #ccc; font-size: smaller; clear:both;}
 footer a, footer a:visited {color: #fff;}
 footer img {margin: 1.5em; float:left;}
@@ -313,3 +315,25 @@ footer p {margin-top: 1.5em; margin-right: 1.5em; margin-left: 1em;}
     max-width: 3rem;
   }
 }
+@media #{$small-up} {
+  .flex-video.widescreen {
+    padding-bottom: 49% !important; // customization for our first issue vid
+  }
+}
+@media #{$medium-up} {
+  #videotrailer {
+    iframe {
+      margin: 0 auto;
+    }
+  }
+  .flex-video.widescreen {
+    padding-bottom: 50% !important; // customization for our first issue vid
+  }
+}
+
+@media #{$large-up} {
+  .flex-video.widescreen {
+    padding-bottom: 53% !important; // customization for our first issue vid
+  }
+}
+

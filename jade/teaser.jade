@@ -23,41 +23,41 @@ html(lang="en")
 
 		
 		//- topbar nav
-		.fixed#navigation-container
-			nav.top-bar(data-topbar,role="navigation",data-options="sticky_on: large")
-				section.logo-section
-					a(href="#") 
-						img(src="../images/logos/fy2017_logo_horiz_wh.png")
-						//h1 <b>First Year</b> 2017
+		include navbar
 
  
 
-		section.hero
-			.row.hero-title
-				.small-centered.medium-uncentered.small-12.columns#hero-title
-					h2 Coming in October: Issue 1
-					span.stars &#x2605; &#x2605; &#x2605;
-					h1.main-title Why The First Year Matters
-					p Six essays about the promises and pitfalls of the first 365 days in office.
+		.row
+			.small-12.columns.hero
+				.row.hero-title
+					.small-12.small-centered.medium-centered.columns#hero-title
+						h2 Coming in October: Issue 1
+						span.stars &#x2605; &#x2605; &#x2605;
+						h1.main-title 
+							a(href="") Why The First Year Matters
+						p Six essays about the promises and pitfalls of the first 365 days in office.
 
-				//- .small-centered.medium-uncentered.medium-6.large-5.columns
-				//-	 .tech-img
+					
+				.row#videobutton
+					.small-12.medium-8.medium-centered.columns
+						div.text-center
+							a.more(href="#",data-reveal-id="myModal") Watch the video
 
-			.intro-nav#learnabout
-				.small-10.medium-6.small-centered.columns
-					//- span
-					//- 	a(href="#about") Learn about First Year 2017 below
+				.row#teasertext
+					.small-12.small-centered.medium-8.columns
+						p On October 15, the Miller Center will launch a new, multi-year initiative to guide the next administration during its critical first year. 
 
-			.row#teasertext
-				.small-12.small-centered
-					p On October 15, the Miller Center will launch a new, multi-year initiative to guide the next administration during its critical first year. 
+				
 
-		div#videotrailer <iframe width="500" height="281" src="https://www.youtube.com/embed/XnSYwazhZes" frameborder="0" allowfullscreen></iframe>
+		.row
+			.small-10.small-centered.columns
+				p#about &ldquo;You&rsquo;ve got to give it all you can that first year. Doesn&rsquo;t matter what kind of majority you come in with. You&rsquo;ve got just one year when they treat you right, and before they start worrying about themselves. &mldr;So, you&rsquo;ve got one year.&rdquo; 
+					span - Lyndon B. Johnson, January 1965
 
-		.small-10.small-centered.columns
-			p#about &ldquo;You&rsquo;ve got to give it all you can that first year. Doesn&rsquo;t matter what kind of majority you come in with. You&rsquo;ve got just one year when they treat you right, and before they start worrying about themselves. &mldr;So, you&rsquo;ve got one year.&rdquo; 
-				span - Lyndon B. Johnson, January 1965
-
+		.reveal-modal#myModal(data-reveal,aria-labelledby="modalTitle",aria-hidden="true",role="dialog")
+			h2#modalTitle Why the First Year Matters
+			div.flex-video.widescreen#videotrailer <iframe width="500" height="281" src="https://www.youtube.com/embed/Ga5Afau5B0U" frameborder="0" allowfullscreen></iframe>
+			a.close-reveal-modal(aria-label="Close") &#215;
 
 		div#innercontent
 
@@ -146,6 +146,7 @@ footer#bodyFooter.footer
 		script(src="http://code.jquery.com/jquery-migrate-1.2.1.min.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.topbar.js")
+		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.reveal.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.interchange.js")
 		script(src="#{project_home}/bower_components/slick-carousel/slick/slick.min.js")
 		//- script(src="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")
