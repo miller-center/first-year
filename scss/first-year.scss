@@ -556,7 +556,8 @@ ul {list-style-type: circle;}
 	}
 
 
-
+// this is to address situations where iphones aren't
+// displaying pages across the full viewport width
 @media screen and (max-width: 375px) and (orientation: portrait) {
   $iphone-6-max-w: 395;
   #navigation-container {
