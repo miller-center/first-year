@@ -61,6 +61,8 @@ a:hover {text-decoration: none;}
 a:visited {color: #000;}
 a.important {color: #ff7d34; font-weight: bold;}	/*formerly AB1A25*/
 a.more {
+  position:relative;
+  z-index: 250 !important;
   font-size: 1rem;
   &:after {
     content: " ➤";
@@ -316,6 +318,13 @@ footer p {margin-top: 1.5em; margin-right: 1.5em; margin-left: 1em;}
   }
 }
 @media #{$small-up} {
+  a.more {
+    position:relative;
+    z-index: 250 !important;
+  }
+  .hero {
+    z-index: $hero-z !important;
+  }
   .hero * {
     z-index: $hero-z +1 !important;
   }
