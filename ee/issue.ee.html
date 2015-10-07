@@ -32,7 +32,7 @@
         		{if potus-essays:potus-es-hero != ''}
 	        		<img src="//{exp:string name="asset_path"}/images/sm-{potus-essays:potus-es-hero}">
         		{if:else}
-	        		<img src="https://placehold.it/400x225">
+	        		<img src="//{exp:string name="asset_path"}/images/nelson-Hero7_obama_ovaloffice.jpg">
         		{/if}
         		<a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">
 	            <h2>{potus-essays:potus-es-shorttitle}</h2>
@@ -62,10 +62,10 @@
 	<div class="large-1 columns">&nbsp;</div>
 {potus-editors}
 	<div class="editor small-6 medium-4 large-3 columns">
-		<a href="/expressionengine.php/potus/about#scholars-{potus-editors:potus-edlink} "><img src="{potus-editors:potus-edphoto}"></a>
+		<a href="/expressionengine.php/potus/scholars#scholars-{potus-editors:potus-edlink} "><img src="{potus-editors:potus-edphoto}"></a>
 		<div class="editor-info">
 			<div class="editor-name">
-				<a href="/about/staff/{potus-editors:potus-edlink} ">
+				<a href="/expressionengine.php/potus/scholars#scholars-{potus-editors:potus-edlink} ">
 					{potus-editors:potus-ed}
 				</a>
 			</div>
