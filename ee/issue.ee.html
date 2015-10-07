@@ -28,9 +28,9 @@
         	{/potus-video}
 
         	{potus-essays}
-        	<div class="large-4 small-12 columns slider-panel">
+        	<div class="large-4 small-12 columns slider-panel"><!--//{exp:string name="asset_path"}/images/sm-{potus-essays:potus-es-hero}-->
         		{if potus-essays:potus-es-hero != ''}
-	        		<img src="//{exp:string name="asset_path"}/images/heros/{potus-essays:potus-es-hero}">
+	        		<img src="//{exp:string name="asset_path"}/images/sm-{potus-essays:potus-es-hero}">
         		{if:else}
 	        		<img src="https://placehold.it/400x225">
         		{/if}
