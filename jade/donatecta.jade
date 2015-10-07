@@ -1,0 +1,14 @@
+//- this is a jade comment
+
+// Modal (hidden at page load)
+.reveal-modal#donateModal(data-reveal,aria-labelledby="donateModalTitle",aria-hidden="true",role="dialog")
+  h2#donateModalTitle Sign Up For Access To Miller Center Updates &amp; Resources
+  div: p.text-justify Sign up for our newsletter and get advance notice of special events and guests, in addition to select publications from Miller Center experts.
+  form 
+    .row
+      .large-12.columns
+        .row.collapse
+          .small-8.small-offset-2.medium-6.medium-offeset-2.large-4.large-offset-3.columns
+            a.button.postfix(href="http://millercenter.org/donate" target="_blank") Give now
+
+  a.close-reveal-modal(aria-label="Close") &#215;

@@ -64,6 +64,10 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
     right: 1rem;
     top: ($topbar-height) - rem-calc(25);
     #the-latest {
+      @include single-transition(background-color, 200ms, ease-in-out);
+      &:hover {
+        background-color: transparentize(#111, 0.5);
+      }
       width: 15rem;
       background-color: transparentize(#111, 0.3);
       z-index: $hero-z + 100;
@@ -80,6 +84,7 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
           font-size: 75%;
         }
         li {
+          border:thin solid yellow;
           font-size: 85%;
           font-weight: 100;
           letter-spacing: 2px;
@@ -600,4 +605,128 @@ ul {list-style-type: circle;}
 
 @media #{$xlarge-only} {
   
+}
+
+//
+// Modals (popups)
+//
+
+// Video Player (Issue page, maybe blogs)
+#videoModal {
+  position: fixed !important; // ensure stays in viewport
+}
+
+
+// Call-to-Action styles
+@import url(https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911); //move import if approved for deployment
+#emailModal, #donateModal {
+  $logo-size: 100;
+  $logo-offset: 0;
+  padding-left: 0;
+  padding-top: rem-calc($logo-size * 1.20);
+  &:before {
+    position: absolute;
+    left: 0;
+    margin-left: -$logo-offset;
+    top: 0;
+    margin-top: -$logo-offset;
+    content: "";
+    width: #{$logo-size}px;
+    height: #{$logo-size}px;
+    background: url('../images/logos/mc_logo.png') no-repeat center center;
+    background-size: contain;
+   }
+}
+#emailModal, #donateModal {
+  div, h2 {
+    font-family: 'Goudy Bookletter 1911', serif;    
+  }
+  form a {
+    font-family: $font-family-sans-serif;
+  }
+}
+#emailModal, #donateModal {
+  a.button {
+    color: #fff;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+}
+// make Donate buttons orange
+#donateModal {
+  a.button {
+    background-color: $info-color;
+    font-size: 150%;
+    border-width: 1px;
+    border-color: darken($info-color, 20%);
+  }
+}
+#emailModal, #donateModal {
+  position: fixed !important; // ensure stays in viewport
+  padding-left: 0;
+  padding-top: 0;
+}
+#email-cta-submit {
+  content: "Submit";
+  color:red;
+}
+@media #{$small-only} {
+
+}
+
+@media #{$small-up} {
+  #emailModal, #donateModal {
+    top: 5% !important;
+    $logo-offset: 0;
+    $logo-size: 100;
+    padding-left: 1rem;
+    padding-top: rem-calc($logo-size * 1.20);
+    &:before {
+      margin-left: -$logo-offset;
+      margin-top: -$logo-offset;
+      width: #{$logo-size}px;
+      height: #{$logo-size}px;
+      background: url('../images/logos/sm/mc_logo.png') no-repeat center center;
+    }
+  }
+}
+
+@media #{$medium-up} {
+  #emailModal, #donateModal {
+    top: 25% !important;
+    $logo-offset: 1rem;
+    $logo-size: 150;
+    padding-left: rem-calc($logo-size);
+    padding-top: rem-calc($logo-size * 0.25);
+    &:before {
+      margin-left: -$logo-offset;
+      margin-top: -$logo-offset;
+      width: #{$logo-size}px;
+      height: #{$logo-size}px;
+      background: url('../images/logos/md/mc_logo.png') no-repeat center center;
+    }
+  }
+}
+
+@media #{$large-up} {
+  #emailModal, #donateModal {
+    top: 25% !important;
+    $logo-offset: 2rem;
+    $logo-size: 225;
+    padding-left: rem-calc($logo-size);
+    padding-top: rem-calc($logo-size * 0.25);
+    &:before {
+      padding-left: 0;
+      padding-top: 0;      
+      margin-left: -$logo-offset;
+      margin-top: -$logo-offset;
+      width: #{$logo-size}px;
+      height: #{$logo-size}px;
+      background: url('../images/logos/lg/mc_logo.png') no-repeat center center;
+    }
+    a.button {
+      font-weight: normal;
+      font-size: 100%;
+    }
+  }
 }

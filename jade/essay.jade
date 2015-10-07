@@ -86,7 +86,6 @@ html(lang="en")
 					figcaption
 						p President Ronald Reagan meets with his advisors, including (from left to right) Ed Meese, Michael Deaver, James Baker, and James Brady. 
 		
-				
 				p History suggests that first-year presidents should keep several considerations in mind as they take up these tasks. In selecting individuals for their administrations, presidents should balance their personal connections to appointees with appointees’ experience of government. This is especially important for presidents with little personal experience of their own of life in Washington. Carter’s reputation as an outsider served him well as a candidate in the wake of the Watergate scandal, but the “Georgia mafia” that took control of the White House found Washington unfamiliar and, soon enough, unfriendly. Carter’s presidency suffered as a consequence. Reagan, by contrast, created a “troika” consisting of two loyalists from California, Michael Deaver and Ed Meese, and Washington pro James Baker. Reagan’s administration got off to a fast start and continued to run smoothly with Baker as chief of staff. (Things unraveled under Baker’s successor, Donald Regan.) 
 				
 				p Incoming presidents must establish priorities. Some presidents have priorities thrust upon them: Lincoln had to deal with secession, Franklin Roosevelt to address the Great Depression, Truman to finish World War II. But most presidents have leeway in deciding what to tackle first. Even amid the crisis of the Depression, Roosevelt initially focused on rescuing the banking system and getting relief to unemployed workers and their families; measures with longer horizons, such as Social Security, were deferred till later. Lyndon Johnson had big plans for his Great Society, but his first year was given to civil rights reform. Reagan devoted his first six months to cutting taxes and nondefense spending. Presidents without focus, by contrast, have often failed. The micromanaging Carter wanted to be everywhere but, as a result, spread himself too thin to gain policy traction anywhere. Clinton ran on economic issues (“It’s the economy, stupid”), but wandered afield into a disastrous effort to reform health care. 
@@ -193,14 +192,16 @@ html(lang="en")
 
 
 		include ./sidebar.jade
-
+		include ./emailcta.jade
 		include ./footer.jade
 
 		script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
+		script(src="#{project_home}/bower_components/js-cookie/src/js.cookie.js")
 		//- remove http protocol from production version
 		script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.topbar.js")
+		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.reveal.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.interchange.js")
 		script(src="#{project_home}/bower_components/slick-carousel/slick/slick.min.js")
 		//- script(src="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")

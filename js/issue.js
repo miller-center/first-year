@@ -4,27 +4,68 @@ $(document).ready(function() {
   // using Foundation's reveal callbacks
   $(document).on('open.fndtn.reveal', '[data-reveal]', function () {
     var modal = $(this);
-    var iframe = modal.find('iframe');
-    var url = iframe.attr('src');
-    url = url.replace('autoplay=0', 'autoplay=1');
-    iframe.attr('src', url);
+    if (modal.is('#videoModal')) {
+      var iframe = modal.find('iframe');
+      var url = iframe.attr('src');
+      url = url.replace('autoplay=0', 'autoplay=1');
+      iframe.attr('src', url);
+    }
   });
 
-  // $(document).on('opened.fndtn.reveal', '[data-reveal]', function () {
-  //   var modal = $(this);
-  // });
+  $(document).on('opened.fndtn.reveal', '[data-reveal]', function () {
+    var modal = $(this);
+    if (modal.is('#videoModal')) {
+      FirstYear.videoModalOpen = true;
+    }
+  });
 
   $(document).on('close.fndtn.reveal', '[data-reveal]', function () {
     var modal = $(this);
-    var iframe = modal.find('iframe');
-    var url = iframe.attr('src');
-    url = url.replace('autoplay=1', 'autoplay=0');
-    iframe.attr('src', url);
+    if (modal.is('#videoModal')) {
+      var iframe = modal.find('iframe');
+      var url = iframe.attr('src');
+      url = url.replace('autoplay=1', 'autoplay=0');
+      iframe.attr('src', url);      
+    }
   });
 
-  // $(document).on('closed.fndtn.reveal', '[data-reveal]', function () {
-  //   var modal = $(this);
-  // });
+  $(document).on('closed.fndtn.reveal', '[data-reveal]', function () {
+    var modal = $(this);
+    if (modal.is('#videoModal')) {
+      FirstYear.videoModalOpen = false;
+    }
+  });
+
+  // email signup call to action trigger
+
+  // set email call-to-action to reveal at scroll point
+  var hasPassedRevealPoint = 0;
+  $(window).scroll(function() {
+    var wScroll = Number( $(this).scrollTop() );
+
+    // set the point at which to make the call to action
+    // can be a percentage of window.height
+    var revealPoint = Number($(document).height() / 2) ;
+    // or a fixed amount (px), which is mobile-friendly
+    revealPoint = Number(1000);
+
+    var ctaModal = $('#emailModal');
+
+    // call the reveal() event
+    try {
+      if (wScroll > revealPoint && hasPassedRevealPoint === 0) {
+        // do nothing if video modal is open
+        if (FirstYear.videoModalOpen == true) {
+          console.log('disabled cta because video modal is open');
+        } else  {
+          hasPassedRevealPoint = 1;
+          ctaModal.foundation('reveal', 'open');
+        }
+      }
+    } catch(err) {
+      console.log(err);
+    }
+  });
 
   // initialize slick carousel
   // with three break points, we configure for

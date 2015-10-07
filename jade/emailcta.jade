@@ -1,0 +1,19 @@
+//- this is a jade comment
+
+// Modal (hidden at page load)
+.reveal-modal#emailModal(data-reveal,aria-labelledby="emailModalTitle",aria-hidden="true",role="dialog")
+	h2#emailModalTitle Sign Up For Access To Miller Center Updates &amp; Resources
+	div: p.text-justify Sign up for our newsletter and get advance notice of special events and guests, in addition to select publications from Miller Center experts.
+	form 
+		.row
+			.large-12.columns
+				.row
+					.small-12.columns
+						input(type="text",name="name",placeholder="Your Name")
+				.row.collapse
+					.small-7.columns
+						input(type="text",name="email",placeholder="Enter your email address...")
+					.small-5.columns
+						a(href="#").button.postfix Keep me in the Loop!
+
+	a.close-reveal-modal(aria-label="Close") &#215;
