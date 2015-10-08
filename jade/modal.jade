@@ -1,0 +1,57 @@
+doctype html
+- var title = "First Year 2017"
+- var issue = "Why The Next Year Matters"
+- var essay = "What Time Is It?"
+- var project_home = ".."
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title #{title}
+    meta(name="description", content="")
+    meta(name="author", content="")
+    meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
+    link(rel="stylesheet", href="#{project_home}/css/first-year.css")
+    link(rel="stylesheet", href="#{project_home}/css/teaser.css")
+    link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
+    link(href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&7CCrimson+Text:400,700,600',rel="stylesheet", type="text/css")
+    //- adding Slick Carousel
+    //- link(rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick.css")
+    //- link(rel="stylesheet" type="text/css" href="bower_components/slick-carousel/slick/slick-theme.css")
+    //- line(rel="stylesheet",type="text/css",href="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css")
+  
+  body
+    .row
+        .small-12.medium-8.medium-centered.columns
+            div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id non ex dolor molestias doloremque sapiente laudantium odio, distinctio blanditiis, et quae. Eveniet exercitationem adipisci ducimus veniam nulla alias minima, deleniti.
+    .row
+        .small-12.medium-8.medium-centered.columns
+            div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id non ex dolor molestias doloremque sapiente laudantium odio, distinctio blanditiis, et quae. Eveniet exercitationem adipisci ducimus veniam nulla alias minima, deleniti.
+            a.more(href="#",data-reveal-id="myModal") Watch the video
+
+    .row
+        .small-12.medium-8.medium-centered.columns
+            div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id non ex dolor molestias doloremque sapiente laudantium odio, distinctio blanditiis, et quae. Eveniet exercitationem adipisci ducimus veniam nulla alias minima, deleniti.
+    .row
+        .small-12.medium-8.medium-centered.columns
+            div Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id non ex dolor molestias doloremque sapiente laudantium odio, distinctio blanditiis, et quae. Eveniet exercitationem adipisci ducimus veniam nulla alias minima, deleniti.            
+
+
+    .reveal-modal#myModal(data-reveal,aria-labelledby="modalTitle",aria-hidden="true",role="dialog")
+      h2#modalTitle Awesome. I have it.
+      p.lead Your couch.  It is mine.
+      p I'm a cool paragraph that lives inside of an even cooler modal. Wins!
+      div#videotrailer <iframe width="500" height="281" src="https://www.youtube.com/embed/XnSYwazhZes" frameborder="0" allowfullscreen></iframe>
+      a.close-reveal-modal(aria-label="Close") &#215;
+
+    script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
+    //- remove http protocol from production version
+    script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.js")
+    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.topbar.js")
+    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.reveal.js")
+    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.interchange.js")
+    script(src="#{project_home}/bower_components/slick-carousel/slick/slick.min.js")
+    //- script(src="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")
+    script(src="#{project_home}/js/first-year.js")
+    //- first-year.js initializes Foundation
+    script(src="#{project_home}/js/home.js")

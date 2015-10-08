@@ -3,8 +3,8 @@ doctype html
 - var issue = "The Crucible Year"
 - var essay = "What Time Is It?"
 - var essay1 = "The Promise and Peril of a President’s First Year"
-- var essay2 = "The First Year: Avoiding Failure By Getting to Know the Government You Run"
-- var essay3 = "The Experience Of Others: Ten Lessons From Presidential Oral History"
+- var essay2 = "Avoiding Failure By Getting to Know the Government You Run"
+- var essay3 = "Ten Lessons From Presidential Oral History"
 - var essay4 = "What Time Is It?"
 - var essay5 = "Letter to the New President on Your First Year"
 - var essay6 = "The Crucible: The First 365 Days"
@@ -55,48 +55,58 @@ html(lang="en")
 					.small-10.large-10.small-centered.columns#hero-slider
 						div.large-4.small-12.columns.slider-panel.video-slide
 							img(src="../images/heros/hero-brands.jpg")
-							a(href="#video-1",title="Learn about First Year 2017")
+							a(id="videoRevealAnchor", href="#",data-reveal-id="videoModal",title="Learn about First Year 2017")
 								h2 WATCH: A Long-Titled Video						
 						div.large-4.small-12.columns.slider-panel
-							img(src="../images/heros/hero-brands.jpg")
-							a(href="essay.html")
-								h2= essay1
-							p.text-right= author1
-						div.large-4.small-12.columns.slider-panel
-							img(src="../images/heros/hero-kamarck.jpg")
-							a(href="essay.html")
-								h2= essay2
-							p.text-right= author2
-						div.large-4.small-12.columns.slider-panel
-							img(src="../images/heros/hero-nelson.jpg")
-							a(href="essay.html")
-								h2= essay3 
-							p.text-right= author3
-						div.large-4.small-12.columns.slider-panel
-							img(src="../images/heros/hero-skowronek.jpg")
-							a(href="essay.html")
-								h2= essay4 
-							p.text-right= author4
-						div.large-4.small-12.columns.slider-panel
-							img(src="../images/heros/hero-wehner.jpg")
-							a(href="essay.html")
-								h2= essay5 
-							p.text-right= author5
-						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-milkis.jpg")
-							a(href="essay.html")
+							a(href="milkis-essay.html")
 								h2= essay6
 							p.text-right= author6
 						div.large-4.small-12.columns.slider-panel
-							img(src="http://placehold.it/1600x900")
-							a(href="essay.html")
-								h2 Seven
-							p.text-right Cordwainer Bird
+							img(src="../images/heros/hero-skowronek.jpg")
+							a(href="skowronek-essay.html")
+								h2= essay4 
+							p.text-right= author4
 						div.large-4.small-12.columns.slider-panel
-							img(src="http://placehold.it/1600x900")
-							a(href="essay.html")
-								h2 Eight
-							p.text-right Jane Doe
+							img(src="../images/heros/hero-brands.jpg")
+							a(href="brands-essay.html")
+								h2= essay1
+							p.text-right= author1
+
+						div.large-4.small-12.columns.slider-panel
+							img(src="../images/heros/hero-nelson.jpg")
+							a(href="nelson-essay.html")
+								h2= essay3 
+							p.text-right= author3
+						div.large-4.small-12.columns.slider-panel
+							img(src="../images/heros/hero-kamarck.jpg")
+							a(href="kamarck-essay.html")
+								h2= essay2
+							p.text-right= author2
+
+						div.large-4.small-12.columns.slider-panel
+							img(src="../images/heros/hero-wehner.jpg")
+							a(href="wehner-essay.html")
+								h2= essay5 
+							p.text-right= author5
+
+						//- div.large-4.small-12.columns.slider-panel
+						//- 	img(src="http://placehold.it/1600x900")
+						//- 	a(href="essay.html")
+						//- 		h2 Seven
+						//- 	p.text-right Cordwainer Bird
+						//- div.large-4.small-12.columns.slider-panel
+						//- 	img(src="http://placehold.it/1600x900")
+						//- 	a(href="essay.html")
+						//- 		h2 Eight
+						//- 	p.text-right Jane Doe
+
+		// Modal (hidden at page load)
+		.reveal-modal#videoModal(data-reveal,aria-labelledby="modalTitle",aria-hidden="true",role="dialog")
+			h2#modalTitle Why the First Year Matters
+			div.flex-video.widescreen#videotrailer <iframe width="500" height="281" src="https://www.youtube.com/embed/Ga5Afau5B0U?autoplay=0" frameborder="0" allowfullscreen></iframe>
+			a.close-reveal-modal(aria-label="Close") &#215;
+
 
 		//					
 		// Content Section
@@ -237,6 +247,7 @@ html(lang="en")
 		script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.topbar.js")
+		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.reveal.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.interchange.js")
 		script(src="#{project_home}/bower_components/slick-carousel/slick/slick.min.js")
 		//- script(src="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")

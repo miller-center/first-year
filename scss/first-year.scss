@@ -304,7 +304,7 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
       padding-top: 0em;
       a {
         color: #fff;
-        &:hover {
+        &:hover, &:visited {
           text-decoration: none;
         }
       }
@@ -556,7 +556,8 @@ ul {list-style-type: circle;}
 	}
 
 
-
+// this is to address situations where iphones aren't
+// displaying pages across the full viewport width
 @media screen and (max-width: 375px) and (orientation: portrait) {
   $iphone-6-max-w: 395;
   #navigation-container {
