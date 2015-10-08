@@ -4,9 +4,9 @@
 @import "header";
 @import "foundation";
 // @import "foundation-icons.css";
+$hero-height: 25rem;
 
-
-.hero {height: 25rem;}
+.hero {height: $hero-height;}
 .hero:before {height: 100%;}
 
 #hero-title h2 a:hover {color: #fff; text-decoration: none;}

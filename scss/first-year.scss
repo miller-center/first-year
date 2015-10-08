@@ -2,6 +2,7 @@ $hero-height: 30rem;
 @import "settings";
 @import "foundation";
 // @import "foundation-icons.css";
+@import "utils";
 @import "header";
 @import "sidebar";
 @import "footer";
@@ -21,29 +22,62 @@ body {
   z-index: 0;
 }
 
+// global classes 
+.grey {
+  color: $first-year-grey;
+}
+.supertitle {
+  text-transform: uppercase;
+}
+
 //
-// HEADER (NAVBAR) STYLES
+// 1.0 HEADER (NAVBAR) STYLES
 //
 // see "_header.scss"
 
 
 //
-// HERO IMAGE CONTAINER 
+// 2.0 HERO IMAGE CONTAINER 
 //
-// hero stuff needs SERIOUS refactoring
+// See Subsections Below
 
-
+// default styling
 $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1, not sure why. 
+#hero-row {
+
+}
 .hero {
-  background: url('../images/heros/sm/white-house.jpg') no-repeat center center;
-  background-size: cover;
-  height: $hero-height;
-  top: -($topbar-height);
+  // typography
+  h1, h2, h3, h4, p, span {
+    color: $white;
+    text-align: center;
+  }
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.5em;
+    letter-spacing: -0.025em;
+    font-weight: 300;
+  }
+  p {
+    line-height: 1.75em;
+    font-weight: 200;
+    margin-bottom: 2rem;
+  }
+
+  // geometry
   position: relative;
+  z-index: $hero-z;
+  top: -($topbar-height);
   padding-left: 0;
   padding-right: 0;
   margin-bottom: -2em;
-  z-index: $hero-z;
+  height: $hero-height;
+
+  // background
+  background: url('../images/heros/sm/white-house.jpg') no-repeat center center;
+  background-size: cover;
+
+  // gradient filter overlay to darken background image
   &:before {
     content: '';
     height: $hero-height;
@@ -59,298 +93,507 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
   * {
     z-index: $hero-z + 1;
   }
-  .news {
-    position: absolute;
-    right: 1rem;
-    top: ($topbar-height) - rem-calc(25);
-    #the-latest {
-      width: 15rem;
-      background-color: transparentize(#111, 0.3);
-      z-index: $hero-z + 100;
-      ul {
-        list-style-type: none;
-        color: #ddd;
-        margin-bottom: 2px;
-        padding-bottom: 0.5em;
-        li.label {
-          color: $info-color;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-          background-color: transparent;
-          font-size: 75%;
-        }
-        li {
-          font-size: 85%;
-          font-weight: 100;
-          letter-spacing: 2px;
-          a {
-            color: #eee;
-            z-index: $hero-z + 101;
-            height: 100%;
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-    }
+
+  // styles common to all rows in hero section
+  .news, .hero-title, .intro-nav, #hero-navigation-row {
+
   }
 
-  /* two buttons side-by-side, below title */
-  .intro-nav {
-    z-index: $hero-z + 10;
-    color: #eee;
-    .row {
-      margin: 0 auto;
+  // main page titles
+
+
+
+} // end hero defaults
+@media #{$small-up} {
+  /* the column holding the navigational tabs */
+  .hero {
+  }  
+} // end .hero small-up
+@media #{$medium-up} {
+  /* the column holding the navigational tabs */
+  .hero {
+  }  
+} // end .hero medium-up
+@media #{$large-up} {
+  /* the column holding the navigational tabs */
+  .hero {
+  }  
+} // end .hero large-up
+
+
+//
+// 2.1 Hero News Ticker
+//
+
+// default
+#hero-row .hero .news {
+  position: absolute;
+  right: 0.4rem;
+  top: ($topbar-height) - rem-calc(25);
+  #the-latest {
+    @include single-transition(background-color, 200ms, ease-in-out);
+    &:hover {
+      background-color: transparentize(#111, 0.5);
     }
-    div {
-      display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-      display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-      display: -ms-flexbox;      /* TWEENER - IE 10 */
-      display: -webkit-flex;     /* NEW - Chrome */
-      display: flex; 
-    }
-    .columns {
-      .intro-button {
-        position: relative;
-        z-index: 10;
-        text-align: center;
-        padding: 0.3em 1em;
-        display: inline-block;
-        -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
-        -moz-box-flex: 1;
-        -webkit-flex: 1;          /* Chrome */
-        flex: 1;
-        margin: 0 0.5em;
-        min-width: 45%;
-        max-width: 47%;
-        width: 50%;
+    width: 15rem;
+    background-color: transparentize(#111, 0.3);
+    z-index: $hero-z + 100;
+    ul {
+      list-style-type: none;
+      color: #ddd;
+      margin-bottom: 2px;
+      padding-bottom: 0.5em;
+      li.label {
+        font-size: 75%;
+        color: $info-color;
+        letter-spacing: 2px;
         text-transform: uppercase;
-        font-size: 90%;
-        $gradient-opacity: 0.7;
-        $hover-opacity: 0.5;
-        border: 1px solid rgba(#eee, 0.3);
-        border-radius: 1px;
-        background: -webkit-radial-gradient(transparentize(#000, $gradient-opacity) 5%, transparentize(#333, $gradient-opacity) 25%, transparentize(#888, $gradient-opacity) 95%);
-        &:hover, &:active {
-          background: -webkit-radial-gradient(transparentize(#000, $hover-opacity) 5%, transparentize(#333, $hover-opacity) 25%, transparentize(#888, $hover-opacity) 95%);
-          color:$info-color;
-        }
-        @include single-transition(background, 300ms, ease-in-out);
-        @include single-transition(color, 300ms, ease-in-out);
+        background-color: transparent;
+      }
+      li {
+        font-size: 85%;
+        font-weight: 100;
+        letter-spacing: 2px;
         a {
-          @include single-transition(color, 300ms, ease-in-out);
-          position: inherit;
-          z-index: inherit;
-          color: inherit;
-          &:hover {
-            color:$info-color;
+          color: #eee;
+          z-index: $hero-z + 101;
+          height: 100%;
+          &:hover, &:active {
+            text-decoration: underline;
           }
         }
       }
-
     }
   }
-  h1 {
+} // end .news default
+@media #{$small-up} {
+  /* the column holding the latest news updates */
+  #hero-row .hero .news {
+  }  
+} // end .news small-up
+@media #{$medium-up} {
+  /* the column holding the latest news updates */
+  #hero-row .hero .news {
+  }  
+} // end .news medium-up
+@media #{$large-up} {
+  /* the column holding the latest news updates */
+  #hero-row .hero .news {
+  }  
+} // end .news large-up
+
+
+//
+// 2.2 Hero Main Titles
+//
+
+
+// default
+#hero-row .hero-title {
+  text-align: center;
+  top:0;
+  margin-top: $topbar-height;
+  #hero-title {
+    margin-top: 10%;  //overall vertical placement of title (refactor)
+  }
+  h2.supertitle {
+    color: $first-year-grey;
+    font-size: 1.3rem;
+    letter-spacing: 0.15em;
+    font-weight: 100;
+    font-family: "Verdana";
+    text-transform: uppercase;
+  }
+  .stars {
+    color: $info-color;
+    display: inline-block;
+    letter-spacing: 0.5em;
+    padding-bottom: 0.25em;
+  }
+  h1.main-title {
+    font-family: $header-title-fonts;
     color: #fff;
-    font-size: 1.5rem;
-    line-height: 1.5em;
-    letter-spacing: -0.025em;
+    font-size: 2.5rem;
+    line-height: 1em;
+    letter-spacing: 0.025em;
     font-weight: 300;
     text-align: center;
+    padding-top: 0em;
+    a {
+      color: #fff;
+      &:hover, &:visited {
+        text-decoration: none;
+      }
+    }
   }
   p {
+    font-size: 1rem;
+    text-shadow: 1px 1px #000000;
+    text-align: center;
+    margin: 0 auto;
+    display: inline-block;
     color: #fff;
     line-height: 1.75em;
     font-weight: 200;
     text-align: center;
     margin-bottom: 2rem;
   }
-  @media only screen and (min-width: 40.063em) {
-    h1 {
-      padding-top: 4.5rem;
-      text-align: right;
-      font-size: 2.5rem;
-    }
-    p {
-      text-align: right;
-    }
-  }
 
-  /* multiple tab-styled option panes */
-  #hero-navigation-row {
-    z-index: $hero-z + 10;
-    position:absolute;
-    margin:0 auto;
-    width: 100%;
-    bottom: 0;
-    min-height: 110px;
-    max-height: 25%;
-    background-color: transparentize(#111,0.6);
-  }
-  .subnav {
-    $window-tint: 0.3;
-    $active-border-width: 5px;
-    margin: 0 auto;
-    padding: 0.5em 0;
-    min-height: 5rem;
-    max-height: 8rem;
-    overflow:visible;
-    /* ul */
-    #nav-tabs {
-      li.tab {
-        .tab-entry {
-          position: absolute;
-          top: 0;
-          height: 100%;
-          width: 25%;
-          background-color:none;
-          @include single-transition(background-color, 500ms, ease-in-out);
-          &:hover {
-            background-color: rgba(250,250,250,$window-tint);
-          }
-          &.is-active {
-            a {
-              color: $info-color !important;
-            }
-            a::after {
-              $bar-width-ratio: 45;
-              display: block;
-              position:absolute;
-              content: "";
-              height: 2px;
-              width: #{$bar-width-ratio}%;
-              left: #{(100 - $bar-width-ratio) / 2}%;
-              margin: -1.8em auto 15px auto;
-              background-color: $info-color;
-            }
-            border-bottom: none;
-            top: -$active-border-width;
-            height: 110%;
-            left: 0;
-          }
-          a {
-            padding: 0;
-            margin: 0 auto;
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-            &:hover {
-              color: $info-color;
-              transition: all .25s ease-in-out;
-              text-decoration: none;
-            }            
-          }
-          p {
-            letter-spacing: 0.04em;
-            line-height: 100%;
-            font-size: 0.6rem;
-            text-align: center;
-            padding: 0 0 0 0;
-            margin-top: 0.5em;
-          }
-        &.unreleased a, &.unreleased p {color: $secondary-color;}
-        }
-        
-        a {
-          padding: 0.9rem 1rem 0.75rem;
-          font-size: 0.875rem;
-          color: #fff;
-          text-transform: uppercase;
-          display: block;
-          letter-spacing: 0.15em;
-          top: 0;
-          position: relative;
-
-        }
-      }
-    }
-  }
-
-  .hero-title {
-    text-align: center;
-    top:0;
+}
+@media #{$small-up} {
+  /* the column holding the main titles */
+  #hero-row .hero-title {
     #hero-title {
-      margin-top: 10%;  //overall vertical placement of title (refactor)
+      h2.supertitle {
+        font-size: 0.75rem;
+      }
+      .stars {}
+      h1.main-title {
+        font-size: 1.2rem;
+      }
+      p {
+        font-size: 0.6rem;
+      }
     }
-    h2 {
-      color: $first-year-grey;
-      font-size: 1.3rem;
-      letter-spacing: 0.15em;
-      font-weight: 100;
-      font-family: "Verdana";
+  }  
+} // end .hero-title small-up
+@media #{$medium-up} {
+  /* the column holding the main titles */
+  #hero-row .hero-title {
+    #hero-title {
+      h2.supertitle {
+        font-size: 1.3rem;
+      }
+      .stars {}
+      h1.main-title {
+        font-size: 2.5rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }  
+} // end .hero-title medium-up
+@media #{$large-up} {
+  /* the column holding the main titles */
+  #hero-row .hero-title {
+  }  
+} // end .hero-title large-up
+
+
+//
+// 2.3 Hero Explore Buttons
+//
+
+// default
+#hero-row .intro-nav {
+  /* two buttons side-by-side, below title */
+  z-index: $hero-z + 10;
+  color: #eee;
+  .row {
+    margin: 0 auto;
+  }
+  div {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex; 
+  }
+  .columns {
+    .intro-button {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 0.3em 1em;
+      display: inline-block;
+      -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+      -moz-box-flex: 1;
+      -webkit-flex: 1;          /* Chrome */
+      flex: 1;
+      margin: 0 0.5em;
+      min-width: 45%;
+      max-width: 47%;
+      width: 50%;
       text-transform: uppercase;
-    }
-    p {
-      text-shadow: 1px 1px #000000;
-      text-align: center;
-      margin: 0 auto;
-      display: inline-block;
-    }
-    .stars {
-      color: $info-color;
-      display: inline-block;
-      letter-spacing: 0.5em;
-      padding-bottom: 0.25em;
-    }
-    h1.main-title {
-      font-family: $header-title-fonts;
-      color: #fff;
-      font-size: 2.5rem;
-      line-height: 1em;
-      letter-spacing: 0.025em;
-      font-weight: 300;
-      text-align: center;
-      padding-top: 0em;
+      font-size: 90%;
+      $gradient-opacity: 0.7;
+      $hover-opacity: 0.5;
+      border: 1px solid rgba(#eee, 0.3);
+      border-radius: 1px;
+      background: -webkit-radial-gradient(transparentize(#000, $gradient-opacity) 5%, transparentize(#333, $gradient-opacity) 25%, transparentize(#888, $gradient-opacity) 95%);
+      &:hover, &:active {
+        background: -webkit-radial-gradient(transparentize(#000, $hover-opacity) 5%, transparentize(#333, $hover-opacity) 25%, transparentize(#888, $hover-opacity) 95%);
+        color:$info-color;
+      }
+      @include single-transition(background, 300ms, ease-in-out);
+      @include single-transition(color, 300ms, ease-in-out);
       a {
-        color: #fff;
-        &:hover, &:visited {
-          text-decoration: none;
+        @include single-transition(color, 300ms, ease-in-out);
+        position: inherit;
+        z-index: inherit;
+        color: inherit;
+        &:hover {
+          color:$info-color;
         }
       }
     }
-    p {
-      color: #fff;
-      line-height: 1.75em;
-      font-weight: 200;
-      text-align: center;
-      margin-bottom: 2rem;
+  }
+} // end default .intro-nav
+@media #{$small-up} {
+  /* the column holding the explore buttons */
+  #hero-row .intro-nav {
+  }  
+} // end .intro-nav small-up
+@media #{$medium-up} {
+  /* the column holding the explore buttons */
+  #hero-row .intro-nav {
+  }  
+} // end .intro-nav medium-up
+@media #{$large-up} {
+  /* the column holding the explore buttons */
+  #hero-row .intro-nav {
+  }  
+} // end .intro-nav large-up
+
+
+//
+// 2.4 Hero Navigational Pane Row
+//
+
+// default
+#hero-row #hero-navigation-row {
+  /* multiple tab-styled option panes */
+  z-index: $hero-z + 10;
+  position:absolute;
+  margin:0 auto;
+  width: 100%;
+  bottom: 0;
+  min-height: 110px;
+  max-height: 25%;
+  background-color: transparentize(#111,0.6);
+}
+@media #{$small-up} {
+  /* the column holding the navigational tabs */
+  #hero-row #hero-navigation-row {
+  }  
+} // end #hero-navigation-row small-up
+@media #{$medium-up} {
+  /* the column holding the navigational tabs */
+  #hero-row #hero-navigation-row {
+  }  
+} // end #hero-navigation-row medium-up
+@media #{$large-up} {
+  /* the column holding the navigational tabs */
+  #hero-row #hero-navigation-row {
+  }  
+} // end #hero-navigation-row large-up
+
+
+//
+// 2.4.1 Hero Navigational Column
+//
+
+// default
+/* the column holding the navigational tabs */
+.subnav {
+  $window-tint: 0.3;
+  $active-border-width: 5px;
+  margin: 0 auto;
+  padding: 0.5em 0;
+  min-height: 5rem;
+  max-height: 8rem;
+  overflow:visible;
+  /* ul */
+  #nav-tabs {
+    li.tab {
+      .tab-entry {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 25%;
+        background-color:none;
+        @include single-transition(background-color, 500ms, ease-in-out);
+        &:hover {
+          background-color: rgba(250,250,250,$window-tint);
+        }
+        &.is-active {
+          a {
+            color: $info-color !important;
+          }
+          a::after {
+            $bar-width-ratio: 45;
+            display: block;
+            position:absolute;
+            content: "";
+            height: 2px;
+            width: #{$bar-width-ratio}%;
+            left: #{(100 - $bar-width-ratio) / 2}%;
+            margin: -1.8em auto 15px auto;
+            background-color: $info-color;
+          }
+          border-bottom: none;
+          top: -$active-border-width;
+          height: 110%;
+          left: 0;
+        }
+        a {
+          padding: 0;
+          margin: 0 auto;
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          &:hover {
+            color: $info-color;
+            transition: all .25s ease-in-out;
+            text-decoration: none;
+          }            
+        }
+        p {
+          letter-spacing: 0.04em;
+          line-height: 100%;
+          font-size: 0.6rem;
+          text-align: center;
+          padding: 0 0 0 0;
+          margin-top: 0.5em;
+        }
+      &.unreleased a, &.unreleased p {color: $secondary-color;}
+      }
+      
+      a {
+        padding: 0.9rem 1rem 0.75rem;
+        font-size: 0.875rem;
+        color: #fff;
+        text-transform: uppercase;
+        display: block;
+        letter-spacing: 0.15em;
+        top: 0;
+        position: relative;
+
+      }
     }
+  }
+} // end .subnav default
+@media #{$small-up} {
+  /* the column holding the navigational tabs */
+  #hero-row #hero-navigation-row .subnav {
+  }  
+} // end #hero-navigation-row .subnav small-up
+@media #{$medium-only} {
+  #nav-tabs {
+    .tab {
+      .tab-entry {
+        a, p {
+          font-size: 0.6rem;
+          line-height: 140%;
+          width: 100%;
+          font-weight: 100;
+          padding-left: 0.25em;
+        }
+      }
+    }
+  }
+} // end #hero-navigation-row .subname medium-only
+@media #{$medium-up} {
+  /* the column holding the navigational tabs */
+  #hero-row #hero-navigation-row .subnav {
+  }  
+} // end #hero-navigation-row .subnav medium-up
+@media #{$large-up} {
+  /* the column holding the navigational tabs */
+  #hero-row #hero-navigation-row .subnav {
+  }  
+} // end #hero-navigation-row .subnav large-up
+
+
+@media #{$small-up} {
+  /* the column holding the navigational tabs */
+  #hero-navigation-row .subnav {
+    float: none;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    left: 10%;
+    width: 75%;
+  }  
+} // end .subnav small-up
+@media #{$medium-up} {
+  /* the column holding the navigational tabs */
+  #hero-navigation-row .subnav {
+  }  
+} // end .subnav medium-up
+@media #{$large-up} {
+  /* the column holding the navigational tabs */
+  #hero-navigation-row .subnav {
+  }  
+} // end .subnav large-up
+
+
+.hero {
+  /* ??? */
+  @media only screen and (min-width: 40.063em) {
+    // h1 {
+    //   padding-top: 4.5rem;
+    //   text-align: right;
+    //   font-size: 2.5rem;
+    // }
+    // p {
+    //   text-align: right;
+    // }
   }
 }
 
 @media #{$small-up} {
+  #hero-row {
+  
+  }
+  .hero {
+    .news, .hero-title, .intro-nav, #hero-navigation-row {
+
+    }
+    .news {}
+    .hero-title {}
+    .intro-nav {}
+    #hero-navigation-row {}
+  }
+  /* the column holding the navigational tabs */
+  #hero-navigation-row .subnav {
+  }
+
+
   .hero-title {
-    text-align: center;
-    margin-top: $topbar-height;
+    // text-align: center;
+    // margin-top: $topbar-height;
     h2 {
-      color: $first-year-grey;
-      text-transform: uppercase;
+      // color: $first-year-grey;
+      // text-transform: uppercase;
     }
     h3 {color: #fff; font-weight: initial;}
     .stars {
-      color: $info-color;
-      display: inline-block;
       letter-spacing: 0.25em;
-      padding-bottom: 0.25em;
+    }
+    p {
+      max-width: percentage(8/12); // simulate our grid
     }
   } // end hero-title
-  .subnav {
-    $window-tint: 0.3;
-    float: none;
-    position: absolute;
-    // top: 4rem;
-    bottom: 0;
-    // text-align: center;
-    margin-bottom: 0;
-    left: 10%;
-    width: 75%;
-    .tab {
-    }
-  }
 }
 
 @media #{$medium-up} {
+  #hero-row {
+  
+  }
+  .hero {
+    .news, .hero-title, .intro-nav, #hero-navigation-row {
+
+    }
+    .news {}
+    .hero-title {}
+    .intro-nav {}
+    #hero-navigation-row {}
+  }
+  /* the column holding the navigational tabs */
+  #hero-navigation-row .subnav {
+  }
   .hero {
     background: url('../images/heros/md/white-house.jpg') no-repeat center center;
 
@@ -358,31 +601,51 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
 }
 
 @media #{$large-up} {
+  #hero-row {
+  
+  }
+  .hero {
+    .news, .hero-title, .intro-nav, #hero-navigation-row {
+
+    }
+    .news {}
+    .hero-title {
+
+    }
+    .intro-nav {}
+    #hero-navigation-row {}
+  }
+  /* the column holding the navigational tabs */
+  #hero-navigation-row .subnav {
+  }
   .hero {
     background: url('../images/heros/lg/white-house.jpg') no-repeat center center;    
   } // end .hero
 }
 
 @media #{$small-only} {
+  #hero-row {
+  
+  }
+  .hero {
+    .news, .hero-title, .intro-nav, #hero-navigation-row {
+
+    }
+    .news {}
+    .hero-title {}
+    .intro-nav {}
+    #hero-navigation-row {}
+  }
+  /* the column holding the navigational tabs */
+  #hero-navigation-row .subnav {
+  }
   .hero {
     height: 25rem;
     &:before {
       height: 25rem;
     }
     margin-top: 2rem;
-    .hero-title {
-      #hero-title {
-        h1 {
-          font-size: 1.2rem;
-        }
-        h2 {
-          font-size: 0.75rem;
-        }
-        p {
-          font-size: 0.6rem;
-        }
-      }
-    }
+
     .intro-nav {
       .row {
         margin: 0 auto;
@@ -413,6 +676,19 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
 }
 
 @media #{$medium-only} {
+  #hero-row {
+  
+  }
+  .hero {
+    .news, .hero-title, .intro-nav, #hero-navigation-row {
+
+    }
+    .news {}
+    .hero-title {}
+    .intro-nav {}
+    #hero-navigation-row {}
+  }
+
   .hero {
     margin-top: 2rem;
     .hero-title {
@@ -445,28 +721,28 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
         line-height: 0.9rem;
       }
     }
-    #hero-navigation-row {
-      .subnav {
-        #nav-tabs {
-          .tab {
-            .tab-entry {
-              a, p {
-                font-size: 0.6rem;
-                line-height: 140%;
-                width: 100%;
-                font-weight: 100;
-                padding-left: 0.25em;
-              }
-            }
-          }
-        }
-      }
-    }
+    
 
   } // end .hero 
+  /* the column holding the navigational tabs */
+  #hero-navigation-row .subnav {
+  }
 }
 
 @media #{$large-only} {
+  #hero-row {
+  
+  }
+  .hero {
+    .news, .hero-title, .intro-nav, #hero-navigation-row {
+
+    }
+    .news {}
+    .hero-title {}
+    .intro-nav {}
+    #hero-navigation-row {}
+  }
+
   .hero {
     margin-top: 2rem;
     .hero-title {
@@ -480,10 +756,26 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
     }
     #hero-navigation-row {
     }
-  }   
+  }
+  /* the column holding the navigational tabs */
+  #hero-navigation-row .subnav {
+  }
 }
 
 @media #{$xlarge-up} {
+  #hero-row {
+  
+  }
+  .hero {
+    .news, .hero-title, .intro-nav, #hero-navigation-row {
+
+    }
+    .news {}
+    .hero-title {}
+    .intro-nav {}
+    #hero-navigation-row {}
+  }
+
   .hero {
     margin-top: 2rem;
     .hero-title {
@@ -498,9 +790,13 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
     }
     #hero-navigation-row {
     }
-  }  
+  }
+  /* the column holding the navigational tabs */
+  #hero-navigation-row .subnav {
+  }
 }
 
+// end hero section
 
 //
 // MAIN CONTAINER
