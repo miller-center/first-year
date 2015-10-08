@@ -477,6 +477,12 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
 @media #{$small-up} {
   /* the column holding the navigational tabs */
   #hero-row #hero-navigation-row .subnav {
+    float: none;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0;
+    left: 10%;
+    width: 75%;
   }  
 } // end #hero-navigation-row .subnav small-up
 @media #{$medium-only} {
@@ -509,12 +515,7 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
 @media #{$small-up} {
   /* the column holding the navigational tabs */
   #hero-navigation-row .subnav {
-    float: none;
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 0;
-    left: 10%;
-    width: 75%;
+
   }  
 } // end .subnav small-up
 @media #{$medium-up} {
