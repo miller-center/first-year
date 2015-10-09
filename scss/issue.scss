@@ -32,6 +32,10 @@ body {
 }
 
 #about-this-issue {
+	background-color: #000;
+	padding-top: 5px;
+	border-top: 1px solid $jumbo;
+	a:hover {color: #fff;}
 	.editor {
 		//float:left; 
 		//clear:right;
@@ -44,14 +48,14 @@ body {
 			-webkit-border-radius:5px;
 			border-radius:1.25rem;}
 		.editor-name {}
-		.editor-title {font-size: smaller;}
+		.editor-title {font-size: .8rem; color: $jumbo;}
 		span {display:block;}
 	}
 	.partners {
 		//float:left; 
 		//clear:right;
 		//width: 33%;
-		padding-top: 1rem;
+		padding-top: .5rem;
 	}
 }
 
