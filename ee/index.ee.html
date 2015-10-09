@@ -107,22 +107,20 @@
     <div class="row">
       <div class="small-0 large-1 columns spacer">&nbsp;</div>
       <div id="featured" class="small-12 medium-8 large-7 columns">
-      
-        <h2>Featured</h2>
         
 		{exp:channel:entries channel="potus_blog" category="447" limit="4"}		
         <div class="small-6 featured-item">
  
 			{potus-bl-image}
  			<div class="media">
-				<div class="media-item"><img src="{potus-bl-image:potus-bl-imagefile}"></div>
+				<div class="media-item"><a href="/expressionengine.php/potus/blog/{url_title}"><img src="{potus-bl-image:potus-bl-imagefile}"></a></div>
 				<div class="media-credit">{potus-bl-image:potus-bl-imagecredit}</div>
           	</div>
           	{/potus-bl-image}
           	
 			<div class="featured-item-text">
-				<h4><a href="/expressionengine.php/potus/blog/{url_title}">{title}</a></h4>
-				<p class="content">{potus-bl-teaser} <a href="/expressionengine.php/potus/blog/{url_title}" class="more">more </a></p>
+				<h3><a href="/expressionengine.php/potus/blog/{url_title}">{title}</a></h3>
+				<p class="content">{potus-bl-teaser}</p>
 			</div>
         </div>
         {/exp:channel:entries}	
