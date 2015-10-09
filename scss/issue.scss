@@ -1,6 +1,6 @@
 /* Styles for issue pages only */
 
-/* override First Year defaults here */
+/* override First Year defaults before importing _settings */
 
 @import "settings";
 
@@ -8,7 +8,7 @@
 
 @import "blog";
 
-/* override Foundation defaults here */
+/* override Foundation defaults before importing foundation */
 
 @import "foundation";
 @import "utils";
@@ -30,6 +30,20 @@ $hero-z: $sidebar-z + 1;
 
 body {
 }
+
+//
+// 1.0 Global styles
+//
+
+//
+// 2.0 Hero Section
+//
+$hero-height: 30rem;
+@import "hero";
+
+//
+// 3.0 Masthead
+// 
 
 #about-this-issue {
 	.editor {

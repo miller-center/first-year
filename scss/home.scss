@@ -1,10 +1,29 @@
-/* Styles for home page only */
+/* Styles for issue pages only */
+
+/* override First Year defaults before importing _settings */
+
 @import "settings";
+
+/* import blog styles */
+
 @import "blog";
-// @import "header";
+
+/* override Foundation defaults before importing foundation */
+
+@import "foundation";
+@import "utils";
 
 /* styling specific to project home page */
 
+//
+// 1.0 Global styles
+//
+
+//
+// 2.0 Hero Section
+//
+$hero-height: 30rem;
+@import "hero";
 
 #featured {
 	margin-top: 1rem;

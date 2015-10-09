@@ -1,4 +1,7 @@
 /* Styles for teaser page only */
+
+/* override First Year defaults before importing _settings */
+
 @import "settings";
 @import "header";
 @import "foundation";
@@ -6,6 +9,10 @@ $first-year-blue: #0c2b48;
 $hero-height: 30rem;
 
 $hide-menus: 'true';
+
+//
+// 1.0 Global styles
+//
 body {
   color: #333;
   font-family: 'Karla', Verdana, sans-serif;
@@ -16,6 +23,37 @@ body {
   position:relative;
   z-index: 0;
 }
+
+
+//
+// 2.0 Hero Section
+//
+$hero-height: 30rem;
+@import "hero";
+
+#hero-row h3 {
+  font-size: 1rem;
+  line-height: 1.75em;
+  text-shadow: 1px 1px #000000;
+}
+#hero-row .hero .hero-title {
+  position: absolute;
+  top: 20%; 
+  #hero-title {
+    margin-top: 0 !important;     
+  }
+}
+#hero-row .hero #videobutton {
+  position: absolute;
+  top: 60%;
+  margin: 0 auto;
+  width: 100%
+}
+#hero-row .hero #teasertext {
+  position: absolute;
+  bottom: 5%;
+}
+
 
 #innercontent {max-width: 650px; margin: 0 auto;}
 
@@ -105,7 +143,6 @@ div#videotrailer iframe {
 .intro-nav {margin-top: 200px;}
 
 #hero-title, #learnabout, #teasertext, #videotrailer, #videobutton {
-  position:relative;
   z-index: $sidebar-z + 5 !important;
   p {
     font-size: 1rem;
