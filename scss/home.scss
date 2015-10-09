@@ -9,22 +9,23 @@
 #featured {
 	margin-top: 1rem;
 	.columns {padding-left: 0;}
-	h2 {
+	/*h2 {
 		padding-left: .2rem;
 		background-color: $info-color;
 		color: #fff;
-	}
+	}*/
 	.featured-item {
 		padding-right: 1rem;
-		border-left: .1rem solid $info-color;
+		/*border-left: .1rem solid $info-color;*/
 		float:left;
-		height: 20rem;
+		height: 19rem;
 		overflow: hidden;
 		margin-bottom: 1rem;
 			.featured-item-text {
-				margin: 0 5%;
-					p {line-height: 1.2rem;	}
-			}		
+					p {line-height: 1.2rem;	
+						font-size: .8rem;}
+			} 
+		h3 {line-height: 1.5rem;}
 		.media {
 			.media-credit {
 				font-family: $font-family-monospace; 
