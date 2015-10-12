@@ -1,7 +1,13 @@
 {exp:string:set name="asset_path"}staticmc.org/potus{/exp:string:set}
-{exp:channel:entries channel="potus_essay" limit="1"}
+{exp:channel:entries channel="potus_essay" limit="1" require_entry="yes"}
+
+	{!-- If the query failed, send the visitor to the project home page. --}
+	{if no_results}{redirect="potus/index"}{/if}
 
 {embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/essay.css" css-hero-include="{potus-es-css}"}	
+
+	{!-- Create a variable to store our meta description. --}
+	{exp:string:set name="meta_description"}{potus-es-author}{potus-es-author:potus-es-authorname}{/potus-es-author}{/exp:string:set}
 
     <div class="row">
       <div class="small-12 columns hero">

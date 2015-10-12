@@ -1,5 +1,12 @@
 {exp:string:set name="asset_path"}staticmc.org/potus{/exp:string:set}
-{exp:channel:entries channel="potus" limit="1"}
+
+{exp:channel:entries channel="potus" limit="1" require_entry="yes"}
+
+	{!-- If the query failed, send the visitor to the project home page. --}
+	{if no_results}{redirect="potus/index"}{/if}
+
+	{!-- Create a variable to store our meta description. --}
+	{exp:string:set name="meta_description"}{potus-shortdescription}{/exp:string:set}
 
 <!-- Topbar Navigation Section-->
 {embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/issue.css" css-hero-include="{potus-issue-css}" kind="issue"}
