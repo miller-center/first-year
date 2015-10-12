@@ -43,11 +43,12 @@ $(document).ready(function() {
 
         var interval = setInterval(startSlideShow,  delay);
 
-        $('#the-latest').mouseover(function() {
+        $('#stopSlide').mouseenter(function() {
             clearInterval(interval);
         });
 
-        $('#the-latest').mouseout(function() {
+        $('#stopSlide').mouseleave(function() {
+            clearInterval(interval);
             interval = setInterval(startSlideShow, delay);
         });
 

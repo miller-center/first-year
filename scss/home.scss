@@ -1,30 +1,50 @@
-/* Styles for home page only */
+/* Styles for issue pages only */
+
+/* override First Year defaults before importing _settings */
+
 @import "settings";
+
+/* import blog styles */
+
 @import "blog";
-// @import "header";
+
+/* override Foundation defaults before importing foundation */
+
+@import "foundation";
+@import "utils";
 
 /* styling specific to project home page */
 
+//
+// 1.0 Global styles
+//
+
+//
+// 2.0 Hero Section
+//
+$hero-height: 30rem;
+@import "hero";
 
 #featured {
 	margin-top: 1rem;
 	.columns {padding-left: 0;}
-	h2 {
+	/*h2 {
 		padding-left: .2rem;
 		background-color: $info-color;
 		color: #fff;
-	}
+	}*/
 	.featured-item {
 		padding-right: 1rem;
-		border-left: .1rem solid $info-color;
+		/*border-left: .1rem solid $info-color;*/
 		float:left;
-		height: 20rem;
+		height: 19rem;
 		overflow: hidden;
 		margin-bottom: 1rem;
 			.featured-item-text {
-				margin: 0 5%;
-					p {line-height: 1.2rem;	}
-			}		
+					p {line-height: 1.2rem;	
+						font-size: .8rem;}
+			} 
+		h3 {line-height: 1.5rem;}
 		.media {
 			.media-credit {
 				font-family: $font-family-monospace; 
@@ -40,21 +60,3 @@
 	
 
 }
-
-// this is to address situations where iphones aren't
-// displaying pages across the full viewport width
-@media screen and (max-width: 395px) and (orientation: portrait) {
-  $iphone-6-max-w: 414;
-  #navigation-container {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
-  }
-  body {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
-  }
-  body > .row {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
-  }
-} // end custom media query

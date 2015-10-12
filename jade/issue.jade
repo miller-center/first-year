@@ -21,7 +21,7 @@ html(lang="en")
 		title #{title}
 		meta(name="description", content="")
 		meta(name="author", content="")
-		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=yes")
 		link(rel="stylesheet", href="#{project_home}/css/first-year.css") 
 		link(rel="stylesheet", href="#{project_home}/css/issue.css") 
 		link(rel="stylesheet", href="#{project_home}/css/hero/issue1.css") 
@@ -40,13 +40,11 @@ html(lang="en")
 
  
 		// Hero Image Section
-		.row
+		.row#hero-row
 			.small-12.columns.hero
-
-
 				.row.hero-title
 					.small-12.small-centered.medium-centered.columns#hero-title
-						h2 Issue 1
+						h2.supertitle.grey Issue 1
 						span.stars &#x2605; &#x2605; &#x2605;
 						h1.main-title The Next President's Crucible Year
 						p Six essays about the promises and pitfalls of the first 365 days in office.
@@ -61,34 +59,34 @@ html(lang="en")
 							img(src="../images/heros/hero-milkis.jpg")
 							a(href="milkis-essay.html")
 								h2= essay6
-							p.text-right= author6
+							//- p.text-right= author6
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-skowronek.jpg")
 							a(href="skowronek-essay.html")
 								h2= essay4 
-							p.text-right= author4
+							//- p.text-right= author4
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-brands.jpg")
 							a(href="brands-essay.html")
 								h2= essay1
-							p.text-right= author1
+							//- p.text-right= author1
 
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-nelson.jpg")
 							a(href="nelson-essay.html")
 								h2= essay3 
-							p.text-right= author3
+							//- p.text-right= author3
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-kamarck.jpg")
 							a(href="kamarck-essay.html")
 								h2= essay2
-							p.text-right= author2
+							//- p.text-right= author2
 
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-wehner.jpg")
 							a(href="wehner-essay.html")
 								h2= essay5 
-							p.text-right= author5
+							//- p.text-right= author5
 
 						//- div.large-4.small-12.columns.slider-panel
 						//- 	img(src="http://placehold.it/1600x900")
@@ -116,7 +114,7 @@ html(lang="en")
 		.row#about-this-issue
 			.editor.small-6.medium-4.large-3.large-offset-1.columns
 				a(href='')
-					img(src="../images/headshots/perry.jpg")
+					img(src="http://lorempixel.com/200/200/")
 				.editor-info
 					a(href='')
 						span.editor-name John Doe
@@ -124,7 +122,7 @@ html(lang="en")
 						
 			
 			.editor.small-6.medium-4.large-3.columns
-				img(src="../images/headshots/milkis.jpg")
+				img(src="http://lorempixel.com/200/200/")
 				.editor-info
 					a(href='')
 						span.editor-name John Doe
@@ -143,7 +141,7 @@ html(lang="en")
 					h4 
 						a(href="zzz") Consectetur Adipiscing Elit
 					.media
-						.media-item <img src="http://lorempixel.com/480/320/">
+						.media-item <img src="http://lorempixel.com/435/268/">
 						.media-credit Image courtesy John Doe
 					p.content This is a teaser sentence about what you'll find here. 				
 					.blog-item-info
@@ -163,7 +161,7 @@ html(lang="en")
 					h4 
 						a(href="ccc") Dolor sit amet?
 					.media
-						.media-item <img src="http://lorempixel.com/500/300/">
+						.media-item <img src="http://lorempixel.com/435/268/">
 						.media-credit Image courtesy John Doe
 					p.content This is a teaser sentence about what you'll find here. 			
 					.blog-item-info

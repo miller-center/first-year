@@ -6,7 +6,7 @@
 
 $navigation-container-height: $topbar-height;
 $navigation-container-bg-color: $first-year-blue;
-$navigation-white: #eee;
+$navigation-white: $jumbo; /* formerly #eee*/
 $navigation-container-z-index: 1000;
 
 $navigation-transition-time: 500ms;
@@ -19,7 +19,8 @@ $transparent: rgba(245,245,245,0.0);
 #navigation-container {
   background-color: $navigation-container-bg-color;
   nav.top-bar {
-    width: $row-width;
+  	width: 100%;
+    max-width: $row-width;
     margin-left: auto;
     margin-right: auto;
     .logo-section {
@@ -102,24 +103,28 @@ $transparent: rgba(245,245,245,0.0);
     background-color: $navigation-container-bg-color;
 
     // select size for social icons here
-    $social-icon-size: 40px;
-    $social-icon-pad: 15px;
+    $social-icon-size: 35px;
+    $social-icon-pad: 20px;
     .social-section {
       position:relative;
-      left:66%;
+      left: 73%;
       ul {
         li.label:first-child {
+          font-weight: 300;
+          font-family: $header-title-fonts;
           position: absolute;
           left: -4rem;
           top: 0.7rem;
+          color: $navigation-white;
+          font-size: 120%;
         }
         padding-top: 0;
         margin-top: 0;
         margin-left: 2%;
         margin-right: 2%;
-        li.social-icon {
+          li.social-icon {
           position: absolute;
-          left:0;
+          left: 10px;
           height: $social-icon-size;
           width: $social-icon-size;
           top: rem-calc($social-icon-pad / 2);
@@ -135,10 +140,10 @@ $transparent: rgba(245,245,245,0.0);
           }
         }
         li#header-fb-icon {
-          background: url('../images/icons/#{$social-icon-size}/facebook-wh.png') no-repeat center center;
+          background: url('../images/icons/#{$social-icon-size}/facebook-gr.png') no-repeat center center;
         }
         li#header-tw-icon {
-          background: url('../images/icons/#{$social-icon-size}/twitter-wh.png') no-repeat center center;
+          background: url('../images/icons/#{$social-icon-size}/twitter-gr.png') no-repeat center center;
           left: $social-icon-size + $social-icon-pad;
         }
 
@@ -148,8 +153,8 @@ $transparent: rgba(245,245,245,0.0);
       margin-right: 5.5rem !important; // align section here
       ul {
         li#header-menu-icon {
-          left: (($social-icon-size) * 2) + $social-icon-pad; 
-          color: $navigation-white;
+          left: (($social-icon-size) * 3) + $social-icon-pad; 
+          color: $topbar-menu-icon-color;
           background-color: $navigation-container-bg-color; 
           a {
             min-width: 150px;
@@ -160,14 +165,16 @@ $transparent: rgba(245,245,245,0.0);
           span.label {
             min-width: 6rem;
             margin-top: 10%;
-            text-align: left;
+            text-align: right;
             line-height: ($topbar-height * .5);
             padding-bottom: 0.4em;
+            padding-right: 2.5rem;
             @include hamburger(16px, false, 0, 1px, 6px, $topbar-menu-icon-color, "", false);
-            font-size: 200%;
+            font-size: 186%;
             font-family: $header-title-fonts;
             font-weight: 300;
             background-color: rgba(255,255,255,0.0);
+            color: $topbar-menu-icon-color;
           }
           a + ul.dropdown {
             width: 200px;
@@ -215,7 +222,8 @@ $transparent: rgba(245,245,245,0.0);
     background-color: $navigation-container-bg-color;
     height: $navigation-container-height;
     nav.top-bar {
-      width: $row-width;
+      width: 100%;
+      max-width: $row-width;
       @include single-transition(padding, $navigation-transition-time, ease-out);
       z-index: $navigation-container-z-index + 1;
       background-color: $transparent !important; // transparent; parent has correct style
@@ -272,17 +280,17 @@ $transparent: rgba(245,245,245,0.0);
       // }
     }
     // select size for social icons here
-    $social-icon-size: 40px;
-    $social-icon-pad: 15px;
+    $social-icon-size: 35px;
+    $social-icon-pad: 25px;
     .social-section {
       position:relative;
-      left:0;
+      left: 7rem;
       ul { 
         padding-top: 0;
         margin-top: 0;
         li.social-icon {
           position: absolute;
-          left:0;
+          left: 10px;
           height: $social-icon-size;
           width: $social-icon-size;
           top: rem-calc($social-icon-pad / 2);
@@ -297,13 +305,7 @@ $transparent: rgba(245,245,245,0.0);
             }
           }
         }
-        li#header-fb-icon {
-          background: url('../images/icons/#{$social-icon-size}/facebook-wh.png') no-repeat center center;
-        }
-        li#header-tw-icon {
-          background: url('../images/icons/#{$social-icon-size}/twitter-wh.png') no-repeat center center;
-          left: $social-icon-size + $social-icon-pad;
-        }
+
 
       }
     }
@@ -311,7 +313,7 @@ $transparent: rgba(245,245,245,0.0);
       margin-right: 5.5rem !important; // align section here
       ul {
         li#header-menu-icon {
-          left: (($social-icon-size) * 2) + $social-icon-pad; 
+          left: (($social-icon-size) * 3) + $social-icon-pad; 
           color: $navigation-white;
           // padding-top: $social-icon-size * 0.2;
           background-color: $navigation-container-bg-color; 
@@ -324,12 +326,11 @@ $transparent: rgba(245,245,245,0.0);
           }
           span.label {
             min-width: 8rem;
-            text-align: left;
             margin-top: 7.5%;
             line-height: ($topbar-height * .5);
             padding-bottom: 0.4em;
             @include hamburger(16px, false, 0, 1px, 6px, $topbar-menu-icon-color, "", false);
-            font-size: 200%;
+            font-size: 186%;
             font-family: $header-title-fonts;
             font-weight: 300;
             background-color: rgba(255,255,255,0.0);
@@ -358,6 +359,13 @@ $transparent: rgba(245,245,245,0.0);
         position:relative;
       }
     } // end .social-section
+    .social-section li.label {
+            /*font-size: 130%;
+            font-family: $header-title-fonts;
+            font-weight: 300;*/
+    
+    }
+    
     #navigation-section {
       ul.right {
         li.menu-option {
@@ -370,7 +378,6 @@ $transparent: rgba(245,245,245,0.0);
             span.label {
               color:$navigation-white;
               min-width: 8rem;
-              text-align: left;
               line-height: ($topbar-height * .5);
               padding-bottom: 0.4em;
               @include hamburger(16px, false, 0, 1px, 6px, $topbar-menu-icon-color, "", false);

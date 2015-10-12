@@ -1,33 +1,65 @@
 /* Styles for essay pages only */
 
+/* override First Year defaults before importing _settings */
+
 @import "settings";
 @import "header";
+
+/* override Foundation defaults before importing foundation */
+
 @import "foundation";
 // @import "foundation-icons.css";
 
 
-.hero {height: 25rem;}
+
+//
+// 1.0 Global styles
+//
+
+//
+// 2.0 Hero Section
+//
+$hero-height: 24rem;
+@import "hero";
+
+#hero-row .hero .hero-title {
+  top: 15%; 
+  #hero-title {
+  }
+}
+
+.hero {height: $hero-height;}
 .hero:before {height: 100%;}
 
 #hero-title h2 a:hover {color: #fff; text-decoration: none;}
 
 #essay {margin: 0 auto; font-family: Verdana, sans-serif;}
 
-p.essay-intro {}
+p.essay-intro {color: #7797ab;}
 
 #essay > p, #essay > h3, #essay > h4 {padding-right: 150px; padding-left: 150px;}
 
-.lateral-nav p {
-	font-size: .7rem; 
-	line-height: 1rem; 
-	color: $secondary-color;
+.lateral-nav {
+	background-color: #000;
+	padding-top: .5rem;
+	border-top: 1px solid $jumbo;
+	border-bottom: 5px solid #fff;
+	p {
+		font-size: .8rem; 
+		line-height: 1rem;
+		color: $jumbo;	
 	}
-	
-.lateral-nav .lateral-nav-next {
+	a, a:visited  {color: $jumbo; }
+	a:hover {color: #fff; text-decoration: none;}
+	.lateral-nav-next {
 		text-align:right;
 		&::after {content:" »";}
 	}
-.lateral-nav .lateral-nav-prev:before {content: "« ";}
+	.lateral-nav-prev:before {content: "« ";}
+}
+
+.lateral-nav#bottom {background-color: #fff;}
+
 
 
 figure {
@@ -116,34 +148,28 @@ blockquote {
 .author {
 	position: inherit;
 	z-index: 100; // ensure greater than $sidebar-z
-	background-color: $primary-color; 
+	background-color: #ddd; 
 	width: 100%;
 	margin-bottom: 3rem;
-	color: #ddd; 
+	color: #000; 
 	font-family: $font-family-small; 
 	padding: 1em;	
-		a {color: #fff;
-		&:hover {color:#ddd;}
-		}
-	color: #ddd; 
 	font-family: $font-family-small; 
 	padding: 1em;	
-	a {
-		color: #fff;
-		&:hover {
-			color:#ddd;
-		}
-	}
 	p {
-		font-size: smaller;
+		font-size: .8rem;
 		}
 	.author-contact {
 		float:right;
-		font-size: smaller;
+		font-size: .8rem;
+		position: relative; 
+		top: -.8rem;
 			.tw {
 			&:before {
-				content: url('../images/icons/35px/twitter-wh-sm.png'); 
-				position:relative; top: 13px; 
+				content: url('../images/icons/35px/twitter-gr.png'); 
+				position:relative; 
+				top: .6rem;
+				right: .8rem;
 				}
 			}
 		}

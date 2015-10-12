@@ -11,7 +11,7 @@ html(lang="en")
 		title #{title}: #{essay}
 		meta(name="description", content="")
 		meta(name="author", content="")
-		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=yes")
 		link(rel="stylesheet", href="#{project_home}/css/first-year.css")
 		link(rel="stylesheet", href="#{project_home}/css/essay.css")
 		link(rel="stylesheet", href="#{project_home}/css/hero/issue1/essay#{essay_no}.css")
@@ -23,26 +23,15 @@ html(lang="en")
 
 
 		//- Hero Image Section
-		.row
-			//- .small-12.columns
-			//- 	h1
-			//- 		a(href="#") LINK
+		.row#hero-row
 			.small-12.columns.hero
-				//.row.news
-					.small-6.medium-2.small-centered.columns.hide-for-small-only.right#the-latest
-						ul
-							li.label The Latest
-							li <a href="#">Lorem ipsum dolor sit amet.</a>
-							li.hide <a href="#">Consectetur adipisicing elit. </a>
-							li.hide <a href="#">Veniam hic beatae maiores laboriosam cum soluta</a>
-
 				.row.hero-title
 					.small-12.small-centered.medium-uncentered.columns#hero-title
-						h2 Issue 1
+						h2.supertitle.grey Issue 1
 						span.stars &#x2605; &#x2605; &#x2605;
 						h1.main-title #{essay_title}
-						p by Pete Wehner
-			//- end hero
+						h3.subtitle subtitles are very important
+		//- end hero
 
 		.row.lateral-nav.hide-for-small
 			.columns.small-6
@@ -59,6 +48,8 @@ html(lang="en")
 
 		.row
 			.small-12.columns#essay
+				p.byline
+					a(href="#author-bio") by Pete Wehner
 		
 				p.essay-intro Congratulations on your impressive electoral victory. Now you are entering territory that can’t be charted. “The job is sui generis. The presidency is an act of faith," as Richard Reeves wrote in his 1993 book <em>President Kennedy: Profile of Power</em>. 
 		
@@ -166,7 +157,7 @@ html(lang="en")
 				p It won't always be easy, but try to retain a relatively charitable view of your political adversaries. "Remember, we have no enemies, only opponents," former Indiana Governor Mitch Daniels, who worked as a political aide to Reagan, quotes him as admonishing his staff. Keep in mind, above all, that you're the one person in public life who was elected to represent the entire nation. There will be a temptation to take the low road now and then. Resist it. Appeal to the better, not the darker, impulses of the American people. There is honor in doing so.  
 				
 		
-		.row
+		.row#author-bio
 			.small-12.columns
 
 				.author 

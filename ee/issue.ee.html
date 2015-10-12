@@ -1,17 +1,24 @@
 {exp:string:set name="asset_path"}staticmc.org/potus{/exp:string:set}
-{exp:channel:entries channel="potus" limit="1"}
+
+{exp:channel:entries channel="potus" limit="1" require_entry="yes"}
+
+	{!-- If the query failed, send the visitor to the project home page. --}
+	{if no_results}{redirect="potus/index"}{/if}
+
+	{!-- Create a variable to store our meta description. --}
+	{exp:string:set name="meta_description"}{potus-shortdescription}{/exp:string:set}
 
 <!-- Topbar Navigation Section-->
 {embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/issue.css" css-hero-include="{potus-issue-css}" kind="issue"}
 
 <!-- Hero Image Section-->
-<div class="row">
+<div class="row" id="hero-row">
     <div class="small-12 columns hero">
       <div class="row hero-title">
         <div id="hero-title" class="small-12 small-centered medium-centered columns">
-          <h2>Issue {potus-number}</h2><span class="stars">&#x2605; &#x2605; &#x2605;</span>
+          <h2 class="supertitle">Issue {potus-number}</h2><span class="stars">&#x2605; &#x2605; &#x2605;</span>
           <h1 class="main-title">{title}</h1>
-          <p>{potus-shortdescription}</p>
+          <h3 class="subtitle">{potus-shortdescription}</h3>
         </div>
       </div><!-- close .hero-title -->
 
@@ -37,7 +44,6 @@
         		<a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">
 	            <h2>{potus-essays:potus-es-shorttitle}</h2>
 	          </a>
-	            <p class="text-right">{potus-essays:potus-es-author}{potus-essays:potus-es-author:potus-es-authorname}{/potus-essays:potus-es-author}</p>
           </div>
         	{/potus-essays}
         </div><!-- close .hero-slider -->

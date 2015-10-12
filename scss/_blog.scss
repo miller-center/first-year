@@ -4,9 +4,9 @@
 
 #blog, #blog-large {
 	margin-top: 2rem;
-	border-top: 3px solid $primary-color;
+	border-top: 3px solid $info-color;
 	h2 {
-		background-color: $primary-color;
+		background-color: $info-color;
 		color: #fff;
 		text-align: center;
 		text-transform: uppercase;
@@ -20,14 +20,17 @@
 		position: inherit;
 		background-color: $body-bg;
 		z-index: 999;
-		border-bottom: 1px solid $first-year-grey;
+		border-bottom: 1px solid #444;
 		margin-bottom: 1rem;
 		.blog-item-info {
-			span {display: block;}
+			padding-top: .5rem;
+			span {display: block; margin-top: -.8rem;}
 			text-align: right;
-			font-size: smaller;
+			font-size: .6rem;
+			text-transform: uppercase;
+			color: #888;
 		}
-		h4 {font-size: 1rem;}
+		h4 {line-height: 1.4rem;}
 	}
 }
 
