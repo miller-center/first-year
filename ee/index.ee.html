@@ -45,7 +45,7 @@
 	{!-- Create a variable to store our meta description. --}
 	{exp:string:set name="meta_description"}A non-partisan effort to examine the history and structure of presidential First Years, assess the policy opportunities and threats for our next President, and influence the national debate by addressing candidates, opinion leaders, and the public.{/exp:string:set}
 	
-    <div class="row">
+    <div class="row" id="hero-row">
       <div class="small-12 columns hero">
         <!--<div class="row news">
           <div id="the-latest" class="small-6 medium-2 small-centered columns hide-for-small-only right">
@@ -62,9 +62,9 @@
 
         <div class="row hero-title">
           <div id="hero-title" class="small-12 small-centered medium-centered columns">
-            <h2>Issue {potus-number}</h2><span class="stars">&#x2605; &#x2605; &#x2605;</span>
+            <h2 class="supertitle">Issue {potus-number}</h2><span class="stars">&#x2605; &#x2605; &#x2605;</span>
             <h1 class="main-title"><a href="/expressionengine.php/potus/issue/{url_title}">{title}</a></h1>
-            <p>{potus-shortdescription}</p>
+            <h3 class="subtitle">{potus-shortdescription}</h3>
           </div>
         </div>
         <div class="row intro-nav">
