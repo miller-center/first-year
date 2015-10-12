@@ -130,6 +130,7 @@ ul {list-style-type: circle;}
 // Call-to-Action styles
 @import url(https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911); //move import if approved for deployment
 #emailModal, #donateModal {
+  position:fixed;
   $logo-size: 100;
   $logo-offset: 0;
   padding-left: 0;
