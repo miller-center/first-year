@@ -36,7 +36,7 @@ body {
 	padding-top: 5px;
 	border-top: 1px solid $jumbo;
 	a:hover {color: #fff;}
-	a:visited {color: $jumbo;}
+	a, a:visited {color: $jumbo;}
 	.editor {
 		//float:left; 
 		//clear:right;
