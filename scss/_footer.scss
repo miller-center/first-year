@@ -67,7 +67,7 @@ footer .footerNav {
       width:100%;
       margin: 0 auto;
     }
-    button {background-color: $info-color; width: 100%;}
+    button {background-color: #888; width: 100%;}
   }
   .footer-form {
     padding-top: 1em;
@@ -99,7 +99,7 @@ footer label {
 //R+V Copyright statement
 footer .copyright p {text-align: center; font-size: .6rem;}
 
-$social-icon-size: 50;
+$social-icon-size: 40;
 footer {
   .social-email-icon, .social-fb-icon, .social-tw-icon {
     min-width: #{$social-icon-size}px;
@@ -124,17 +124,18 @@ footer #social-options {
 	padding: 0;
   float: right;
   li.label:first-child {
+  	color: #888;
     top: #{$social-icon-size/4}px;
   }
 }
 footer .social-email-icon {
-  background: url('../images/icons/#{$social-icon-size}px/mail.png') no-repeat center center;
+  background: url('../images/icons/#{$social-icon-size}px/mail-gr.png') no-repeat center center;
 }
 footer .social-fb-icon {
-  background: url('../images/icons/#{$social-icon-size}px/facebook.png') no-repeat center center;
+  background: url('../images/icons/#{$social-icon-size}px/facebook-gr.png') no-repeat center center;
 }
 footer .social-tw-icon {
-  background: url('../images/icons/#{$social-icon-size}px/twitter.png') no-repeat center center;
+  background: url('../images/icons/#{$social-icon-size}px/twitter-gr.png') no-repeat center center;
 }
 
 //

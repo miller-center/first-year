@@ -1,7 +1,13 @@
 {exp:string:set name="asset_path"}staticmc.org/potus{/exp:string:set}
-{exp:channel:entries channel="potus_essay" limit="1"}
+{exp:channel:entries channel="potus_essay" limit="1" require_entry="yes"}
+
+	{!-- If the query failed, send the visitor to the project home page. --}
+	{if no_results}{redirect="potus/index"}{/if}
 
 {embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/essay.css" css-hero-include="{potus-es-css}"}	
+
+	{!-- Create a variable to store our meta description. --}
+	{exp:string:set name="meta_description"}{potus-es-author}{potus-es-author:potus-es-authorname}{/potus-es-author}{/exp:string:set}
 
     <div class="row">
       <div class="small-12 columns hero">
@@ -25,24 +31,24 @@
     <div class="row lateral-nav hide-for-small">
       <div class="columns small-6">
         {exp:channel:prev_entry channel="potus_essay"}
-			<p class="lateral-nav-prev">Previous essay: <a href="/expressionengine.php/potus/essay/{url_title}">{title}</a></p>
+			<p class="lateral-nav-prev"><a href="/expressionengine.php/potus/essay/{url_title}">Previous essay: {title}</a></p>
 		{/exp:channel:prev_entry}
       </div>
       <div class="columns small-6">
         {exp:channel:next_entry channel="potus_essay"}
-			<p class="lateral-nav-next">Next essay: <a href="/expressionengine.php/potus/essay/{url_title}">{title}</a></p>
+			<p class="lateral-nav-next"><a href="/expressionengine.php/potus/essay/{url_title}">Next essay: {title}</a></p>
 		{/exp:channel:next_entry}
       </div>
     </div><!--close large next/prev-->
     <div class="row lateral-nav show-for-small">
       <div class="columns small-6">
         {exp:channel:prev_entry channel="potus_essay"}
-			<p class="lateral-nav-prev">Previous essay: <a href="/expressionengine.php/potus/essay/{url_title}">{title}</a></p>
+			<p class="lateral-nav-prev"><a href="/expressionengine.php/potus/essay/{url_title}">Previous essay</a></p>
 		{/exp:channel:prev_entry}
       </div>
       <div class="columns small-6">
         {exp:channel:next_entry channel="potus_essay"}
-			<p class="lateral-nav-next">Next essay: <a href="/expressionengine.php/potus/essay/{url_title}">{title}</a></p>
+			<p class="lateral-nav-next"><a href="/expressionengine.php/potus/essay/{url_title}">Next essay</a></p>
 		{/exp:channel:next_entry}
       </div>
     </div><!--close small next/prev-->
@@ -54,8 +60,9 @@
     <div class="row">
       <div id="essay" class="small-12 columns">
       <p><a href="#author-bio">By {potus-es-author}{potus-es-author:potus-es-authorname}{/potus-es-author}</a></p>
-
+      	{exp:allow_eecode}
 		{potus-es}      
+	{/exp:allow_eecode}
       
       </div>
     </div>
@@ -98,32 +105,56 @@
 
 {!--Next and prev have to exist outside of the channel entries tag --}
 
-    <div class="row lateral-nav hide-for-small">
+    <div class="row lateral-nav hide-for-small" id="bottom">
       <div class="columns small-6">
         {exp:channel:prev_entry channel="potus_essay"}
-			<p class="lateral-nav-prev">Previous essay: <a href="/expressionengine.php/potus/essay/{url_title}">{title}</a></p>
+			<p class="lateral-nav-prev"><a href="/expressionengine.php/potus/essay/{url_title}">Previous essay: {title}</a></p>
 		{/exp:channel:prev_entry}
       </div>
       <div class="columns small-6">
         {exp:channel:next_entry channel="potus_essay"}
-			<p class="lateral-nav-next">Next essay: <a href="/expressionengine.php/potus/essay/{url_title}">{title}</a></p>
+			<p class="lateral-nav-next"><a href="/expressionengine.php/potus/essay/{url_title}">Next essay: {title}</a></p>
 		{/exp:channel:next_entry}
       </div>
     </div><!--close large next/prev-->
-    <div class="row lateral-nav show-for-small">
+    <div class="row lateral-nav show-for-small" id="bottom">
       <div class="columns small-6">
         {exp:channel:prev_entry channel="potus_essay"}
-			<p class="lateral-nav-prev">Previous essay: <a href="/expressionengine.php/potus/essay/{url_title}">{title}</a></p>
+			<p class="lateral-nav-prev"><a href="/expressionengine.php/potus/essay/{url_title}">Previous essay</a></p>
 		{/exp:channel:prev_entry}
       </div>
       <div class="columns small-6">
         {exp:channel:next_entry channel="potus_essay"}
-			<p class="lateral-nav-next">Next essay: <a href="/expressionengine.php/potus/essay/{url_title}">{title}</a></p>
+			<p class="lateral-nav-next"><a href="/expressionengine.php/potus/essay/{url_title}">Next essay</a></p>
 		{/exp:channel:next_entry}
       </div>
     </div><!--close small next/prev-->
 
 
 {embed="potus/sharing-sidebar" target-url='{url_title}' literal='some information hard-coded'}
-
-{embed="potus/footer"}
+    <!-- Email call-to-action (modal)-->
+    <!-- Modal (hidden at page load)-->
+    <div id="emailModal" data-reveal aria-labelledby="emailModalTitle" aria-hidden="true" role="dialog" class="reveal-modal">
+      <h2 id="emailModalTitle">Sign Up For Access To Miller Center Updates &amp; Resources</h2>
+      <div>
+        <p class="text-justify">Sign up for our newsletter and get advance notice of special events and guests, in addition to select publications from Miller Center experts.</p>
+      </div>
+      <form> 
+        <div class="row">
+          <div class="large-12 columns">
+            <div class="row">
+              <div class="small-12 columns">
+                <input type="text" name="name" placeholder="Your Name">
+              </div>
+            </div>
+            <div class="row collapse">
+              <div class="small-7 columns">
+                <input type="text" name="email" placeholder="Enter your email address...">
+              </div>
+              <div class="small-5 columns"><a href="#" class="button postfix">Keep me in the Loop!</a></div>
+            </div>
+          </div>
+        </div>
+      </form><a aria-label="Close" class="close-reveal-modal">&#215;</a>
+    </div>
+{embed="potus/footer" kind="essay"}

@@ -5,6 +5,9 @@
 {!-- This is a misc or "about" page. Display its contents. --}
 {exp:channel:entries channel="potus_about" require_entry="yes" cache="yes" refresh="120"}
 
+	{!-- If the query failed, send the visitor to the project home page. --}
+	{if no_results}{redirect="potus/index"}{/if}
+
 	{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/about.css"}	
 
     <div class="row">
@@ -39,10 +42,12 @@
 {exp:channel:entries channel="potus" limit="1" orderby="potus-released" sort="desc"}
 	{embed="potus/header" header-title="The First Year Project" css-include="{exp:string name='asset_path'}/css/home.css" css-hero-include="{potus-home-css}" kind="home"}
 
+	{!-- Create a variable to store our meta description. --}
+	{exp:string:set name="meta_description"}A non-partisan effort to examine the history and structure of presidential First Years, assess the policy opportunities and threats for our next President, and influence the national debate by addressing candidates, opinion leaders, and the public.{/exp:string:set}
 	
     <div class="row">
       <div class="small-12 columns hero">
-        <div class="row news">
+        <!--<div class="row news">
           <div id="the-latest" class="small-6 medium-2 small-centered columns hide-for-small-only right">
             <ul>
               <li class="label">The Latest</li>
@@ -51,7 +56,10 @@
               <li class="hide"><a href="#">Veniam hic beatae maiores laboriosam cum soluta</a></li>
             </ul>
           </div>
-        </div>
+        </div>-->
+
+{embed="potus/latest"}
+
         <div class="row hero-title">
           <div id="hero-title" class="small-12 small-centered medium-centered columns">
             <h2>Issue {potus-number}</h2><span class="stars">&#x2605; &#x2605; &#x2605;</span>
@@ -95,28 +103,29 @@
         </div>
       </div>
     </div>
+
+
+
     
 {/exp:channel:entries}    
     
     <div class="row">
       <div class="small-0 large-1 columns spacer">&nbsp;</div>
       <div id="featured" class="small-12 medium-8 large-7 columns">
-      
-        <h2>Featured</h2>
         
 		{exp:channel:entries channel="potus_blog" category="447" limit="4"}		
         <div class="small-6 featured-item">
  
 			{potus-bl-image}
  			<div class="media">
-				<div class="media-item"><img src="{potus-bl-image:potus-bl-imagefile}"></div>
+				<div class="media-item"><a href="/expressionengine.php/potus/blog/{url_title}"><img src="{potus-bl-image:potus-bl-imagefile}"></a></div>
 				<div class="media-credit">{potus-bl-image:potus-bl-imagecredit}</div>
           	</div>
           	{/potus-bl-image}
           	
 			<div class="featured-item-text">
-				<h4><a href="/expressionengine.php/potus/blog/{url_title}">{title}</a></h4>
-				<p class="content">{potus-bl-teaser} <a href="/expressionengine.php/potus/blog/{url_title}" class="more">more </a></p>
+				<h3><a href="/expressionengine.php/potus/blog/{url_title}">{title}</a></h3>
+				<p class="content">{potus-bl-teaser}</p>
 			</div>
         </div>
         {/exp:channel:entries}	
