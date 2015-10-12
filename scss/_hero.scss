@@ -351,6 +351,7 @@ $hero-height: 30rem !default;
   bottom: 0;
   min-height: 110px;
   max-height: 25%;
+  padding: 0;
   background-color: transparentize(#111,0.6);
 } // end #hero-row .hero #hero-navigation-row default
 @media #{$small-up} {
@@ -361,6 +362,7 @@ $hero-height: 30rem !default;
 @media #{$medium-up} {
   /* the column holding the navigational tabs */
   #hero-row .hero #hero-navigation-row {
+    padding: 0 rem-calc(15); // to align with content container below
   }  
 } // end #hero-row .hero #hero-navigation-row medium-up
 @media #{$large-up} {
@@ -376,138 +378,212 @@ $hero-height: 30rem !default;
 
 // default
 /* the column holding the navigational tabs */
-.subnav {
+#nav-tabs {
   $window-tint: 0.3;
   $active-border-width: 5px;
-  margin: 0 auto;
-  padding: 0.5em 0;
+  padding: 0 0.5em;
   min-height: 5rem;
   max-height: 8rem;
-  overflow:visible;
-  /* ul */
-  #nav-tabs {
-    li.tab {
-      .tab-entry {
-        position: absolute;
-        top: 0;
-        height: 100%;
-        width: 25%;
-        background-color:none;
-        @include single-transition(background-color, 500ms, ease-in-out);
-        &:hover {
-          background-color: rgba(250,250,250,$window-tint);
-        }
-        &.is-active {
-          a {
-            color: $info-color !important;
-          }
-          a::after {
-            $bar-width-ratio: 45;
-            display: block;
-            position:absolute;
-            content: "";
-            height: 2px;
-            width: #{$bar-width-ratio}%;
-            left: #{(100 - $bar-width-ratio) / 2}%;
-            margin: -1.8em auto 15px auto;
-            background-color: $info-color;
-          }
-          border-bottom: none;
-          top: -$active-border-width;
-          height: 110%;
-          left: 0;
-        }
+  overflow:hidden;
+  .tab {
+    padding: 0 !important;
+    margin: 0;
+    .tab-entry {
+      top: 0;
+      min-height: 6rem;
+      height: 100%;
+      background-color:none;
+      @include single-transition(background-color, 500ms, ease-in-out);
+      &:hover {
+        background-color: rgba(250,250,250,$window-tint);
+      }
+      &.is-active {
         a {
-          padding: 0;
-          margin: 0 auto;
-          display: inline-block;
-          width: 100%;
-          text-align: center;
-          &:hover {
-            color: $info-color;
-            transition: all .25s ease-in-out;
-            text-decoration: none;
-          }            
+          color: $info-color !important;
         }
-        p {
-          letter-spacing: 0.04em;
-          line-height: 100%;
-          font-size: 0.6rem;
-          text-align: center;
-          padding: 0 0 0 0;
-          margin-top: 0.5em;
+        a::after {
+          $bar-width-ratio: 45;
+          display: block;
+          position:absolute;
+          content: "";
+          height: 2px;
+          width: #{$bar-width-ratio}%;
+          left: #{(100 - $bar-width-ratio) / 2}%;
+          margin: -1.8em auto 15px auto;
+          background-color: $info-color;
         }
-      &.unreleased a, &.unreleased p {color: $secondary-color;}
+        border-bottom: none;
+        top: -$active-border-width;
+        height: 110%;
+        left: 0;
       }
-      
       a {
-        padding: 0.9rem 1rem 0.75rem;
-        font-size: 0.875rem;
-        color: #fff;
-        text-transform: uppercase;
-        display: block;
-        letter-spacing: 0.15em;
-        top: 0;
-        position: relative;
-
+        padding: 0;
+        margin: 0 auto;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        &:hover {
+          color: $info-color;
+          transition: all .25s ease-in-out;
+          text-decoration: none;
+        }            
       }
+      p {
+        letter-spacing: 0.04em;
+        line-height: 100%;
+        font-size: 0.6rem;
+        text-align: center;
+        padding: 0 0 0 0;
+        margin-top: 0.5em;
+      }
+    &.unreleased a, &.unreleased p {color: $secondary-color;}
+    }
+    a {
+      padding: 0.9rem 1rem 0.75rem;
+      font-size: 0.875rem;
+      color: #fff;
+      text-transform: uppercase;
+      display: block;
+      letter-spacing: 0.15em;
+      top: 0;
+      position: relative;
+
     }
   }
-} // end .subnav default
+} // end #navtabs default
+@media #{$small-only} {
+  #hero-row #hero-navigation-row {
+    // make entries legible
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1),  rgba(0, 0, 0, 0));    
+  }
+  #nav-tabs {
+    margin-top: 1rem;
+  }
+}
+
 @media #{$small-up} {
   /* the column holding the navigational tabs */
   #hero-row #hero-navigation-row .subnav {
-    float: none;
     position: absolute;
     bottom: 0;
     margin-bottom: 0;
-    left: 10%;
-    width: 75%;
-  }  
-} // end #hero-navigation-row .subnav small-up
-@media #{$medium-only} {
+    .tab-entry {
+      margin-top: -0.7rem;
+      padding-top: 0rem;
+      a, p {
+        position:absolute;
+        font-size: 0.6rem;
+        font-weight: 100;
+        letter-spacing: 0.04em;
+        line-height: 120%;
+        padding: 0 0 0 0;
+        text-align: center;
+        margin-top: 0.5em;
+      }
+      a {
+          top: 0;
+      }
+      p {
+          top: 25%;
+      }
+    }
+  }
   #nav-tabs {
     .tab {
       .tab-entry {
+        margin-top: -0.7rem;
+        padding-top: 0rem;
         a, p {
           font-size: 0.6rem;
           line-height: 140%;
-          width: 100%;
           font-weight: 100;
           padding-left: 0.25em;
+        }
+        a {
+          top: 0;
+        }
+        p {
+          top: 33%;
         }
       }
     }
   }
-} // end #hero-navigation-row .subname medium-only
+} // end #hero-navigation-row .subnav small-up
+@media #{$medium-only} {
+  #hero-row #hero-navigation-row {
+    // make entries legible
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.33),  rgba(0, 0, 0, 0));    
+  }
+} // end #hero-row #hero-navigation-row medium-only
 @media #{$medium-up} {
   /* the column holding the navigational tabs */
-  #hero-row #hero-navigation-row .subnav {
-  }  
+  #hero-row #hero-navigation-row{
+  }
+  #nav-tabs {
+    .tab {
+      .tab-entry {
+        margin-top: -0.7rem;
+        padding-top: 0rem;
+        a, p {
+          position:absolute;
+          font-size: 0.6rem;
+          line-height: 140%;
+          font-weight: 100;
+          padding-left: 0.25em;
+        }
+        a {
+          top: 0;
+          height: 66%; // make anchor easy to hit
+        }
+        p {
+          top: 33%;
+        }
+      }
+    }
+  }
 } // end #hero-navigation-row .subnav medium-up
 @media #{$large-up} {
   /* the column holding the navigational tabs */
-  #hero-row #hero-navigation-row .subnav {
+  #hero-row #hero-navigation-row {
+    #nav-tabs {
+      padding: 0;
+      min-height: 5rem;
+      .tab-entry {
+        min-height: 6rem;
+        padding-top: 0rem;
+        a, p {
+          position:absolute;
+          line-height: 100%;
+          font-weight: 100;
+          text-align: center;
+          margin-top: 0.5em;
+          padding-left: 0.25em;
+          width: 100%;
+          margin-right:auto;
+          margin-left:auto;
+        }
+        a {
+          letter-spacing: 0.15em;
+          font-size: 0.875rem;
+          height: 66%; // make anchor easy to hit
+        }
+        p {
+          letter-spacing: 0.04em;
+          font-size: 0.6rem
+        }
+        a {
+            top: 0;
+        }
+        p {
+            top: 33%;
+        }
+
+        }
+    }
   }  
 } // end #hero-navigation-row .subnav large-up
 
-
-@media #{$small-up} {
-  /* the column holding the navigational tabs */
-  #hero-navigation-row .subnav {
-
-  }  
-} // end .subnav small-up
-@media #{$medium-up} {
-  /* the column holding the navigational tabs */
-  #hero-navigation-row .subnav {
-  }  
-} // end .subnav medium-up
-@media #{$large-up} {
-  /* the column holding the navigational tabs */
-  #hero-navigation-row .subnav {
-  }  
-} // end .subnav large-up
 
 
 .hero {
@@ -544,12 +620,6 @@ $hero-height: 30rem !default;
 
 
   .hero-title {
-    // text-align: center;
-    // margin-top: $topbar-height;
-    h2 {
-      // color: $first-year-grey;
-      // text-transform: uppercase;
-    }
     h3 {color: #fff; font-weight: initial;}
     .stars {
       letter-spacing: 0.25em;
@@ -637,16 +707,16 @@ $hero-height: 30rem !default;
       }
     }
     #hero-navigation-row {
-      height: 4rem;
+      // height: 4rem;
       .subnav {
         #nav-tabs {
           .tab {
             .tab-entry {
               a, p {
-                font-size: 0.5rem;
-                line-height: 130%;
-                width: 100%;
-                padding-left: 0.25em;
+                // font-size: 0.5rem;
+                // line-height: 130%;
+                // width: 100%;
+                // padding-left: 0.25em;
               }
             }
           }
