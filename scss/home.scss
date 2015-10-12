@@ -59,21 +59,3 @@ $hero-height: 30rem;
 	
 
 }
-
-// this is to address situations where iphones aren't
-// displaying pages across the full viewport width
-@media screen and (max-width: 395px) and (orientation: portrait) {
-  $iphone-6-max-w: 414;
-  #navigation-container {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
-  }
-  body {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
-  }
-  body > .row {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
-  }
-} // end custom media query

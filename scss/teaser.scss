@@ -52,6 +52,7 @@ $hero-height: 30rem;
 #hero-row .hero #teasertext {
   position: absolute;
   bottom: 5%;
+  max-width: 100% !important;
 }
 
 
@@ -69,28 +70,28 @@ $hero-height: 30rem;
   line-height: 1.5em;}
 
 
-$hero-z: $sidebar-z + 1; //
-.hero {
-  height: $hero-height;
-  top: -($topbar-height);
-  position: relative;
-  max-width: $row-width;
-  &:before {
-    content: '';
-    height: auto;
-    position: absolute;
-    top: 0; // watch out for topbar
-    right: 0;
-    bottom: 0;
-    left: 0;
-    // background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
-    background-image: linear-gradient(to bottom right,#111,#444);
-    opacity: .55; // was .8 
-  }
-  /* this margin-bottom positions video within hero image */
-  // margin-bottom: -100px; 
+// $hero-z: $sidebar-z + 1; //
+// .hero {
+//   height: $hero-height;
+//   top: -($topbar-height);
+//   position: relative;
+//   max-width: $row-width;
+//   &:before {
+//     content: '';
+//     height: auto;
+//     position: absolute;
+//     top: 0; // watch out for topbar
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     // background-image: linear-gradient(to bottom right,#002f4b,#dc4225);
+//     background-image: linear-gradient(to bottom right,#111,#444);
+//     opacity: .55; // was .8 
+//   }
+//   /* this margin-bottom positions video within hero image */
+//   // margin-bottom: -100px; 
   
-}
+// }
 
 
 #container p {margin-top: 25px;} /*Pad any p that's loose in the container*/
@@ -108,11 +109,11 @@ a.more {
   }
 } 
 
-.hero-title h1.main-title {
-	font-family: 'Crimson Text', serif;
-	font-size: 44px;
-	line-height: 50px;
-	margin-bottom: 0.5rem;}
+// .hero-title h1.main-title {
+// 	font-family: 'Crimson Text', serif;
+// 	font-size: 44px;
+// 	line-height: 50px;
+// 	margin-bottom: 0.5rem;}
 		
 /*h2 {font-family: Verdana, sans-serif; font-size: 50px; line-height: 60px;}	
 h3 {font-family: Verdana, sans-serif; font-size: 40px; line-height: 50px;}	
@@ -324,8 +325,26 @@ $donate-orange-hover: scale-color($donate-orange, $lightness: 20%);
       max-width: 100%;
     }
   }
+  #teasertext {
+    top: initial;
+    bottom: 0 !important;
+    p {
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;  
+    }
+  }
   #videotrailer iframe {
     width: 100vw !important;
+  }
+}
+@media #{$small-up} and (orientation: landscape) {
+  #teasertext {
+    top: initial;
+    bottom: 0 !important;
+    p {
+      padding: 0 !important;
+      margin-bottom: 0 !important;  
+    }
   }
 }
 @media #{$small-only} and (orientation: portrait) {
@@ -351,7 +370,12 @@ $donate-orange-hover: scale-color($donate-orange, $lightness: 20%);
 }
 #navigation-container h1 {color:#fff;}
 
-footer#bodyFooter.footer {min-height: 150px; background-color: $first-year-blue; }
+footer#bodyFooter.footer {
+  min-height: 150px; 
+  background-color: $first-year-blue; 
+  min-width: 100% !important;
+  width: 100% !important;
+}
 footer {color: #ccc; font-size: smaller; clear:both;}
 footer a, footer a:visited {color: #fff;}
 footer img {margin: 1.5em; float:left;}
@@ -404,19 +428,29 @@ footer p {margin-top: 1.5em; margin-right: 1.5em; margin-left: 1em;}
 
 // this is to address situations where iphones aren't
 // displaying pages across the full viewport width
-@media screen and (max-width: 395px) and (orientation: portrait) {
+@media screen and (max-width: 375px) and (orientation: portrait) {
   $iphone-6-max-w: 414;
-  #navigation-container {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
+  #navigation-container, .row#hero-row .small-12.columns.hero {
+    // max-width: #{$iphone-6-max-w}px;
+    // min-width: #{$iphone-6-max-w}px;
+    // width: #{$iphone-6-max-w}px;
+    // max-width: 375px !important;
+    // min-width: 375px !important;
+    // width: 375px !important;
   }
-  body {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
+  .row#hero-row .small-12.columns.hero {
+  }
+  body, footer {
+    // max-width: #{$iphone-6-max-w}px;
+    // width: #{$iphone-6-max-w}px;
+    // max-width: 100% !important;
+    // width: 100% !important;
   }
   body > .row {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
+    // max-width: #{$iphone-6-max-w}px;
+    // width: #{$iphone-6-max-w}px;
+    // max-width: 100% !important;
+    // width: 100% !important;
   }
 } // end custom media query
 
@@ -424,7 +458,7 @@ footer p {margin-top: 1.5em; margin-right: 1.5em; margin-left: 1em;}
 // disable menus on this teaser page
 //
 @if $hide-menus == 'true' {
-  .main-menu-section, #mobile-menu {
+  .main-menu-section, #mobile-menu, .social-section {
     display: none !important;
   }
   @media #{$small-up} {
@@ -441,4 +475,3 @@ footer p {margin-top: 1.5em; margin-right: 1.5em; margin-left: 1em;}
     }
   }
 }
-
