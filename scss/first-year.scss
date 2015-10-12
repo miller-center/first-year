@@ -42,7 +42,7 @@ $hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1
   position: relative;
   padding-left: 0;
   padding-right: 0;
-  margin-bottom: -2em;
+  margin-bottom: -($topbar-height);
   z-index: $hero-z;
   &:before {
     content: '';
