@@ -166,7 +166,7 @@ $hero-height: 30rem;
           background-size: 64px 64px;
           display: block;
           content: "";
-          top: 25%;
+          top: 15%;
           left: 35%;
           height: 64px !important;
           width: 64px !important;
@@ -174,13 +174,11 @@ $hero-height: 30rem;
         }
         a {
           position: absolute;
-          height: 75%;
-          width: 67%;
-          left: percentage(0.33/2); // split 100 - 66 between left and right
-          h2 { // make up for this left gutter
-            margin-left: -15%;
-          }
-          top: 0;
+          height: 40%;
+          width: 100%;
+          top: initial;
+          bottom: 0;
+          left: 0;
           margin: 0 auto;
         }
       }
@@ -193,25 +191,24 @@ $hero-height: 30rem;
         margin-right: $panel-gutter;
         a {
           position: absolute;
-          height: 75%;
-          width: 67%;
-          left: percentage(0.33/2); // split 100 - 66 between left and right
-          h2 { // make up for this left gutter
-            margin-left: -15%;
-          }
-          top: 0;
+          height: 40%;
+          width: 100%;
+          top: initial;
+          bottom: 0;
           margin: 0 auto;
         }
         h2, p {
-          color:darken($body-font-color, 99%);
+          color:lighten($body-font-color, 99%);
         }
         h2 {
           position:absolute;
           line-height: 0.85rem;
           font-size: 0.75rem;
-          margin-top: 0.5rem;
+          margin-top: 0;
           padding: 0 0.25em;
           top: 0;
+          height: 100%;
+          bottom: 0;
         }
         p {
           position:absolute;
@@ -221,13 +218,14 @@ $hero-height: 30rem;
           padding-right: 0.25em;
         }
         &:before {
-          background-color: transparentize(#FFF, 0.4);
+          background-color: transparentize($black, 0.4);
           content: '';
           position:absolute;
           left: 0;
-          top: 0;
+          top: initial;
+          bottom: 0;
           width: 100%;
-          height: 100%;
+          height: 40%;
         }
       }
       .slick-dots {
@@ -361,17 +359,7 @@ $hero-height: 30rem;
         position:absolute;
       }
       a {
-        position: absolute;
-        height: 75%;
-        width: 67%;
-        left: percentage(0.33/2); // split 100 - 66 between left and right
-        h2 { // make up for this left gutter
-          position: absolute;
-          margin-left: -25% !important;
-          margin-right: -25% !important;
-        }
-        top: 0;
-        margin: 0 auto;
+
       }
     }   
   }
