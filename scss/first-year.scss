@@ -131,22 +131,23 @@ ul {list-style-type: circle;}
 @import url(https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911); //move import if approved for deployment
 #emailModal, #donateModal {
   position:fixed;
+  top: 0;
   $logo-size: 100;
   $logo-offset: 0;
   padding-left: 0;
   padding-top: rem-calc($logo-size * 1.20);
-  &:before {
-    position: absolute;
-    left: 0;
-    margin-left: -$logo-offset;
-    top: 0;
-    margin-top: -$logo-offset;
-    content: "";
-    width: #{$logo-size}px;
-    height: #{$logo-size}px;
-    background: url('../images/logos/mc_logo.png') no-repeat center center;
-    background-size: contain;
-   }
+  // &:before {
+  //   position: absolute;
+  //   left: 0;
+  //   margin-left: -$logo-offset;
+  //   top: 0;
+  //   margin-top: -$logo-offset;
+  //   content: "";
+  //   width: #{$logo-size}px;
+  //   height: #{$logo-size}px;
+  //   background: url('../images/logos/mc_logo.png') no-repeat center center;
+  //   background-size: contain;
+  //  }
 }
 #emailModal, #donateModal {
   div, h2 {
