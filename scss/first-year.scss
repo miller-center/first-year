@@ -205,7 +205,7 @@ ul {list-style-type: circle;}
 
 @media #{$medium-up} {
   #emailModal, #donateModal {
-    top: 25% !important;
+    top: 5% !important;
     $logo-offset: 1rem;
     $logo-size: 150;
     padding-left: rem-calc($logo-size);
@@ -222,7 +222,7 @@ ul {list-style-type: circle;}
 
 @media #{$large-up} {
   #emailModal, #donateModal {
-    top: 25% !important;
+    top: 5% !important;
     $logo-offset: 2rem;
     $logo-size: 225;
     padding-left: rem-calc($logo-size);
