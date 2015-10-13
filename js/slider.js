@@ -61,30 +61,19 @@ $(document).ready(function() {
 
     // start/stop for touch devices
     $(document).on("touchstart", function (e) {
-        var container = $('#stopSlide');
-        console.log('touchstart detected');
 
-        // if the target of the click isn't the container...
-        if ( container.is(e.target) && container.has(e.target).length === 0) {
-            // stop the ticker
-            console.log('touchstart detected in slider');
+        // check to see if ticker's stoped, restart if it is
+        console.log('FirstYear.timeout='+ FirstYear.timeout);
+        if (FirstYear.timeout === null) {
+            console.log('restarting ticker');
+            currentSlide = $('.slider li.slide').filter('.current');
+            index = currentSlide.index('.slider li.slide');
+            $('.slider').trigger('activateTicker', index);
+        } else {
             console.log('pausing ticker (timeout = ' + FirstYear.timeout + ')');
             clearTimeout(FirstYear.timeout);
             FirstYear.timeout = null;
-
-        } else {
-            console.log('touchstart detected outside');
-            // check to see if ticker's stoped, restart if it is
-            console.log('FirstYear.timeout='+ FirstYear.timeout);
-            if (FirstYear.timeout === null) {
-                console.log('restarting ticker');
-                currentSlide = $('.slider li.slide').filter('.current');
-                index = currentSlide.index('.slider li.slide');
-                $('.slider').trigger('activateTicker', index);
-            }
-
         }
-
     });
 
 });
