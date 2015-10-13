@@ -9,7 +9,7 @@ html(lang="en")
 		title #{title}
 		meta(name="description", content="")
 		meta(name="author", content="")
-		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=yes")
 		link(rel="stylesheet", href="#{project_home}/css/first-year.css")
 		link(rel="stylesheet", href="#{project_home}/css/essay.css")
 		link(rel="stylesheet", href="#{project_home}/css/hero/issue1/essay1.css")
@@ -21,10 +21,7 @@ html(lang="en")
 
 
 		//- Hero Image Section
-		.row
-			//- .small-12.columns
-			//- 	h1
-			//- 		a(href="#") LINK
+		.row#hero-row
 			.small-12.columns.hero
 				//.row.news
 					.small-6.medium-2.small-centered.columns.hide-for-small-only.right#the-latest
@@ -36,11 +33,11 @@ html(lang="en")
 
 				.row.hero-title
 					.small-12.small-centered.medium-uncentered.columns#hero-title
-						h2 
+						h2.supertitle.grey 
 							a(href="issue.html") Issue 1
 						span.stars &#x2605; &#x2605; &#x2605;
 						h1.main-title The Promise and Peril of a President’s First Year
-						h3 Lorem ipsum text subtitle goes here.
+						h3.subtitle Lorem ipsum text subtitle goes here.
 						
 			//- end hero
 
@@ -86,7 +83,6 @@ html(lang="en")
 					figcaption
 						p President Ronald Reagan meets with his advisors, including (from left to right) Ed Meese, Michael Deaver, James Baker, and James Brady. 
 		
-				
 				p History suggests that first-year presidents should keep several considerations in mind as they take up these tasks. In selecting individuals for their administrations, presidents should balance their personal connections to appointees with appointees’ experience of government. This is especially important for presidents with little personal experience of their own of life in Washington. Carter’s reputation as an outsider served him well as a candidate in the wake of the Watergate scandal, but the “Georgia mafia” that took control of the White House found Washington unfamiliar and, soon enough, unfriendly. Carter’s presidency suffered as a consequence. Reagan, by contrast, created a “troika” consisting of two loyalists from California, Michael Deaver and Ed Meese, and Washington pro James Baker. Reagan’s administration got off to a fast start and continued to run smoothly with Baker as chief of staff. (Things unraveled under Baker’s successor, Donald Regan.) 
 				
 				p Incoming presidents must establish priorities. Some presidents have priorities thrust upon them: Lincoln had to deal with secession, Franklin Roosevelt to address the Great Depression, Truman to finish World War II. But most presidents have leeway in deciding what to tackle first. Even amid the crisis of the Depression, Roosevelt initially focused on rescuing the banking system and getting relief to unemployed workers and their families; measures with longer horizons, such as Social Security, were deferred till later. Lyndon Johnson had big plans for his Great Society, but his first year was given to civil rights reform. Reagan devoted his first six months to cutting taxes and nondefense spending. Presidents without focus, by contrast, have often failed. The micromanaging Carter wanted to be everywhere but, as a result, spread himself too thin to gain policy traction anywhere. Clinton ran on economic issues (“It’s the economy, stupid”), but wandered afield into a disastrous effort to reform health care. 
@@ -192,16 +188,20 @@ html(lang="en")
 			.columns.small-6
 				p.lateral-nav-next <a href="">Next Essay</a>
 
-
+		// sharing sidebar
 		include ./sidebar.jade
-
+		// Email call-to-action (modal)
+		include ./emailcta.jade
+		// Footer
 		include ./footer.jade
 
 		script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
+		script(src="#{project_home}/bower_components/js-cookie/src/js.cookie.js")
 		//- remove http protocol from production version
 		script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.topbar.js")
+		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.reveal.js")
 		script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.interchange.js")
 		script(src="#{project_home}/bower_components/slick-carousel/slick/slick.min.js")
 		//- script(src="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")

@@ -85,24 +85,24 @@ $(document).ready(function() {
     });
   }
 
-  function rotateNewsItem() {
-    fadeTime = 300;
-    listItems.eq(current++).fadeOut(fadeTime, function() {
-      if (current === length) {
-        current = 0;
-      }
-      listItems.eq(current).fadeIn(fadeTime);      
-    });
-  }
+  // function rotateNewsItem() {
+  //   fadeTime = 300;
+  //   listItems.eq(current++).fadeOut(fadeTime, function() {
+  //     if (current === length) {
+  //       current = 0;
+  //     }
+  //     listItems.eq(current).fadeIn(fadeTime);      
+  //   });
+  // }
 
 
   // correct linking targets to accommodate topbar nav strip
   function scroll_if_anchor(href) {
     href = typeof(href) == "string" ? href : $(this).attr("href")
-    console.log('scroll_if_anchor called successfully');
+
+
     // If href missing, ignore
     if(!href) return;
-    console.log('scroll_if_anchor parameter passed');
 
     // Amount of padding to add (in pixels)
     var topbarHeight = $('nav').height();

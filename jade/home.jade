@@ -9,7 +9,7 @@ html(lang="en")
 		title #{title}
 		meta(name="description", content="")
 		meta(name="author", content="")
-		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=yes")
 		link(rel="stylesheet", href="#{project_home}/css/first-year.css")
 		link(rel="stylesheet", href="#{project_home}/css/home.css")
 		link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
@@ -27,28 +27,25 @@ html(lang="en")
 
  
 		//- Hero Image Section
-		.row
-			//- .small-12.columns
-			//- 	h1
-			//- 		a(href="#") LINK
+		.row#hero-row
 			.small-12.columns.hero
-				.row.news
+				.row.news#stopSlide
 					.small-6.medium-2.small-centered.columns.hide-for-small-only.right#the-latest
 						ul
-							li.label#stopSlide The Latest
+							li.label The Latest
 							li <a href="#">Lorem ipsum dolor sit amet.</a>
 							li <a href="#">Consectetur adipisicing elit. </a>
 							li <a href="#">Veniam hic beatae maiores laboriosam cum soluta</a>
 
 				.row.hero-title
 					.small-12.small-centered.medium-centered.columns#hero-title
-						h2 Issue 1
+						h2.grey.supertitle Issue 1
 						span.stars &#x2605; &#x2605; &#x2605;
 
 						h1.main-title 
 							a(href="#") Why the First Year Matters
 							
-						p Six essays about the promises and pitfalls of the first 365 days in office.
+						h3.subtitle Six essays about the promises and pitfalls of the first 365 days in office.
 
 				.row.intro-nav
 					.small-11.small-centered.medium-10.large-8.xlarge-7.large-centered.columns
@@ -59,24 +56,23 @@ html(lang="en")
 								a(href="about.html") Learn about First Year 2017
 
 				.row#hero-navigation-row
-					.subnav.small-12.medium-10.medium-centered.columns
-						ul.small-block-grid-4#nav-tabs
-							li.tab
-								.tab-entry.is-active
-									a(href="#") 1 Crucible
-									p Why the First Year Matters
-							li.tab
-								.tab-entry.unreleased
-									a(href="#") 2 Power
-									p National Security and World Order <br>January 2016
-							li.tab
-								.tab-entry.unreleased
-									a(href="#") 3 Finances
-									p The Critical First Budget <br>February 2016
-							li.tab
-								.tab-entry.unreleased
-									a(href="#") 4 Identity
-									p Immigration and Racial Issues <br>April 2016
+					.subnav.small-12.medium-10.medium-offset-1.large-centered.columns#nav-tabs
+						.small-3.columns.tab
+							.tab-entry.is-active
+								a(href="#") 1 Crucible
+								p Why the First Year Matters
+						.small-3.columns.tab
+							.tab-entry.unreleased
+								a(href="#") 2 Power
+								p National Security and World Order <br>January 2016
+						.small-3.columns.tab
+							.tab-entry.unreleased
+								a(href="#") 3 Finances
+								p The Critical First Budget <br>February 2016
+						.small-3.columns.tab
+							.tab-entry.unreleased
+								a(href="#") 4 Identity
+								p Immigration and Racial Issues <br>April 2016
 
 
 		.row

@@ -1,7 +1,11 @@
 $hero-height: 30rem;
 @import "settings";
+
+/* override Foundation defaults before importing foundation */
+
 @import "foundation";
 // @import "foundation-icons.css";
+@import "utils";
 @import "header";
 @import "sidebar";
 @import "footer";
@@ -18,488 +22,29 @@ $hero-height: 30rem;
 // project-wide styling here
 
 body {
+  position:relative;
   z-index: 0;
 }
 
+// global classes 
+.grey {
+  color: $first-year-grey;
+}
+.supertitle {
+  text-transform: uppercase;
+}
+
 //
-// HEADER (NAVBAR) STYLES
+// 1.0 HEADER (NAVBAR) STYLES
 //
 // see "_header.scss"
 
 
 //
-// HERO IMAGE CONTAINER 
+// 2.0 HERO IMAGE CONTAINER 
 //
-// hero stuff needs SERIOUS refactoring
 
-
-$hero-z: $sidebar-z + 1; //This is shading the hero text when it's set to 0 or 1, not sure why. 
-.hero {
-  background: url('../images/heros/sm/white-house.jpg') no-repeat center center;
-  background-size: cover;
-  height: $hero-height;
-  top: -($topbar-height);
-  position: relative;
-  padding-left: 0;
-  padding-right: 0;
-  margin-bottom: -($topbar-height);
-  z-index: $hero-z;
-  &:before {
-    content: '';
-    height: $hero-height;
-    position: absolute;
-    top: 0; // watch out for topbar
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-image: linear-gradient(to bottom right,#222222,#111111);
-    opacity: .55;  // was .8 
-    z-index: $hero-z;
-  }
-  * {
-    z-index: $hero-z + 1;
-  }
-  .news {
-    position: absolute;
-    right: 1rem;
-    top: ($topbar-height) - rem-calc(25);
-    #the-latest {
-      width: 15rem;
-      background-color: transparentize(#111, 0.3);
-      z-index: $hero-z + 100;
-      ul {
-        list-style-type: none;
-        color: #ddd;
-        margin-bottom: 2px;
-        padding-bottom: 0.5em;
-        li.label {
-          color: $info-color;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-          background-color: transparent;
-          font-size: 75%;
-        }
-        li {
-          font-size: 85%;
-          font-weight: 100;
-          letter-spacing: 2px;
-          a {
-            color: #eee;
-            z-index: $hero-z + 101;
-            height: 100%;
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  /* two buttons side-by-side, below title */
-  .intro-nav {
-    z-index: $hero-z + 10;
-    color: #eee;
-    .row {
-      margin: 0 auto;
-    }
-    div {
-      display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
-      display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
-      display: -ms-flexbox;      /* TWEENER - IE 10 */
-      display: -webkit-flex;     /* NEW - Chrome */
-      display: flex; 
-    }
-    .columns {
-      .intro-button {
-        position: relative;
-        z-index: 10;
-        text-align: center;
-        padding: 0.3em 1em;
-        display: inline-block;
-        -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
-        -moz-box-flex: 1;
-        -webkit-flex: 1;          /* Chrome */
-        flex: 1;
-        margin: 0 0.5em;
-        min-width: 45%;
-        max-width: 47%;
-        width: 50%;
-        text-transform: uppercase;
-        font-size: 90%;
-        $gradient-opacity: 0.7;
-        $hover-opacity: 0.5;
-        border: 1px solid rgba(#eee, 0.3);
-        border-radius: 1px;
-        background: -webkit-radial-gradient(transparentize(#000, $gradient-opacity) 5%, transparentize(#333, $gradient-opacity) 25%, transparentize(#888, $gradient-opacity) 95%);
-        &:hover, &:active {
-          background: -webkit-radial-gradient(transparentize(#000, $hover-opacity) 5%, transparentize(#333, $hover-opacity) 25%, transparentize(#888, $hover-opacity) 95%);
-          color:$info-color;
-        }
-        @include single-transition(background, 300ms, ease-in-out);
-        @include single-transition(color, 300ms, ease-in-out);
-        a {
-          @include single-transition(color, 300ms, ease-in-out);
-          position: inherit;
-          z-index: inherit;
-          color: inherit;
-          &:hover {
-            color:$info-color;
-          }
-        }
-      }
-
-    }
-  }
-  h1 {
-    color: #fff;
-    font-size: 1.5rem;
-    line-height: 1.5em;
-    letter-spacing: -0.025em;
-    font-weight: 300;
-    text-align: center;
-  }
-  p {
-    color: #fff;
-    line-height: 1.75em;
-    font-weight: 200;
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  @media only screen and (min-width: 40.063em) {
-    h1 {
-      padding-top: 4.5rem;
-      text-align: right;
-      font-size: 2.5rem;
-    }
-    p {
-      text-align: right;
-    }
-  }
-
-  /* multiple tab-styled option panes */
-  #hero-navigation-row {
-    z-index: $hero-z + 10;
-    position:absolute;
-    margin:0 auto;
-    width: 100%;
-    bottom: 0;
-    min-height: 110px;
-    max-height: 25%;
-    background-color: transparentize(#111,0.6);
-  }
-  .subnav {
-    $window-tint: 0.3;
-    $active-border-width: 5px;
-    margin: 0 auto;
-    padding: 0.5em 0;
-    min-height: 5rem;
-    max-height: 8rem;
-    overflow:visible;
-    /* ul */
-    #nav-tabs {
-      li.tab {
-        .tab-entry {
-          position: absolute;
-          top: 0;
-          height: 100%;
-          width: 25%;
-          background-color:none;
-          @include single-transition(background-color, 500ms, ease-in-out);
-          &:hover {
-            background-color: rgba(250,250,250,$window-tint);
-          }
-          &.is-active {
-            a {
-              color: $info-color !important;
-            }
-            a::after {
-              $bar-width-ratio: 45;
-              display: block;
-              position:absolute;
-              content: "";
-              height: 2px;
-              width: #{$bar-width-ratio}%;
-              left: #{(100 - $bar-width-ratio) / 2}%;
-              margin: -1.8em auto 15px auto;
-              background-color: $info-color;
-            }
-            border-bottom: none;
-            top: -$active-border-width;
-            height: 110%;
-            left: 0;
-          }
-          a {
-            padding: 0;
-            margin: 0 auto;
-            display: inline-block;
-            width: 100%;
-            text-align: center;
-            &:hover {
-              color: $info-color;
-              transition: all .25s ease-in-out;
-              text-decoration: none;
-            }            
-          }
-          p {
-            letter-spacing: 0.04em;
-            line-height: 100%;
-            font-size: 0.6rem;
-            text-align: center;
-            padding: 0 0 0 0;
-            margin-top: 0.5em;
-          }
-        &.unreleased a, &.unreleased p {color: $secondary-color;}
-        }
-        
-        a {
-          padding: 0.9rem 1rem 0.75rem;
-          font-size: 0.875rem;
-          color: #fff;
-          text-transform: uppercase;
-          display: block;
-          letter-spacing: 0.15em;
-          top: 0;
-          position: relative;
-
-        }
-      }
-    }
-  }
-
-  .hero-title {
-    text-align: center;
-    top:0;
-    #hero-title {
-      margin-top: 10%;  //overall vertical placement of title (refactor)
-    }
-    h2 {
-      color: $first-year-grey;
-      font-size: 1.3rem;
-      letter-spacing: 0.15em;
-      font-weight: 100;
-      font-family: "Verdana";
-      text-transform: uppercase;
-    }
-    p {
-      text-shadow: 1px 1px #000000;
-      text-align: center;
-      margin: 0 auto;
-      display: inline-block;
-    }
-    .stars {
-      color: $info-color;
-      display: inline-block;
-      letter-spacing: 0.5em;
-      padding-bottom: 0.25em;
-    }
-    h1.main-title {
-      font-family: $header-title-fonts;
-      color: #fff;
-      font-size: 2.5rem;
-      line-height: 1em;
-      letter-spacing: 0.025em;
-      font-weight: 300;
-      text-align: center;
-      padding-top: 0em;
-      a {
-        color: #fff;
-        &:hover, &:visited {
-          text-decoration: none;
-        }
-      }
-    }
-    p {
-      color: #fff;
-      line-height: 1.75em;
-      font-weight: 200;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-  }
-}
-
-@media #{$small-up} {
-  .hero-title {
-    text-align: center;
-    margin-top: $topbar-height;
-    h2 {
-      color: $first-year-grey;
-      text-transform: uppercase;
-    }
-    h3 {color: #fff; font-weight: initial;}
-    .stars {
-      color: $info-color;
-      display: inline-block;
-      letter-spacing: 0.25em;
-      padding-bottom: 0.25em;
-    }
-  } // end hero-title
-  .subnav {
-    $window-tint: 0.3;
-    float: none;
-    position: absolute;
-    // top: 4rem;
-    bottom: 0;
-    // text-align: center;
-    margin-bottom: 0;
-    left: 10%;
-    width: 75%;
-    .tab {
-    }
-  }
-}
-
-@media #{$medium-up} {
-  .hero {
-    background: url('../images/heros/md/white-house.jpg') no-repeat center center;
-
-  } // end .hero
-}
-
-@media #{$large-up} {
-  .hero {
-    background: url('../images/heros/lg/white-house.jpg') no-repeat center center;    
-  } // end .hero
-}
-
-@media #{$small-only} {
-  .hero {
-    height: 25rem;
-    &:before {
-      height: 25rem;
-    }
-    margin-top: 2rem;
-    .hero-title {
-      #hero-title {
-        h1 {
-          font-size: 1.2rem;
-        }
-        h2 {
-          font-size: 0.75rem;
-        }
-        p {
-          font-size: 0.6rem;
-        }
-      }
-    }
-    .intro-nav {
-      .row {
-        margin: 0 auto;
-      }
-      a {
-        font-size: 0.6rem;
-        line-height: 1rem;
-      }
-    }
-    #hero-navigation-row {
-      height: 4rem;
-      .subnav {
-        #nav-tabs {
-          .tab {
-            .tab-entry {
-              a, p {
-                font-size: 0.5rem;
-                line-height: 130%;
-                width: 100%;
-                padding-left: 0.25em;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-@media #{$medium-only} {
-  .hero {
-    margin-top: 2rem;
-    .hero-title {
-      #hero-title {}
-    }
-    .news {
-      #the-latest {
-        margin-top: -0.5em;
-        width: 12rem;
-        ul {
-          padding-top: 0;
-          li.label {
-            letter-spacing: 1.5px;
-            font-size: 60%;
-          }
-          li {
-            font-size: 70%;
-            font-weight: 100;
-            letter-spacing: 1.5px;
-          }
-        }
-      }
-
-    }
-    .intro-nav {
-      .row {
-        margin: 0 auto;
-        width: 100% !important;
-        font-size: 0.9rem;
-        line-height: 0.9rem;
-      }
-    }
-    #hero-navigation-row {
-      .subnav {
-        #nav-tabs {
-          .tab {
-            .tab-entry {
-              a, p {
-                font-size: 0.6rem;
-                line-height: 140%;
-                width: 100%;
-                font-weight: 100;
-                padding-left: 0.25em;
-              }
-            }
-          }
-        }
-      }
-    }
-
-  } // end .hero 
-}
-
-@media #{$large-only} {
-  .hero {
-    margin-top: 2rem;
-    .hero-title {
-      #hero-title {}
-    }
-    .intro-nav {
-      .row {
-        margin: 0 auto;
-        width: 100% !important;
-      }
-    }
-    #hero-navigation-row {
-    }
-  }   
-}
-
-@media #{$xlarge-up} {
-  .hero {
-    margin-top: 2rem;
-    .hero-title {
-      #hero-title {}
-    }
-    .intro-nav {
-      .row {
-        width: 100% !important;
-        font-size: 0.9rem;
-        line-height: 0.9rem;
-      }
-    }
-    #hero-navigation-row {
-    }
-  }  
-}
+// See @import "hero" in individual stylesheets
 
 
 //
@@ -556,36 +101,6 @@ ul {list-style-type: circle;}
 	}
 
 
-// this is to address situations where iphones aren't
-// displaying pages across the full viewport width
-@media screen and (max-width: 375px) and (orientation: portrait) {
-  $iphone-6-max-w: 395;
-  #navigation-container {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
-  }
-  body {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
-  }
-  body > .row {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
-  }
-} // end custom media query
-
-@media #{$small-up} {
-
-}
-
-@media #{$medium-up} {
-
-}
-
-@media #{$large-up} {
-
-}
-
 @media #{$small-only} {
   
 }
@@ -600,4 +115,130 @@ ul {list-style-type: circle;}
 
 @media #{$xlarge-only} {
   
+}
+
+//
+// Modals (popups)
+//
+
+// Video Player (Issue page, maybe blogs)
+#videoModal {
+  position: fixed !important; // ensure stays in viewport
+}
+
+
+// Call-to-Action styles
+@import url(https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911); //move import if approved for deployment
+#emailModal, #donateModal {
+  position:fixed;
+  top: 0;
+  $logo-size: 100;
+  $logo-offset: 0;
+  padding-left: 0;
+  padding-top: rem-calc($logo-size * 1.20);
+  // &:before {
+  //   position: absolute;
+  //   left: 0;
+  //   margin-left: -$logo-offset;
+  //   top: 0;
+  //   margin-top: -$logo-offset;
+  //   content: "";
+  //   width: #{$logo-size}px;
+  //   height: #{$logo-size}px;
+  //   background: url('../images/logos/mc_logo.png') no-repeat center center;
+  //   background-size: contain;
+  //  }
+}
+#emailModal, #donateModal {
+  div, h2 {
+    font-family: 'Goudy Bookletter 1911', serif;    
+  }
+  form a {
+    font-family: $font-family-sans-serif;
+  }
+}
+#emailModal, #donateModal {
+  a.button {
+    color: #fff;
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+}
+// make Donate buttons orange
+#donateModal {
+  a.button {
+    background-color: $info-color;
+    font-size: 150%;
+    border-width: 1px;
+    border-color: darken($info-color, 20%);
+  }
+}
+#emailModal, #donateModal {
+  position: fixed !important; // ensure stays in viewport
+  padding-left: 0;
+  padding-top: 0;
+}
+#email-cta-submit {
+  content: "Submit";
+  color:red;
+}
+@media #{$small-only} {
+
+}
+
+@media #{$small-up} {
+  #emailModal, #donateModal {
+    top: 5% !important;
+    $logo-offset: 0;
+    $logo-size: 100;
+    padding-left: 1rem;
+    padding-top: rem-calc($logo-size * 1.20);
+    &:before {
+      margin-left: -$logo-offset;
+      margin-top: -$logo-offset;
+      width: #{$logo-size}px;
+      height: #{$logo-size}px;
+      background: url('../images/logos/sm/mc_logo.png') no-repeat center center;
+    }
+  }
+}
+
+@media #{$medium-up} {
+  #emailModal, #donateModal {
+    top: 5% !important;
+    $logo-offset: 1rem;
+    $logo-size: 150;
+    padding-left: rem-calc($logo-size);
+    padding-top: rem-calc($logo-size * 0.25);
+    &:before {
+      margin-left: -$logo-offset;
+      margin-top: -$logo-offset;
+      width: #{$logo-size}px;
+      height: #{$logo-size}px;
+      background: url('../images/logos/md/mc_logo.png') no-repeat center center;
+    }
+  }
+}
+
+@media #{$large-up} {
+  #emailModal, #donateModal {
+    top: 5% !important;
+    $logo-offset: 2rem;
+    $logo-size: 225;
+    padding-left: rem-calc($logo-size);
+    padding-top: rem-calc($logo-size * 0.25);
+    &:before {
+      padding-left: 0;
+      padding-top: 0;      
+      margin-left: -$logo-offset;
+      margin-top: -$logo-offset;
+      width: #{$logo-size}px;
+      height: #{$logo-size}px;
+      background: url('../images/logos/lg/mc_logo.png') no-repeat center center;
+    }
+    a.button {
+      font-weight: normal;
+      font-size: 100%;
+    }
+  }
 }

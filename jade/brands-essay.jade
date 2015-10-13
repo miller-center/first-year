@@ -11,7 +11,7 @@ html(lang="en")
 		title #{title}: #{essay}
 		meta(name="description", content="")
 		meta(name="author", content="")
-		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=yes")
 		link(rel="stylesheet", href="#{project_home}/css/first-year.css")
 		link(rel="stylesheet", href="#{project_home}/css/essay.css")
 		link(rel="stylesheet", href="#{project_home}/css/hero/issue1/essay#{essay_no}.css")
@@ -23,26 +23,15 @@ html(lang="en")
 
 
 		//- Hero Image Section
-		.row
-			//- .small-12.columns
-			//- 	h1
-			//- 		a(href="#") LINK
+		.row#hero-row
 			.small-12.columns.hero
-				//.row.news
-					.small-6.medium-2.small-centered.columns.hide-for-small-only.right#the-latest
-						ul
-							li.label The Latest
-							li <a href="#">Lorem ipsum dolor sit amet.</a>
-							li.hide <a href="#">Consectetur adipisicing elit. </a>
-							li.hide <a href="#">Veniam hic beatae maiores laboriosam cum soluta</a>
-
 				.row.hero-title
 					.small-12.small-centered.medium-uncentered.columns#hero-title
-						h2 Issue 1
+						h2.supertitle.grey Issue 1
 						span.stars &#x2605; &#x2605; &#x2605;
 						h1.main-title #{essay_title}
-						p by H.W. Brands
-			//- end hero
+						h3.subtitle Subtitles are very important
+		//- end hero
 
 		.row.lateral-nav.hide-for-small
 			.columns.small-6
@@ -59,6 +48,8 @@ html(lang="en")
 
 		.row
 			.small-12.columns#essay
+				p.byline
+					a(href="#author-bio") by H. W. Brands
 				
 				p.essay-intro The different ways in which presidents enter the White House often shape their first-year prospects and agendas. Accidental presidents like Theodore Roosevelt and Lyndon Johnson typically feel obliged to assure the American people that they will seek to continue the work of their untimely departed predecessors. Presidents who win election by virtue of the continuing popularity of living predecessors—William Howard Taft and George H. W. Bush, for instance—experience similar pressure. 
 				
@@ -148,7 +139,7 @@ html(lang="en")
 				p First-year presidents who heed the foregoing advice are by no means assured of success. The presidency is a daunting job, with competing and contradictory demands that no president, however gifted, can entirely satisfy. The most popular candidate will be harshly criticized as president, often sooner rather than later. Yet faint-hearts don’t seek the White House, and new presidents always take up their task with big plans and high hopes. It is well that this is the case, for ambition and self-confidence are essential qualities in persons undertaking large endeavors of any kind. But so is attention to what has gone before, and first-year presidents who study their predecessors will increase their chances of becoming second-term presidents.  
 				
 		
-		.row
+		.row#author-bio
 			.small-12.columns
 			
 				.author 

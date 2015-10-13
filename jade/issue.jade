@@ -21,7 +21,7 @@ html(lang="en")
 		title #{title}
 		meta(name="description", content="")
 		meta(name="author", content="")
-		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=yes")
 		link(rel="stylesheet", href="#{project_home}/css/first-year.css") 
 		link(rel="stylesheet", href="#{project_home}/css/issue.css") 
 		link(rel="stylesheet", href="#{project_home}/css/hero/issue1.css") 
@@ -40,13 +40,11 @@ html(lang="en")
 
  
 		// Hero Image Section
-		.row
+		.row#hero-row
 			.small-12.columns.hero
-
-
 				.row.hero-title
 					.small-12.small-centered.medium-centered.columns#hero-title
-						h2 Issue 1
+						h2.supertitle.grey Issue 1
 						span.stars &#x2605; &#x2605; &#x2605;
 						h1.main-title The Next President's Crucible Year
 						p Six essays about the promises and pitfalls of the first 365 days in office.
@@ -56,39 +54,39 @@ html(lang="en")
 						div.large-4.small-12.columns.slider-panel.video-slide
 							img(src="../images/heros/hero-brands.jpg")
 							a(id="videoRevealAnchor", href="#",data-reveal-id="videoModal",title="Learn about First Year 2017")
-								h2 WATCH: A Long-Titled Video						
+								h2.carousel-item-title.carousel-video-item-title WATCH: A Long-Titled Video						
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-milkis.jpg")
 							a(href="milkis-essay.html")
-								h2= essay6
-							p.text-right= author6
+								h2.carousel-item-title= essay6
+							//- p.text-right= author6
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-skowronek.jpg")
 							a(href="skowronek-essay.html")
-								h2= essay4 
-							p.text-right= author4
+								h2.carousel-item-title= essay4 
+							//- p.text-right= author4
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-brands.jpg")
 							a(href="brands-essay.html")
-								h2= essay1
-							p.text-right= author1
+								h2.carousel-item-title= essay1
+							//- p.text-right= author1
 
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-nelson.jpg")
 							a(href="nelson-essay.html")
-								h2= essay3 
-							p.text-right= author3
+								h2.carousel-item-title= essay3 
+							//- p.text-right= author3
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-kamarck.jpg")
 							a(href="kamarck-essay.html")
-								h2= essay2
-							p.text-right= author2
+								h2.carousel-item-title= essay2
+							//- p.text-right= author2
 
 						div.large-4.small-12.columns.slider-panel
 							img(src="../images/heros/hero-wehner.jpg")
 							a(href="wehner-essay.html")
-								h2= essay5 
-							p.text-right= author5
+								h2.carousel-item-title= essay5 
+							//- p.text-right= author5
 
 						//- div.large-4.small-12.columns.slider-panel
 						//- 	img(src="http://placehold.it/1600x900")
@@ -195,11 +193,11 @@ html(lang="en")
 						span.author Dwight D. Eisenhower
 	
 		// Video(s)
-		.row
-			.small-12.medium-8.medium-centered.large-10.columns#video-container-1
-				h2.text-center Title Introducing This Video
-				.flex-video.widescreen#video-1
-					iframe(width="720",height="360",src="https://www.youtube.com/embed/Ga5Afau5B0U",frameborder="0",allowfullscreen)
+		//- .row
+		//- 	.small-12.medium-8.medium-centered.large-10.columns#video-container-1
+		//- 		h2.text-center Title Introducing This Video
+		//- 		.flex-video.widescreen#video-1
+		//- 			iframe(width="720",height="360",src="https://www.youtube.com/embed/Ga5Afau5B0U",frameborder="0",allowfullscreen)
 
 
 		// Essays
@@ -240,6 +238,7 @@ html(lang="en")
 		// Sidebar, Footer, and Javascript includes
 
 		include ./sidebar.jade
+		//- include ./emailcta.jade
 		include ./footer.jade
 
 		script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
