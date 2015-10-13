@@ -857,6 +857,9 @@ $hero-height: 30rem !default;
   bottom: 5%;
   margin: 0 auto;
   max-width: 100%;
+  h2.carousel-item-title {
+    width: 100%;
+  }
 } // end .hero-slider-row default
 @media #{$small-up} {
   /* the column holding the image carousel */
