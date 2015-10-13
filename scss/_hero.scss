@@ -97,7 +97,7 @@ $hero-height: 30rem !default;
   top: ($topbar-height) - rem-calc(25);
   #the-latest {
     @include single-transition(background-color, 200ms, ease-in-out);
-    &:hover, &:active {
+    &:hover, &:active, &.active {
       background-color: transparentize(#111, 0.5);
     }
     width: 16rem;

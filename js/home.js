@@ -1,34 +1,8 @@
 $(document).ready(function() {
 
-  //
-  // News Ticker Animation
-  //
 
-  var newsListCounter = 0;
 
-  function hideSiblings(list, index) {
-    list.not(":eq("+index+")").hide();
-  }
 
-  var listItems = $("#the-latest ul > li:not(.label)");
-  listItems.not(":eq(0)").hide();
-  item = 0;
-
-  var startSlideShow = function() {
-    listItems.eq(item++).each(function (e) {
-
-        me = listItems.index($(this));
-        hideSiblings(listItems, me);
-
-        $(this).fadeOut('300', function() {
-        if (item === 3) {
-          item = 0;
-        }
-        listItems.not(":eq("+item+")").hide();
-        listItems.eq(item).fadeIn('400');
-      })
-    });
-  };
 
 
   // if window is large enough do the following:
@@ -41,16 +15,50 @@ $(document).ready(function() {
 
       if(Foundation.utils.is_medium_up()) {
 
-        var interval = setInterval(startSlideShow,  delay);
+      //
+      // News Ticker Animation
+      //
 
-        $('#stopSlide').mouseenter(function() {
-            clearInterval(interval);
-        });
+      // init  
+      $('.slider').trigger('activateTicker');
 
-        $('#stopSlide').mouseleave(function() {
-            clearInterval(interval);
-            interval = setInterval(startSlideShow, delay);
-        });
+      // pause
+      $('#stopSlide').mouseenter(function() {
+          console.log('pausing ticker (timeout = ' + FirstYear.timeout + ')');
+          clearTimeout(FirstYear.timeout);
+          FirstYear.timeout = null;
+      });
+
+      // resume
+      $('#stopSlide').mouseleave(function() {
+          console.log('resuming ticker...');
+          if (FirstYear.timeout) clearTimeout(FirstYear.timeout);
+
+          currentSlide = $('.slider li.slide').filter('.current');
+          index = currentSlide.index('.slider li.slide');
+          $('.slider').trigger('activateTicker', index);
+      });
+
+      // start/stop for touch devices
+      $(document).on("touchstart", function (e) {
+
+          // check to see if ticker's stoped, restart if it is
+          console.log('FirstYear.timeout='+ FirstYear.timeout);
+          if (FirstYear.timeout === null) {
+              console.log('restarting ticker');
+              $('#the-latest').removeClass('active');
+              currentSlide = $('.slider li.slide').filter('.current');
+              index = currentSlide.index('.slider li.slide');
+              $('.slider').trigger('activateTicker', index);
+          } else {
+              console.log('pausing ticker (timeout = ' + FirstYear.timeout + ')');
+              $('#the-latest').addClass('active');
+              clearTimeout(FirstYear.timeout);
+              FirstYear.timeout = null;
+          }
+      });
+
+
 
 
       } else {

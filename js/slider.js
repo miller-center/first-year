@@ -1,3 +1,5 @@
+/* functions for news ticker aka slider */
+
 $('.slider').bind('activateTicker', function activateTicker( someIndex ) { // For every slider
     var $this = $(this), // Current slider
         $group = $this.find('.slide-group'), // Get the slide-group (container)
@@ -37,43 +39,5 @@ $('.slider').bind('activateTicker', function activateTicker( someIndex ) { // Fo
 
     advance(); // Script is set up, advance() to move it
 
-
-});
-
-$(document).ready(function() {
-    $('.slider').trigger('activateTicker');
-
-    $('#stopSlide').mouseenter(function() {
-        console.log('pausing ticker (timeout = ' + FirstYear.timeout + ')');
-        clearTimeout(FirstYear.timeout);
-        FirstYear.timeout = null;
-    });
-
-
-    $('#stopSlide').mouseleave(function() {
-        console.log('resuming ticker...');
-        if (FirstYear.timeout) clearTimeout(FirstYear.timeout);
-
-        currentSlide = $('.slider li.slide').filter('.current');
-        index = currentSlide.index('.slider li.slide');
-        $('.slider').trigger('activateTicker', index);
-    });
-
-    // start/stop for touch devices
-    $(document).on("touchstart", function (e) {
-
-        // check to see if ticker's stoped, restart if it is
-        console.log('FirstYear.timeout='+ FirstYear.timeout);
-        if (FirstYear.timeout === null) {
-            console.log('restarting ticker');
-            currentSlide = $('.slider li.slide').filter('.current');
-            index = currentSlide.index('.slider li.slide');
-            $('.slider').trigger('activateTicker', index);
-        } else {
-            console.log('pausing ticker (timeout = ' + FirstYear.timeout + ')');
-            clearTimeout(FirstYear.timeout);
-            FirstYear.timeout = null;
-        }
-    });
 
 });
