@@ -29,7 +29,7 @@
         	<div class="large-4 small-12 columns slider-panel video-slide">
         	  <img src="{potus-video:potus-vid-image}">
   		      <a href="#" data-reveal-id="videoModal" title="Learn about First Year 2017">
-	            <h2>WATCH: The Next President's Crucible Year</h2>
+	            <h2 class="carousel-item-title carousel-video-item-title">WATCH: The Next President's Crucible Year</h2>
 	          </a>
           </div>
         	{/potus-video}
@@ -42,7 +42,7 @@
 	        		<img src="//{exp:string name="asset_path"}/images/nelson-Hero7_obama_ovaloffice.jpg">
         		{/if}
         		<a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">
-	            <h2>{potus-essays:potus-es-shorttitle}</h2>
+	            <h2 class="carousel-item-title">{potus-essays:potus-es-shorttitle}</h2>
 	          </a>
           </div>
         	{/potus-essays}
@@ -55,7 +55,7 @@
 <!-- Modal (hidden at page load)-->
 <div id="videoModal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal">
   <h2 id="modalTitle">Why the First Year Matters</h2>
-  <div id="videotrailer" class="flex-video widescreen"><iframe width="500" height="281" src="https://www.youtube.com/embed/Ga5Afau5B0U?autoplay=0" frameborder="0" allowfullscreen></iframe></div><a aria-label="Close" class="close-reveal-modal">&#215;</a>
+  <div id="videotrailer" class="flex-video widescreen"><iframe width="500" height="281" src="{potus-video}{potus-video:potus-vid-file}{/potus-video}" frameborder="0" allowfullscreen></iframe></div><a aria-label="Close" class="close-reveal-modal">&#215;</a>
 </div>
 
 <!--                 -->
@@ -102,7 +102,7 @@
 			  <h4><a href="/expressionengine.php/potus/blog/{url_title}">{title}</a></h4>
 			  <div class="media">
 				{potus-bl-image}
-					<div class="media-item"><img src="{potus-bl-image:potus-bl-imagefile}"></div>
+					<div class="media-item"><a href="/expressionengine.php/potus/blog/{url_title}"><img src="{potus-bl-image:potus-bl-imagefile}"></a></div>
 					<div class="media-credit">	{potus-bl-image:potus-bl-imagecredit}</div>
 				{/potus-bl-image}
 			  </div>

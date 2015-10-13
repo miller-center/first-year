@@ -859,22 +859,31 @@ $hero-height: 30rem !default;
   max-width: 100%;
   h2.carousel-item-title {
     width: 100%;
+    font-weight: initial;
   }
 } // end .hero-slider-row default
 @media #{$small-up} {
   /* the column holding the image carousel */
   #hero-row .hero .hero-slider-row #hero-slider {
-
+    h2.carousel-item-title {
+      font-size: 0.5rem;
+    }
   }  
 } // end #hero-slider small-up
 @media #{$medium-up} {
   /* the column holding the image carousel */
   #hero-row .hero .hero-slider-row #hero-slider {
+    h2.carousel-item-title {
+      font-size: 0.6rem;
+    }  
   }  
 } // end #hero-slider medium-up
 @media #{$large-up} {
   /* the column holding the image carousel */
   #hero-row .hero .hero-slider-row #hero-slider {
+    h2.carousel-item-title {
+      font-size: 0.75rem;      
+    }  
   }  
 } // end #hero-slider large-up
 
