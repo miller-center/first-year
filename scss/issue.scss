@@ -238,7 +238,28 @@ $hero-height: 30rem;
       }
     }
   }
-}
+} // end .hero defaults
+@media #{$small-up} {
+  .slider-panel {
+    &:before {
+      height: 50%;
+    }
+  }
+} // end .hero small-up
+@media #{$medium-up} {
+  .slider-panel {
+    &:before {
+      height: 50%;
+    }
+  }
+} // end .hero medium-up
+@media #{$large-up} {
+  .slider-panel {
+    &:before {
+      height: 40%;      
+    }
+  }
+} // end .hero large-up
 
 // Main Content Section
 #video-container-1 {
