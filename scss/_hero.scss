@@ -97,17 +97,19 @@ $hero-height: 30rem !default;
   top: ($topbar-height) - rem-calc(25);
   #the-latest {
     @include single-transition(background-color, 200ms, ease-in-out);
-    &:hover {
+    &:hover, &:active {
       background-color: transparentize(#111, 0.5);
     }
-    width: 15rem;
+    width: 16rem;
     background-color: transparentize(#111, 0.3);
     z-index: $hero-z + 100;
-    ul {
+    ul.slide-group {
       list-style-type: none;
       color: #ddd;
       margin-bottom: 2px;
+      padding-top: rem-calc(10);
       padding-bottom: 0.5em;
+      padding-right: 1.5em;
       li.label {
         font-size: 75%;
         color: $info-color;
@@ -120,6 +122,8 @@ $hero-height: 30rem !default;
         font-size: 85%;
         font-weight: 100;
         letter-spacing: 2px;
+        padding-right: 0.5em;
+        margin-right: 0.5em;
         a {
           color: #eee;
           z-index: $hero-z + 101;
