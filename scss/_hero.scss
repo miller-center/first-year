@@ -110,7 +110,7 @@ $hero-height: 30rem !default;
       padding-top: rem-calc(10);
       padding-bottom: 0.5em;
       padding-right: 1.5em;
-      min-height: 6rem;
+      min-height: 7rem;
       li.label {
         font-size: 75%;
         color: $info-color;
@@ -121,7 +121,7 @@ $hero-height: 30rem !default;
       }
       li.slide {
         position:absolute; 
-        top: 40%;
+        top: 33%;
       }
       li.slide:not(:first-child) {
         opacity: 0;
