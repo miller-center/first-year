@@ -1,7 +1,17 @@
-/* Styles for home page only */
+/* Styles for issue pages only */
+
+/* override First Year defaults before importing _settings */
+
 @import "settings";
+
+/* import blog styles */
+
 @import "blog";
-// @import "header";
+
+/* override Foundation defaults before importing foundation */
+
+@import "foundation";
+@import "utils";
 
 // mixins, including overriding default ones
 @mixin single-transition($property:all, $speed:300ms, $ease:ease-out) {
@@ -19,6 +29,15 @@
   @include single-transition();
 }
 
+//
+// 1.0 Global styles
+//
+
+//
+// 2.0 Hero Section
+//
+$hero-height: 30rem;
+@import "hero";
 
 #featured {
 	margin-top: 1rem;
@@ -55,21 +74,3 @@
 	
 
 }
-
-// this is to address situations where iphones aren't
-// displaying pages across the full viewport width
-@media screen and (max-width: 395px) and (orientation: portrait) {
-  $iphone-6-max-w: 414;
-  #navigation-container {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
-  }
-  body {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
-  }
-  body > .row {
-    max-width: #{$iphone-6-max-w}px;
-    width: #{$iphone-6-max-w}px;
-  }
-} // end custom media query

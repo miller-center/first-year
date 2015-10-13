@@ -5,6 +5,9 @@
 {!-- This is a misc or "about" page. Display its contents. --}
 {exp:channel:entries channel="potus_about" require_entry="yes" cache="yes" refresh="120"}
 
+	{!-- If the query failed, send the visitor to the project home page. --}
+	{if no_results}{redirect="potus/index"}{/if}
+
 	{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/about.css"}	
 
     <div class="row">
@@ -39,8 +42,10 @@
 {exp:channel:entries channel="potus" limit="1" orderby="potus-released" sort="desc"}
 	{embed="potus/header" header-title="The First Year Project" css-include="{exp:string name='asset_path'}/css/home.css" css-hero-include="{potus-home-css}" kind="home"}
 
+	{!-- Create a variable to store our meta description. --}
+	{exp:string:set name="meta_description"}A non-partisan effort to examine the history and structure of presidential First Years, assess the policy opportunities and threats for our next President, and influence the national debate by addressing candidates, opinion leaders, and the public.{/exp:string:set}
 	
-    <div class="row">
+    <div class="row" id="hero-row">
       <div class="small-12 columns hero">
         <!--<div class="row news">
           <div id="the-latest" class="small-6 medium-2 small-centered columns hide-for-small-only right">
@@ -57,9 +62,9 @@
 
         <div class="row hero-title">
           <div id="hero-title" class="small-12 small-centered medium-centered columns">
-            <h2>Issue {potus-number}</h2><span class="stars">&#x2605; &#x2605; &#x2605;</span>
+            <h2 class="supertitle">Issue {potus-number}</h2><span class="stars">&#x2605; &#x2605; &#x2605;</span>
             <h1 class="main-title"><a href="/expressionengine.php/potus/issue/{url_title}">{title}</a></h1>
-            <p>{potus-shortdescription}</p>
+            <h3 class="subtitle">{potus-shortdescription}</h3>
           </div>
         </div>
         <div class="row intro-nav">
@@ -71,29 +76,27 @@
           </div>
         </div>
         <div id="hero-navigation-row" class="row">
-          <div class="subnav small-12 medium-10 medium-centered columns">
-            <ul id="nav-tabs" class="small-block-grid-4">
-              <li class="tab">
+          <div id="nav-tabs" class="subnav small-12 medium-10 medium-offset-1 medium-centered columns">
+              <div class="small-3 columns tab">
                 <div class="tab-entry is-active"><a href="/expressionengine.php/potus/issue/{url_title}">1 Crucible</a>
                   <p>Why the First Year Matters</p>
                 </div>
-              </li>
-              <li class="tab">
+              </div>
+              <div class="small-3 columns tab">
                 <div class="tab-entry unreleased"><a href="#">2 Power</a>
                   <p>National Security and World Order<br>January 2016</p>
                 </div>
-              </li>
-              <li class="tab">
+              </div>
+              <div class="small-3 columns tab">
                 <div class="tab-entry unreleased"><a href="#">3 Finances</a>
                   <p>The Critical First Budget<br> February 2016</p>
                 </div>
-              </li>
-              <li class="tab">
+              </div>
+              <div class="small-3 columns tab">
                 <div class="tab-entry unreleased"><a href="#">4 Identity</a>
                   <p>Immigration and Racial Issues<br> April 2016</p>
                 </div>
-              </li>
-            </ul>
+              </div>
           </div>
         </div>
       </div>

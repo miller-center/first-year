@@ -1,6 +1,6 @@
 /* Styles for issue pages only */
 
-/* override First Year defaults here */
+/* override First Year defaults before importing _settings */
 
 @import "settings";
 
@@ -8,7 +8,7 @@
 
 @import "blog";
 
-/* override Foundation defaults here */
+/* override Foundation defaults before importing foundation */
 
 @import "foundation";
 @import "utils";
@@ -31,12 +31,26 @@ $hero-z: $sidebar-z + 1;
 body {
 }
 
+//
+// 1.0 Global styles
+//
+
+//
+// 2.0 Hero Section
+//
+$hero-height: 30rem;
+@import "hero";
+
+//
+// 3.0 Masthead
+// 
+
 #about-this-issue {
 	background-color: #000;
 	padding-top: 5px;
 	border-top: 1px solid $jumbo;
 	a:hover {color: #fff;}
-	a:visited {color: $jumbo;}
+	a, a:visited {color: $jumbo;}
 	.editor {
 		//float:left; 
 		//clear:right;
@@ -152,7 +166,7 @@ body {
           background-size: 64px 64px;
           display: block;
           content: "";
-          top: 25%;
+          top: 15%;
           left: 35%;
           height: 64px !important;
           width: 64px !important;
@@ -160,13 +174,11 @@ body {
         }
         a {
           position: absolute;
-          height: 75%;
-          width: 67%;
-          left: percentage(0.33/2); // split 100 - 66 between left and right
-          h2 { // make up for this left gutter
-            margin-left: -15%;
-          }
-          top: 0;
+          height: 40%;
+          width: 100%;
+          top: initial;
+          bottom: 0;
+          left: 0;
           margin: 0 auto;
         }
       }
@@ -179,25 +191,26 @@ body {
         margin-right: $panel-gutter;
         a {
           position: absolute;
-          height: 75%;
-          width: 67%;
-          left: percentage(0.33/2); // split 100 - 66 between left and right
-          h2 { // make up for this left gutter
-            margin-left: -15%;
-          }
-          top: 0;
+          height: 40%;
+          width: 100%;
+          top: initial;
+          bottom: 0;
           margin: 0 auto;
         }
         h2, p {
-          color:darken($body-font-color, 99%);
+          color:lighten($body-font-color, 99%);
         }
+        // see _hero.scss for h2.carousel-item-title
         h2 {
           position:absolute;
           line-height: 0.85rem;
           font-size: 0.75rem;
-          margin-top: 0.5rem;
+          font-weight: initial;
+          margin-top: 0;
           padding: 0 0.25em;
           top: 0;
+          height: 100%;
+          bottom: 0;
         }
         p {
           position:absolute;
@@ -207,13 +220,14 @@ body {
           padding-right: 0.25em;
         }
         &:before {
-          background-color: transparentize(#FFF, 0.4);
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 1),  rgba(0, 0, 0, 0.5));    
           content: '';
           position:absolute;
           left: 0;
-          top: 0;
+          top: initial;
+          bottom: 0;
           width: 100%;
-          height: 100%;
+          height: 40%;
         }
       }
       .slick-dots {
@@ -224,7 +238,40 @@ body {
       }
     }
   }
-}
+} // end .hero defaults
+@media #{$small-up} {
+  .hero-slider-row #hero-slider .slider-panel {
+    $slider-panel-label-h: 55%;
+    &:before {
+      height: $slider-panel-label-h !important;
+    }
+    a {
+      height: $slider-panel-label-h !important;
+    }
+  }
+} // end .hero small-up
+@media #{$medium-up} {
+  .hero-slider-row #hero-slider .slider-panel {
+    $slider-panel-label-h: 50%;
+    &:before {
+      height: $slider-panel-label-h !important;
+    }
+    a {
+      height: $slider-panel-label-h !important;
+    }
+  }
+} // end .hero medium-up
+@media #{$large-up} {
+  .hero-slider-row #hero-slider .slider-panel {
+    $slider-panel-label-h: 40%;
+    &:before {
+      height: $slider-panel-label-h !important;      
+    }
+    a {
+      height: $slider-panel-label-h !important;
+    }
+  }
+} // end .hero large-up
 
 // Main Content Section
 #video-container-1 {
@@ -347,17 +394,7 @@ body {
         position:absolute;
       }
       a {
-        position: absolute;
-        height: 75%;
-        width: 67%;
-        left: percentage(0.33/2); // split 100 - 66 between left and right
-        h2 { // make up for this left gutter
-          position: absolute;
-          margin-left: -25% !important;
-          margin-right: -25% !important;
-        }
-        top: 0;
-        margin: 0 auto;
+
       }
     }   
   }

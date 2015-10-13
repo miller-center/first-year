@@ -11,7 +11,7 @@ html(lang="en")
 		title #{title}: #{essay}
 		meta(name="description", content="")
 		meta(name="author", content="")
-		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=yes")
 		link(rel="stylesheet", href="#{project_home}/css/first-year.css")
 		link(rel="stylesheet", href="#{project_home}/css/essay.css")
 		link(rel="stylesheet", href="#{project_home}/css/hero/issue1/essay#{essay_no}.css")
@@ -23,26 +23,15 @@ html(lang="en")
 
 
 		//- Hero Image Section
-		.row
-			//- .small-12.columns
-			//- 	h1
-			//- 		a(href="#") LINK
+		.row#hero-row
 			.small-12.columns.hero
-				//.row.news
-					.small-6.medium-2.small-centered.columns.hide-for-small-only.right#the-latest
-						ul
-							li.label The Latest
-							li <a href="#">Lorem ipsum dolor sit amet.</a>
-							li.hide <a href="#">Consectetur adipisicing elit. </a>
-							li.hide <a href="#">Veniam hic beatae maiores laboriosam cum soluta</a>
-
 				.row.hero-title
 					.small-12.small-centered.medium-uncentered.columns#hero-title
-						h2 Issue 1
+						h2.supertitle.grey Issue 1
 						span.stars &#x2605; &#x2605; &#x2605;
 						h1.main-title #{essay_title}
-						p by Mike Nelson
-			//- end hero
+						h3.subtitle subtitles are very important
+		//- end hero
 
 		.row.lateral-nav.hide-for-small
 			.columns.small-6
@@ -59,6 +48,8 @@ html(lang="en")
 
 		.row
 			.small-12.columns#essay
+				p.byline
+					a(href="#author-bio") by Mike Nelson
 		
 				p No previous experience fully prepares one to be president. The most important training presidents receive is on the job. But presidents and their aides can learn much about the first year from those who have gone before. What follows—drawn almost entirely from the Presidential Oral History Program of the University of Virginia’s Miller Center—are ten lessons that any new president can apply, or at least be informed by, the experience of those who already have served in one or more administrations. <sup><a href="#_edn1" name="_ednref1" title="Unless otherwise indicated, the quotations in this chapter are from the Miller Center&rsquo;s Presidential Oral History Program. The interviews are available online at http://millercenter.org/oralhistory">1</a></sup> The ten lessons are divided evenly between those that pertain to the transition and those that inform the actual presidency.
 		
@@ -197,7 +188,7 @@ html(lang="en")
 				p Some senior foreign leaders were initially inclined to regard Clinton, whose pre-presidential experience was as governor of a small southern state, as an unimpressive statesman, especially compared with his globally surefooted predecessor, George H.W. Bush. Clinton’s early resolve in the first-year budget battle caused these leaders to reassess him and, eventually, change their minds.
 		
 		
-		.row
+		.row#author-bio
 			.small-12.columns
 	
 				.author 

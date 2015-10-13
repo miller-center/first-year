@@ -9,7 +9,7 @@ html(lang="en")
 		title #{title}
 		meta(name="description", content="")
 		meta(name="author", content="")
-		meta(name="viewport", content="width=device-width, initial-scale=1, user-scalable=yes")
+		meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=yes")
 		link(rel="stylesheet", href="#{project_home}/css/first-year.css")
 		link(rel="stylesheet", href="#{project_home}/css/home.css")
 		link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
@@ -27,31 +27,8 @@ html(lang="en")
 
  
 		//- Hero Image Section
-		.row
-			//- .small-12.columns
-			//- 	h1
-			//- 		a(href="#") LINK
+		.row#hero-row
 			.small-12.columns.hero
-				//- .row.slidertest
-				//- 	.small-12.columns
-				//- 		.slider
-				//- 			.slide-viewer
-				//- 				ul.slide-group(style="left: 0px;")
-				//- 					li.slide(style="display: block; left: 0px;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-1.jpg",alt="Objects diagram from JavaScript and jQuery book")
-				//- 					li.slide(style="left: 0px; display: none;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-2.jpg",alt="Loops diagram from JavaScript and jQuery book")
-				//- 					li.slide(style="left: 0px; display: none;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-3.jpg",alt="Arrays explanation from JavaScript and jQuery book")
-				//- 					li.slide(style="left: 0px; display: none;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-4.jpg",alt="jQuery example from JavaScript and jQuery book")
-				//- 					li.slide(style="left: 0px; display: none;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-5.jpg",alt="Scripting explanation from JavaScript and jQuery book")
-				//- 					li.slide(style="left: 0px; display: none;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-6.jpg",alt="Photo viewer flowchart from JavaScript and jQuery book")
-				//- 					li.slide(style="left: 0px; display: none;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-7.jpg",alt="Filtering and sorting introduction from JavaScript and jQuery book")
-				//- 			.slide-buttons
-				//- 				button(type="button" class="slide-btn active") •
-				//- 				button(type="button" class="slide-btn") •
-				//- 				button(type="button" class="slide-btn") •
-				//- 				button(type="button" class="slide-btn") •
-				//- 				button(type="button" class="slide-btn") •
-				//- 				button(type="button" class="slide-btn") •
-				//- 				button(type="button" class="slide-btn") •
 
 				.row.news
 					.small-6.medium-2.small-centered.columns.hide-for-small-only.right#the-latest
@@ -65,13 +42,13 @@ html(lang="en")
 
 				.row.hero-title
 					.small-12.small-centered.medium-centered.columns#hero-title
-						h2 Issue 1
+						h2.grey.supertitle Issue 1
 						span.stars &#x2605; &#x2605; &#x2605;
 
 						h1.main-title 
 							a(href="#") Why the First Year Matters
 							
-						p Six essays about the promises and pitfalls of the first 365 days in office.
+						h3.subtitle Six essays about the promises and pitfalls of the first 365 days in office.
 
 				.row.intro-nav
 					.small-11.small-centered.medium-10.large-8.xlarge-7.large-centered.columns
@@ -82,24 +59,23 @@ html(lang="en")
 								a(href="about.html") Learn about First Year 2017
 
 				.row#hero-navigation-row
-					.subnav.small-12.medium-10.medium-centered.columns
-						ul.small-block-grid-4#nav-tabs
-							li.tab
-								.tab-entry.is-active
-									a(href="#") 1 Crucible
-									p Why the First Year Matters
-							li.tab
-								.tab-entry.unreleased
-									a(href="#") 2 Power
-									p National Security and World Order <br>January 2016
-							li.tab
-								.tab-entry.unreleased
-									a(href="#") 3 Finances
-									p The Critical First Budget <br>February 2016
-							li.tab
-								.tab-entry.unreleased
-									a(href="#") 4 Identity
-									p Immigration and Racial Issues <br>April 2016
+					.subnav.small-12.medium-10.medium-offset-1.large-centered.columns#nav-tabs
+						.small-3.columns.tab
+							.tab-entry.is-active
+								a(href="#") 1 Crucible
+								p Why the First Year Matters
+						.small-3.columns.tab
+							.tab-entry.unreleased
+								a(href="#") 2 Power
+								p National Security and World Order <br>January 2016
+						.small-3.columns.tab
+							.tab-entry.unreleased
+								a(href="#") 3 Finances
+								p The Critical First Budget <br>February 2016
+						.small-3.columns.tab
+							.tab-entry.unreleased
+								a(href="#") 4 Identity
+								p Immigration and Racial Issues <br>April 2016
 
 
 		.row
