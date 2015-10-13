@@ -240,23 +240,35 @@ $hero-height: 30rem;
   }
 } // end .hero defaults
 @media #{$small-up} {
-  .slider-panel {
+  .hero-slider-row #hero-slider .slider-panel {
+    $slider-panel-label-h: 55%;
     &:before {
-      height: 50%;
+      height: $slider-panel-label-h !important;
+    }
+    a {
+      height: $slider-panel-label-h !important;
     }
   }
 } // end .hero small-up
 @media #{$medium-up} {
-  .slider-panel {
+  .hero-slider-row #hero-slider .slider-panel {
+    $slider-panel-label-h: 50%;
     &:before {
-      height: 50%;
+      height: $slider-panel-label-h !important;
+    }
+    a {
+      height: $slider-panel-label-h !important;
     }
   }
 } // end .hero medium-up
 @media #{$large-up} {
-  .slider-panel {
+  .hero-slider-row #hero-slider .slider-panel {
+    $slider-panel-label-h: 40%;
     &:before {
-      height: 40%;      
+      height: $slider-panel-label-h !important;      
+    }
+    a {
+      height: $slider-panel-label-h !important;
     }
   }
 } // end .hero large-up

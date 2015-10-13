@@ -859,6 +859,7 @@ $hero-height: 30rem !default;
   max-width: 100%;
   h2.carousel-item-title {
     width: 100%;
+    line-height: 0.85rem;
     font-weight: initial;
   }
 } // end .hero-slider-row default
@@ -866,6 +867,7 @@ $hero-height: 30rem !default;
   /* the column holding the image carousel */
   #hero-row .hero .hero-slider-row #hero-slider {
     h2.carousel-item-title {
+      line-height: 0.75rem;
       font-size: 0.5rem;
     }
   }  
@@ -874,6 +876,7 @@ $hero-height: 30rem !default;
   /* the column holding the image carousel */
   #hero-row .hero .hero-slider-row #hero-slider {
     h2.carousel-item-title {
+      line-height: 0.85rem;
       font-size: 0.6rem;
     }  
   }  
@@ -882,6 +885,7 @@ $hero-height: 30rem !default;
   /* the column holding the image carousel */
   #hero-row .hero .hero-slider-row #hero-slider {
     h2.carousel-item-title {
+      line-height: 0.85rem;
       font-size: 0.75rem;      
     }  
   }  
