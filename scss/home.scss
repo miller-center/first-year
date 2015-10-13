@@ -3,7 +3,21 @@
 @import "blog";
 // @import "header";
 
+// mixins, including overriding default ones
+@mixin single-transition($property:all, $speed:300ms, $ease:ease-out) {
+  transition: $property $speed $ease;
+  -webkit-transition: $property $speed $ease;
+  -moz-transition: $property $speed $ease;
+  -ms-transition: $property $speed $ease;
+  -o-transition: $property $speed $ease;
+}
+
 /* styling specific to project home page */
+
+/* transition for news ticker */
+.slide {
+  @include single-transition();
+}
 
 
 #featured {

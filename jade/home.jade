@@ -32,13 +32,36 @@ html(lang="en")
 			//- 	h1
 			//- 		a(href="#") LINK
 			.small-12.columns.hero
+				//- .row.slidertest
+				//- 	.small-12.columns
+				//- 		.slider
+				//- 			.slide-viewer
+				//- 				ul.slide-group(style="left: 0px;")
+				//- 					li.slide(style="display: block; left: 0px;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-1.jpg",alt="Objects diagram from JavaScript and jQuery book")
+				//- 					li.slide(style="left: 0px; display: none;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-2.jpg",alt="Loops diagram from JavaScript and jQuery book")
+				//- 					li.slide(style="left: 0px; display: none;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-3.jpg",alt="Arrays explanation from JavaScript and jQuery book")
+				//- 					li.slide(style="left: 0px; display: none;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-4.jpg",alt="jQuery example from JavaScript and jQuery book")
+				//- 					li.slide(style="left: 0px; display: none;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-5.jpg",alt="Scripting explanation from JavaScript and jQuery book")
+				//- 					li.slide(style="left: 0px; display: none;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-6.jpg",alt="Photo viewer flowchart from JavaScript and jQuery book")
+				//- 					li.slide(style="left: 0px; display: none;"): img(src="http://01eba9f59936628a9c10-a672e330d72d3d2e689cb64015c1f8c5.r97.cf2.rackcdn.com/slide-7.jpg",alt="Filtering and sorting introduction from JavaScript and jQuery book")
+				//- 			.slide-buttons
+				//- 				button(type="button" class="slide-btn active") •
+				//- 				button(type="button" class="slide-btn") •
+				//- 				button(type="button" class="slide-btn") •
+				//- 				button(type="button" class="slide-btn") •
+				//- 				button(type="button" class="slide-btn") •
+				//- 				button(type="button" class="slide-btn") •
+				//- 				button(type="button" class="slide-btn") •
+
 				.row.news
 					.small-6.medium-2.small-centered.columns.hide-for-small-only.right#the-latest
-						ul
-							li.label#stopSlide The Latest
-							li <a href="#">Lorem ipsum dolor sit amet.</a>
-							li <a href="#">Consectetur adipisicing elit. </a>
-							li <a href="#">Veniam hic beatae maiores laboriosam cum soluta</a>
+						.slider
+							.slide-viewer
+								ul.slide-group(style="min-height: 6rem;")
+									li.label#stopSlide The Latest
+									li.slide(style="position:absolute; top: 40%; opacity: 1;") <a href="#">Lorem ipsum dolor sit amet.</a>
+									li.slide(style="position:absolute; top: 40%; opacity: 0;") <a href="#">Consectetur adipisicing elit. </a>
+									li.slide(style="position:absolute; top: 40%; opacity: 0;") <a href="#">Veniam hic beatae maiores laboriosam cum soluta</a>
 
 				.row.hero-title
 					.small-12.small-centered.medium-centered.columns#hero-title
@@ -176,4 +199,4 @@ html(lang="en")
 		//- script(src="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")
 		script(src="#{project_home}/js/first-year.js")
 		//- first-year.js initializes Foundation
-		script(src="#{project_home}/js/home.js")
+		script(src="#{project_home}/js/slider.js")
