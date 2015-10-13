@@ -218,7 +218,7 @@ $hero-height: 30rem;
           padding-right: 0.25em;
         }
         &:before {
-          background-color: transparentize($black, 0.4);
+          background: linear-gradient(to bottom, rgba(0, 0, 0, 1),  rgba(0, 0, 0, 0.5));    
           content: '';
           position:absolute;
           left: 0;
