@@ -872,6 +872,7 @@ $hero-height: 30rem !default;
 // default
 #hero-row .hero .hero-slider-row {
   top: initial;
+  top: auto; // because IE 11 doesn't recognize 'initial';
   bottom: 5%;
   margin: 0 auto;
   max-width: 100%;
