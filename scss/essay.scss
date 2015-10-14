@@ -58,7 +58,10 @@ p.essay-intro {color: #7797ab;}
 	.lateral-nav-prev:before {content: "« ";}
 }
 
-.lateral-nav#bottom {background-color: #fff;}
+.lateral-nav#bottom {
+	background-color: #fff;
+	a:hover {color: $jumbo;}
+}
 
 
 

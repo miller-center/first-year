@@ -8,12 +8,17 @@
   {embed="embeds/meta_description"}
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+  <meta property="og:type"  content="website"/>
+  <meta property="og:title" content="{embed:header-title}"/>
   <link rel="stylesheet" href="//{exp:string name='asset_path'}/css/first-year.css">
   {if embed:css-include != ""}
   <link rel="stylesheet" href="//{embed:css-include}">
   {/if}
   {if embed:css-hero-include != ""}
   <link rel="stylesheet" href="//{embed:css-hero-include}">
+  {/if}
+  {if embed:og-image-include != ""}
+  <meta property="og:image" content="//{embed:og-image-include}"/>
   {/if}
   <link rel="icon" type="image/png" href="//{exp:string name='asset_path'}/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&amp;7CCrimson+Text:400,700,600" rel="stylesheet" type="text/css">
@@ -31,6 +36,9 @@
 	</script>
 	<!-- end Google Analytics -->
 
+	<!--Chartbeat-->
+	<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+	<!--end Chartbeat-->
 </head>
 
 <body>
