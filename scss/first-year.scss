@@ -125,6 +125,11 @@ ul {list-style-type: circle;}
 #videoModal {
   position: fixed !important; // ensure stays in viewport
 }
+@media #{$medium-up} { // ensure fixed iframe is in viewport
+  #videoModal {
+    top: 0;
+  }
+}
 
 
 // Call-to-Action styles
