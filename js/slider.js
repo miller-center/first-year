@@ -13,17 +13,24 @@ $('.slider').bind('activateTicker', function activateTicker( someIndex ) { // Fo
 
         successor = newIndex < ($slides.length - 1) ? newIndex + 1 : 0
         
-        $slides.eq(newIndex).removeClass('current');
+
+
         $slides.eq(newIndex).animate({ opacity: 0 }, 400, "linear", function() {
-            $slides.eq(successor).animate({ opacity: 1   }, 400, "linear");
+            $slides.eq(successor).css("display", "block");
+            $slides.eq(newIndex).removeClass('current');
             $slides.eq(successor).addClass('current');
+            $slides.eq(successor).animate({ opacity: 1   }, 400, "linear");
         });
         advance(); // When slide moves, call advance() again
     }
 
-    function advance(lastTime) { // Used to set 
+    function advance() { // Used to set 
         clearTimeout(timeout); // Clear previous timeout
         FirstYear.timeout = null;
+
+        // ensure those not current are not displaying
+        // $slides.not('.current').css("display", "none");
+
 
         timeout = setTimeout(function() { // Set new timer
             if (currentIndex < ($slides.length - 1)) { // If slide < total slides

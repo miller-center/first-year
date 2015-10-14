@@ -1,10 +1,5 @@
 $(document).ready(function() {
 
-
-
-
-
-
   // if window is large enough do the following:
   //   1. activate newsfeed rotation
   //   2. reveal/conceal sharing sidebar
@@ -20,7 +15,7 @@ $(document).ready(function() {
       //
 
       // init  
-      $('.slider').trigger('activateTicker');
+      $('.slider').trigger('activateTicker', 2);
 
       // pause
       $('#stopSlide').mouseenter(function() {

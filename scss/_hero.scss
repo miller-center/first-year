@@ -123,11 +123,13 @@ $hero-height: 30rem !default;
         position:absolute; 
         top: 33%;
       }
-      li.slide:not(:first-child) {
+      li.slide:nth-child(n+3) {
         opacity: 0;
       }
       li.slide.current {
-        opacity: 1 !important;
+        opacity: 1;
+        visibility: visible !important;
+        display:block !important;
       }
       li {
         font-size: 85%;
