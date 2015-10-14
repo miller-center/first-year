@@ -51,3 +51,14 @@
 	background: url('../images/icons/55px/linkedin.png') no-repeat center center;
 	}
 }
+@media #{$small-only} {
+	.social-options {
+		li.label {
+			position:absolute;
+			margin: 0 30%;
+			width: 40%;
+			margin-top: -2rem;
+			left: -0.375rem;
+		}
+	}
+}
