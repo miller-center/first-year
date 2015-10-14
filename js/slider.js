@@ -17,6 +17,8 @@ $('.slider').bind('activateTicker', function activateTicker( someIndex ) { // Fo
 
         $slides.eq(newIndex).animate({ opacity: 0 }, 400, "linear", function() {
             $slides.eq(successor).css("display", "block");
+            $slides.eq(newIndex).css("z-index", "0");
+            $slides.eq(successor).css("z-index", "999"); // ensure on top
             $slides.eq(newIndex).removeClass('current');
             $slides.eq(successor).addClass('current');
             $slides.eq(successor).animate({ opacity: 1   }, 400, "linear");
