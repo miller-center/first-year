@@ -365,6 +365,7 @@ $hero-height: 30rem !default;
   margin:0 auto;
   width: 100%;
   top: initial; // to clear settings elsewhere;
+  top: auto; // because IE 11 doesn't recognize 'initial';
   bottom: 0;
   min-height: 110px;
   max-height: 25%;
