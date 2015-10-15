@@ -19,7 +19,7 @@ $(document).ready(function() {
   // Intercept all anchor clicks
   $("body").on("click", "a[href^='#']", scroll_if_anchor);
   $("body").on("click", "a[href^='/about#']", scroll_if_anchor); // menu has these
-
+  
   // Disable linking behavior on topbar Menu label
   $("#header-menu-icon a:first").click(function(e) {
     e.preventDefault();
@@ -104,6 +104,9 @@ $(document).ready(function() {
 
     // If href missing, ignore
     if(!href) return;
+
+    // If target not at beginning, trim string
+    href = href.replace(/^[^#]+/,"");
 
     // Amount of padding to add (in pixels)
     var topbarHeight = $('nav').height();
