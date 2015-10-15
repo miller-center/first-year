@@ -127,7 +127,7 @@ ul {list-style-type: circle;}
 }
 @media #{$medium-up} { // ensure fixed iframe is in viewport
   #videoModal {
-    top: 0;
+    top: 0 !important;
   }
 }
 
