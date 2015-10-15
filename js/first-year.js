@@ -19,7 +19,7 @@ $(document).ready(function() {
   // Intercept all anchor clicks
   $("body").on("click", "a[href^='#']", scroll_if_anchor);
   $("body").on("click", "a[href^='/about#']", scroll_if_anchor); // menu has these
-  
+
   // Disable linking behavior on topbar Menu label
   $("#header-menu-icon a:first").click(function(e) {
     e.preventDefault();
@@ -62,7 +62,7 @@ $(document).ready(function() {
       var wScroll = Number( $(this).scrollTop() );
 
       // reveal point for social sharing bar
-      var sbReveal  = revealPoint || Number( $('.hero').height() );
+      var sbReveal  = revealPoint || Number( $('.hero').height() * 0.5 );
       var sbConceal = $(document).height() - $('#bodyFooter').height() - ( $(window).height() / 1.05 );
 
       // slide in social sharing bar from off canvas
