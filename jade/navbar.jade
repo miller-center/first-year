@@ -6,7 +6,7 @@
       a(href="#") 
         img(src="../images/logos/#{logo}",data-interchange="[../images/logos/sm/#{logo}, (default)], [../images/logos/md/#{logo}, (medium)], [../images/logos/lg/#{logo}, (large)]")
 
-    ul.title-area
+    ul.title-area.hide-for-print
       li.name
         h1
           a.logo.show-for-small-only(href="#")
@@ -19,13 +19,13 @@
     section.top-bar-section.main-menu-section#navigation-section
       //  Right Nav Section 
       ul.right
-        li.hide-for-medium-up
+        li.hide-for-medium-up.hide-for-print
           a(href="/expressionengine.php/potus/about") About the Project
-        li.hide-for-medium-up
+        li.hide-for-medium-up.hide-for-print
           a(href="/expressionengine.php/potus/issue/why-the-first-year") Issue 1: The First Year
-        li.hide-for-medium-up <!--.active class was applied here--I like it but want to apply globally. UntilI figure that out, commenting it out. -->
+        li.hide-for-medium-up.hide-for-print <!--.active class was applied here--I like it but want to apply globally. UntilI figure that out, commenting it out. -->
           a(href="/expressionengine.php/potus/about#getinvolved") Get Involved
-        li.menu-option.hide-for-small-only.has-dropdown#header-menu-icon
+        li.menu-option.hide-for-small-only.hide-for-print.has-dropdown#header-menu-icon
           a(href="#")
             span.label Menu
               span
@@ -48,7 +48,7 @@
               a(href="/expressionengine.php/potus/about#getinvolved") Get Involved
 
 
-    section.social-section.show-for-medium-up
+    section.social-section.show-for-medium-up.hide-for-print
       ul.right
         li.label Follow
         li.social-icon#header-fb-icon: a(href="#",title="Visit #{title} on Facebook")

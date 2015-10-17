@@ -41,6 +41,12 @@ body {
 $hero-height: 30rem;
 @import "hero";
 
+@media print {
+  #hero-row .hero {
+    height: $hero-height / 2;
+  }
+}
+
 //
 // 3.0 Masthead
 // 
@@ -73,7 +79,26 @@ $hero-height: 30rem;
 		padding-top: .5rem;
 	}
 }
+@media print {
+  #about-this-issue {
+    padding: 2rem 0;
+    .editor {
+      width: 50%;
+      float: left;
+      a:after {
+        display: none;
+      }
+      img {
+        max-width: 2.5rem;
+        max-height: 2.5rem;
+        -moz-border-radius:5px;
+        -webkit-border-radius:5px;
+        border-radius:1.25rem;
 
+      }
+    }
+  }
+}
 
 
 #blog-large {
@@ -97,6 +122,17 @@ $hero-height: 30rem;
 			}
 		}
 	}
+}
+@media print {
+  #blog-large {
+    margin: 0 10%;
+    width: 80%;
+    border-top: none;
+    .blog-item {
+      .blog-item-info {
+      }
+    }
+  }
 }
 
 
@@ -306,6 +342,23 @@ $hero-height: 30rem;
     }
   }
 }
+@media print {
+  #essays-row {
+    .columns:first-child {
+      width: 100%;
+    }
+    .columns {
+      width: 33%;
+      a {
+        &:after {
+          display:none;
+        }
+      }
+    }
+  }
+}
+
+
 //
 // media queries
 //

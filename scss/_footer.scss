@@ -232,6 +232,19 @@ footer .social-tw-icon {
   }
 
 }
+@media print {
+  footer.footer {
+    .footerTeaser {
+      li a:after {
+        display: none;
+      }
+    }
+    a:after {
+      display:none;
+    }
+  }
+}
+
 
 //
 // Viewport-specific styles

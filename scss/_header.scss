@@ -473,3 +473,27 @@ $transparent: rgba(245,245,245,0.0);
 @media #{$xlarge-only} {
   
 }
+
+@media print {
+  #navigation-container {
+    nav {
+      min-height: 80px;
+      .logo-section {
+        a {
+          border:thin solid yellow;
+          &:after {
+            content: url('../images/logos/print/fy2017_logo.png') !important;
+            position:absolute;
+            top: 0;
+            height: 200px;
+          }
+        }
+        img {
+          display: none;
+        }
+      }
+
+    }
+  }
+
+}

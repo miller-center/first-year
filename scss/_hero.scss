@@ -84,7 +84,30 @@ $hero-height: 30rem !default;
   .hero {
   }  
 } // end .hero large-up
+@media print {
+  #hero-row .hero {
+    margin-top: -4rem;
+    top: 0;
+    &:before {
+      display:none;
+    }
+    .hero-title {
+      &:after {
+        position: absolute;
+        top: 100%;
+        content: "";
+        width: 100%;
+        margin: 0 auto;
+        height: 360px;
+        -webkit-print-color-adjust: exact;
+        background: url('../images/heros/lg/white-house.jpg') no-repeat center center;
+        background-size: 60%;
+      }
+    }
 
+
+  }
+}
 
 //
 // 2.1 Hero News Ticker
@@ -272,7 +295,43 @@ $hero-height: 30rem !default;
     top: 30%; //overall vertical placement of title
   }  
 } // end #hero-row .hero .hero-title large-up
-
+@media print {
+  #hero-row .hero .hero-title {
+    top: 20%; //overall vertical placement of title
+    .hero:before {
+      -webkit-print-color-adjust:exact;
+      content: "foobar";
+      font-size: 500%;
+      color: black;
+      position:absolute;
+      top: 50%;
+      left: 40%;
+      // content: url('../images/heros/lg/white-house.jpg') no-repeat center center;    
+    }
+    h1.main-title {
+      a {
+        color: #fff;
+        &:hover, &:visited, &:active, & {
+          text-decoration: none;
+        }
+      }
+    }
+    h2.supertitle {
+      a {
+        text-decoration: none;
+        &:active, &:visited, &:hover {
+          text-decoration: none;
+        }
+        &:after { 
+          display: none;
+        }
+      }
+    }
+    h2.supertitle, h1.main-title, h3.subtitle {
+      color: black;
+    }
+  }  
+}
 
 //
 // 2.3 Hero Explore Buttons
@@ -390,7 +449,27 @@ $hero-height: 30rem !default;
   #hero-row .hero #hero-navigation-row {
   }  
 } // end #hero-row .hero #hero-navigation-row large-up
-
+@media print {
+  #hero-row .hero #hero-navigation-row {
+    top: $hero-height + 5rem;
+    #nav-tabs {
+      width: 100%;
+      .tab {
+        width: 25%;
+        .tab-entry {
+          a, p {
+            color:black;
+          }
+        }
+        .tab-entry.unreleased {
+          a, p {
+            color: $oil;
+          }
+        }
+      }
+    }
+  }   
+}
 
 //
 // 2.4.1 Hero Navigational Column

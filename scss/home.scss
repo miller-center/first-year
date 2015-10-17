@@ -40,7 +40,7 @@ $hero-height: 30rem;
 @import "hero";
 
 #featured {
-	margin-top: 1rem;
+	margin-top: 4rem;
 	.columns {padding-left: 0;}
 	/*h2 {
 		padding-left: .2rem;
@@ -73,4 +73,28 @@ $hero-height: 30rem;
 	}
 	
 
+}
+@media print {
+	#featured {
+		margin-top: 13rem;
+		.featured-item {
+			width: 100%;
+			height: auto;
+			.media {
+				float: right;
+				width: 33%;
+				.media-item {
+					a img {
+						margin-bottom: 1.25rem;
+					}
+					a:after {
+						display:none;
+					}
+				}
+			}
+			.featured-item-text {
+				width: 66%;
+			}
+		}
+	}
 }

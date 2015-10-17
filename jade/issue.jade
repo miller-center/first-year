@@ -49,7 +49,7 @@ html(lang="en")
 						h1.main-title The Next President's Crucible Year
 						p Six essays about the promises and pitfalls of the first 365 days in office.
 
-				.row.hero-slider-row
+				.row.hero-slider-row.hide-for-print
 					.small-10.large-10.small-centered.columns#hero-slider
 						div.large-4.small-12.columns.slider-panel.video-slide
 							img(src="../images/heros/hero-brands.jpg")
@@ -100,7 +100,7 @@ html(lang="en")
 						//- 	p.text-right Jane Doe
 
 		// Modal (hidden at page load)
-		.reveal-modal#videoModal(data-reveal,aria-labelledby="modalTitle",aria-hidden="true",role="dialog")
+		.reveal-modal.hide-for-print#videoModal(data-reveal,aria-labelledby="modalTitle",aria-hidden="true",role="dialog")
 			h2#modalTitle Why the First Year Matters
 			div.flex-video.widescreen#videotrailer <iframe width="500" height="281" src="https://www.youtube.com/embed/Ga5Afau5B0U?autoplay=0" frameborder="0" allowfullscreen></iframe>
 			a.close-reveal-modal(aria-label="Close") &#215;
@@ -128,7 +128,7 @@ html(lang="en")
 						span.editor-name John Doe
 					span.editor-title Issue Editor
 			
-			.partners.small-12.medium-4.large-4.columns
+			.partners.hide-for-print.small-12.medium-4.large-4.columns
 				p.text-center 
 					a.important(href="http://forms.hoosonline.virginia.edu/s/1535/16-uva/index.aspx?sid=1535&gid=16&pgid=9982&cid=17637" target="_blank") Sign up for exclusive alerts&nbsp;»
 
