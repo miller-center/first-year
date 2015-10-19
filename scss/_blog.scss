@@ -39,4 +39,12 @@
 		margin: 0 10%;
 		width: 80%;
 	}
+	.blog-item {
+		a, a:visited, a:hover, a:active {
+			text-decoration: none;
+			&:after {
+				display: none;
+			}
+		}
+	}
 }
