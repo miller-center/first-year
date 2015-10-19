@@ -23,13 +23,13 @@
       </div><!-- close .hero-title -->
 
 	    {!--This is EE code to render the slider on Issue home pages --}
-	    <div class="row hero-slider-row">
+	    <div class="row hero-slider-row hide-for-print">
         <div id="hero-slider" class="small-10 large-10 small-centered columns">
         	{potus-video}
         	<div class="large-4 small-12 columns slider-panel video-slide">
         	  <img src="{potus-video:potus-vid-image}">
   		      <a href="#" data-reveal-id="videoModal" title="Learn about First Year 2017">
-	            <h2 class="carousel-item-title carousel-video-item-title">WATCH: The Next President's Crucible Year</h2>
+	            <h2 class="carousel-item-title carousel-video-item-title">WATCH: The Next President’s Critical First Year</h2>
 	          </a>
           </div>
         	{/potus-video}
@@ -41,7 +41,7 @@
         		{if:else}
 	        		<img src="//{exp:string name="asset_path"}/images/nelson-Hero7_obama_ovaloffice.jpg">
         		{/if}
-        		<a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">
+        		<a href="/essay/{potus-essays:url_title}">
 	            <h2 class="carousel-item-title">{potus-essays:potus-es-shorttitle}</h2>
 	          </a>
           </div>
@@ -53,7 +53,7 @@
 </div> <!-- close .row -->
 
 <!-- Modal (hidden at page load)-->
-<div id="videoModal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal">
+<div id="videoModal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal hide-for-print">
   <h2 id="modalTitle">Why the First Year Matters</h2>
   <div id="videotrailer" class="flex-video widescreen"><iframe width="500" height="281" src="{potus-video}{potus-video:potus-vid-file}{/potus-video}" frameborder="0" allowfullscreen></iframe></div><a aria-label="Close" class="close-reveal-modal">&#215;</a>
 </div>
@@ -68,10 +68,10 @@
 	<div class="large-1 columns">&nbsp;</div>
 {potus-editors}
 	<div class="editor small-6 medium-4 large-3 columns">
-		<a href="/expressionengine.php/potus/scholars#scholars-{potus-editors:potus-edlink} "><img src="{potus-editors:potus-edphoto}"></a>
+		<a href="/scholars#scholars-{potus-editors:potus-edlink} "><img src="{potus-editors:potus-edphoto}"></a>
 		<div class="editor-info">
 			<div class="editor-name">
-				<a href="/expressionengine.php/potus/scholars#scholars-{potus-editors:potus-edlink} ">
+				<a href="/scholars#scholars-{potus-editors:potus-edlink} ">
 					{potus-editors:potus-ed}
 				</a>
 			</div>
@@ -83,7 +83,7 @@
 {/potus-editors}
 
 <!-- partners information -->
-  <div class="partners small-12 medium-4 large-4 columns">
+  <div class="partners hide-for-print small-12 medium-4 large-4 columns">
     <p> <a href="http://forms.hoosonline.virginia.edu/s/1535/16-uva/index.aspx?sid=1535&amp;gid=16&amp;pgid=9982&amp;cid=17637" target="_blank" class="important">Sign up for exclusive alerts&nbsp;»</a></p>
   </div>
 </div>
@@ -99,10 +99,10 @@
 	  {!-- Other (Blog) Entries --}
 		{exp:channel:entries channel="potus_blog" dynamic="no" category="438"} {!--this needs some development before issue2. maybe a php variable?--}	
 			<div class="blog-item clearfix">
-			  <h4><a href="/expressionengine.php/potus/blog/{url_title}">{title}</a></h4>
+			  <h4><a href="/blog/{url_title}">{title}</a></h4>
 			  <div class="media">
 				{potus-bl-image}
-					<div class="media-item"><a href="/expressionengine.php/potus/blog/{url_title}"><img src="{potus-bl-image:potus-bl-imagefile}"></a></div>
+					<div class="media-item"><a href="/blog/{url_title}"><img src="{potus-bl-image:potus-bl-imagefile}"></a></div>
 					<div class="media-credit">	{potus-bl-image:potus-bl-imagecredit}</div>
 				{/potus-bl-image}
 			  </div>
@@ -138,7 +138,7 @@
   {!-- Essay Entries For This Issue --}
 	{potus-essays}	
 	<div class="small-12 medium-8 medium-centered large-8 columns">
-	  <a href="/expressionengine.php/potus/essay/{potus-essays:url_title}">
+	  <a href="/essay/{potus-essays:url_title}">
 	  	<img src="//staticmc.org/potus/images/heros/{potus-essays:potus-es-hero}" data-interchange="[//staticmc.org/potus/images/heros/{potus-essays:potus-es-hero}, (default)], [//staticmc.org/potus/images/heros/lg/{potus-essays:potus-es-hero}, (large)]">
 	  	<h3>{potus-essays:title}</h3>
 	  	<p>{potus-essays:potus-es-author}{potus-essays:potus-es-author:potus-es-authorname}{/potus-essays:potus-es-author}</p>
@@ -149,7 +149,7 @@
 
 <!-- sidebar, footer and Javascript includes -->
 
-{embed="potus/sharing-sidebar" target-url='{url_title}' literal='some information hard-coded'}
+{embed="potus/sharing-sidebar" target-url='issue/{url_title}' literal='The Miller Center on Why The First Year Matters'}
 {/exp:channel:entries}
 
 {embed="potus/footer" kind="issue"}

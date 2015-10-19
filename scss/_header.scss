@@ -493,12 +493,7 @@ $transparent: rgba(245,245,245,0.0);
           margin-right: auto;
           background: url('../images/logos/print/fy2017_logo.png') no-repeat center center !important;
           &:after {
-            // background: url('../images/logos/print/fy2017_logo.png') no-repeat center center !important;
-            // top: 0;
-            // padding-left: 20%;
-            // padding-right: 20%;
-            // min-height: 200px;
-            // width: 100%;
+            display:none;
           }
         }
         img {

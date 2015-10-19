@@ -3,7 +3,6 @@
 <head>
   {exp:string:set name="asset_path"}staticmc.org/potus{/exp:string:set}
   <meta charset="UTF-8">
-  <meta name="robots" content="noindex"> {!--IMPORTANT: remove this before launch--}
   <title>{embed:header-title}</title>
   {embed="embeds/meta_description"}
   <meta name="author" content="">
@@ -18,10 +17,30 @@
   <link rel="stylesheet" href="//{embed:css-hero-include}">
   {/if}
   {if embed:og-image-include != ""}
-  <meta property="og:image" content="//{embed:og-image-include}"/>
+  <meta property="og:image" content="{embed:og-image-include}"/>
+  {if:else}
+  <meta property="og:image" content="http://staticmc.org/potus/images/heros/white-house.jpg"/>
   {/if}
   <link rel="icon" type="image/png" href="//{exp:string name='asset_path'}/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&amp;7CCrimson+Text:400,700,600" rel="stylesheet" type="text/css">
+
+
+
+	<!-- First Year specific Google Analytics -->
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-291080-9', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+	<!-- end FY Google Analytics -->
+
 
 	<!-- start Google Analytics-->
 	<script>
@@ -36,6 +55,8 @@
 	</script>
 	<!-- end Google Analytics -->
 
+
+
 	<!--Chartbeat-->
 	<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
 	<!--end Chartbeat-->
@@ -45,38 +66,38 @@
   <!-- Header (Topbar): Navigation and Logo -->
     <div id="navigation-container" class="fixed">
       <nav data-topbar role="navigation" data-options="sticky_on: large" class="top-bar">
-        <section class="logo-section show-for-medium-up"><a href="/expressionengine.php/potus"> <img src="//{exp:string name="asset_path"}/images/logos/fy2017_logo.png" data-interchange="[//{exp:string name="asset_path"}/images/logos/sm/fy2017_logo.png, (default)], [//{exp:string name="asset_path"}/images/logos/md/fy2017_logo.png, (medium)], [//{exp:string name="asset_path"}/images/logos/lg/fy2017_logo.png, (large)]"></a></section>
-        <ul class="title-area">
+        <section class="logo-section show-for-medium-up"><a href="/"> <img src="//{exp:string name="asset_path"}/images/logos/fy2017_logo.png" data-interchange="[//{exp:string name="asset_path"}/images/logos/sm/fy2017_logo.png, (default)], [//{exp:string name="asset_path"}/images/logos/md/fy2017_logo.png, (medium)], [//{exp:string name="asset_path"}/images/logos/lg/fy2017_logo.png, (large)]"></a></section>
+        <ul class="title-area hide-for-print">
           <li class="name">
-            <h1><a href="/expressionengine.php/potus" class="logo show-for-small-only"><img src="//{exp:string name="asset_path"}/images/logos/fy2017_logo.png"></a></h1>
+            <h1><a href="/" class="logo show-for-small-only"><img src="//{exp:string name="asset_path"}/images/logos/fy2017_logo.png"></a></h1>
           </li>
-          <li id="mobile-menu" class="toggle-topbar menu-icon"><a href="#"><span>Menu </span></a></li>
+          <li id="mobile-menu" class="hide-for-print toggle-topbar menu-icon"><a href="#"><span>Menu </span></a></li>
         </ul>
         <section id="navigation-section" class="top-bar-section main-menu-section">
           <!--  Right Nav Section -->
           <ul class="right">
-            <li class="hide-for-medium-up"><a href="/expressionengine.php/potus/about">About the Project</a></li>
-            <li class="hide-for-medium-up"><a href="/expressionengine.php/potus/issue/why-the-first-year">Issue 1: The First Year</a></li>
-            <li class="hide-for-medium-up"><!--.active class was applied here... I like it but want to apply globally. Until I figure that out, commenting it out. --><a href="/expressionengine.php/potus/about#getinvolved">Get Involved</a></li>
-            <li id="header-menu-icon" class="menu-option hide-for-small-only has-dropdown"><a href="#"><span class="label">Menu<span></span></span></a>
+            <li class="hide-for-medium-up hide-for-print"><a href="/about">About the Project</a></li>
+            <li class="hide-for-medium-up hide-for-print"><a href="/issue/why-the-first-year">Issue 1: The First Year</a></li>
+            <li class="hide-for-medium-up hide-for-print"><!--.active class was applied here... I like it but want to apply globally. Until I figure that out, commenting it out. --><a href="/about#getinvolved">Get Involved</a></li>
+            <li id="header-menu-icon" class="menu-option hide-for-small-only hide-for-print has-dropdown"><a href="#"><span class="label">Menu<span></span></span></a>
               <ul class="dropdown">
             <li>
-              <li><a href="/expressionengine.php/potus/issue/why-the-first-year">Issue 1: The First Year</a></li>
+              <li><a href="/issue/why-the-first-year">Issue 1: The First Year</a></li>
               <li><span>Issue 2: Coming Jan '16</span></li>
             </li>
-            <li><a href="/expressionengine.php/potus/about">About the Project</a>
+            <li><a href="/about">About the Project</a>
               <ul> 
-                <li> <a href="/expressionengine.php/potus/about#contact">Contact Us</a></li>
-                <li> <a href="/expressionengine.php/potus/about#advisory">Advisory Council</a></li>
-                <li> <a href="/expressionengine.php/potus/about#scholars">Scholars</a></li>
+                <li> <a href="/about#contact">Contact Us</a></li>
+                <li> <a href="/about#advisory">Advisory Council</a></li>
+                <li> <a href="/about#scholars">Scholars</a></li>
               </ul>
             </li>
-            <li><!--active class was applied here.. I like it but want to apply globally. UntilI figure that out, commenting it out. --><a href="/expressionengine.php/potus/about#getinvolved">Get Involved</a></li>
+            <li><!--active class was applied here.. I like it but want to apply globally. UntilI figure that out, commenting it out. --><a href="/about#getinvolved">Get Involved</a></li>
           </ul>
             </li>
           </ul>
         </section>
-        <section class="social-section show-for-medium-up">
+        <section class="social-section show-for-medium-up hide-for-print">
           <ul class="right">
             <li class="label">Follow</li>
             <li id="header-fb-icon" class="social-icon"><a href="https://www.facebook.com/millercenter" target="_blank" title="Like the Miller Center on Facebook">&nbsp;</a></li>

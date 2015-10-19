@@ -1,0 +1,22 @@
+{!--This template pulls the 3 most recent headlines from the blog (any category) and teases them--}
+
+        <div class="row news hide-for-print">
+          <div id="the-latest" class="small-6 medium-2 small-centered columns hide-for-small-only right">
+            <div id="stopSlide" class="slider">
+              <div class="slide-viewer">
+                <ul class="slide-group">
+                <li class="label">The Latest</li>
+
+                {exp:channel:entries channel="potus_blog" limit="1" dynamic="no"}
+                 <li class="slide current"><a href="/blog/{url_title}">{title}</a></li>
+                {/exp:channel:entries}
+ 
+                {exp:channel:entries channel="potus_blog" limit="2" dynamic="no" offset="1"}
+                 <li class="slide"><a href="/blog/{url_title}">{title}</a></li>
+                {/exp:channel:entries}
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
