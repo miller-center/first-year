@@ -475,17 +475,30 @@ $transparent: rgba(245,245,245,0.0);
 }
 
 @media print {
+  $print-logo-width: rem-calc(200px);
+  $print-logo-height: rem-calc(200px);
   #navigation-container {
+    position: absolute;
     nav {
-      min-height: 80px;
+      min-height: $print-logo-height;
       .logo-section {
         a {
-          border:thin solid yellow;
+          position:absolute;
+          min-width: $print-logo-width;
+          width: 100%;
+          margin-left: auto;
+          min-height: $print-logo-height;
+          height: $print-logo-height;
+          padding: 0;
+          margin-right: auto;
+          background: url('../images/logos/print/fy2017_logo.png') no-repeat center center !important;
           &:after {
-            content: url('../images/logos/print/fy2017_logo.png') !important;
-            position:absolute;
-            top: 0;
-            height: 200px;
+            // background: url('../images/logos/print/fy2017_logo.png') no-repeat center center !important;
+            // top: 0;
+            // padding-left: 20%;
+            // padding-right: 20%;
+            // min-height: 200px;
+            // width: 100%;
           }
         }
         img {

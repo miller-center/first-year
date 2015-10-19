@@ -476,3 +476,8 @@ $hero-height: 30rem;
 @media #{$xlarge-only} {
   
 }
+@media print {
+  #about-this-issue {
+    margin-top: $hero-height - 9rem;
+  }
+}

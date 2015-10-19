@@ -86,7 +86,7 @@ $hero-height: 30rem !default;
 } // end .hero large-up
 @media print {
   #hero-row .hero {
-    margin-top: -4rem;
+    margin-top: 0rem;
     top: 0;
     &:before {
       display:none;

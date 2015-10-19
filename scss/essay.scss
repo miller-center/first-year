@@ -258,3 +258,8 @@ blockquote {
 
 @media #{$xlarge-only} {
 }
+@media print {
+	#essay {
+		margin-top: $hero-height - 10rem;
+	}
+}
