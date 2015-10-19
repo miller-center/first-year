@@ -346,10 +346,13 @@ $hero-height: 30rem;
   #essays-row {
     .columns:first-child {
       width: 98%;
+      min-height: 3rem;
     }
     .columns {
-      width: 33%;
-      a {
+      width: 33.333%;
+      min-height: 17rem;
+      a, a:active, a:hover, a:visited {
+        text-decoration: none;
         &:after {
           display:none;
         }
