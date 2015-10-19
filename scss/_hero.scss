@@ -297,7 +297,7 @@ $hero-height: 30rem !default;
 } // end #hero-row .hero .hero-title large-up
 @media print {
   #hero-row .hero .hero-title {
-    top: 22.5%; //overall vertical placement of title
+    top: 10%; //overall vertical placement of title
     .hero:before {
       -webkit-print-color-adjust:exact;
       content: "foobar";
