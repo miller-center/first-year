@@ -345,7 +345,7 @@ $hero-height: 30rem;
 @media print {
   #essays-row {
     .columns:first-child {
-      width: 100%;
+      width: 98%;
     }
     .columns {
       width: 33%;
@@ -478,6 +478,6 @@ $hero-height: 30rem;
 }
 @media print {
   #about-this-issue {
-    margin-top: $hero-height - 9rem;
+    margin-top: $hero-height - 8rem;
   }
 }

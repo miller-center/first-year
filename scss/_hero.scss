@@ -297,7 +297,7 @@ $hero-height: 30rem !default;
 } // end #hero-row .hero .hero-title large-up
 @media print {
   #hero-row .hero .hero-title {
-    top: 20%; //overall vertical placement of title
+    top: 22.5%; //overall vertical placement of title
     .hero:before {
       -webkit-print-color-adjust:exact;
       content: "foobar";
@@ -313,6 +313,9 @@ $hero-height: 30rem !default;
         color: #fff;
         &:hover, &:visited, &:active, & {
           text-decoration: none;
+          &:after {
+            display:none;
+          }
         }
       }
     }
@@ -451,7 +454,7 @@ $hero-height: 30rem !default;
 } // end #hero-row .hero #hero-navigation-row large-up
 @media print {
   #hero-row .hero #hero-navigation-row {
-    top: $hero-height + 5rem;
+    top: $hero-height + 4rem;
     #nav-tabs {
       width: 100%;
       .tab {

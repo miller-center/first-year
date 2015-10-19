@@ -482,15 +482,19 @@ $transparent: rgba(245,245,245,0.0);
     nav {
       min-height: $print-logo-height;
       .logo-section {
+        margin: 0 auto;
+        width: $print-logo-width;
         a {
           position:absolute;
           min-width: $print-logo-width;
-          width: 100%;
+          width: $print-logo-width;
           margin-left: auto;
           min-height: $print-logo-height;
           height: $print-logo-height;
           padding: 0;
           margin-right: auto;
+          margin-left: auto;
+          content: url('../images/logos/print/fy2017_logo.png');
           background: url('../images/logos/print/fy2017_logo.png') no-repeat center center !important;
           &:after {
             display:none;
