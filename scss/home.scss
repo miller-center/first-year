@@ -76,7 +76,7 @@ $hero-height: 30rem;
 }
 @media print {
 	#featured {
-		margin-top: 13rem;
+		margin-top: 15rem;
 		.featured-item {
 			width: 100%;
 			height: auto;
@@ -94,6 +94,12 @@ $hero-height: 30rem;
 			}
 			.featured-item-text {
 				width: 66%;
+				a, a:visited, a:hover, a:active {
+					text-decoration: none;
+					&:after {
+						display: none;
+					}
+				}
 			}
 		}
 	}
