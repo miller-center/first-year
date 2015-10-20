@@ -131,6 +131,11 @@ blockquote {
 		margin: rem-calc(25px) rem-calc(150px) rem-calc(25px) rem-calc(175px); 
 	}
 }
+@media print {
+  blockquote {
+    border:none;
+  }
+}
 //blockquote:before {content:"“";}
 //blockquote:after {content:"”";}
 
