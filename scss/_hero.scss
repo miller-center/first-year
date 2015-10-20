@@ -91,21 +91,6 @@ $hero-height: 30rem !default;
     &:before {
       display:none;
     }
-    .hero-title {
-      &:after {
-        position: absolute;
-        top: 100%;
-        content: "";
-        width: 100%;
-        margin: 0 auto;
-        height: 360px;
-        -webkit-print-color-adjust: exact;
-        background: url('../images/heros/lg/white-house.jpg') no-repeat center center;
-        background-size: 60%;
-      }
-    }
-
-
   }
 }
 

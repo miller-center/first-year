@@ -31,15 +31,18 @@ html(lang="en")
 						span.stars &#x2605; &#x2605; &#x2605;
 						h1.main-title #{essay_title}
 						h3.subtitle Subtitles are very important
+					.print-only
+						img.print-hero-image
+						
 		//- end hero
 
-		.row.lateral-nav.hide-for-small
+		.row.lateral-nav.hide-for-small.hide-for-print
 			.columns.small-6
 				p.lateral-nav-prev <a href="skowronek-essay.html">Previous essay: What Time Is It?</a>
 			.columns.small-6
 				p.lateral-nav-next <a href="nelson-essay.html">Next essay: Ten Lessons From Presidential Oral History</a>
 
-		.row.lateral-nav.show-for-small
+		.row.lateral-nav.show-for-small.hide-for-print
 			.columns.small-6
 				p.lateral-nav-prev <a href="skowroneck-essay.html">Previous Essay</a>
 			.columns.small-6

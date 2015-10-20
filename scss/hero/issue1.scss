@@ -1,5 +1,6 @@
 @import "settings";
 @import "foundation/components/grid";
+@import "utils";
 
 // default
 $filename: "white-house-at-night.jpg";
@@ -22,3 +23,5 @@ $filename: "white-house-at-night.jpg";
   background: url('../../images/heros/lg/#{$filename}') no-repeat center center;
   
 }
+// add print styling for a hero image
+@include build-img-for-print($filename, "../../");

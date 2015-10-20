@@ -1,1 +1,6 @@
 /* if custom hero background for home not set elsewhere, use this */
+@import "settings";
+@import "foundation/components/grid";
+@import "utils";
+// add print styling for a hero image
+@include build-img-for-print("white-house.jpg", "../../");

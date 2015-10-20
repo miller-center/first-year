@@ -25,29 +25,24 @@ html(lang="en")
 		//- Hero Image Section
 		.row#hero-row
 			.small-12.columns.hero
-				//.row.news
-					.small-6.medium-2.small-centered.columns.hide-for-small-only.right#the-latest
-						ul
-							li.label The Latest
-							li <a href="#">Lorem ipsum dolor sit amet.</a>
-							li.hide <a href="#">Consectetur adipisicing elit. </a>
-							li.hide <a href="#">Veniam hic beatae maiores laboriosam cum soluta</a>
-
 				.row.hero-title
 					.small-12.small-centered.medium-uncentered.columns#hero-title
 						h2.supertitle.grey Issue 1
 						span.stars &#x2605; &#x2605; &#x2605;
 						h1.main-title #{essay_title}
 						h3.subtitle Subtitles are very Important
+					.print-only
+						img.print-hero-image
+						
 		//- end hero
 
-		.row.lateral-nav.hide-for-small
+		.row.lateral-nav.hide-for-small.hide-for-print
 			.columns.small-6
 				p.lateral-nav-prev <a href="nelson-essay.html">Previous essay: Ten Lessons From Presidential Oral History</a>
 			.columns.small-6
 				p.lateral-nav-next <a href="wehner-essay.html">Next essay: Letter to the New President on Your First Year</a>
 
-		.row.lateral-nav.show-for-small
+		.row.lateral-nav.show-for-small.hide-for-print
 			.columns.small-6
 				p.lateral-nav-prev <a href="nelson-essay.html">Previous Essay</a>
 			.columns.small-6

@@ -31,15 +31,17 @@ html(lang="en")
 						span.stars &#x2605; &#x2605; &#x2605;
 						h1.main-title #{essay_title}
 						h3.subtitle subtitles are very important
+					.print-only
+						img.print-hero-image
 		//- end hero
 
-		.row.lateral-nav.hide-for-small
+		.row.lateral-nav.hide-for-small.hide-for-print
 			.columns.small-6
 				//- p.lateral-nav-prev <a href="#"></a>
 			.columns.small-6
 				p.lateral-nav-next <a href="kamarck-essay.html">Next essay: Avoiding Failure By Getting To Know The Government You Run</a>
 
-		.row.lateral-nav.show-for-small
+		.row.lateral-nav.show-for-small.hide-for-print
 			.columns.small-6
 				p.lateral-nav-prev <a href="#"></a>
 			.columns.small-6

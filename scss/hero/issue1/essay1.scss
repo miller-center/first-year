@@ -1,5 +1,6 @@
 @import "settings";
 @import "foundation/components/grid";
+@import "utils";
 
 // default
 $author-last-name: "brands";
@@ -23,3 +24,5 @@ $filename: "hero-#{$author-last-name}.jpg";
   background: url('../../../images/heros/lg/#{$filename}') ;
   
 }
+// add print styling for a hero image
+@include build-img-for-print($filename);

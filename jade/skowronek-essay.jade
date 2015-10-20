@@ -31,15 +31,18 @@ html(lang="en")
 						span.stars &#x2605; &#x2605; &#x2605;
 						h1.main-title #{essay_title}
 						h3.subtitle subtitles are very important
+					.print-only
+						img.print-hero-image
+						
 		//- end hero
 
-		.row.lateral-nav.hide-for-small
+		.row.lateral-nav.hide-for-small.hide-for-print
 			.columns.small-6
 				p.lateral-nav-prev <a href="milkis-essay.html">Previous essay: The Crucible: The First 365 Days</a>
 			.columns.small-6
 				p.lateral-nav-next <a href="brands-essay.html">Next essay: The Promise and Peril of a President's First Year</a>
 
-		.row.lateral-nav.show-for-small
+		.row.lateral-nav.show-for-small.hide-for-print
 			.columns.small-6
 				p.lateral-nav-prev <a href="milkis-essay.html">Previous Essay</a>
 			.columns.small-6
