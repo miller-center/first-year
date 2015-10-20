@@ -25,6 +25,17 @@ body {
   position:relative;
   z-index: 0;
 }
+@media print {
+  h1, h2, h3, h4, h5 {
+    page-break-after: avoid;
+  }
+  ul, img {
+    page-break-inside: avoid;
+  }
+  @page {
+    margin: 2cm;
+  }
+}
 
 // global classes 
 .grey {

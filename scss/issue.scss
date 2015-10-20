@@ -483,4 +483,9 @@ $hero-height: 30rem;
   #about-this-issue {
     margin-top: $hero-height - 8rem;
   }
+  #essays-row {
+    .columns {
+      page-break-inside: avoid;
+    }
+  }
 }

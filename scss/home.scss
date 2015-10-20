@@ -78,6 +78,7 @@ $hero-height: 30rem;
 	#featured {
 		margin-top: 15rem;
 		.featured-item {
+			page-break-inside: avoid;
 			width: 100%;
 			height: auto;
 			.media {

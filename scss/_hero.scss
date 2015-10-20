@@ -283,16 +283,6 @@ $hero-height: 30rem !default;
 @media print {
   #hero-row .hero .hero-title {
     top: 10%; //overall vertical placement of title
-    .hero:before {
-      -webkit-print-color-adjust:exact;
-      content: "foobar";
-      font-size: 500%;
-      color: black;
-      position:absolute;
-      top: 50%;
-      left: 40%;
-      // content: url('../images/heros/lg/white-house.jpg') no-repeat center center;    
-    }
     h1.main-title {
       a {
         color: #fff;
