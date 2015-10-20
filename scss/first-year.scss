@@ -32,10 +32,8 @@ body {
   ul, img {
     page-break-inside: avoid;
   }
-  @page {
-    margin: 2cm;
-  }
 }
+
 
 // global classes 
 .grey {

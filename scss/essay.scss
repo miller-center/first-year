@@ -262,4 +262,7 @@ blockquote {
 	#essay {
 		margin-top: $hero-height - 10rem;
 	}
+  .pullquote {
+    page-break-inside: avoid;
+  }	
 }

@@ -350,7 +350,7 @@ $hero-height: 30rem;
     }
     .columns {
       width: 33.333%;
-      min-height: 17rem;
+      min-height: 15rem;
       a, a:active, a:hover, a:visited {
         text-decoration: none;
         &:after {
@@ -482,6 +482,10 @@ $hero-height: 30rem;
 @media print {
   #about-this-issue {
     margin-top: $hero-height - 8rem;
+  }
+  #briefing-room-row {
+    page-break-before: always;
+    padding-top: 1cm;
   }
   #essays-row {
     .columns {
