@@ -104,4 +104,7 @@ $hero-height: 30rem;
 			}
 		}
 	}
+	#blog {
+		page-break-inside: avoid;
+	}
 }
