@@ -30,7 +30,7 @@ $(document).ready(function() {
         } else {
           // reset the clock
           FirstYear.isFreshVisitor = true;
-          localStorage.remoteItem('CTA_suppress');
+          localStorage.removeItem('CTA_suppress');
         }
       }
     } else {
