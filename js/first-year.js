@@ -86,6 +86,28 @@ $(document).ready(function() {
     });
   }
 
+  // Adjust Modal Vertical Layout (center modal in viewport)
+  FirstYear.adjustModal = function adjustModalVerticalLayout(el) { 
+    myModal = el;
+    if (myModal.length > 0) {
+      viewport_h = $(window).height();
+      position   = ( viewport_h - myModal.height() ) / 2;
+      (position < 0) ? position  = 0: position = position;
+  
+      myModal.on('opened.fndtn.reveal', function() {
+        console.log('setting modal position to top: ' + position);
+        myModal.css('top', position + 'px');
+      });
+
+      myModal.on('close.fndtn.reveal', function() {
+        myModal.css('top', '');
+        console.log('clearing modal position: ' + myModal.css('top') + '.');
+      });
+
+      $(document).foundation('reveal', 'reflow');
+    }
+  } 
+
   // function rotateNewsItem() {
   //   fadeTime = 300;
   //   listItems.eq(current++).fadeOut(fadeTime, function() {
@@ -130,6 +152,29 @@ $(document).ready(function() {
   // (this is intentionally called BEFORE $(document).ready() )
   scroll_if_anchor(window.location.hash);
 
+
+
+  // position VideoModal centered vertically in viewport
+  try {
+
+    var myModal = $('#videoModal');
+
+    // dismiss modal on touch outside box
+    $(document).on({'touchend': function (e){
+      var container = $("#videoModal.open");
+      if (!container.is(e.target) // if the target of the click isn't the container...
+          && container.has(e.target).length === 0) { // ... nor a descendant of the container
+          container.foundation('reveal', 'close');
+        }
+      } 
+    });
+
+    if (myModal.length > 0 && Foundation.utils.is_medium_up() ) { 
+      FirstYear.adjustModal(myModal);
+    } 
+  } catch(err) {
+    console.log("There was a problem re-positioning the video modal: " + err);
+  }
 
   // if window is large enough do the following:
   //   1. describe your function here

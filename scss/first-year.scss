@@ -133,10 +133,16 @@ ul {list-style-type: circle;}
 // Video Player (Issue page, maybe blogs)
 #videoModal {
   position: fixed !important; // ensure stays in viewport
+  top: 0;
+}
+@media #{$small-only} {
+  #videoModal {
+    top: 0;
+  }
 }
 @media #{$medium-up} { // ensure fixed iframe is in viewport
   #videoModal {
-    top: 0 !important;
+    @include single-transition(top, 500ms);
   }
 }
 
