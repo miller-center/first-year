@@ -74,7 +74,7 @@
           <div class="small-11 small-centered medium-10 large-8 xlarge-7 large-centered columns">
             <div class="row">
               <div class="intro-button small-6 columns"><a href="/issue/{url_title}">Explore the essays</a></div>
-              <div class="intro-button small-6 columns"><a href="/about">Learn about First Year 2017</a></div>
+              <div class="intro-button small-6 columns"><a id="videoRevealAnchor" href="#" data-reveal-id="videoModal" title="Watch: The Critical First Year">Watch: The Critical First Year</a></div>
             </div>
           </div>
         </div>
@@ -106,7 +106,12 @@
     </div>
 
 
-
+<!-- Video Modal -->
+<div id="videoModal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal hide-for-print">
+  <h2 id="modalTitle">Why the First Year Matters</h2>
+  <div id="videotrailer" class="flex-video widescreen"><iframe width="500" height="281" src="https://www.youtube.com/embed/G9cb1WH3hEU?autoplay=0" frameborder="0" allowfullscreen></iframe></div>
+  <a aria-label="Close" class="close-reveal-modal">&#215;</a>
+</div>
     
 {/exp:channel:entries}    
     
