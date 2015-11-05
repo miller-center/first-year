@@ -13,6 +13,8 @@ $navigation-transition-time: 500ms;
 
 $header-title-fonts: "Lato", sans-serif;
 
+$label-font-size: 20;
+
 $transparent: rgba(245,245,245,0.0);
 
 /* apply to all */
@@ -114,9 +116,9 @@ $transparent: rgba(245,245,245,0.0);
           font-family: $header-title-fonts;
           position: absolute;
           left: -4rem;
-          top: 0.7rem;
+          top: 0.8rem;
           color: $navigation-white;
-          font-size: 120%;
+          font-size: rem-calc($label-font-size);
         }
         padding-top: 0;
         margin-top: 0;
@@ -381,7 +383,7 @@ $transparent: rgba(245,245,245,0.0);
               line-height: ($topbar-height * .5);
               padding-bottom: 0.4em;
               @include hamburger(16px, false, 0, 1px, 6px, $topbar-menu-icon-color, "", false);
-              font-size: 200%;
+              font-size: rem-calc($label-font-size);
               font-family: $header-title-fonts;
               font-weight: 300;
             }
