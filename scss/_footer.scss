@@ -208,7 +208,23 @@ footer .social-tw-icon {
 
 @media #{$large-up} {
   footer.footer {
-   .social-options {
+    .footerLogo {
+      p, a {
+        line-height: 1.4;
+        font-size: 95%;
+        margin-top: 0;
+        vertical-align: top;
+      }
+      .hide-for-small img {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-top: 0;
+        height: 5em;
+        width: 5em;
+      }
+    }
+    .social-options {
       width: 100%;
       ul {
         li.social-option {
