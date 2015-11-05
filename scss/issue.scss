@@ -387,7 +387,13 @@ $hero-height: 30rem;
     .flex-video.widescreen {
       padding-bottom: 50% !important; // customization for our first issue vid
     }
-  }  
+  } 
+  #about-this-issue .editor .editor-info {
+    padding-top: 0.25em;
+    .editor-title {
+      margin-top: -0.5em;
+    }
+  } 
 }
 
 @media #{$large-up} {
