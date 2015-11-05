@@ -118,7 +118,7 @@ $hero-height: 30rem !default;
       padding-top: rem-calc(10);
       padding-bottom: 0.5em;
       padding-right: 1.5em;
-      min-height: 7rem;
+      min-height: 6rem;
       li.label {
         font-size: 75%;
         color: $info-color;
@@ -131,6 +131,7 @@ $hero-height: 30rem !default;
         position:absolute; 
         top: 33%;
         z-index: $hero-z;
+        line-height: initial;
       }
       li.slide:nth-child(n+3) {
         opacity: 0;
