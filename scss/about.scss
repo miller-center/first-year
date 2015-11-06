@@ -5,9 +5,13 @@
 @import "foundation";
 @import "foundation-icons.css";
 
+//
+// default
+//
+
 #videotrailer {margin: 0 auto;}
 
-p {margin-right: 100px;}
+p {margin-right: 5px;}
 
 .pullquote {
 	font-size: smaller;
@@ -25,3 +29,34 @@ p {margin-right: 100px;}
 	margin-bottom: 25px;
 
 }
+
+
+//
+// media queries
+//
+
+@media #{$small-up} {
+	p { 
+		margin-right: 5px;
+	}
+}
+
+@media #{$medium-up} {
+	p {
+		margin-right: 50px;
+	}
+}
+
+@media #{$large-up} {
+	p {
+		margin-right: 100px;
+	}
+}
+
+// viewport-specific queries
+
+@media #{$small-only} {}
+
+@media #{$medium-only} {}
+
+@media #{$large-only} {}
