@@ -19,7 +19,8 @@ html(lang="en")
 		include ./navbar.jade
 
 		.row#blog-single-entry
-			.small-12.medium-10.large-offset-1.columns
+					
+			.small-12.medium-9.columns
 				.blog-item
 					h1 Infographic: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 					.blog-item-info
@@ -27,7 +28,7 @@ html(lang="en")
 						span.author Amber Lautigar Reichert
 					.media
 						.media-item
-							img(src='http://millercenter.org/images/blog/149px-Mfillmore.jpeg')
+							img(src='http://millercenter.org/images/blog/149px-Mfillmore.jpeg' width="435" height="268")
 						.media-credit Public domain.
 						.media-caption Millard Fillmore
 					p
@@ -47,6 +48,20 @@ html(lang="en")
 						a(href="")
 					li.social-option.social-mail-icon
 						a(href="mailto:?body={url_title}")
+
+			.show-for-small.small-12.columns
+				.blogteaser
+					p
+						a.important(href="#") More from briefing room »
+
+			.hide-for-small.medium-3.columns
+				.blogteaser
+					h4 More from the briefing room
+					ul
+						li one
+						li two
+						li three
+
 
 		include ./sidebar.jade
 
