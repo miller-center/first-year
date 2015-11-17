@@ -111,7 +111,7 @@ $(document).ready(function() {
   //   1. reveal/conceal sharing sidebar
 
   try {
-    if(Foundation.utils.is_medium_up()) {
+    if(Foundation.utils.is_large_up()) {
       FirstYear.sharingBar();
     } else {
       console.log('some animations disabled for small device');

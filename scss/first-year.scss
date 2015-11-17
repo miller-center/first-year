@@ -202,6 +202,10 @@ ul {list-style-type: circle;}
   content: "Submit";
   color:red;
 }
+.social-container-horizontal {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
 @media #{$small-only} {
 
 }

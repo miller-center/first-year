@@ -1,0 +1,21 @@
+{!-- static, horizontal sharing list for use on essays and blog entries  --}
+{!-- surround with div and style/position as desired                     --}
+<div class="hide-for-print social-sidebar-horizontal">
+  <div class="social-sidebar-option label">Share</div>
+  <div class="social-sidebar-option social-fb-icon"><a href="http://www.facebook.com/share.php?u={potus-path}{embed:target-url}" title="share on Twitter" target="_blank">
+      <div class="sharing-item"><img data-interchange="[../images/icons/45px/facebook.png, (default)], [../images/icons/55px/facebook.png, (large)]"/>
+        <noscript><img src="../images/icons/md/facebook.png"/></noscript>
+      </div></a></div>
+  <div class="social-sidebar-option social-tw-icon"><a href="https://twitter.com/intent/tweet?text={title} - {potus-path}{embed:target-url}" title="share on Twitter" target="_blank">
+      <div class="sharing-item"><img data-interchange="[../images/icons/45px/twitter.png, (default)], [../images/icons/55px/twitter.png, (large)]"/>
+        <noscript><img src="../images/icons/md/twitter.png"/></noscript>
+      </div></a></div>
+  <div class="social-sidebar-option social-linkedin-icon"><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url={potus-path}{embed:target-url}&amp;title={title}&amp;source=First Year 2017" title="share on LinkedIn" target="_blank">
+      <div class="sharing-item"><img data-interchange="[../images/icons/45px/linkedin.png, (default)], [../images/icons/55px/linkedin.png, (large)]"/>
+        <noscript><img src="../images/icons/md/linkedin.png"/></noscript>
+      </div></a></div>
+  <div class="social-sidebar-option social-mail-icon"><a href="mailto:?subject={embed:literal}%20-%20First%20Year%20Project&amp;body={potus-path}{embed:target-url}&amp;body={embed:url_title}">
+      <div class="sharing-item"><img data-interchange="[../images/icons/45px/mail.png, (default)], [../images/icons/55px/mail.png, (large)]"/>
+        <noscript><img src="../images/icons/md/mail.png"/></noscript>
+      </div></a></div>
+</div>

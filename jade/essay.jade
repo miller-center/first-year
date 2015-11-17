@@ -178,6 +178,11 @@ html(lang="en")
 						ul
 							li Unless otherwise indicated, the quotations in this chapter are from the Miller Center&rsquo;s Presidential Oral History Program. The interviews are available online at <a href="http://millercenter.org/oralhistory">http://millercenter.org/oralhistory</a>. 
 
+		// horizontal sidebar (for small/medium)
+		div.social-container-horizontal.hide-for-large-up
+			include ./social-horizontal.jade
+
+
 
 		.row.lateral-nav.hide-for-small.hide-for-print#bottom
 			.columns.small-6.hide-for-print
@@ -191,8 +196,9 @@ html(lang="en")
 			.columns.small-6.hide-for-print
 				p.lateral-nav-next <a href="">Next Essay</a>
 
-		// sharing sidebar
+		// sharing sidebar (large only)
 		include ./sidebar.jade
+
 		// Email call-to-action (modal)
 		include ./emailcta.jade
 		// Footer
