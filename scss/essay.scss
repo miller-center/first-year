@@ -37,7 +37,33 @@ $hero-height: 24rem;
 
 p.essay-intro {color: #7797ab;}
 
-#essay > p, #essay > h3, #essay > h4 {padding-right: 150px; padding-left: 150px;}
+#essay > p, #essay > h3, #essay > h4 {padding-right: 200px; padding-left: 100px;}
+
+#cliffsnotes {
+	float:left; 
+	width: 175px; 
+	float:right;
+	ul {
+		margin-left: .5em; 
+		margin-right: 0; 
+		font-size: 60%; 
+		color: #aaa;
+		li {margin-bottom: .5em;}
+		li.label {
+			font-size: 140%;
+			border-bottom: 1px dotted $first-year-grey; 
+			color: $info-color;
+			padding-left: 0;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			background-color: transparent;
+			text-align: center;
+			white-space: initial;
+			list-style-type: none;}
+		}
+	
+	}
+
 
 .lateral-nav {
 	background-color: #000;
@@ -222,7 +248,8 @@ blockquote {
 	#essay p {padding-left: 1em; padding-right: 1em;}
 	#essay figure {max-width: 100%; text-align: center; border-top: 1px solid $info-color; border-bottom: 1px solid $info-color; }
 	#essay figure.right, #essay figure.left {float:none !important; clear:both; position: static; left: 0; margin-left: 0; }  
-
+	#cliffsnotes {width: 100%;}
+	
 	// keep embeded videos within a 375px (width) viewport
 	#essay {
 		figure.video {
@@ -258,7 +285,7 @@ blockquote {
 }
 
 @media #{$large-up} {
-	#essay > p, #essay > h3, #essay > h4 {padding-right: rem-calc(150px); padding-left: rem-calc(150px);}
+	#essay > p, #essay > h3, #essay > h4 {padding-right: rem-calc(200px); padding-left: rem-calc(100px);}
 }
 
 @media #{$xlarge-only} {
