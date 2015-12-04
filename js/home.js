@@ -1,5 +1,38 @@
 $(document).ready(function() {
 
+  // animations for changing text in Hero section
+  $('.issue-link').click(function(event) {
+    /* Act on the event */
+    var issue_id = Number($(this).data('id'));
+    var supertitle_text = $(this).data('supertitle');
+    var title_text = $(this).data('title');
+    var subtitle_text = $(this).data('subtitle');
+    var video_text = $(this).data('videotitle');
+
+    if (supertitle_text && title_text) {
+      $('#hero-title h2.supertitle:eq(0)').fadeOut(400, function(){
+        $(this).text(supertitle_text);
+        $(this).fadeIn(400);
+      });
+
+      $('#hero-title h1.main-title:eq(0)').fadeOut(400, function(){
+        $(this).text(title_text);
+        $(this).fadeIn(400);
+      });
+
+      $('#hero-title h3.subtitle:eq(0)').fadeOut(400, function(){
+        $(this).text(subtitle_text);
+        $(this).fadeIn(400);
+      });
+
+      $('#videoRevealAnchor').fadeOut(400, function(){
+        $(this).text(video_text);
+        $(this).fadeIn(400);
+      });
+
+    } // end if
+  });
+
   // if window is large enough do the following:
   //   1. activate newsfeed rotation
   //   2. reveal/conceal sharing sidebar
