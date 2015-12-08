@@ -25,6 +25,12 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
+  // Sharing Bar Print Action
+  $('.print-button').click(function() {
+    window.print();
+    return false;
+  });
+
   // give page a nudge if loading anywhere other than top
   var currentPosition = $(window).scrollTop();
   if (currentPosition > 0) {
@@ -85,6 +91,8 @@ $(document).ready(function() {
 
     });
   }
+
+
 
   // Adjust Modal Vertical Layout (center modal in viewport)
   FirstYear.adjustModal = function adjustModalVerticalLayout(el) { 
