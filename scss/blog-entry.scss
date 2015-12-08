@@ -7,6 +7,9 @@
 
 #blog-single-entry {
 		.blog-item {
+			a {
+				color: $info-color;
+			}
 			.blog-item-info {
 				color: $secondary-color;
 				text-align: right;
