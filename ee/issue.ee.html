@@ -1,5 +1,21 @@
 {exp:string:set name="asset_path"}staticmc.org/potus{/exp:string:set}
 
+{!--This code looks at the URL segment and assigns a category number to the Briefing Room tag pair below. It is currently PHP parsed on input since it needs to precede the channel entry tags in parsing order.--}
+<?php 
+	$url="{segment_3}";
+	$issuecategory;
+	
+	echo "<!-- URL: ".$url."-->";
+
+	if (strpos($url,'national') !== false) {
+		$issuecategory='439'; //National Security
+	} else {
+		$issuecategory='438'; //Why First Year Matters
+	}
+
+?>
+
+
 {exp:channel:entries channel="potus" limit="1" require_entry="yes"}
 
 	{!-- If the query failed, send the visitor to the project home page. --}
@@ -8,8 +24,14 @@
 	{!-- Create a variable to store our meta description. --}
 	{exp:string:set name="meta_description"}{potus-shortdescription}{/exp:string:set}
 
+	{if potus-released=="no"}
+		{!-- Create a trigger to block indexing of this page. Any content here will trigger the meta tag in the header. --}
+		{exp:string:set name="donottrack"}ON{/exp:string:set}
+	{/if}
+
 <!-- Topbar Navigation Section-->
 {embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/issue.css" css-hero-include="{potus-issue-css}" kind="issue"}
+
 
 <!-- Hero Image Section-->
 <div class="row" id="hero-row">
@@ -30,7 +52,7 @@
         	<div class="large-4 small-12 columns slider-panel video-slide">
         	  <img src="{potus-video:potus-vid-image}">
   		      <a href="#" data-reveal-id="videoModal" title="Learn about First Year 2017">
-	            <h2 class="carousel-item-title carousel-video-item-title">WATCH: The Next President’s Critical First Year</h2>
+	            <h2 class="carousel-item-title carousel-video-item-title">WATCH: The next president’s critical first year</h2>
 	          </a>
           </div>
         	{/potus-video}
@@ -98,7 +120,7 @@
 	<div id="blog-large" class="small-12 medium-9 medium-offset-1 large-10 columns">
     <h2>Briefing Room</h2>
 	  {!-- Other (Blog) Entries --}
-		{exp:channel:entries channel="potus_blog" dynamic="no" category="438"} {!--this needs some development before issue2. maybe a php variable?--}	
+		{exp:channel:entries channel="potus_blog" dynamic="no" category="<?php echo $issuecategory; ?>"} 
 			<div class="blog-item clearfix">
 			  <h4><a href="/blog/{url_title}">{title}</a></h4>
 			  <div class="media">
