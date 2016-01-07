@@ -1,13 +1,15 @@
 $(document).ready(function() {
 
   // animations for changing text in Hero section
-  $('.issue-link').click(function(event) {
+  $('.tab-entry').click(function(event) {
+    event.preventDefault();
     /* Act on the event */
-    var issue_id = Number($(this).data('id'));
-    var supertitle_text = $(this).data('supertitle');
-    var title_text = $(this).data('title');
-    var subtitle_text = $(this).data('subtitle');
-    var video_text = $(this).data('videotitle');
+    var issue_id = Number($('a.issue-link', this).data('id'));
+    var supertitle_text = $('a.issue-link', this).data('supertitle');
+    var title_text = $('a.issue-link', this).data('title');
+    var subtitle_text = $('a.issue-link', this).data('subtitle');
+    var video_text = $('a.issue-link', this).data('videotitle');
+    var background_image_url = $('a.issue-link', this).data('background-url');
 
     if (supertitle_text && title_text) {
       $('#hero-title h2.supertitle:eq(0)').fadeOut(400, function(){
@@ -29,7 +31,14 @@ $(document).ready(function() {
         $(this).text(video_text);
         $(this).fadeIn(400);
       });
+      console.log(background_image_url);
+      // move hero contents into div and reveal
+      var hero_contents = $(this).parentsUntil($('#hero-row'));
+      $('#hero-row .hero:first').css('background-image', 'url('+background_image_url+')');
 
+      parent_id = $(this).parent().index();
+      $('.tab-entry').removeClass('is-active');
+      $(this).addClass('is-active');
     } // end if
   });
 

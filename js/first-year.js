@@ -25,8 +25,10 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
+
   // Sharing Bar Print Action
   $('.print-button').click(function() {
+    FirstYear.printHeroChange();
     window.print();
     return false;
   });
@@ -55,6 +57,23 @@ $(document).ready(function() {
     } 
   });
 
+
+  //
+  // Rewriting Print Hero Images Styling
+  //
+  FirstYear.printHeroChange = function printHeroChange() {
+    try {
+      hero_image = $('.hero').css('background-image')
+      for_print_img = $('.hero .print-only img.print-hero-image');
+      if (for_print_img != undefined) {
+        console.log('rewriting $for_print_img content to ' + hero_image);
+        for_print_img.css('content', hero_image);
+      }
+    } catch(err) {
+      console.log(err);
+      return false;
+    }
+  }
 
   //
   // Side (Sharing) Bar Animation

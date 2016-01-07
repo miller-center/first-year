@@ -496,6 +496,7 @@ $hero-height: 30rem !default;
         left: 0;
       }
       a {
+        @include single-transition(color, 400ms, ease-in-out);
         padding: 0;
         margin: 0 auto;
         display: inline-block;
@@ -682,8 +683,20 @@ $hero-height: 30rem !default;
   #hero-row {
   
   }
-  .hero {
+  #issue-1-hero {
     background: url('../images/heros/sm/white-house.jpg') no-repeat center center;
+  }
+  #issue-2-hero {
+    background: url('../images/heros/sm/hero-milkis.jpg') no-repeat center center;
+  }
+  #issue-3-hero {
+
+  }
+  #issue-4-hero {
+
+  }
+  .hero {
+    background: url('../images/heros/sm/hero-milkis.jpg') no-repeat center center;
     .news, .hero-title, .intro-nav, #hero-navigation-row {
 
     }
@@ -712,6 +725,18 @@ $hero-height: 30rem !default;
   #hero-row {
   
   }
+  #issue-1-hero {
+    background: url('../images/heros/md/white-house.jpg') no-repeat center center;
+  }
+  #issue-2-hero {
+    background: url('../images/heros/md/hero-milkis.jpg') no-repeat center center;
+  }
+  #issue-3-hero {
+
+  }
+  #issue-4-hero {
+
+  }
   .hero {
     .news, .hero-title, .intro-nav, #hero-navigation-row {
 
@@ -725,13 +750,25 @@ $hero-height: 30rem !default;
   #hero-navigation-row .subnav {
   }
   .hero {
-    background: url('../images/heros/md/white-house.jpg') no-repeat center center;
+    background: url('../images/heros/md/hero-milkis.jpg') no-repeat center center;
   } // end .hero
 }
 
 @media #{$large-up} {
   #hero-row {
   
+  }
+  #issue-1-hero {
+    background: url('../images/heros/lg/white-house.jpg') no-repeat center center;
+  }
+  #issue-2-hero {
+    background: url('../images/heros/lg/hero-milkis.jpg') no-repeat center center;
+  }
+  #issue-3-hero {
+
+  }
+  #issue-4-hero {
+
   }
   .hero {
     .news, .hero-title, .intro-nav, #hero-navigation-row {
@@ -748,7 +785,7 @@ $hero-height: 30rem !default;
   #hero-navigation-row .subnav {
   }
   .hero {
-    background: url('../images/heros/lg/white-house.jpg') no-repeat center center;    
+    background: url('../images/heros/lg/hero-milkis.jpg') no-repeat center center;    
   } // end .hero
 }
 
