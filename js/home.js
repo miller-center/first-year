@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   // animations for changing text in Hero section
-  $('.tab-entry').click(function(event) {
+  $('.tab-entry').not('.is-active').click(function(event) {
     event.preventDefault();
     /* Act on the event */
     var issue_id = Number($('a.issue-link', this).data('id'));
@@ -9,6 +9,7 @@ $(document).ready(function() {
     var title_text = $('a.issue-link', this).data('title');
     var subtitle_text = $('a.issue-link', this).data('subtitle');
     var video_text = $('a.issue-link', this).data('videotitle');
+    var issue_href = $('a.issue-link', this).attr('href');
     var background_image_url = $('a.issue-link', this).data('background-url');
 
     if (supertitle_text && title_text) {
@@ -32,6 +33,12 @@ $(document).ready(function() {
         $(this).fadeIn(400);
       });
       console.log(background_image_url);
+
+      // change link in 'Explore the Essays' button
+      if (issue_href) {
+        $('#explore-anchor').attr('href',issue_href);        
+      }
+
       // move hero contents into div and reveal
       var hero_contents = $(this).parentsUntil($('#hero-row'));
       $('#hero-row .hero:first').css('background-image', 'url('+background_image_url+')');
