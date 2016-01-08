@@ -35,7 +35,7 @@ $(document).ready(function() {
       console.log(background_image_url);
 
       // change link in 'Explore the Essays' button
-      if (issue_href) {
+      if (issue_href !== undefined) {
         $('#explore-anchor').attr('href',issue_href);        
       }
 
