@@ -1,7 +1,8 @@
 $(document).ready(function() {
 
   // animations for changing text in Hero section
-  $('.tab-entry').not('.is-active').click(function(event) {
+
+  function swapHeroImages(event) {
     event.preventDefault();
     /* Act on the event */
     var issue_id = Number($('a.issue-link', this).data('id'));
@@ -11,6 +12,15 @@ $(document).ready(function() {
     var video_text = $('a.issue-link', this).data('videotitle');
     var issue_href = $('a.issue-link', this).attr('href');
     var background_image_url = $('a.issue-link', this).data('background-url');
+
+    var currentActive = $('.tab-entry.is-active');
+    currentActive.one('click', function swapHandler(event) {
+      swapHeroImages.call(this,event);
+    });
+
+    // move the is-active pointer to target of event
+    currentActive.removeClass('is-active');
+    $(this).addClass('is-active');
 
     if (supertitle_text && title_text) {
       $('#hero-title h2.supertitle:eq(0)').fadeOut(400, function(){
@@ -32,10 +42,12 @@ $(document).ready(function() {
         $(this).text(video_text);
         $(this).fadeIn(400);
       });
+    } // end if
       console.log(background_image_url);
 
       // change link in 'Explore the Essays' button
       if (issue_href !== undefined) {
+        console.log('changing explore anchor to ' + issue_href);
         $('#explore-anchor').attr('href',issue_href);        
       }
 
@@ -43,10 +55,20 @@ $(document).ready(function() {
       var hero_contents = $(this).parentsUntil($('#hero-row'));
       $('#hero-row .hero:first').css('background-image', 'url('+background_image_url+')');
 
-      parent_id = $(this).parent().index();
-      $('.tab-entry').removeClass('is-active');
-      $(this).addClass('is-active');
-    } // end if
+      // bind this behavior to the div that is about to lose '.is-active'
+      $('.tab-entry.is-active').on('click', function(event) {
+        swapHeroImages.call(this,event);
+      });
+
+  } // end swapHeroImages
+
+
+  $('.tab-entry').not('.is-active').one('click', function swapHandler(event) {
+      swapHeroImages.call(this,event);
+
+      // $(this).off('click', swapHandler);
+      console.log('removing handler to ' + event.target.id);
+      // restore original click function to this div
   });
 
   // if window is large enough do the following:
