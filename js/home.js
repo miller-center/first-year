@@ -14,7 +14,7 @@ $(document).ready(function() {
     var background_image_url = $('a.issue-link', this).data('background-url');
 
     var currentActive = $('.tab-entry.is-active');
-    currentActive.one('click', function swapHandler(event) {
+    currentActive.one('click tap', function (event) {
       swapHeroImages.call(this,event);
     });
 
@@ -56,19 +56,15 @@ $(document).ready(function() {
       $('#hero-row .hero:first').css('background-image', 'url('+background_image_url+')');
 
       // bind this behavior to the div that is about to lose '.is-active'
-      $('.tab-entry.is-active').on('click', function(event) {
-        swapHeroImages.call(this,event);
-      });
+      // $('.tab-entry.is-active').on('click', function(event) {
+      //   swapHeroImages.call(this,event);
+      // });
 
   } // end swapHeroImages
 
 
-  $('.tab-entry').not('.is-active').one('click', function swapHandler(event) {
+  $('.tab-entry').not('.is-active').one('click tap', function (event) {
       swapHeroImages.call(this,event);
-
-      // $(this).off('click', swapHandler);
-      console.log('removing handler to ' + event.target.id);
-      // restore original click function to this div
   });
 
   // if window is large enough do the following:
