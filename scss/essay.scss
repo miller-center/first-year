@@ -35,18 +35,16 @@ $hero-height: 24rem;
 
 #essay {margin: 0 auto; font-family: Verdana, sans-serif;}
 
-p.essay-intro {color: #7797ab;}
-
-#essay > p, #essay > h3, #essay > h4 {padding-right: 200px; padding-left: 100px;}
+/* #essay > p, #essay > h3, #essay > h4 {padding-right: 150px; }*/
 
 #cliffsnotes {
 	float:left; 
-	width: 175px; 
+	width: 12rem; 
 	float:right;
 	ul {
 		margin-left: .5em; 
 		margin-right: 0; 
-		font-size: 60%; 
+		font-size: 70%; 
 		color: #aaa;
 		li {margin-bottom: .5em;}
 		li.label {
@@ -134,6 +132,33 @@ figure img {clear:both; max-width: 100%;z-index:$sidebar-z + 10;}
 	position:inherit;
 	z-index:$sidebar-z + 10;
 }
+
+.pullquote.ohp-pullquote {
+	text-align:center;
+	line-height: 1rem;
+	font-style: normal;
+	padding: 1rem;
+	margin: 1rem;
+	p {font-size: .7rem; 	color: #000;}
+	img {}
+}
+
+.pullquote-info {
+	font-size: .6rem; 
+	line-height: .8rem; 
+	max-width: 50%;
+	float:right;
+
+	}
+
+.pullquote-project {
+	text-transform: uppercase; 
+	font-size: .5rem;
+	padding-top: 1rem;
+	padding-bottom: -1rem;
+	clear:both;
+	color: #000;}
+	
 
 blockquote {
 	margin: 25px 150px 25px 175px; 
@@ -240,6 +265,9 @@ blockquote {
 	}
 
 
+#essay > ul li {padding-bottom: 1rem; font-size: smaller;}
+
+
 //
 // Viewport-specific styles
 //
@@ -248,7 +276,7 @@ blockquote {
 	#essay p {padding-left: 1em; padding-right: 1em;}
 	#essay figure {max-width: 100%; text-align: center; border-top: 1px solid $info-color; border-bottom: 1px solid $info-color; }
 	#essay figure.right, #essay figure.left {float:none !important; clear:both; position: static; left: 0; margin-left: 0; }  
-	#cliffsnotes {width: 100%;}
+	#cliffsnotes, .pullquote.ohp-pullquote {width: 100%;}
 	
 	// keep embeded videos within a 375px (width) viewport
 	#essay {
@@ -280,12 +308,13 @@ blockquote {
 
 @media #{$medium-up} {
 	p.essay-intro {font-size: 26px;}
-	#essay > p, #essay > h3, #essay > h4 {padding-right: 1em; padding-left: 1em;}
-
+	#essay > p, #essay > h3, #essay > h4, #essay > ul, #essay > ol {padding-right: 1em; padding-left: 1em;}
+	.pullquote.ohp-pullquote {width: 40%;}
 }
 
 @media #{$large-up} {
-	#essay > p, #essay > h3, #essay > h4 {padding-right: rem-calc(200px); padding-left: rem-calc(100px);}
+	#essay > p.essay-intro { padding-right: 14rem;}
+	#essay > p, #essay > h3, #essay > h4, #essay > ul, #essay > ol {padding-right: 14rem;}
 }
 
 @media #{$xlarge-only} {
