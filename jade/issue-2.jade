@@ -1,6 +1,7 @@
 doctype html
 - var title = "The First Year Project"
-- var issue = "National Security"
+- var issue = "The Dangerous First Year"
+- var issue_subtitle = "How a new president can prepare for national security crises"
 - var essay = "What Time Is It?"
 - var essay1 = "Epic Misadventure"
 - var essay2 = "The vision thing"
@@ -47,10 +48,10 @@ html(lang="en")
       .small-12.columns.hero
         .row.hero-title
           .small-12.small-centered.medium-centered.columns#hero-title
-            h2.supertitle.grey Issue 1
+            h2.supertitle.grey Issue 2
             span.stars &#x2605; &#x2605; &#x2605;
-            h1.main-title National Security
-            p Seven essays about the monster living under your bed.
+            h1.main-title #{issue}
+            p #{issue_subtitle}
           .print-only
             img.print-hero-image
 
