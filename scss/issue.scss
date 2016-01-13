@@ -219,6 +219,7 @@ $hero-height: 30rem;
         }
       }
       .slider-panel {
+        max-height: 7rem !important;
         background-color: transparentize(#111, 0.5);
         border-bottom: 5px solid $info-color;
         padding-left: 0;
@@ -299,6 +300,7 @@ $hero-height: 30rem;
 } // end .hero medium-up
 @media #{$large-up} {
   .hero-slider-row #hero-slider .slider-panel {
+    max-height: 7rem !important;
     $slider-panel-label-h: 40%;
     &:before {
       height: $slider-panel-label-h !important;      
