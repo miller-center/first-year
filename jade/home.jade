@@ -2,6 +2,8 @@ doctype html
 - var title = "First Year 2017"
 - var issue = "Why The Next Year Matters"
 - var essay = "What Time Is It?"
+- var issue_2_title = "National Security and World Order"
+- var issue_2_subtitle = "How the World is Going to Hell in a Handbasket, Explained."
 - var project_home = ".."
 html(lang="en")
 	head
@@ -29,7 +31,7 @@ html(lang="en")
  
 		//- Hero Image Section
 		.row#hero-row
-			.small-12.columns.hero
+			.small-12.columns.hero#issue-2-hero
 
 				.row.news.hide-for-print
 					.small-6.medium-2.small-centered.columns.hide-for-small-only.right#the-latest
@@ -43,13 +45,13 @@ html(lang="en")
 
 				.row.hero-title
 					.small-12.small-centered.medium-centered.columns#hero-title
-						h2.grey.supertitle Issue 1
+						h2.grey.supertitle Issue 2
 						span.stars &#x2605; &#x2605; &#x2605;
 
 						h1.main-title 
-							a(href="issue.html") Why the First Year Matters
+							a(href="issue.html") #{issue_2_title}
 							
-						h3.subtitle Six essays about the promises and pitfalls of the first 365 days in office.
+						h3.subtitle #{issue_2_subtitle}
 					.print-only
 						img.print-hero-image
 						
@@ -58,29 +60,31 @@ html(lang="en")
 					.small-11.small-centered.medium-10.large-8.xlarge-7.large-centered.columns
 						.row
 							.intro-button.small-6.columns
-								a(href="issue.html",title="Explore the essays of issue 1") Explore the essays
+								a(id="explore-anchor",href="issue.html",title="Explore the essays of this issue") Explore the essays
 							.intro-button.small-6.columns
-								a(id="videoRevealAnchor", href="#",data-reveal-id="videoModal",title="Watch: The Critical First Year") Watch: The Critical First Year
+								a(id="videoRevealAnchor", href="#",data-reveal-id="videoModal",title="Watch: The Critical First Year") Watch: War (Ugh) What is it Good For?
 
 				.row#hero-navigation-row
 					.subnav.small-12.medium-10.medium-offset-1.large-centered.columns#nav-tabs
 						.small-3.columns.tab
-							.tab-entry.is-active
-								a(href="#") 1 Crucible
+							.tab-entry.released
+								a#issue-1.issue-link(data-id="1",data-supertitle="Issue 1", data-title="Why the First Year Matters",data-subtitle="Six essays about the promises and pitfalls of the first 365 days in office.", data-videotitle="Watch: The Critical First Year",data-background-url="../images/heros/lg/white-house.jpg", href="issue.html") 1 Crucible
 								p Why the First Year Matters
 						.small-3.columns.tab
-							.tab-entry.unreleased
-								a(href="#") 2 Power
+							.tab-entry.released.is-active
+								a#issue-2.issue-link(data-id="2",data-supertitle="Issue 2", data-title="#{issue_2_title}",data-subtitle="#{issue_2_subtitle}",data-videotitle="Watch: War (Ugh) What is it Good For?",data-background-url="../images/heros/lg/hero-issue-2.jpg", href="issue-2.html") 2 Power
 								p National Security and World Order <br>JANUARY 2016
 						.small-3.columns.tab
 							.tab-entry.unreleased
-								a(href="#") 3 Finances
+								a#issue-3.issue-link(href="#") 3 Finances
 								p The Critical First Budget <br>FEBRUARY 2016
 						.small-3.columns.tab
 							.tab-entry.unreleased
-								a(href="#") 4 Identity
+								a#issue-4.issue-link(href="#") 4 Identity
 								p Immigration and Racial Issues <br>APRIL 2016
-
+			.small-12.columns.hero.hide.hide-for-print#issue-1-hero
+			.small-12.columns.hero.hide.hide-for-print#issue-3-hero
+			.small-12.columns.hero.hide.hide-for-print#issue-4-hero
 		//-
 		//- Video Modal (hidden at page load)
 		//- 

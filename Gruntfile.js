@@ -21,6 +21,7 @@ module.exports = function(grunt) {
           'css/essay.css': 'scss/essay.scss',
           'css/hero/home.css': 'scss/hero/home.scss',
           'css/hero/issue1.css': 'scss/hero/issue1.scss',
+          'css/hero/issue2.css': 'scss/hero/issue2.scss',
           'css/hero/issue1/essay1.css': 'scss/hero/issue1/essay1.scss',
           'css/hero/issue1/essay2.css': 'scss/hero/issue1/essay2.scss',
           'css/hero/issue1/essay3.css': 'scss/hero/issue1/essay3.scss',
