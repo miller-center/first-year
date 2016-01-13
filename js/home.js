@@ -40,7 +40,7 @@ $(document).ready(function() {
       });
 
       $('#videoRevealAnchor').fadeOut(400, function(){
-        $(this).text(video_text);
+        $(this).text('Watch: ' + video_text);
         $(this).fadeIn(400);
       });
 
@@ -60,7 +60,7 @@ $(document).ready(function() {
         console.log('changing video link to ' + video_identifier);
       }
       if (video_text !== undefined) {
-        $('#modalTitle').text('Watch: ' + video_text);
+        $('#modalTitle').text(video_text);
       }
 
       // move hero contents into div and reveal
