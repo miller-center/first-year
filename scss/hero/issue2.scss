@@ -1,0 +1,27 @@
+@import "settings";
+@import "foundation/components/grid";
+@import "utils";
+
+// default
+$filename: "hero-issue-2.jpg";
+.hero {
+  background: url('../../images/heros/#{$filename}') no-repeat center center;
+
+}
+
+@media #{$small-only} {
+  background: url('../../images/heros/sm/#{$filename}') no-repeat center center;
+  
+}
+
+@media #{$medium-only} {
+  background: url('../../images/heros/md/#{$filename}') no-repeat center center;
+  
+}
+
+@media #{$large-only} {
+  background: url('../../images/heros/lg/#{$filename}') no-repeat center center;
+  
+}
+// add print styling for a hero image
+@include build-img-for-print($filename, "../../");
