@@ -1,9 +1,13 @@
 doctype html
 - var title = "First Year 2017"
 - var issue = "Why The Next Year Matters"
+- var video1_url = "G9cb1WH3hEU"
+- var video2_url = "VpFdNTd5UBo"
+- var video1_tagline = "Why The First Year Matters"
+- var video2_tagline = "The Dangerous First Year"
 - var essay = "What Time Is It?"
-- var issue_2_title = "National Security and World Order"
-- var issue_2_subtitle = "How the World is Going to Hell in a Handbasket, Explained."
+- var issue_2_title = "The Dangerous First Year"
+- var issue_2_subtitle = "Facing National Security Challenges"
 - var project_home = ".."
 html(lang="en")
 	head
@@ -68,12 +72,12 @@ html(lang="en")
 					.subnav.small-12.medium-10.medium-offset-1.large-centered.columns#nav-tabs
 						.small-3.columns.tab
 							.tab-entry.released
-								a#issue-1.issue-link(data-id="1",data-supertitle="Issue 1", data-title="Why the First Year Matters",data-subtitle="Six essays about the promises and pitfalls of the first 365 days in office.", data-videotitle="Watch: The Critical First Year",data-background-url="../images/heros/lg/white-house.jpg", href="issue.html") 1 Crucible
+								a#issue-1.issue-link(data-id="1",data-supertitle="Issue 1", data-title="Why the First Year Matters",data-subtitle="Six essays about the promises and pitfalls of the first 365 days in office.", data-videotitle="The Critical First Year",data-background-url="../images/heros/lg/white-house.jpg",data-video-url="#{video1_url}", href="issue.html") 1 Crucible
 								p Why the First Year Matters
 						.small-3.columns.tab
 							.tab-entry.released.is-active
-								a#issue-2.issue-link(data-id="2",data-supertitle="Issue 2", data-title="#{issue_2_title}",data-subtitle="#{issue_2_subtitle}",data-videotitle="Watch: War (Ugh) What is it Good For?",data-background-url="../images/heros/lg/hero-issue-2.jpg", href="issue-2.html") 2 Power
-								p National Security and World Order <br>JANUARY 2016
+								a#issue-2.issue-link(data-id="2",data-supertitle="Issue 2", data-title="#{issue_2_title}",data-subtitle="#{issue_2_subtitle}",data-videotitle="War (Ugh) What is it Good For?",data-background-url="../images/heros/lg/hero-issue-2.jpg",data-video-url="#{video2_url}", href="issue-2.html") 2 Peril
+								p Facing National Security Challenges 
 						.small-3.columns.tab
 							.tab-entry.unreleased
 								a#issue-3.issue-link(href="#") 3 Finances
@@ -89,8 +93,8 @@ html(lang="en")
 		//- Video Modal (hidden at page load)
 		//- 
 		.reveal-modal.hide-for-print#videoModal(data-reveal,aria-labelledby="modalTitle",aria-hidden="true",role="dialog")
-			h2#modalTitle Why the First Year Matters
-			div.flex-video.widescreen#videotrailer <iframe width="500" height="281" src="https://www.youtube.com/embed/G9cb1WH3hEU?autoplay=0" frameborder="0" allowfullscreen></iframe>
+			h2#modalTitle #{video2_tagline}
+			div.flex-video.widescreen#videotrailer <iframe width="500" height="281" src="https://www.youtube.com/embed/#{video2_url}?autoplay=0" frameborder="0" allowfullscreen></iframe>
 			a.close-reveal-modal(aria-label="Close") &#215;
 
 
