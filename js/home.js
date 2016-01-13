@@ -60,7 +60,7 @@ $(document).ready(function() {
         console.log('changing video link to ' + video_identifier);
       }
       if (video_text !== undefined) {
-        $('#modalTitle').text(video_text);
+        $('#modalTitle').text('Watch: ' + video_text);
       }
 
       // move hero contents into div and reveal
