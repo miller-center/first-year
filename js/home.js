@@ -63,7 +63,7 @@ $(document).ready(function() {
   } // end swapHeroImages
 
 
-  $('.tab-entry').not('.is-active').one('click tap', function (event) {
+  $('.tab-entry.released').not('.is-active').one('click tap', function (event) {
       swapHeroImages.call(this,event);
   });
 
