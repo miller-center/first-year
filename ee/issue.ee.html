@@ -2,27 +2,32 @@
 
 {!--This code looks at the URL segment and assigns a category number to the Briefing Room tag pair below. It is currently PHP parsed on input since it needs to precede the channel entry tags in parsing order.--}
 <?php 
-	$url="{segment_3}";
-	$issuecategory;
-	
-	echo "<!-- URL: ".$url."-->";
+  $url="{segment_3}";
+  $issuecategory;
+  
+  echo "<!-- URL: ".$url."-->";
 
-	if (strpos($url,'national') !== false) {
-		$issuecategory='439'; //National Security
-	} else {
-		$issuecategory='438'; //Why First Year Matters
-	}
+  if (strpos($url,'national') !== false) {
+    $issuecategory='439'; //National Security
+  } else {
+    $issuecategory='438'; //Why First Year Matters
+  }
 
 ?>
 
 
 {exp:channel:entries channel="potus" limit="1" require_entry="yes"}
 
-	{!-- If the query failed, send the visitor to the project home page. --}
-	{if no_results}{redirect="potus/index"}{/if}
+  {!-- If the query failed, send the visitor to the project home page. --}
+  {if no_results}{redirect="potus/404"}{/if}
 
-	{!-- Create a variable to store our meta description. --}
-	{exp:string:set name="meta_description"}{potus-shortdescription}{/exp:string:set}
+  {!-- Create a variable to store our meta description. --}
+  {exp:string:set name="meta_description"}{potus-shortdescription}{/exp:string:set}
+
+  {if potus-released=="no"}
+    {!-- Create a trigger to block indexing of this page. Any content here will trigger the meta tag in the header. --}
+    {exp:string:set name="donottrack"}ON{/exp:string:set}
+  {/if}
 
 	{if potus-released=="no"}
 		{!-- Create a trigger to block indexing of this page. Any content here will trigger the meta tag in the header. --}
@@ -45,30 +50,30 @@
         <div class="print-only"><img class="print-hero-image"/></div>
       </div><!-- close .hero-title -->
 
-	    {!--This is EE code to render the slider on Issue home pages --}
-	    <div class="row hero-slider-row hide-for-print">
+      {!--This is EE code to render the slider on Issue home pages --}
+      <div class="row hero-slider-row hide-for-print">
         <div id="hero-slider" class="small-10 large-10 small-centered columns">
-        	{potus-video}
-        	<div class="large-4 small-12 columns slider-panel video-slide">
-        	  <img src="{potus-video:potus-vid-image}">
-  		      <a href="#" data-reveal-id="videoModal" title="Learn about First Year 2017">
-	            <h2 class="carousel-item-title carousel-video-item-title">WATCH: The next president’s critical first year</h2>
-	          </a>
+          {potus-video}
+          <div class="large-4 small-12 columns slider-panel video-slide">
+            <img src="{potus-video:potus-vid-image}">
+            <a href="#" data-reveal-id="videoModal" title="Learn about First Year 2017">
+              <h2 class="carousel-item-title carousel-video-item-title">WATCH: {potus-video:potus-vid-short-desc}</h2>
+            </a>
           </div>
-        	{/potus-video}
+          {/potus-video}
 
-        	{potus-essays}
-        	<div class="large-4 small-12 columns slider-panel"><!--//{exp:string name="asset_path"}/images/sm-{potus-essays:potus-es-hero}-->
-        		{if potus-essays:potus-es-hero != ''}
-	        		<img src="//{exp:string name="asset_path"}/images/sm-{potus-essays:potus-es-hero}">
-        		{if:else}
-	        		<img src="//{exp:string name="asset_path"}/images/nelson-Hero7_obama_ovaloffice.jpg">
-        		{/if}
-        		<a href="/essay/{potus-essays:url_title}">
-	            <h2 class="carousel-item-title">{potus-essays:potus-es-shorttitle}</h2>
-	          </a>
+          {potus-essays}
+          <div class="large-4 small-12 columns slider-panel"><!--//{exp:string name="asset_path"}/images/sm-{potus-essays:potus-es-hero}-->
+            {if potus-essays:potus-es-hero != ''}
+              <img src="//{exp:string name="asset_path"}/images/sm-{potus-essays:potus-es-hero}">
+            {if:else}
+              <img src="//{exp:string name="asset_path"}/images/nelson-Hero7_obama_ovaloffice.jpg">
+            {/if}
+            <a href="/essay/{potus-essays:url_title}">
+              <h2 class="carousel-item-title">{potus-essays:potus-es-shorttitle}</h2>
+            </a>
           </div>
-        	{/potus-essays}
+          {/potus-essays}
         </div><!-- close .hero-slider -->
       </div><!-- close .hero-slider-row -->
 
@@ -77,7 +82,7 @@
 
 <!-- Modal (hidden at page load)-->
 <div id="videoModal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal hide-for-print">
-  <h2 id="modalTitle">Why the First Year Matters</h2>
+  <h2 id="modalTitle">{potus-video}{potus-video:potus-vid-short-desc}{/potus-video}</h2>
   <div id="videotrailer" class="flex-video widescreen"><iframe width="500" height="281" src="{potus-video}{potus-video:potus-vid-file}{/potus-video}" frameborder="0" allowfullscreen></iframe></div><a aria-label="Close" class="close-reveal-modal">&#215;</a>
 </div>
 
@@ -88,21 +93,21 @@
 
 <!-- Editors Section-->
 <div id="about-this-issue" class="row">
-	<div class="large-1 columns">&nbsp;</div>
+  <div class="large-1 columns">&nbsp;</div>
 {potus-editors}
-	<div class="editor small-6 medium-4 large-3 columns">
-		<a href="/scholars#scholars-{potus-editors:potus-edlink} "><img src="{potus-editors:potus-edphoto}"></a>
-		<div class="editor-info">
-			<div class="editor-name">
-				<a href="/scholars#scholars-{potus-editors:potus-edlink} ">
-					{potus-editors:potus-ed}
-				</a>
-			</div>
-			<div class="editor-title">
-				Issue Editor
-			</div>
-		</div>
-	</div>
+  <div class="editor small-6 medium-4 large-3 columns">
+    <a href="/scholars#scholars-{potus-editors:potus-edlink} "><img src="{potus-editors:potus-edphoto}"></a>
+    <div class="editor-info">
+      <div class="editor-name">
+        <a href="/scholars#scholars-{potus-editors:potus-edlink} ">
+          {potus-editors:potus-ed}
+        </a>
+      </div>
+      <div class="editor-title">
+        Issue Editor
+      </div>
+    </div>
+  </div>
 {/potus-editors}
 
 <!-- partners information -->
@@ -117,22 +122,22 @@
 <!-- Briefing Room Section-->
 
 <div id="briefing-room-row" class="row">
-	<div id="blog-large" class="small-12 medium-9 medium-offset-1 large-10 columns">
+  <div id="blog-large" class="small-12 medium-9 medium-offset-1 large-10 columns">
     <h2>Briefing Room</h2>
-	  {!-- Other (Blog) Entries --}
-		{exp:channel:entries channel="potus_blog" dynamic="no" category="<?php echo $issuecategory; ?>"} 
-			<div class="blog-item clearfix">
-			  <h4><a href="/blog/{url_title}">{title}</a></h4>
-			  <div class="media">
-				{potus-bl-image}
-					<div class="media-item"><a href="/blog/{url_title}"><img src="{potus-bl-image:potus-bl-imagefile}"></a></div>
-					<div class="media-credit">	{potus-bl-image:potus-bl-imagecredit}</div>
-				{/potus-bl-image}
-			  </div>
-			  <p class="content">{potus-bl-teaser}</p>
-			  <div class="blog-item-info"><span class="date">{entry_date format='%F %d, %Y'}</span><span class="author">{author}</span></div>
-			</div>
-		{/exp:channel:entries}
+    {!-- Other (Blog) Entries --}
+    {exp:channel:entries channel="potus_blog" dynamic="no" category="<?php echo $issuecategory; ?>"} 
+      <div class="blog-item clearfix">
+        <h4><a href="/blog/{url_title}">{title}</a></h4>
+        <div class="media">
+        {potus-bl-image}
+          <div class="media-item"><a href="/blog/{url_title}"><img src="{potus-bl-image:potus-bl-imagefile}"></a></div>
+          <div class="media-credit">  {potus-bl-image:potus-bl-imagecredit}</div>
+        {/potus-bl-image}
+        </div>
+        <p class="content">{potus-bl-teaser}</p>
+        <div class="blog-item-info"><span class="date">{entry_date format='%F %d, %Y'}</span><span class="author">{author}</span></div>
+      </div>
+    {/exp:channel:entries}
   </div>
 </div>
 
@@ -155,24 +160,24 @@
 -->
 
 <div id="essays-row" class="row">
-	<div class="small-12 medium-8 medium-centered large-8 columns">
+  <div class="small-12 medium-8 medium-centered large-8 columns">
     <h2 class="text-center">{title}: Essays</h2>
   </div>
   {!-- Essay Entries For This Issue --}
-	{potus-essays}	
-	<div class="small-12 medium-8 medium-centered large-8 columns">
-	  <a href="/essay/{potus-essays:url_title}">
-	  	<img src="//staticmc.org/potus/images/heros/{potus-essays:potus-es-hero}" data-interchange="[//staticmc.org/potus/images/heros/{potus-essays:potus-es-hero}, (default)], [//staticmc.org/potus/images/heros/lg/{potus-essays:potus-es-hero}, (large)]">
-	  	<h3>{potus-essays:title}</h3>
-	  	<p>{potus-essays:potus-es-author}{potus-essays:potus-es-author:potus-es-authorname}{/potus-essays:potus-es-author}</p>
-  	</a>
-	</div>
-	{/potus-essays}
+  {potus-essays}  
+  <div class="small-12 medium-8 medium-centered large-8 columns">
+    <a href="/essay/{potus-essays:url_title}">
+      <img src="//staticmc.org/potus/images/heros/{potus-essays:potus-es-hero}" data-interchange="[//staticmc.org/potus/images/heros/{potus-essays:potus-es-hero}, (default)], [//staticmc.org/potus/images/heros/lg/{potus-essays:potus-es-hero}, (large)]">
+      <h3>{potus-essays:title}</h3>
+      <p>{potus-essays:potus-es-author}{potus-essays:potus-es-author:potus-es-authorname}{/potus-essays:potus-es-author}</p>
+    </a>
+  </div>
+  {/potus-essays}
 </div>    
 
 <!-- sidebar, footer and Javascript includes -->
 
-{embed="potus/sharing-sidebar" target-url='issue/{url_title}' literal='The Miller Center on Why The First Year Matters'}
+{embed="potus/sharing-sidebar" target-url='issue/{url_title}' literal='The Miller Center on {title}'}
 {/exp:channel:entries}
 
 {embed="potus/footer" kind="issue"}

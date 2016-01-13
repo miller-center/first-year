@@ -1,0 +1,270 @@
+doctype html
+- var title = "The First Year Project"
+- var issue = "National Security"
+- var essay = "What Time Is It?"
+- var essay1 = "Epic Misadventure"
+- var essay2 = "The vision thing"
+- var essay3 = "Hippocratic diplomacy"
+- var essay4 = "It's not just the economy, stupid"
+- var essay5 = "Trust but clarify"
+- var essay6 = "Smaller but sharper"
+- var essay7 = "Best practices"
+- var author1 = "Marc Selverstone"
+- var author2 = "H. W. Brands"
+- var author3 = "Friedrich Engels"
+- var author4 = "Suri Cruise"
+- var author5 = "Melvin Leffler"
+- var author6 = "Philip Zelikow"
+- var author7 = "Theodore Flurnoy"
+- var videoDesc = "Scary Monsters"
+- var project_home = ".."
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title #{title}
+    meta(name="description", content="")
+    meta(name="author", content="")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0, user-scalable=yes")
+    link(rel="stylesheet", href="#{project_home}/css/first-year.css") 
+    link(rel="stylesheet", href="#{project_home}/css/issue.css") 
+    link(rel="stylesheet", href="#{project_home}/css/hero/issue2.css") 
+    link(rel="icon", type="image/png", href="#{project_home}/images/favicon.ico")
+    link(href='https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&7CCrimson+Text:400,700,600',rel="stylesheet", type="text/css")
+    //- adding Slick Carousel
+    //- link(rel="stylesheet" type="text/css" href="#{project_home}/bower_components/slick-carousel/slick/slick.css")
+    //- link(rel="stylesheet" type="text/css" href="#{project_home}/bower_components/slick-carousel/slick/slick-theme.css")
+    //- line(rel="stylesheet",type="text/css",href="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css")
+  
+  body
+
+    
+    // Header: Navigation, Social Icons and Logo
+    include ./navbar.jade
+
+ 
+    // Hero Image Section
+    .row#hero-row
+      .small-12.columns.hero
+        .row.hero-title
+          .small-12.small-centered.medium-centered.columns#hero-title
+            h2.supertitle.grey Issue 1
+            span.stars &#x2605; &#x2605; &#x2605;
+            h1.main-title National Security
+            p Seven essays about the monster living under your bed.
+          .print-only
+            img.print-hero-image
+
+        .row.hero-slider-row.hide-for-print
+          .small-10.large-10.small-centered.columns#hero-slider
+            div.large-4.small-12.columns.slider-panel.video-slide
+              img(src="../images/heros/hero-brands.jpg")
+              a(id="videoRevealAnchor", href="#",data-reveal-id="videoModal",title="The World is a scary place")
+                h2.carousel-item-title.carousel-video-item-title WATCH: #{videoDesc}
+            div.large-4.small-12.columns.slider-panel
+              img(src="../images/heros/hero-milkis.jpg")
+              a(href="milkis-essay.html")
+                h2.carousel-item-title= essay1
+              //- p.text-right= author6
+            div.large-4.small-12.columns.slider-panel
+              img(src="../images/heros/hero-skowronek.jpg")
+              a(href="skowronek-essay.html")
+                h2.carousel-item-title= essay2
+              //- p.text-right= author4
+            div.large-4.small-12.columns.slider-panel
+              img(src="../images/heros/hero-brands.jpg")
+              a(href="brands-essay.html")
+                h2.carousel-item-title= essay3
+              //- p.text-right= author1
+
+            div.large-4.small-12.columns.slider-panel
+              img(src="../images/heros/hero-nelson.jpg")
+              a(href="nelson-essay.html")
+                h2.carousel-item-title= essay4 
+              //- p.text-right= author3
+            div.large-4.small-12.columns.slider-panel
+              img(src="../images/heros/hero-kamarck.jpg")
+              a(href="kamarck-essay.html")
+                h2.carousel-item-title= essay5
+              //- p.text-right= author2
+
+            div.large-4.small-12.columns.slider-panel
+              img(src="../images/heros/hero-wehner.jpg")
+              a(href="wehner-essay.html")
+                h2.carousel-item-title= essay6 
+
+            div.large-4.small-12.columns.slider-panel
+              img(src="../images/heros/hero-brands.jpg")
+              a(href="wehner-essay.html")
+                h2.carousel-item-title= essay7
+              //- p.text-right= author5
+
+            //- div.large-4.small-12.columns.slider-panel
+            //-   img(src="http://placehold.it/1600x900")
+            //-   a(href="essay.html")
+            //-     h2 Seven
+            //-   p.text-right Cordwainer Bird
+            //- div.large-4.small-12.columns.slider-panel
+            //-   img(src="http://placehold.it/1600x900")
+            //-   a(href="essay.html")
+            //-     h2 Eight
+            //-   p.text-right Jane Doe
+
+    // Modal (hidden at page load)
+    .reveal-modal.hide-for-print#videoModal(data-reveal,aria-labelledby="modalTitle",aria-hidden="true",role="dialog")
+      h2#modalTitle #{videoDesc}
+      div.flex-video.widescreen#videotrailer <iframe width="500" height="281" src="https://www.youtube.com/embed/VpFdNTd5UBo?autoplay=0" frameborder="0" allowfullscreen></iframe>
+      a.close-reveal-modal(aria-label="Close") &#215;
+
+
+    //          
+    // Content Section
+    //
+
+    // Editors Section 
+    .row#about-this-issue
+      .editor.small-6.medium-4.large-3.large-offset-1.columns
+        a(href='')
+          img(src="http://lorempixel.com/200/200/")
+        .editor-info
+          a(href='')
+            span.editor-name John Doe
+          span.editor-title Issue Editor
+            
+      
+      .editor.small-6.medium-4.large-3.columns
+        img(src="http://lorempixel.com/200/200/")
+        .editor-info
+          a(href='')
+            span.editor-name John Doe
+          span.editor-title Issue Editor
+      
+      .partners.hide-for-print.small-12.medium-4.large-4.columns
+        p.text-center 
+          a.important(href="http://forms.hoosonline.virginia.edu/s/1535/16-uva/index.aspx?sid=1535&gid=16&pgid=9982&cid=17637" target="_blank") Sign up for exclusive alerts&nbsp;»
+
+
+    // Briefing Room
+    .row#briefing-room-row
+      .small-12.medium-9.medium-offset-1.large-10.columns#blog-large
+        h2 Briefing Room
+        .blog-item.clearfix
+          h4 
+            a(href="zzz") Consectetur Adipiscing Elit
+          .media
+            .media-item <img src="http://lorempixel.com/435/268/">
+            .media-credit Image courtesy John Doe
+          p.content This is a teaser sentence about what you'll find here.        
+          .blog-item-info
+            span.date January 1, 2016
+            span.author Jeff Chidester
+
+        .blog-item.clearfix
+          h4 
+            a(href="xxx") Consectetur Adipiscing Elit Sed Fermentum Hendrerit Eros Sit Amet Congue
+          p.content This is a teaser sentence about what you'll find here. 
+          .blog-item-info
+            span.date January 1, 2016
+            span.author Joe Biden
+
+
+        .blog-item.clearfix
+          h4 
+            a(href="ccc") Dolor sit amet?
+          .media
+            .media-item <img src="http://lorempixel.com/435/268/">
+            .media-credit Image courtesy John Doe
+          p.content This is a teaser sentence about what you'll find here.      
+          .blog-item-info
+            span.date January 1, 2016
+            span.author Bill Antholis
+
+        .blog-item.clearfix
+          h4 
+            a(href="aaa") Proin eleifend vel neque laoreet ullamcorper
+          p.content This is a teaser sentence about what you'll find here.          
+          .blog-item-info
+            span.date January 1, 2016
+            span.author Amber Lautigar Reichert
+
+        .blog-item.clearfix
+          h4 
+            a(href="aaa") Proin eleifend vel neque laoreet ullamcorper
+          p.content This is a teaser sentence about what you'll find here.          
+          .blog-item-info
+            span.date January 1, 2016
+            span.author Woody Sherman   
+            
+        .blog-item.clearfix
+          h4 
+            a(href="aaa") Proin eleifend vel neque laoreet ullamcorper
+          p.content This is a teaser sentence about what you'll find here.          
+          .blog-item-info
+            span.date January 1, 2016
+            span.author Dwight D. Eisenhower
+  
+    // Video(s)
+    //- .row
+    //-   .small-12.medium-8.medium-centered.large-10.columns#video-container-1
+    //-     h2.text-center Title Introducing This Video
+    //-     .flex-video.widescreen#video-1
+    //-       iframe(width="720",height="360",src="https://www.youtube.com/embed/Ga5Afau5B0U",frameborder="0",allowfullscreen)
+
+
+    // Essays
+    .row#essays-row
+      .small-12.medium-8.medium-centered.large-8.columns
+        h2.text-center= issue + ': Essays'
+      .small-12.medium-8.medium-centered.large-8.columns
+        a(href="essay.html")
+          img(src="../images/heros/hero-brands.jpg",data-interchange="[../images/heros/hero-brands.jpg, (default)], [../images/heros/lg/hero-brands.jpg, (large)]")
+          h3= essay1
+          p=  author1
+      .small-12.medium-8.medium-centered.large-8.columns
+        a(href="essay.html")
+          img(src="../images/heros/hero-kamarck.jpg",data-interchange="[../images/heros/hero-kamarck.jpg, (default)], [../images/heros/lg/hero-kamarck.jpg, (large)]")
+          h3= essay2
+          p=  author2
+      .small-12.medium-8.medium-centered.large-8.columns
+        a(href="essay.html")
+          img(src="../images/heros/hero-nelson.jpg",data-interchange="[../images/heros/hero-nelson.jpg, (default)], [../images/heros/lg/hero-nelson.jpg, (large)]")
+          h3= essay3
+          p=  author3
+      .small-12.medium-8.medium-centered.large-8.columns
+        a(href="essay.html")
+          img(src="../images/heros/hero-skowronek.jpg",data-interchange="[../images/heros/hero-skowronek.jpg, (default)], [../images/heros/lg/hero-skowronek.jpg, (large)]")
+          h3= essay4
+          p=  author4
+      .small-12.medium-8.medium-centered.large-8.columns
+        a(href="essay.html")
+          img(src="../images/heros/hero-wehner.jpg",data-interchange="[../images/heros/hero-wehner.jpg, (default)], [../images/heros/lg/hero-wehner.jpg, (large)]")
+          h3= essay5
+          p=  author5
+      .small-12.medium-8.medium-centered.large-8.columns
+        a(href="essay.html")
+          img(src="../images/heros/hero-milkis.jpg",data-interchange="[../images/heros/hero-milkis.jpg, (default)], [../images/heros/lg/hero-milkis.jpg, (large)]")
+          h3= essay6
+          p=  author6
+      .small-12.medium-8.medium-centered.large-8.columns
+        a(href="essay.html")
+          img(src="../images/heros/hero-milkis.jpg",data-interchange="[../images/heros/hero-milkis.jpg, (default)], [../images/heros/lg/hero-milkis.jpg, (large)]")
+          h3= essay7
+          p=  author7
+
+    // Sidebar, Footer, and Javascript includes
+
+    include ./sidebar.jade
+    //- include ./emailcta.jade
+    include ./footer.jade
+
+    script(src="#{project_home}/bower_components/foundation/js/vendor/jquery.js")
+    //- remove http protocol from production version
+    script(src="//code.jquery.com/jquery-migrate-1.2.1.min.js")
+    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.js")
+    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.topbar.js")
+    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.reveal.js")
+    script(src="#{project_home}/bower_components/foundation/js/foundation/foundation.interchange.js")
+    script(src="#{project_home}/bower_components/slick-carousel/slick/slick.min.js")
+    //- script(src="http://cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js")
+    script(src="#{project_home}/js/first-year.js")
+    script(src="#{project_home}/js/issue.js")
+    //- first-year.js initializes Foundation

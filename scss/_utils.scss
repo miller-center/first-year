@@ -51,8 +51,8 @@
       .hero-title {
         img.print-hero-image {
           max-width: 100% !important;
-          height: 360px;
-          width: 480px;
+          height: 300px;
+          width: 700px;
           content: url('#{$relpath}images/heros/sm/#{$filepath}');
         }
       }
