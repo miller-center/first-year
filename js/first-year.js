@@ -87,7 +87,8 @@ $(document).ready(function() {
       var wScroll = Number( $(this).scrollTop() );
 
       // reveal point for social sharing bar
-      var sbReveal  = revealPoint || Number( $('.hero').height() * 0.7 );
+      var defaultReveal = Number( $('.hero').height() * 0.7 ) || 210;
+      var sbReveal  = revealPoint || defaultReveal;
       var sbConceal = $(document).height() - $('#bodyFooter').height() - ( $(window).height() / 1.05 );
 
       // slide in social sharing bar from off canvas
