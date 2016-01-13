@@ -29,6 +29,11 @@
     {exp:string:set name="donottrack"}ON{/exp:string:set}
   {/if}
 
+	{if potus-released=="no"}
+		{!-- Create a trigger to block indexing of this page. Any content here will trigger the meta tag in the header. --}
+		{exp:string:set name="donottrack"}ON{/exp:string:set}
+	{/if}
+
 <!-- Topbar Navigation Section-->
 {embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/issue.css" css-hero-include="{potus-issue-css}" kind="issue"}
 
