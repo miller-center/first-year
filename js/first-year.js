@@ -217,6 +217,17 @@ $(document).ready(function() {
   scroll_if_anchor(window.location.hash);
 
 
+  // this function re-writes iFrames to ensure they are not too large for small viewports
+  // el is parent element of iframe 
+  FirstYear.rewriteIframe = function rewriteIframe(e, width) {
+    var iframe = e.innerHTML;
+    var newiframe = "";
+    if (iframe !== undefined && iframe.indexOf('width') != -1) {
+      newiframe = iframe.replace(/width="\d+"/, 'width="'+ width +'"');
+      $(e).html(newiframe);
+      console.log('iframe replaced with: ' + newiframe);
+    }
+  }
 
   // position VideoModal centered vertically in viewport
   try {
@@ -248,6 +259,25 @@ $(document).ready(function() {
 
     } else {
       // console.log('some animations disabled for small device');
+    }
+  }
+  catch(err) {
+    console.log(err);
+  }
+
+  // if small device, rewrite iframes to ensure decent width
+  try {
+    if(Foundation.utils.is_small_only()) {
+      $('figure').each(function() {
+        if ( $(this).has('iframe') ) {
+          FirstYear.rewriteIframe(this, '325');
+        }
+      });
+         
+
+    }
+    else {
+      console.log('unable to rewrite iframe ');
     }
   }
   catch(err) {
