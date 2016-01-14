@@ -27,10 +27,13 @@ $(document).ready(function() {
 
 
   // Sharing Bar Print Action
-  $('.print-button').click(function() {
-    FirstYear.printHeroChange();
-    window.print();
-    return false;
+  $('a').has('.print-button').on("click tap", function(e) {
+    // avoid this behavior on essay pages
+    if (window.location.pathname.indexOf("essay") === -1 ) {
+      FirstYear.printHeroChange();
+      window.print();
+      return false;
+    }
   });
 
   // give page a nudge if loading anywhere other than top
