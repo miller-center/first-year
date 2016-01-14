@@ -263,7 +263,12 @@ blockquote {
 #supplementary-content #resources ul {
 	list-style: circle;
 	}
-
+@media #{$small-only} {
+  #supplementary-content #resources ul {
+    max-width: #{upper-bound($small-range)};
+    overflow:scroll;
+  }
+}
 
 #essay > ul li {padding-bottom: 1rem; font-size: smaller;}
 
