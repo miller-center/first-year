@@ -1,6 +1,7 @@
 doctype html
 - var title = "The First Year Project"
-- var issue = "National Security"
+- var issue = "The Dangerous First Year"
+- var issue_subtitle = "How a new president can prepare for national security crises"
 - var essay = "What Time Is It?"
 - var essay1 = "Epic Misadventure"
 - var essay2 = "The vision thing"
@@ -47,53 +48,53 @@ html(lang="en")
       .small-12.columns.hero
         .row.hero-title
           .small-12.small-centered.medium-centered.columns#hero-title
-            h2.supertitle.grey Issue 1
+            h2.supertitle.grey Issue 2
             span.stars &#x2605; &#x2605; &#x2605;
-            h1.main-title National Security
-            p Seven essays about the monster living under your bed.
+            h1.main-title #{issue}
+            p #{issue_subtitle}
           .print-only
             img.print-hero-image
 
         .row.hero-slider-row.hide-for-print
           .small-10.large-10.small-centered.columns#hero-slider
             div.large-4.small-12.columns.slider-panel.video-slide
-              img(src="../images/heros/hero-brands.jpg")
+              img(src="../images/heros/sm/globe1.jpg")
               a(id="videoRevealAnchor", href="#",data-reveal-id="videoModal",title="The World is a scary place")
                 h2.carousel-item-title.carousel-video-item-title WATCH: #{videoDesc}
             div.large-4.small-12.columns.slider-panel
-              img(src="../images/heros/hero-milkis.jpg")
+              img(src="../images/heros/sm/hero-selverstone.jpg")
               a(href="milkis-essay.html")
                 h2.carousel-item-title= essay1
               //- p.text-right= author6
             div.large-4.small-12.columns.slider-panel
-              img(src="../images/heros/hero-skowronek.jpg")
+              img(src="../images/heros/sm/hero-brandsSoviet.jpg")
               a(href="skowronek-essay.html")
                 h2.carousel-item-title= essay2
               //- p.text-right= author4
             div.large-4.small-12.columns.slider-panel
-              img(src="../images/heros/hero-brands.jpg")
+              img(src="../images/heros/sm/hero-engel.jpg")
               a(href="brands-essay.html")
                 h2.carousel-item-title= essay3
               //- p.text-right= author1
 
             div.large-4.small-12.columns.slider-panel
-              img(src="../images/heros/hero-nelson.jpg")
+              img(src="../images/heros/sm/hero-suri.jpg")
               a(href="nelson-essay.html")
                 h2.carousel-item-title= essay4 
               //- p.text-right= author3
             div.large-4.small-12.columns.slider-panel
-              img(src="../images/heros/hero-kamarck.jpg")
+              img(src="../images/heros/sm/hero-leffler.jpg")
               a(href="kamarck-essay.html")
                 h2.carousel-item-title= essay5
               //- p.text-right= author2
 
             div.large-4.small-12.columns.slider-panel
-              img(src="../images/heros/hero-wehner.jpg")
+              img(src="../images/heros/sm/hero-zelikow.jpg")
               a(href="wehner-essay.html")
                 h2.carousel-item-title= essay6 
 
             div.large-4.small-12.columns.slider-panel
-              img(src="../images/heros/hero-brands.jpg")
+              img(src="../images/heros/sm/hero-flournoy.jpg")
               a(href="wehner-essay.html")
                 h2.carousel-item-title= essay7
               //- p.text-right= author5

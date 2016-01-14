@@ -10,6 +10,7 @@ $(document).ready(function() {
     var title_text = $('a.issue-link', this).data('title');
     var subtitle_text = $('a.issue-link', this).data('subtitle');
     var video_text = $('a.issue-link', this).data('videotitle');
+    var video_identifier = $('a.issue-link', this).data('video-url');
     var issue_href = $('a.issue-link', this).attr('href');
     var background_image_url = $('a.issue-link', this).data('background-url');
 
@@ -39,9 +40,10 @@ $(document).ready(function() {
       });
 
       $('#videoRevealAnchor').fadeOut(400, function(){
-        $(this).text(video_text);
+        $(this).text('Watch: ' + video_text);
         $(this).fadeIn(400);
       });
+
     } // end if
       console.log(background_image_url);
 
@@ -49,6 +51,16 @@ $(document).ready(function() {
       if (issue_href !== undefined) {
         console.log('changing explore anchor to ' + issue_href);
         $('#explore-anchor').attr('href',issue_href);        
+      }
+
+      // change URL for video in modal window
+      if (video_identifier !== undefined) {
+        var new_iframe = '<iframe width="500" height="281" src="https://www.youtube.com/embed/' + video_identifier + '?autoplay=0" frameborder="0" allowfullscreen></iframe>';
+        $('div.flex-video.widescreen#videotrailer').html(new_iframe);
+        console.log('changing video link to ' + video_identifier);
+      }
+      if (video_text !== undefined) {
+        $('#modalTitle').text(video_text);
       }
 
       // move hero contents into div and reveal
@@ -63,7 +75,7 @@ $(document).ready(function() {
   } // end swapHeroImages
 
 
-  $('.tab-entry').not('.is-active').one('click tap', function (event) {
+  $('.tab-entry.released').not('.is-active').one('click tap', function (event) {
       swapHeroImages.call(this,event);
   });
 
