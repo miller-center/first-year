@@ -47,8 +47,23 @@
 //
 // Horizontal Social Sidebar
 //
+@media #{$medium-up} {
+  .social-sidebar-horizontal {
+    max-width: 20rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .social-sidebar-option.label {
+      margin: initial !important;
+      align-self: center;
+    }
+    .social-sidebar-option {
+
+    }
+  }
+}
 .social-sidebar-horizontal {
-  max-width: 20rem;
+  max-width: 18rem;
   display: flex;
   align-items: center;
   justify-content: space-around;
