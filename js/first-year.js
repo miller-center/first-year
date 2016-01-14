@@ -29,7 +29,15 @@ $(document).ready(function() {
   // Sharing Bar Print Action
   $('a').has('.print-button').on("click tap", function(e) {
     // avoid this behavior on essay pages
-    if (window.location.pathname.indexOf("essay") === -1 ) {
+    var name = window.location.pathname;
+    // skip Issue 1 names
+    var name_list = ["crucible","what-time","promise-and-peril","experience-of-others","avoiding-failure","letter-to-the-new"];
+    if ( new RegExp(name_list.join("|")).test(name) ) {
+      FirstYear.printHeroChange();
+      window.print();
+      return false;
+    }
+    else if (window.location.pathname.indexOf("essay") === -1 ) {
       FirstYear.printHeroChange();
       window.print();
       return false;
@@ -272,6 +280,11 @@ $(document).ready(function() {
   try {
     if(Foundation.utils.is_small_only()) {
       $('figure').each(function() {
+        if ( $(this).has('iframe') ) {
+          FirstYear.rewriteIframe(this, '325');
+        }
+      });
+      $('div#emailModal').each(function() {
         if ( $(this).has('iframe') ) {
           FirstYear.rewriteIframe(this, '325');
         }
