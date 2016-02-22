@@ -3,7 +3,7 @@
 @import "utils";
 
 // default
-$author-last-name: “bruner”;
+$author-last-name: "bruner";
 $filename: "hero-#{$author-last-name}.jpg";
 .hero {
   background: url('../../../images/heros/#{$filename}') ;
