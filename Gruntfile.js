@@ -35,6 +35,13 @@ module.exports = function(grunt) {
           'css/hero/issue2/essay5.css': 'scss/hero/issue2/essay5.scss',
           'css/hero/issue2/essay6.css': 'scss/hero/issue2/essay6.scss',
           'css/hero/issue2/essay7.css': 'scss/hero/issue2/essay7.scss',
+          'css/hero/issue3.css': 'scss/hero/issue3.scss',
+          'css/hero/issue3/bernstein.css': 'scss/hero/issue3/bernstein.scss',
+          'css/hero/issue3/bruner.css': 'scss/hero/issue3/bruner.scss',
+          'css/hero/issue3/bruner.css': 'scss/hero/issue3/gale.scss',
+          'css/hero/issue3/bruner.css': 'scss/hero/issue3/macguineas.scss',
+          'css/hero/issue3/bruner.css': 'scss/hero/issue3/mckee.scss',
+          'css/hero/issue3/bruner.css': 'scss/hero/issue3/scheppach.scss',
           'css/teaser.css': 'scss/teaser.scss',
           'css/blog-entry.css': 'scss/blog-entry.scss',
           'css/about.css': 'scss/about.scss'
