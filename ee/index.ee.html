@@ -42,7 +42,7 @@
 {if:else}
 
 {!-- This string appears in the hero, on the button launching the video modal --}
-{exp:string:set name="video-tease"}War (Huh!) What is it Good For?{/exp:string:set}
+{exp:string:set name="video-tease"}The Dangerous First Year{/exp:string:set}
 
 
 {exp:channel:entries channel="potus" limit="1" orderby="potus-released" sort="desc"}
@@ -52,7 +52,7 @@
 	{exp:string:set name="meta_description"}A non-partisan effort to examine the history and structure of presidential First Years, assess the policy opportunities and threats for our next President, and influence the national debate by addressing candidates, opinion leaders, and the public.{/exp:string:set}
 	
     <div id="hero-row" class="row">
-      <div id="issue-2-hero" class="small-12 columns hero">
+      <div id="issue-3-hero" class="small-12 columns hero">
         <!--<div class="row news">
           <div id="the-latest" class="small-6 medium-2 small-centered columns hide-for-small-only right">
             <ul>
@@ -78,25 +78,26 @@
           <div class="small-11 small-centered medium-10 large-8 xlarge-7 large-centered columns">
             <div class="row">
               <div class="intro-button small-6 columns"><a id="explore-anchor" href="/issue/{url_title}">Explore the essays</a></div>
-              <div class="intro-button small-6 columns"><a id="videoRevealAnchor" href="#" data-reveal-id="videoModal" title="Watch: The Critical First Year">Watch: {exp:string:output name="video-tease"}</a></div>
+              <!--<div class="intro-button small-6 columns"><a id="videoRevealAnchor" href="#" data-reveal-id="videoModal" title="Watch: {exp:string:output name="video-tease"}">Watch: {exp:string:output name="video-tease"}</a></div>-->
+              <div class="intro-button small-6 columns"><a id="explore-anchor" href="/about">About the First Year Project</a></div>
             </div>
           </div>
         </div>
         <div id="hero-navigation-row" class="row">
           <div id="nav-tabs" class="subnav small-12 medium-10 medium-offset-1 medium-centered columns">
               <div class="small-3 columns tab">
-                <div class="tab-entry released"><a id="issue-1" class="issue-link" data-id="1" data-supertitle="Issue 1" data-title="Why the First Year Matters" data-subtitle="Six essays about the promises and pitfalls of the first 365 days in office." data-videotitle="Watch: The Critical First Year" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/white-house.jpg" href="/issue/why-the-first-year">1 Crucible</a>
+                <div class="tab-entry released"><a id="issue-1" class="issue-link" data-id="1" data-supertitle="Issue 1" data-title="Why the First Year Matters" data-subtitle="Six essays about the promises and pitfalls of the first 365 days in office." data-videotitle="The Critical First Year" data-video-url="G9cb1WH3hEU" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/white-house.jpg" href="/issue/why-the-first-year">1 Crucible</a>
                   <p>Why the First Year Matters</p>
                 </div>
               </div>
               <div class="small-3 columns tab">
-                <div class="tab-entry released is-active"><a id="issue-2" class="issue-link" data-id="2" data-supertitle="Issue 2" data-title="National Security" data-subtitle="National Security and the World Order" data-videotitle="Watch: War (Ugh) What is it Good For?" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-2.jpg" href="/issue/national-security">2 Power</a>
-                  <p>National Security and World Order<br>NEW</p>
+                <div class="tab-entry released"><a id="issue-2" class="issue-link" data-id="2" data-supertitle="Issue 2" data-title="The Dangerous First Year" data-subtitle="Facing National Security Challenges" data-videotitle="{exp:string:output name="video-tease"}" data-video-url="VpFdNTd5UBo" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-2.jpg" href="/issue/national-security">2 Peril</a>
+                  <p>Facing National Security Challenges</p>
                 </div>
               </div>
               <div class="small-3 columns tab">
-                <div class="tab-entry unreleased"><a id="issue-3" class="issue-link" href="#">3 Finances</a>
-                  <p>The Critical First Budget<br> FEBRUARY 2016</p>
+                <div class="tab-entry unreleased is-active"><a id="issue-3" class="issue-link" data-id="3" data-supertitle="Issue 3" data-title="The critical first budget" data-subtitle="Paying for the next president’s promises without breaking the bank" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-3.jpg" href="/issue/the-critical-first-budget">3 Finances</a>
+                  <p>The Critical First Budget</p>
                 </div>
               </div>
               <div class="small-3 columns tab">
@@ -109,7 +110,8 @@
       </div><!-- end hero -->
       <!-- these divs are for all but the current (default) issue, which is above -->
       <div class="small-12 columns hero hide hide-for-print" id="issue-1-hero"></div>
-      <div class="small-12 columns hero hide hide-for-print" id="issue-3-hero"></div>
+      <div class="small-12 columns hero hide hide-for-print" id="issue-2-hero"></div>
+      <!--<div class="small-12 columns hero hide hide-for-print" id="issue-3-hero"></div>-->
       <div class="small-12 columns hero hide hide-for-print" id="issue-4-hero"></div>
     </div><!-- end hero-row -->
 
@@ -117,7 +119,7 @@
 <!-- Video Modal -->
 <div id="videoModal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal hide-for-print">
   <h2 id="modalTitle">{exp:string:output name="video-tease"}</h2>
-  <div id="videotrailer" class="flex-video widescreen"><iframe width="500" height="281" src="https://www.youtube.com/embed/G9cb1WH3hEU?autoplay=0" frameborder="0" allowfullscreen></iframe></div>
+  <div id="videotrailer" class="flex-video widescreen"><iframe width="500" height="281" src="https://www.youtube.com/embed/VpFdNTd5UBo?autoplay=0" frameborder="0" allowfullscreen></iframe></div>
   <a aria-label="Close" class="close-reveal-modal">&#215;</a>
 </div>
     
@@ -127,14 +129,27 @@
       <div class="small-0 large-1 columns spacer">&nbsp;</div>
       <div id="featured" class="small-12 medium-8 large-7 columns">
         
+<!--WATCH LIVE, make visible at 1:30pm on 1/14. Also change "limit" below to "3".-->
+	<!--<div class="small-6 featured-item" style="border-left: 5px solid #ff7d34;">
+ 
+		<div class="media">
+			<div class="media-item"><a href="http://bit.ly/1PXq0W6" target="_blank"><img src="http://staticmc.org/potus/images/clinton_soldiers.jpg"></a></div>
+          	</div>         	
+          	
+		<div class="featured-item-text" style="padding-left: 5px;">
+			<h3><a href="http://bit.ly/1PXq0W6" target="_blank">WATCH LIVE: National security in year one <img src="http://staticmc.org/potus/images/new-window.png" style="height: .9rem; margin-left: 5px;opacity: .5;"></a></h3>
+			<p class="content">The Miller Center joins with the Woodrow Wilson Center to host a special event on the next president’s first year. Jan 14, 3:00-6:00PM </p>
+		</div>
+        </div>-->
+
 		{exp:channel:entries channel="potus_blog" category="447" limit="4"}		
         <div class="small-6 featured-item">
  
 			{potus-bl-image}
- 			<div class="media">
+			<div class="media">
 				<div class="media-item"><a href="/blog/{url_title}"><img src="{potus-bl-image:potus-bl-imagefile}"></a></div>
 				<div class="media-credit">{potus-bl-image:potus-bl-imagecredit}</div>
-          	</div>
+			</div>
           	{/potus-bl-image}
           	
 			<div class="featured-item-text">
@@ -149,11 +164,16 @@
       
       <div id="blog" class="small-12 medium-4 large-3 columns">
         <h2>Briefing Room</h2>
-		{exp:channel:entries channel="potus_blog" category="not 447" limit="7"}	
-        <div class="blog-item">
-          <h4> <a href="/blog/{url_title}">{title}</a></h4>
-          <div class="blog-item-info"><span class="date">{entry_date format='%F %j, %Y'}</span><span class="author">{author}</span></div>
-        </div>
+		{exp:channel:entries channel="potus_blog" category="not 447" limit="18"}	
+		{if potus-bl-hide==""}
+			<div class="blog-item">
+	        	<h4> <a href="/blog/{url_title}">{title}</a></h4>
+	        	<div class="blog-item-info">
+					<span class="date">{entry_date format='%F %j, %Y'}</span>
+					<span class="author">{if potus-bl-author_override !=""}{potus-bl-author_override}{if:else}{author}{/if}</span>
+				</div>
+			</div>
+		{/if}	
         {/exp:channel:entries}
         <p><a href="/blog" class="more">Briefing Room archive </a></p>
       </div>
