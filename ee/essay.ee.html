@@ -2,7 +2,7 @@
 {exp:channel:entries channel="potus_essay" limit="1" require_entry="yes"}
 
 	{!-- If the query failed, send the visitor to the project home page. --}
-	{if no_results}{redirect="potus/index"}{/if}
+	{if no_results}{redirect='potus/404' status_code="404"}{/if}
 
 {embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/essay.css" css-hero-include="{potus-es-css}" og-image-include="http://staticmc.org/potus/images/heros/lg/{potus-es-hero}"}	
 
@@ -14,7 +14,7 @@
         <div class="row hero-title">
           <div id="hero-title" class="small-12 small-centered medium-uncentered columns">
             {parents field="potus-essays"}
-				<h2 class="supertitle"><a href="/issue/{parents:url_title}">Issue {parents:potus-number}: {parents:title}</a></h2>
+				<h2 class="supertitle"><a href="/issue/{parents:url_title}">Volume {parents:potus-number}: {parents:title}</a></h2>
 			{/parents}
             <span class="stars">&#x2605; &#x2605; &#x2605;</span>
             <h1 class="main-title">{title}</h1>
@@ -25,7 +25,10 @@
       </div>
     </div>
 
+
 {/exp:channel:entries}
+
+
 
 {!--Next and prev have to exist outside of the channel entries tag --}
 
@@ -59,7 +62,15 @@
 {exp:channel:entries channel="potus_essay" limit="1"}
 
     <div class="row">
-      <div id="essay" class="small-12 columns">
+      <div id="essay" class="small-12 large-9 large-centered columns">
+
+
+	<!--KEY TAKEAWAYS-->
+        <div id="cliffsnotes">
+          {potus-es-cliffsnotes}
+        </div>
+	<!--END KEY TAKEAWAYS-->
+
       <p><a href="#author-bio">By {potus-es-author}{potus-es-author:potus-es-authorname}{/potus-es-author}</a></p>
       	{exp:allow_eecode}
 		{potus-es}      
@@ -98,11 +109,25 @@
         {/if}
           
         </div>
+
+
+        <!--Begin Facebook commenting-->
+        {if allow_comments}
+              <div class="fb-comments" data-href="http://firstyear2017.org/essay/{url_title}" data-width="100%" data-numposts="5"></div>
+        {/if} 
+        <!--End Facebook commenting-->
         
       </div>
     </div>
 
+{!--  horizontal sidebar (for small/medium viewports only) --}
+    <div class="social-container-horizontal hide-for-large-up">
+      {embed="potus/sharing-div" target-url='essay/{url_title}' literal='{title}'}
+    </div>
+
 {embed="potus/sharing-sidebar" target-url='essay/{url_title}' literal='{title}'}
+
+
 
  {/exp:channel:entries}   
  
