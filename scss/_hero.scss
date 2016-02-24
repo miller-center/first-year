@@ -572,7 +572,7 @@ $hero-height: 30rem !default;
           height: 2px;
           width: #{$bar-width-ratio}%;
           left: #{(100 - $bar-width-ratio) / 2}%;
-          margin: -2.3em auto 15px auto;
+          margin: -2.5em auto 15px auto;
           background-color: $info-color;
         }
       }
