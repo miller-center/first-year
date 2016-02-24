@@ -566,6 +566,16 @@ $hero-height: 30rem !default;
       p {
           top: 25%;
       }
+      &.is-active {
+        a::after {
+          $bar-width-ratio: 75;
+          height: 2px;
+          width: #{$bar-width-ratio}%;
+          left: #{(100 - $bar-width-ratio) / 2}%;
+          margin: -2.3em auto 15px auto;
+          background-color: $info-color;
+        }
+      }
     }
   }
   #nav-tabs {
@@ -617,6 +627,17 @@ $hero-height: 30rem !default;
         }
         p {
           top: 33%;
+        }
+        a::after {
+          $bar-width-ratio: 45;
+          display: block;
+          position:absolute;
+          content: "";
+          height: 2px;
+          width: #{$bar-width-ratio}%;
+          left: #{(100 - $bar-width-ratio) / 2}%;
+          margin: -1.8em auto 15px auto;
+          background-color: $info-color;
         }
       }
     }
