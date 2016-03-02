@@ -7,6 +7,7 @@
 
 #blog-single-entry {
 		.blog-item {
+			min-height: 350px;
 			a {
 				color: $info-color;
 			}
@@ -19,6 +20,7 @@
 			}
 			.media {
 				float:right;
+				margin-top: 1rem;
 				margin-left: 1rem;
 				//width: 50%;
 				max-width: 50%;
