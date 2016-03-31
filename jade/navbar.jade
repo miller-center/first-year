@@ -50,7 +50,8 @@
               a(href="/expressionengine.php/potus/about#getinvolved") Get Involved
 
 
-    section.social-section.show-for-medium-up.hide-for-print
+
+    section.social-section.show-for-large-up.hide-for-print
       ul.right
         li.label Follow
         li.social-icon#header-fb-icon: a(href="#",title="Visit #{title} on Facebook")
@@ -58,4 +59,7 @@
           //- img(src="images/icons/lg/facebook-wht.png")
         li.social-icon#header-tw-icon: a(href="#",title="Follow #{title} on Twitter") 
           | &nbsp;
+
+    section.show-for-large-up.hide-for-print#search
+     <form action="/searchtest" method="get"><input id="search-header" maxlength="150" name="q" placeholder="Search" type="search" />&nbsp;</form>
  
