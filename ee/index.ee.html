@@ -51,7 +51,7 @@
 	{exp:string:set name="meta_description"}A non-partisan effort to examine the history and structure of presidential First Years, assess the policy opportunities and threats for our next President, and influence the national debate by addressing candidates, opinion leaders, and the public.{/exp:string:set}
 	
     <div id="hero-row" class="row">
-      <div id="issue-3-hero" class="small-12 columns hero">
+      <div id="issue-{potus-number}-hero" class="small-12 columns hero">
         <!--<div class="row news">
           <div id="the-latest" class="small-6 medium-2 small-centered columns hide-for-small-only right">
             <ul>
@@ -95,17 +95,17 @@
                 </div>
               </div>
               <div class="small-3 columns tab">
-                <div class="tab-entry unreleased is-active"><a id="issue-3" class="issue-link" data-id="3" data-supertitle="Volume 3" data-title="The critical first budget" data-subtitle="Paying for the next president’s promises without breaking the bank" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-3.jpg" href="/issue/the-critical-first-budget">3 Fiscal Policy</a>
+                <div class="tab-entry released"><a id="issue-3" class="issue-link" data-id="3" data-supertitle="Volume 3" data-title="The critical first budget" data-subtitle="Paying for the next president’s promises without breaking the bank" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-3.jpg" href="/issue/the-critical-first-budget">3 Fiscal Policy</a>
                   <p>The critical first budget</p>
                 </div>
               </div>
               <div class="small-3 columns tab">
-                <div class="tab-entry unreleased"><a id="issue-4" class="issue-link" href="#">4 Immigration</a>
-                  <p>Struggling over borders<br> May 2016</p>
+                <div class="tab-entry unreleased is-active"><a id="issue-4" class="issue-link" href="#">4 Immigration</a>
+                  <p>Struggling over borders</p>
                 </div>
               </div>
               <div class="small-3 columns tab">
-                <div class="tab-entry unreleased"><a id="issue-4" class="issue-link" href="#">5 Broken Government</a>
+                <div class="tab-entry unreleased"><a id="issue-5" class="issue-link" href="#">5 Broken Government</a>
                   <p>Bridging the partisan divide<br> July 2016</p>
                 </div>
               </div>
@@ -116,8 +116,9 @@
       <!-- these divs are for all but the current (default) issue, which is above -->
       <div class="small-12 columns hero hide hide-for-print" id="issue-1-hero"></div>
       <div class="small-12 columns hero hide hide-for-print" id="issue-2-hero"></div>
-      <!--<div class="small-12 columns hero hide hide-for-print" id="issue-3-hero"></div>-->
-      <div class="small-12 columns hero hide hide-for-print" id="issue-4-hero"></div>
+      <div class="small-12 columns hero hide hide-for-print" id="issue-3-hero"></div>
+      <!--<div class="small-12 columns hero hide hide-for-print" id="issue-4-hero"></div>-->
+      <div class="small-12 columns hero hide hide-for-print" id="issue-5-hero"></div>
     </div><!-- end hero-row -->
 
 
