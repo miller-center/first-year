@@ -44,7 +44,14 @@ module.exports = function(grunt) {
           'css/hero/issue3/scheppach.css': 'scss/hero/issue3/scheppach.scss',
           'css/teaser.css': 'scss/teaser.scss',
           'css/blog-entry.css': 'scss/blog-entry.scss',
-          'css/about.css': 'scss/about.scss'
+          'css/about.css': 'scss/about.scss',
+          'css/hero/issue4.css': 'scss/hero/issue4.scss',
+          'css/hero/issue4/milkis.css': 'scss/hero/issue4/milkis.scss',
+          'css/hero/issue4/milkis.css': 'scss/hero/issue4/freeman.scss',
+          'css/hero/issue4/milkis.css': 'scss/hero/issue4/law.scss',
+          'css/hero/issue4/milkis.css': 'scss/hero/issue4/tichenor.scss',
+          'css/hero/issue4/milkis.css': 'scss/hero/issue4/martin.scss'
+
         }
       }
     },
