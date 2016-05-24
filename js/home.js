@@ -41,8 +41,8 @@ var carousel = jQuery('#nav-tabs').slick({
           dots: false,
           arrows: true,
           slidesToShow: 2,
-          slidesToScroll: 1,
-          initialSlide: 1,
+          slidesToScroll: 2,
+          initialSlide: 2,
           autoplay: false       
         }      
       }
