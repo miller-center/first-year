@@ -13,6 +13,18 @@
 @import "foundation";
 @import "utils";
 
+/* override Slick Carousel defaults */
+$slick-dot-color: white;
+$slick-dot-color-active: $info-color;
+$slick-dot-size: 15px;
+$slick-arrow-size: 35px;
+$slick-font-path: "../fonts/";
+$slick-loader-path: "../";
+$slick-ajax-loader-gif-path: "../images/ajax-loader.gif"; // this will change!
+@import "slick.scss";
+@import "slick-theme.scss";
+
+
 // mixins, including overriding default ones
 @mixin single-transition($property:all, $speed:300ms, $ease:ease-out) {
   transition: $property $speed $ease;

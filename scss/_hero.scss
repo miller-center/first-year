@@ -462,7 +462,7 @@ $hero-height: 30rem !default;
   padding: 0 0.5em;
   min-height: 5rem;
   max-height: 8rem;
-  overflow:hidden;
+//  overflow:hidden;
   .tab {
     padding: 0 !important;
     margin: 0;
@@ -478,17 +478,6 @@ $hero-height: 30rem !default;
       &.is-active {
         a {
           color: $info-color !important;
-        }
-        a::after {
-          $bar-width-ratio: 45;
-          display: block;
-          position:absolute;
-          content: "";
-          height: 2px;
-          width: #{$bar-width-ratio}%;
-          left: #{(100 - $bar-width-ratio) / 2}%;
-          margin: -1.8em auto 15px auto;
-          background-color: $info-color;
         }
         border-bottom: none;
         top: -$active-border-width;
@@ -513,6 +502,9 @@ $hero-height: 30rem !default;
         line-height: 100%;
         font-size: 0.6rem;
         text-align: center;
+        margin-right:auto;
+        margin-left:auto;
+        width: 100%;
         padding: 0 0 0 0;
         margin-top: 0.5em;
       }
@@ -527,7 +519,6 @@ $hero-height: 30rem !default;
       letter-spacing: 0.15em;
       top: 0;
       position: relative;
-
     }
   }
 } // end #navtabs default
@@ -538,6 +529,14 @@ $hero-height: 30rem !default;
   }
   #nav-tabs {
     margin-top: 1rem;
+    .tab-entry {
+      p {
+        margin-right:auto;
+        margin-left:auto;
+        text-align: center;
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -565,16 +564,6 @@ $hero-height: 30rem !default;
       }
       p {
           top: 25%;
-      }
-      &.is-active {
-        a::after {
-          $bar-width-ratio: 75;
-          height: 2px;
-          width: #{$bar-width-ratio}%;
-          left: #{(100 - $bar-width-ratio) / 2}%;
-          margin: -2.5em auto 15px auto;
-          background-color: $info-color;
-        }
       }
     }
   }
@@ -627,17 +616,7 @@ $hero-height: 30rem !default;
         }
         p {
           top: 33%;
-        }
-        a::after {
-          $bar-width-ratio: 45;
-          display: block;
-          position:absolute;
-          content: "";
-          height: 2px;
-          width: #{$bar-width-ratio}%;
-          left: #{(100 - $bar-width-ratio) / 2}%;
-          margin: -1.8em auto 15px auto;
-          background-color: $info-color;
+          margin-top: 33%;
         }
       }
     }
@@ -677,6 +656,7 @@ $hero-height: 30rem !default;
         }
         p {
             top: 33%;
+            margin-top: 0.5rem;
         }
 
         }
