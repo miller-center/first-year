@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,6 +6,7 @@
   <meta charset="UTF-8">
   <title>{embed:header-title}</title>
   {embed="embeds/meta_description"}
+  <meta name="keywords" content="miller center, public affairs, us president, potus, american president, president, first hundred days, first year, potus2017, first year project, UVA, american forum, university of virginia, non-partisan, forum, politics, government"/>  
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
   {exp:string:output name="donottrack"} {!--If this issue hasn't been released, it will have a "noindex" trigger.--}
@@ -15,18 +17,20 @@
   <meta property="og:type"  content="website"/>
   <meta property="og:title" content="{embed:header-title}"/>
   <meta property="fb:app_id" content="186913828328066" /> <!--FB commenting app-->
+  {if embed:og-image-include != ""}
+  	<meta property="og:image" content="{embed:og-image-include}"/>
+  {if:else}
+  	<meta property="og:image" content="http://staticmc.org/potus/images/heros/white-house.jpg"/>
+  {/if}
+  <meta property="og:url" content="http://firstyear2017.org/{embed:og-url-include}"/>
   <link rel="stylesheet" href="//{exp:string name='asset_path'}/css/first-year.css">
   {if embed:css-include != ""}
-  <link rel="stylesheet" href="//{embed:css-include}">
+  	<link rel="stylesheet" href="//{embed:css-include}">
   {/if}
   {if embed:css-hero-include != ""}
-  <link rel="stylesheet" href="//{embed:css-hero-include}">
+  	<link rel="stylesheet" href="//{embed:css-hero-include}">
   {/if}
-  {if embed:og-image-include != ""}
-  <meta property="og:image" content="{embed:og-image-include}"/>
-  {if:else}
-  <meta property="og:image" content="http://staticmc.org/potus/images/heros/white-house.jpg"/>
-  {/if}
+  <link rel="canonical" href="http://firstyear2017.org/{embed:og-url-include}">
   <link rel="icon" type="image/png" href="//{exp:string name='asset_path'}/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Karla:400,400italic,700,700italic&amp;7CCrimson+Text:400,700,600" rel="stylesheet" type="text/css">
 
@@ -112,13 +116,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <li class="hide-for-medium-up hide-for-print"><a href="/issue/why-the-first-year">Volume 1: The First Year</a></li>
             <li class="hide-for-medium-up hide-for-print"><a href="/issue/national-security">Volume 2: National Security</a></li>
             <li class="hide-for-medium-up hide-for-print"><a href="/issue/the-critical-first-budget">Volume 3: The First Budget</a></li>
+            <li class="hide-for-medium-up hide-for-print"><a href="/issue/controlling-the-borders">Volume 4: Immigration</a></li>
             <li class="hide-for-medium-up hide-for-print"><!--.active class was applied here... I like it but want to apply globally. Until I figure that out, commenting it out. --><a href="/about#getinvolved">Get Involved</a></li>
+            <li class="hide-for-medium-up hide-for-print"><a href="/search">Search</a></li>
             <li id="header-menu-icon" class="menu-option hide-for-small-only hide-for-print has-dropdown"><a href="#"><span class="label">Menu<span></span></span></a>
               <ul class="dropdown">
             <li>
               <li><a href="/issue/why-the-first-year">Volume 1: The First Year</a></li>
               <li><a href="/issue/national-security">Volume 2: National Security</a></li>
               <li><a href="/issue/the-critical-first-budget">Volume 3: The First Budget</a></li>
+              <li><a href="/issue/controlling-the-borders">Volume 4: Immigration</a></li>
             </li>
             <li><a href="/about">About the Project</a>
               <ul> 
@@ -128,16 +135,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               </ul>
             </li>
             <li><!--active class was applied here.. I like it but want to apply globally. UntilI figure that out, commenting it out. --><a href="/about#getinvolved">Get Involved</a></li>
+            <li><a href="/search">Search</a></li>
           </ul>
             </li>
           </ul>
         </section>
-        <section class="social-section show-for-medium-up hide-for-print">
+        <section class="social-section show-for-large-up hide-for-print">
           <ul class="right">
             <li class="label">Follow</li>
             <li id="header-fb-icon" class="social-icon"><a href="https://www.facebook.com/millercenter" target="_blank" title="Like the Miller Center on Facebook">&nbsp;</a></li>
-            <li id="header-tw-icon" class="social-icon"><a href="https://twitter.com/POTUS2017" target="_blank" title="Follow the The First Year Project on Twitter">&nbsp;</a></li>
+            <li id="header-tw-icon" class="social-icon"><a href="https://twitter.com/miller_center" target="_blank" title="Follow the Miller Center on Twitter">&nbsp;</a></li>
           </ul>
         </section>
+
+        <section id="search" class="show-for-large-up hide-for-print"><form action="/search" method="get"><input id="search-header" maxlength="150" name="q" placeholder="Search" type="search" />&nbsp;</form></section>
+      
+
       </nav>
     </div>
+
+
