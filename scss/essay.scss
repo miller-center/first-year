@@ -43,6 +43,7 @@ $hero-height: 24rem;
 	float:left; 
 	width: 12rem; 
 	float:right;
+	margin-left: 1em;
 	ul {
 		margin-left: .5em; 
 		margin-right: 0; 
@@ -321,7 +322,7 @@ blockquote {
 
 @media #{$large-up} {
 	#essay > p.essay-intro { padding-right: 14rem;}
-	#essay > p, #essay > h3, #essay > h4, #essay > ul, #essay > ol {padding-right: 14rem;}
+	#essay > p, #essay > h3, #essay > h4, #essay > ul, #essay > ol {padding-right: 12rem;}
 }
 
 @media #{$xlarge-only} {
