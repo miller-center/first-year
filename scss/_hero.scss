@@ -685,26 +685,35 @@ $hero-height: 30rem !default;
   
   }
   #issue-1-hero {
-    background: url('../images/heros/lg/white-house.jpg') no-repeat center center;
+    background: url('../images/heros/sm/white-house.jpg') no-repeat center center;
   }
   #issue-2-hero {
-    background: url('../images/heros/lg/hero-issue-2.jpg') no-repeat center center;
+    background: url('../images/heros/sm/hero-issue-2.jpg') no-repeat center center;
   }
   #issue-3-hero {
-    background: url('../images/heros/lg/hero-issue-3.jpg') no-repeat center center;
+    background: url('../images/heros/sm/hero-issue-3.jpg') no-repeat center center;
   }
   #issue-4-hero {
-    background: url('../images/heros/lg/hero-issue-4.jpg') no-repeat center center;
+    background: url('../images/heros/sm/hero-issue-4.jpg') no-repeat center center;
   }
   #issue-5-hero {
-    background: url('../images/heros/lg/hero-issue-5.jpg') no-repeat center center;
+    background: url('../images/heros/sm/hero-issue-5.jpg') no-repeat center center;
   }
   #issue-6-hero {
-    background: url('../images/heros/lg/hero-issue-6.jpg') no-repeat center center;
+    background: url('../images/heros/sm/hero-issue-6.jpg') no-repeat center center;
+  }
+  #issue-7-hero {
+    background: url('../images/heros/sm/hero-issue-7.jpg') no-repeat center center;
+  }
+  #issue-8-hero {
+    background: url('../images/heros/sm/hero-issue-8.jpg') no-repeat center center;
+  }
+  #issue-9-hero {
+    background: url('../images/heros/sm/hero-issue-9.jpg') no-repeat center center;
   }
 
   .hero {
-    background: url('../images/heros/lg/hero-issue-2.jpg') no-repeat center center;
+    background: url('../images/heros/sm/hero-issue-2.jpg') no-repeat center center;
     .news, .hero-title, .intro-nav, #hero-navigation-row {
 
     }
@@ -745,6 +754,23 @@ $hero-height: 30rem !default;
   #issue-4-hero {
     background: url('../images/heros/md/hero-issue-4.jpg') no-repeat center center;
   }
+  #issue-5-hero {
+    background: url('../images/heros/md/hero-issue-5.jpg') no-repeat center center;
+  }
+  #issue-6-hero {
+    background: url('../images/heros/md/hero-issue-6.jpg') no-repeat center center;
+  }
+  #issue-7-hero {
+    background: url('../images/heros/md/hero-issue-7.jpg') no-repeat center center;
+  }
+  #issue-8-hero {
+    background: url('../images/heros/md/hero-issue-8.jpg') no-repeat center center;
+  }
+  #issue-9-hero {
+    background: url('../images/heros/md/hero-issue-9.jpg') no-repeat center center;
+  }
+
+
   .hero {
     .news, .hero-title, .intro-nav, #hero-navigation-row {
 
@@ -778,6 +804,22 @@ $hero-height: 30rem !default;
   #issue-4-hero {
     background: url('../images/heros/lg/hero-issue-4.jpg') no-repeat center center;
   }
+  #issue-5-hero {
+    background: url('../images/heros/lg/hero-issue-5.jpg') no-repeat center center;
+  }
+  #issue-6-hero {
+    background: url('../images/heros/lg/hero-issue-6.jpg') no-repeat center center;
+  }
+  #issue-7-hero {
+    background: url('../images/heros/lg/hero-issue-7.jpg') no-repeat center center;
+  }
+  #issue-8-hero {
+    background: url('../images/heros/lg/hero-issue-8.jpg') no-repeat center center;
+  }
+  #issue-9-hero {
+    background: url('../images/heros/lg/hero-issue-9.jpg') no-repeat center center;
+  }
+
   .hero {
     .news, .hero-title, .intro-nav, #hero-navigation-row {
 
