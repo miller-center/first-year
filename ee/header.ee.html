@@ -13,6 +13,8 @@
       <meta name="robots" content="noindex">
     {/if}
   {/exp:string:output}
+  
+  {!--Begin Facebook tags --}
   <meta property="og:type"  content="website"/>
   <meta property="og:title" content="{embed:header-title}"/>
   <meta property="fb:app_id" content="186913828328066" /> <!--FB commenting app-->
@@ -22,12 +24,36 @@
   	<meta property="og:image" content="http://staticmc.org/potus/images/heros/white-house.jpg"/>
   {/if}
   <meta property="og:url" content="http://firstyear2017.org/{embed:og-url-include}"/>
-  <link rel="stylesheet" href="//{exp:string name='asset_path'}/css/first-year.css">
+  {if embed:descr-include}
+    <meta name="og:description" property="og:description" content="{embed:descr-include}" />
+  {if:else}
+    <meta name="og:description" property="og:description" content="{exp:string name="meta_description"}" />
+  {/if}
+
+  {!--Begin Twitter tags --}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@Miller_Center" />
+  <meta name="twitter:title" content="{embed:header-title}" />
+
+  {if embed:descr-include}
+	  <meta name="twitter:description" content="{embed:descr-include}" />
+  {if:else}
+	  <meta name="twitter:description" content="{exp:string name="meta_description"}" />  
+  {/if}
+
+  {if embed:og-image-include != ""}
+  	<meta name="twitter:image" content="{embed:og-image-include}" />
+  {/if}
+  
+  {!--end social media tags --}  
+  
+
+  <link rel="stylesheet" type="text/css" href="//{exp:string name='asset_path'}/css/first-year.css">
   {if embed:css-include != ""}
-  	<link rel="stylesheet" href="//{embed:css-include}">
+  	<link rel="stylesheet" type="text/css" href="//{embed:css-include}">
   {/if}
   {if embed:css-hero-include != ""}
-  	<link rel="stylesheet" href="//{embed:css-hero-include}">
+  	<link rel="stylesheet" type="text/css" href="//{embed:css-hero-include}">
   {/if}
   <link rel="canonical" href="http://firstyear2017.org/{embed:og-url-include}">
   <link rel="icon" type="image/png" href="//{exp:string name='asset_path'}/images/favicon.ico">
@@ -116,6 +142,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <li class="hide-for-medium-up hide-for-print"><a href="/issue/national-security">Volume 2: National Security</a></li>
             <li class="hide-for-medium-up hide-for-print"><a href="/issue/the-critical-first-budget">Volume 3: The First Budget</a></li>
             <li class="hide-for-medium-up hide-for-print"><a href="/issue/controlling-the-borders">Volume 4: Immigration</a></li>
+            <li class="hide-for-medium-up hide-for-print"><a href="/issue/broken-government">Volume 5: Broken Government</a></li>
+            <li class="hide-for-medium-up hide-for-print"><a href="/issue/mobility">Volume 6: American Dreams</a></li>
             <li class="hide-for-medium-up hide-for-print"><a target="_blank" href="https://www.youtube.com/playlist?list=PLx8k3K8LUbZAjMPuUWrv6fczntLQ1IyG1">First Year Videos</a></li>
             <li class="hide-for-medium-up hide-for-print"><!--.active class was applied here... I like it but want to apply globally. Until I figure that out, commenting it out. --><a href="/about#getinvolved">Get Involved</a></li>
             <li class="hide-for-medium-up hide-for-print"><a href="/search">Search</a></li>
@@ -126,6 +154,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               <li><a href="/issue/national-security">Volume 2: National Security</a></li>
               <li><a href="/issue/the-critical-first-budget">Volume 3: The First Budget</a></li>
               <li><a href="/issue/controlling-the-borders">Volume 4: Immigration</a></li>
+              <li><a href="/issue/broken-government">Volume 5: Broken Government</a></li>
+              <li><a href="/issue/mobility">Volume 6: American Dreams</a></li>
             </li>
             <li><a target="_blank" href="https://www.youtube.com/playlist?list=PLx8k3K8LUbZAjMPuUWrv6fczntLQ1IyG1">Videos</a>
               <ul> 
