@@ -65,7 +65,13 @@ module.exports = function(grunt) {
           'css/hero/issue6/omara.css': 'scss/hero/issue6/omara.scss',
           'css/hero/issue6/pianta.css': 'scss/hero/issue6/pianta.scss',
           'css/hero/issue6/schragger.css': 'scss/hero/issue6/schragger.scss',
-          'css/hero/issue6/wehner.css': 'scss/hero/issue6/wehner.scss'
+          'css/hero/issue6/wehner.css': 'scss/hero/issue6/wehner.scss',
+          'css/hero/issue7.css': 'scss/hero/issue7.scss', 
+          'css/hero/issue7/cary.css': 'scss/hero/issue7/cary.scss',
+          'css/hero/issue7/douglas.css': 'scss/hero/issue7/douglas.scss',
+          'css/hero/issue7/dunn.css': 'scss/hero/issue7/dunn.scss',
+          'css/hero/issue7/greenberg.css': 'scss/hero/issue7/greenberg.scss',
+          'css/hero/issue7/shesol.css': 'scss/hero/issue7/shesol.scss'
 
         }
       }
