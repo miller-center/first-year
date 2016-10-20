@@ -17,7 +17,7 @@
 		$issuecategory='439'; //National Security
 	} elseif (strpos($url,'first-year') !== false) {
 		$issuecategory='438'; //Why First Year Matters
-	} else {
+	} elseif (strpos($url, 'budget') !== false) {
 		$issuecategory='440'; //First Budget
 	} else {
                 $issuecategory='444'; //Communication
