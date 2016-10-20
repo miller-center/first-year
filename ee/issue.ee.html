@@ -7,13 +7,21 @@
 	
 	echo "<!-- URL: ".$url."-->";
 
-	if (strpos($url,'national') !== false) {
+	if (strpos($url,'mobility') !== false) {
+		$issuecategory='443'; //Opportunity + Mobility
+	} elseif (strpos($url,'broken') !== false) {
+		$issuecategory='442'; //Broken Gov
+	} elseif (strpos($url,'controlling') !== false) {
+		$issuecategory='441'; //Immigration
+	} elseif (strpos($url,'national') !== false) {
 		$issuecategory='439'; //National Security
 	} elseif (strpos($url,'first-year') !== false) {
 		$issuecategory='438'; //Why First Year Matters
 	} else {
 		$issuecategory='440'; //First Budget
-	}
+	} else {
+                $issuecategory='444'; //Communication
+        }
 
 ?>
 
@@ -32,7 +40,7 @@
 	{/if}
 
 <!-- Topbar Navigation Section-->
-{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/issue.css" css-hero-include="{potus-issue-css}" kind="issue"}
+{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/issue.css" css-hero-include="{potus-issue-css}" kind="issue" og-url-include="{segment_2}{if segment_3}/{segment_3}{/if}" descr-include="{potus-shortdescription}" og-image-include="http://staticmc.org/potus/images/heros/sm/{potus-hero}" }
 
 
 <!-- Hero Image Section-->
@@ -102,7 +110,7 @@
 				</a>
 			</div>
 			<div class="editor-title">
-				Issue Editor
+				Volume Editor
 			</div>
 		</div>
 	</div>
@@ -127,13 +135,13 @@
 			<div class="blog-item clearfix">
 			  <h4><a href="/blog/{url_title}">{title}</a></h4>
 			  <div class="media">
-				{potus-bl-image}
+				{potus-bl-image limit="1"}
 					<div class="media-item"><a href="/blog/{url_title}"><img src="{potus-bl-image:potus-bl-imagefile}"></a></div>
 					<div class="media-credit">	{potus-bl-image:potus-bl-imagecredit}</div>
 				{/potus-bl-image}
 			  </div>
 			  <p class="content">{potus-bl-teaser}</p>
-			  <div class="blog-item-info"><!--{categories}{category_url_title} {/categories} --><span class="date">{entry_date format='%F %d, %Y'}</span><span class="author">{author}</span></div>
+			  <div class="blog-item-info"><!--{categories}{category_url_title} {/categories} --><span class="date">{entry_date format='%F %d, %Y'}</span><span class="author">{if potus-bl-author_override !=""}{potus-bl-author_override}{if:else}{author}{/if}</span></div>
 			</div>
 		{/exp:channel:entries}
   </div>
