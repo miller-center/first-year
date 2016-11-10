@@ -6,9 +6,9 @@
 {exp:channel:entries channel="potus_about" require_entry="yes" cache="yes" refresh="120"}
 
 	{!-- If the query failed, send the visitor to the project home page. --}
-	{if no_results}{redirect="potus/index"}{/if}
+	{if no_results}{redirect='potus/404' status_code="404"}{/if}
 
-	{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/about.css"}	
+	{embed="potus/header" header-title="{title}" css-include="{exp:string name='asset_path'}/css/about.css" og-image-include="http://staticmc.org/potus/images/heros/sm/{potus-hero}" descr-include="{potus-shortdescription}"}	
 
     <div class="row">
       <div class="small-12 medium-10 medium-offset-1 large-8 large-offset-2 columns">
@@ -41,11 +41,11 @@
 {if:else}
 
 {!-- This string appears in the hero, on the button launching the video modal --}
-{exp:string:set name="video-tease"}The dangerous first year{/exp:string:set}
+{exp:string:set name="video-tease"}Our broken government{/exp:string:set}
 
 
 {exp:channel:entries channel="potus" limit="1" orderby="potus-released" sort="desc"}
-	{embed="potus/header" header-title="The First Year Project" css-include="{exp:string name='asset_path'}/css/home.css" css-hero-include="{exp:string name='asset_path'}/css/hero/home.css" kind="home"}
+	{embed="potus/header" header-title="The First Year Project, Volume {potus-number}: {title}" css-include="{exp:string name='asset_path'}/css/home.css" css-hero-include="{exp:string name='asset_path'}/css/hero/home.css" kind="home" og-image-include="http://staticmc.org/potus/images/heros/sm/{potus-hero}" descr-include="{potus-shortdescription}"}
 
 	{!-- Create a variable to store our meta description. --}
 	{exp:string:set name="meta_description"}A non-partisan effort to examine the history and structure of presidential First Years, assess the policy opportunities and threats for our next President, and influence the national debate by addressing candidates, opinion leaders, and the public.{/exp:string:set}
@@ -85,7 +85,7 @@
         <div id="hero-navigation-row" class="row">
           <div id="nav-tabs" class="subnav small-12 medium-10 medium-offset-1 medium-centered columns slick">
               <div class="large-4 small-12 columns tab slider-panel">
-                <div class="tab-entry released"><a id="issue-1" class="issue-link" data-id="1" data-supertitle="Volume 1" data-title="Why the first year matters" data-subtitle="Six essays about the promises and pitfalls of the first 365 days in office" data-videotitle="The critical first year" data-video-url="G9cb1WH3hEU" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/white-house.jpg" href="/issue/why-the-first-year">1 Crucible</a>
+                <div class="tab-entry released"><a id="issue-1" class="issue-link" data-id="1" data-supertitle="Volume 1" data-title="Why the first year matters" data-subtitle="Six essays about the promises and pitfalls of the first 365 days in office" data-videotitle="The critical first year" data-video-url="J5J1cId4Pow" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/white-house.jpg" href="/issue/why-the-first-year">1 Crucible</a>
                   <p>Why the first year matters</p>
                 </div>
               </div>
@@ -100,15 +100,31 @@
                 </div>
               </div>
               <div class="large-4 small-12 columns slider-panel tab">
-                <div class="tab-entry released is-active"><a id="issue-4" class="issue-link" data-id="4" data-supertitle="Volume 4" data-title="Controlling the borders" data-subtitle="The next president must navigate the complex politics of immigration reform" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-4.jpg" href="/issue/controlling-the-borders">4 Immigration</a>
+                <div class="tab-entry released"><a id="issue-4" class="issue-link" data-id="4" data-supertitle="Volume 4" data-title="Controlling the borders" data-subtitle="The next president must navigate the complex politics of immigration reform" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-4.jpg" href="/issue/controlling-the-borders">4 Immigration</a>
                   <p>Struggling over borders</p>
                 </div>
               </div>
               <div class="large-4 small-12 columns slider-panel tab">
-                <div class="tab-entry unreleased"><a id="issue-5" class="issue-link" href="#">5 Broken Government</a>
-                  <p>Bridging the partisan divide<br>Coming July 2016</p>
+                <div class="tab-entry released"><a id="issue-5" class="issue-link" data-id="5" data-supertitle="Volume 5" data-title="Fixing our broken government" data-subtitle="History shows how America has survived partisan gridlock before—and can do so again" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-5.jpg" href="/issue/broken-government">5 Broken Government</a>
+                  <p>Bridging the partisan divide</p>
                 </div>
               </div>
+              <div class="large-4 small-12 columns slider-panel tab">
+                <div class="tab-entry released"><a id="issue-6" class="issue-link" data-id="6" data-supertitle="Volume 6" data-title="Opportunity & upward mobility" data-subtitle="The next president can revive confidence in the Great American Dream" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-6.jpg" href="/issue/mobility">6 American dreams</a>
+                  <p>Keeping the promise alive</p>
+                </div>
+              </div>
+              <div class="large-4 small-12 columns slider-panel tab">
+                <div class="tab-entry released is-active"><a id="issue-7" class="issue-link" data-id="7" data-title="Seizing the bully pulpit" data-subtitle="It will be harder than ever for the next president to be heard" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-7.jpg" href="/issue/seizing-the-bully-pulpit">7 Communication</a>
+                  <p>Getting the message across</p>
+                </div>
+              </div>
+              <div class="large-4 small-12 columns slider-panel tab">
+                <div class="tab-entry unreleased"><a id="issue-8" class="issue-link" href="#">8 Infrastructure</a>
+                  <p>Rebuilding a crumbling nation<br> Coming January 2017</p>
+                </div>
+              </div>
+
 
           </div><!-- end nav-tabs -->
         </div><!-- end hero-navigation-row -->
@@ -117,15 +133,17 @@
       <div class="small-12 columns hero hide hide-for-print" id="issue-1-hero"></div>
       <div class="small-12 columns hero hide hide-for-print" id="issue-2-hero"></div>
       <div class="small-12 columns hero hide hide-for-print" id="issue-3-hero"></div>
-      <!--<div class="small-12 columns hero hide hide-for-print" id="issue-4-hero"></div>-->
+      <div class="small-12 columns hero hide hide-for-print" id="issue-4-hero"></div>
       <div class="small-12 columns hero hide hide-for-print" id="issue-5-hero"></div>
+      <!--<div class="small-12 columns hero hide hide-for-print" id="issue-6-hero"></div>-->
+      <div class="small-12 columns hero hide hide-for-print" id="issue-7-hero"></div>
     </div><!-- end hero-row -->
 
 
 <!-- Video Modal -->
 <div id="videoModal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog" class="reveal-modal hide-for-print">
   <h2 id="modalTitle">{exp:string:output name="video-tease"}</h2>
-  <div id="videotrailer" class="flex-video widescreen"><iframe width="500" height="281" src="https://www.youtube.com/embed/VpFdNTd5UBo?autoplay=0" frameborder="0" allowfullscreen></iframe></div>
+  <div id="videotrailer" class="flex-video widescreen"><iframe width="500" height="281" src="https://www.youtube.com/embed/AusnNOvZc4Q?autoplay=0" frameborder="0" allowfullscreen></iframe></div>
   <a aria-label="Close" class="close-reveal-modal">&#215;</a>
 </div>
     
@@ -197,4 +215,3 @@
 
 
 {embed="potus/footer"}
-
