@@ -55,8 +55,8 @@ $transparent: rgba(245,245,245,0.0);
   	width: 150px;
   	float: right;
   	margin-right: 14%;
-  	input[type="search"] {background-color : $navigation-container-bg-color; border: 1px solid #666; }
-  	input[type="search"]:hover {background-color : #fff; }
+  	input[type="search"] { color: white; background-color : $navigation-container-bg-color; border: 1px solid #666; }
+  	input[type="search"]:hover { color: black; background-color : #fff; }
   	} /*close search*/
   }
 }
