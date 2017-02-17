@@ -7,7 +7,9 @@
 	
 	echo "<!-- URL: ".$url."-->";
 
-	if (strpos($url,'mobility') !== false) {
+	if (strpos($url,'bully') !== false) {
+		$issuecategory='444'; //Communication
+	} elseif (strpos($url,'mobility') !== false) {
 		$issuecategory='443'; //Opportunity + Mobility
 	} elseif (strpos($url,'broken') !== false) {
 		$issuecategory='442'; //Broken Gov
@@ -20,8 +22,8 @@
 	} elseif (strpos($url, 'budget') !== false) {
 		$issuecategory='440'; //First Budget
 	} else {
-                $issuecategory='444'; //Communication
-        }
+    $issuecategory='445'; //Infrastructure
+    }
 
 ?>
 

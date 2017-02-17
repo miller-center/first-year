@@ -44,6 +44,7 @@
 {exp:string:set name="video-tease"}Our broken government{/exp:string:set}
 
 
+<!--IMPORTANT: This was changed to "asc" in order to show the first Volume temporarily. For this page to function normally and show recent release, change "asc" below to "desc". -->
 {exp:channel:entries channel="potus" limit="1" orderby="potus-released" sort="desc"}
 	{embed="potus/header" header-title="The First Year Project, Volume {potus-number}: {title}" css-include="{exp:string name='asset_path'}/css/home.css" css-hero-include="{exp:string name='asset_path'}/css/hero/home.css" kind="home" og-image-include="http://staticmc.org/potus/images/heros/sm/{potus-hero}" descr-include="{potus-shortdescription}"}
 
@@ -110,18 +111,25 @@
                 </div>
               </div>
               <div class="large-4 small-12 columns slider-panel tab">
-                <div class="tab-entry released is-active"><a id="issue-6" class="issue-link" data-id="6" data-supertitle="Volume 6" data-title="Opportunity & upward mobility" data-subtitle="The next president can revive confidence in the Great American Dream" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-6.jpg" href="/issue/mobility">6 American dreams</a>
+                <div class="tab-entry released"><a id="issue-6" class="issue-link" data-id="6" data-supertitle="Volume 6" data-title="Opportunity & upward mobility" data-subtitle="The next president can revive confidence in the Great American Dream" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-6.jpg" href="/issue/mobility">6 American dreams</a>
                   <p>Keeping the promise alive</p>
                 </div>
               </div>
               <div class="large-4 small-12 columns slider-panel tab">
-                <div class="tab-entry unreleased"><a id="issue-7" class="issue-link" href="#">7 Communication</a>
-                  <p>Getting the message across<br> Coming October 2016</p>
+                <div class="tab-entry released"><a id="issue-7" class="issue-link" data-id="7" data-title="Seizing the bully pulpit" data-subtitle="It will be harder than ever for the next president to be heard" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-7.jpg" href="/issue/seizing-the-bully-pulpit">7 Communication</a>
+                  <p>Getting the message across</p>
                 </div>
               </div>
               <div class="large-4 small-12 columns slider-panel tab">
-                <div class="tab-entry unreleased"><a id="issue-8" class="issue-link" href="#">8 Infrastructure</a>
-                  <p>Rebuilding a crumbling nation<br> Coming January 2017</p>
+                <div class="tab-entry released is-active"><a id="issue-8" class="issue-link" data-id="8" data-title="Rebuilding a crumbling nation" data-subtitle="The moment is ripe to invest in America’s roads, ports, bridges, and airports" data-background-url="//{exp:string name='asset_path'}/images/heros/lg/hero-issue-8.jpg" href="/issue/rebuilding-a-crumbling-nation">8 Infrastructure</a>
+                  <p>Rebuilding a crumbling nation</p>
+                </div>
+              </div>
+              
+
+              <div class="large-4 small-12 columns slider-panel tab">
+                <div class="tab-entry unreleased"><a id="issue-8" class="issue-link" href="#">9 Global Economy</a>
+                  <p>The uncertain future of globalization<br> Coming March 2017</p>
                 </div>
               </div>
 
@@ -135,9 +143,10 @@
       <div class="small-12 columns hero hide hide-for-print" id="issue-3-hero"></div>
       <div class="small-12 columns hero hide hide-for-print" id="issue-4-hero"></div>
       <div class="small-12 columns hero hide hide-for-print" id="issue-5-hero"></div>
-      <!--<div class="small-12 columns hero hide hide-for-print" id="issue-6-hero"></div>-->
+      <div class="small-12 columns hero hide hide-for-print" id="issue-6-hero"></div>
       <div class="small-12 columns hero hide hide-for-print" id="issue-7-hero"></div>
-    </div><!-- end hero-row -->
+      <!--<div class="small-12 columns hero hide hide-for-print" id="issue-8-hero"></div>--> 
+   </div><!-- end hero-row -->
 
 
 <!-- Video Modal -->
