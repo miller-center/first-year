@@ -43,7 +43,6 @@
 {!-- This string appears in the hero, on the button launching the video modal --}
 {exp:string:set name="video-tease"}Our broken government{/exp:string:set}
 
-
 <!--IMPORTANT: This was changed to "asc" in order to show the first Volume temporarily. For this page to function normally and show recent release, change "asc" below to "desc". -->
 {exp:channel:entries channel="potus" limit="1" orderby="potus-released" sort="desc"}
 	{embed="potus/header" header-title="The First Year Project, Volume {potus-number}: {title}" css-include="{exp:string name='asset_path'}/css/home.css" css-hero-include="{exp:string name='asset_path'}/css/hero/home.css" kind="home" og-image-include="http://staticmc.org/potus/images/heros/sm/{potus-hero}" descr-include="{potus-shortdescription}"}
@@ -128,8 +127,8 @@
               
 
               <div class="large-4 small-12 columns slider-panel tab">
-                <div class="tab-entry unreleased"><a id="issue-8" class="issue-link" href="#">9 Global Economy</a>
-                  <p>The uncertain future of globalization<br> Coming March 2017</p>
+                <div class="tab-entry unreleased"><a id="issue-8" class="issue-link" href="#">9 American Cauldron</a>
+                  <p>Grappling with tensions over race<br> Coming March 2017</p>
                 </div>
               </div>
 
