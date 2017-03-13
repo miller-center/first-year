@@ -66,7 +66,6 @@ module.exports = function(grunt) {
           'css/hero/issue6/pianta.css': 'scss/hero/issue6/pianta.scss',
           'css/hero/issue6/schragger.css': 'scss/hero/issue6/schragger.scss',
           'css/hero/issue6/wehner.css': 'scss/hero/issue6/wehner.scss',
-          'css/hero/issue7.css': 'scss/hero/issue7.scss', 
           'css/hero/issue7/cary.css': 'scss/hero/issue7/cary.scss',
           'css/hero/issue7/douglas.css': 'scss/hero/issue7/douglas.scss',
           'css/hero/issue7/dunn.css': 'scss/hero/issue7/dunn.scss',
@@ -77,7 +76,12 @@ module.exports = function(grunt) {
           'css/hero/issue8/lahood.css': 'scss/hero/issue8/lahood.scss',
           'css/hero/issue8/villaraigosa.css': 'scss/hero/issue8/villaraigosa.scss',
           'css/hero/issue8/norton.css': 'scss/hero/issue8/norton.scss',
-          'css/hero/issue8/williams.css': 'scss/hero/issue8/williams.scss'
+          'css/hero/issue8/williams.css': 'scss/hero/issue8/williams.scss',
+          'css/hero/issue9.css': 'scss/hero/issue9.scss', 
+          'css/hero/issue9/blackmon.css': 'scss/hero/issue9/blackmon.scss',
+          'css/hero/issue9/dyson.css': 'scss/hero/issue9/dyson.scss',
+          'css/hero/issue9/hinton.css': 'scss/hero/issue9/hinton.scss',
+          'css/hero/issue9/patterson.css': 'scss/hero/issue9/patterson.scss',
         }
       }
     },
