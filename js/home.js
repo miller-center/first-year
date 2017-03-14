@@ -8,7 +8,7 @@ var carousel = jQuery('#nav-tabs').slick({
     arrows: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    initialSlide: 5,
+    initialSlide: 6,
     infinite: true,
     autoplaySpeed: 2000,
     autoplay: false,
@@ -20,7 +20,7 @@ var carousel = jQuery('#nav-tabs').slick({
           arrows: true,
           slidesToShow: 3,
           slidesToScroll: 1,
-          initialSlide: 5,
+          initialSlide: 6,
           autoplay: false
         }
       },
@@ -31,7 +31,7 @@ var carousel = jQuery('#nav-tabs').slick({
           arrows: true,
           slidesToShow: 3,
           slidesToScroll: 1,
-          initialSlide: 5,
+          initialSlide: 6,
           autoplay: false       
         }
       },
@@ -42,7 +42,7 @@ var carousel = jQuery('#nav-tabs').slick({
           arrows: true,
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 5,
+          initialSlide: 6,
           autoplay: false       
         }      
       }
