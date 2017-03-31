@@ -25,3 +25,12 @@ $filename: "hero-issue-9.jpg";
 }
 // add print styling for a hero image
 @include build-img-for-print($filename, "../../");
+// custom overrides for this issue only
+
+#hero-slider {
+  .slider-panel.slick-active.video-slide {
+    &:after {
+      background:none !important;
+    }
+  }
+}
